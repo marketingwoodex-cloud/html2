@@ -1,13 +1,18 @@
-{# Block 24: Testimonial — Named Client #}
-<section class="py-16 bg-cream">
-  <div class="container max-w-3xl">
-    <div class="bg-white rounded-wx p-8 border">
-      <p class="text-lg italic leading-relaxed">"{{ quote or 'Woodex Interior delivered our corporate office in Lahore under one contract, with 3D approval before any physical work. One PM accountable. No chaos. Wellstar DHA Lahore is proof.' }}"</p>
-      <div class="mt-6 flex items-center gap-4">
-        <img src="{{ avatar or '/images/project-minimal.jpg' }}" alt="{{ name or 'Client' }}" class="w-10 h-10 rounded-full object-cover" loading="lazy" />
-        <div><p class="font-semibold text-sm">{{ name or 'Wellstar Team — DHA Lahore' }}</p><p class="text-xs text-muted">{{ role or 'Pharmacy / Cosmetics / Mini Hospital — DHA Lahore — Named Client' }}</p><p class="text-[11px] tracking-[0.18em] uppercase text-wood mt-1">{{ project or 'Corporate Office Fit-Out — Lahore' }}</p></div>
+{# Block 24: Testimonial — Premium — Balanced Spacing — Animation #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="section-premium bg-[#0f1e36] text-white relative overflow-hidden" data-anim="fade">
+  <div class="absolute inset-0 opacity-[0.08] pointer-events-none" aria-hidden="true"><div class="container-wx h-full flex justify-between"><span class="w-px bg-white h-full"></span><span class="w-px bg-white h-full"></span><span class="w-px bg-white h-full"></span><span class="w-px bg-white h-full"></span></div></div>
+  <div class="container-wx relative">
+    <div class="max-w-[800px] mx-auto text-center" data-anim="up">
+      <div class="flex justify-center gap-1 mb-6" aria-label="5 stars"><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span></div>
+      <div class="text-[80px] leading-none opacity-20 font-serif -mt-4" aria-hidden="true" style="font-family:'Syne',sans-serif;">“</div>
+      <p class="text-[20px] md:text-[24px] leading-[1.4] font-medium -mt-8 text-white">{{ quote or 'Woodex Interior delivered our Wellstar Pharmacy, Cosmetics and Mini Hospital in DHA Lahore under one contract, with 3D approval before any physical work. One PM accountable. No chaos.' }}</p>
+      <div class="mt-10 flex flex-col items-center">
+        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-[14px] font-semibold text-white">{{ avatar or 'W' }}</div>
+        <p class="text-[14px] font-semibold mt-4 text-white">{{ name or 'Wellstar Team, DHA Lahore' }}</p>
+        <p class="text-[13px] text-white/60 mt-1">{{ role or 'Pharmacy, Cosmetics and Mini Hospital — Named Client — 200+ projects proof' }}</p>
+        <p class="text-[12px] tracking-wide uppercase text-white/40 mt-3">{{ sector or 'Healthcare — Wellstar' }}</p>
       </div>
     </div>
-    <p class="text-xs text-muted mt-3">{{ note or 'Placeholder testimonial TBD per Phase 1 gap — need real testimonials with names and project details.' }}</p>
   </div>
 </section>

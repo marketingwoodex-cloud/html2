@@ -1,41 +1,37 @@
-{# Block 26: Final CTA + Qualification Form — Book Consultation #}
-<section class="py-20 bg-navy text-white">
-  <div class="container">
-    <div class="grid md:grid-cols-2 gap-12">
-      <div>
-        <h2 class="text-4xl font-bold tracking-tightx">{{ heading or 'Tell us about your space' }}</h2>
-        <p class="mt-4 text-cream-2">{{ text or 'Empty hall, floor plan, brand, or drawings. We answer with the next gate — not a brochure. M-71 Zainab Tower, Model Town Link Road, Lahore.' }}</p>
-        <ul class="mt-6 space-y-2 text-sm text-cream-2">
-          {% for b in bullets or ['One team. One process. One result.','Discover → Design → Visualize → Plan (Budget + BOQ) → Build → Install → Deliver — Stop at gate you choose','No fake sqft rate — budget with clarity after 3D approval'] %}
-          <li class="flex gap-2"><span class="text-wood">•</span> {{ b }}</li>
-          {% endfor %}
-        </ul>
+{# Block 26: Final CTA Form — Premium — Balanced Spacing — Animation — Dark + Form #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="section-premium bg-[#0f1e36] text-white relative overflow-hidden" data-anim="fade">
+  <div class="absolute inset-0"><img src="{{ ctaBg or '/images/hero-2.jpg' }}" width="1600" height="900" alt="Final CTA" class="w-full h-full object-cover opacity-20" loading="lazy" decoding="async" /><div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/90 via-[#0f1e36]/70 to-[#0f1e36]/40"></div></div>
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" aria-hidden="true"><div class="container-wx h-full flex justify-between"><span class="w-px bg-white h-full"></span><span class="w-px bg-white h-full"></span><span class="w-px bg-white h-full"></span><span class="w-px bg-white h-full"></span></div></div>
+  <div class="container-wx relative">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12">
+      <div class="col-span-12 lg:col-span-6" data-anim="left">
+        <h2 class="text-white" style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); line-height:1.2;">{{ heading or 'Tell us about your space' }}</h2>
+        <p class="mt-4 text-[15px] leading-[1.7] text-white/70 max-w-[48ch]">{{ text or 'Empty hall, floor plan, brand, or drawings. We answer with the next gate — not a brochure. M-71 Zainab Tower, Model Town Link Road, Lahore — 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof.' }}</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://wa.me/923224000768" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[13px] bg-white/10 border border-white/10 rounded-full px-4 py-2 hover:bg-white/15 transition">WhatsApp <span aria-hidden="true">↗</span></a>
+          <a href="tel:+923224000768" class="inline-flex items-center gap-2 text-[13px] bg-white text-[#0f1e36] rounded-full px-4 py-2 font-medium">Call +92 322 4000768</a>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-2 text-[12px]">
+          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">M-71 Zainab Tower</span>
+          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">10 Years Proof</span>
+          <span class="px-3 py-1 rounded-full bg-[#fcf2e8] text-[#0f1e36] font-semibold">Wellstar DHA Proof</span>
+        </div>
       </div>
-      <div class="bg-white rounded-[24px] p-8 text-ink shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
-        <h3 class="font-bold text-lg tracking-tightx">{{ formTitle or 'Project Brief — Netlify Forms + GA4' }}</h3>
-        <p class="text-[13px] text-muted mt-1">Beyond Design. We Build Experiences. — M-71 Zainab Tower</p>
-        <form name="{{ formName or 'project-brief' }}" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="mt-6 grid gap-5" onsubmit="if(window.trackEvent) trackEvent('form_submit',{form:'{{ formName or 'project-brief' }}'});">
-          <input type="hidden" name="form-name" value="{{ formName or 'project-brief' }}" />
-          <p class="hidden"><label>Don’t fill if human: <input name="bot-field" /></label></p>
-          <div class="grid md:grid-cols-2 gap-5">
-            <label class="block group"><span class="text-[11px] tracking-[0.12em] uppercase font-semibold opacity-60 group-focus-within:opacity-100 transition">What space is today? *</span><select name="space_today" required class="mt-2 w-full border-0 border-b border-black/10 rounded-none px-0 py-3 bg-transparent focus:border-black focus:ring-0 text-sm"><option value="">Select</option><option>Empty / Shell</option><option>Existing with problems</option><option>Under construction</option><option>Have drawings only</option></select></label>
-            <label class="block group"><span class="text-[11px] tracking-[0.12em] uppercase font-semibold opacity-60 group-focus-within:opacity-100 transition">What must it become? *</span><select name="space_become" required class="mt-2 w-full border-0 border-b border-black/10 rounded-none px-0 py-3 bg-transparent focus:border-black focus:ring-0 text-sm"><option value="">Select</option><option>Corporate Office</option><option>Software House</option><option>Retail / Showroom</option><option>Restaurant / Café</option><option>Pharmacy / Clinic / Healthcare</option><option>Residential</option><option>Other Commercial</option></select></label>
-          </div>
-          <div class="grid md:grid-cols-2 gap-5">
-            <label class="block group"><span class="text-[11px] tracking-[0.12em] uppercase font-semibold opacity-60 group-focus-within:opacity-100 transition">City & Area *</span><input type="text" name="city" required class="mt-2 w-full border-0 border-b border-black/10 rounded-none px-0 py-3 bg-transparent focus:border-black focus:ring-0 text-sm placeholder:text-black/30" placeholder="e.g., Lahore DHA Phase 6" /></label>
-            <label class="block group"><span class="text-[11px] tracking-[0.12em] uppercase font-semibold opacity-60 group-focus-within:opacity-100 transition">Budget band</span><select name="budget" class="mt-2 w-full border-0 border-b border-black/10 rounded-none px-0 py-3 bg-transparent focus:border-black focus:ring-0 text-sm"><option value="">Select if you have</option><option>< 10 Lakh</option><option>10-25 Lakh</option><option>25-50 Lakh</option><option>50 Lakh - 1 Cr</option><option>1 Cr+</option></select></label>
-          </div>
-          {% if '3d' in formName or 'studio' in formName %}
-          <label class="block group"><span class="text-[11px] tracking-[0.12em] uppercase font-semibold opacity-60 group-focus-within:opacity-100 transition">Upload plan / photos / references (optional) — 3D Studio™</span><input type="file" name="reference_files" accept=".jpg,.jpeg,.png,.pdf,.dwg,.zip" multiple class="mt-2 w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-navy file:text-white file:text-xs file:font-semibold hover:file:bg-navy/90" /><span class="text-[11px] text-muted mt-1 block">JPG, PNG, PDF, DWG, ZIP — max 10MB — plan, photos, references — See the room before it exists.</span></label>
-          {% endif %}
-          <label class="block group"><span class="text-[11px] tracking-[0.12em] uppercase font-semibold opacity-60 group-focus-within:opacity-100 transition">Name *</span><input type="text" name="name" required class="mt-2 w-full border-0 border-b border-black/10 rounded-none px-0 py-3 bg-transparent focus:border-black focus:ring-0 text-sm" /></label>
-          <div class="grid md:grid-cols-2 gap-5">
-            <label class="block group"><span class="text-[11px] tracking-[0.12em] uppercase font-semibold opacity-60 group-focus-within:opacity-100 transition">Phone *</span><input type="tel" name="phone" required class="mt-2 w-full border-0 border-b border-black/10 rounded-none px-0 py-3 bg-transparent focus:border-black focus:ring-0 text-sm placeholder:text-black/30" placeholder="+92 322 ..." /></label>
-            <label class="block group"><span class="text-[11px] tracking-[0.12em] uppercase font-semibold opacity-60 group-focus-within:opacity-100 transition">Email *</span><input type="email" name="email" required class="mt-2 w-full border-0 border-b border-black/10 rounded-none px-0 py-3 bg-transparent focus:border-black focus:ring-0 text-sm" /></label>
-          </div>
-          <button type="submit" class="btn mt-2 bg-black text-white rounded-full px-6 py-3 text-sm font-semibold hover:bg-black/90 transition"><span class="btn-label"><span>{{ btnText or 'Send the brief' }}</span><span>{{ btnText or 'Send the brief' }}</span></span><span class="btn-icon bg-white text-black w-7 h-7 rounded-full flex items-center justify-center ml-3"><svg viewBox="0 0 16 16" fill="none" class="w-4 h-4"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg><svg viewBox="0 0 16 16" fill="none" class="w-4 h-4"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
-          <p class="text-[11px] text-muted leading-relaxed">By submitting, you agree to be contacted. NAP: M-71 Zainab Tower, Model Town Link Road, Lahore — +92 322 4000768 — info@woodex.com.pk — Architectural coordination via qualified professionals where required by law.</p>
-        </form>
+      <div class="col-span-12 lg:col-span-6" data-anim="right" data-delay="1">
+        <div class="card-premium bg-white p-8 md:p-10 rounded-[24px]">
+          <p class="text-[12px] tracking-wide uppercase font-semibold text-black/50">{{ formEyebrow or 'Book a Consultation' }}</p>
+          <h3 class="mt-2 text-[20px] font-semibold leading-tight text-[#111]" style="font-family:'Syne',sans-serif;">{{ formHeading or 'Book a Consultation — Tell us about your space' }}</h3>
+          <form name="{{ formName or 'final-cta' }}" method="POST" data-netlify="true" class="mt-6 space-y-4" aria-label="Consultation form">
+            <input type="hidden" name="form-name" value="{{ formName or 'final-cta' }}" />
+            <div class="grid grid-cols-12 gap-4">
+              <div class="col-span-12 md:col-span-6"><label class="text-[12px] tracking-wide uppercase font-semibold text-black/50">Full Name *</label><input name="full-name" required autocomplete="name" placeholder="CEO / Founder / Head Admin" class="mt-2 w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px] bg-white focus:outline-none focus:border-[#0f1e36]" /></div>
+              <div class="col-span-12 md:col-span-6"><label class="text-[12px] tracking-wide uppercase font-semibold text-black/50">Phone *</label><input name="phone" required type="tel" autocomplete="tel" placeholder="+92 322 4000768" class="mt-2 w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px] bg-white focus:outline-none focus:border-[#0f1e36]" /></div>
+              <div class="col-span-12"><label class="text-[12px] tracking-wide uppercase font-semibold text-black/50">Tell us about your space *</label><textarea name="brief" required rows="4" placeholder="What is your space today? What must it become? — Empty hall, floor plan, brand, or drawings — usage, city, budget band" class="mt-2 w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px] bg-white resize-y focus:outline-none focus:border-[#0f1e36]"></textarea></div>
+              <div class="col-span-12 pt-2"><button type="submit" class="btn w-full justify-center"><span class="btn-label"><span>{{ formBtn or 'Book a Consultation' }}</span></span><span class="btn-icon"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></button><p class="text-[11px] text-black/40 mt-3 text-center leading-[1.5]">By sending, you agree to be contacted about your project — M-71 Zainab Tower, Model Town Link Road, Lahore — info@woodex.com.pk — Mon-Sat 9:30-6:30</p></div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

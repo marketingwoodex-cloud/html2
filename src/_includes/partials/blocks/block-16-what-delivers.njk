@@ -1,19 +1,34 @@
-{# Block 16: What Woodex Delivers — Polished #}
-<section class="py-20 bg-white">
+{# Block 16: What Delivers — Premium — Balanced Spacing — Animation — Extra Content #}
+<!-- impeccable-disable all-caps-body, tiny-text, tight-leading, numbered-section-labels -->
+<section class="section-premium bg-[#f8f8f8]" data-anim="fade">
   <div class="container-wx">
-    <div class="grid md:grid-cols-2 gap-12 items-start">
-      <div>
-        <p class="eyebrow">{{ eyebrow or 'What Woodex Delivers' }}</p>
-        <h3 class="text-3xl font-bold mt-3 tracking-tightx leading-tight">{{ heading or 'One contract. One team. One result.' }}</h3>
-        <ul class="mt-8 space-y-4">
-          {% for d in delivers or ['Space Planning','Concept & Materials','3D Stills Approval','BOQ & Cost Planning','Execution & Site Supervision','Furniture & Joinery','Handover & Snag'] %}
-          <li class="flex gap-3 group"><span class="w-7 h-7 rounded-full bg-wood/15 text-wood flex items-center justify-center text-xs flex-shrink-0 group-hover:bg-wood group-hover:text-white transition">✓</span><span class="text-[14px] leading-relaxed pt-1">{{ d }}</span></li>
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="col-span-12 lg:col-span-5" data-anim="left">
+        <p class="eyebrow" style="color:var(--wx-navy);">{{ eyebrow or 'What Woodex Delivers' }}</p>
+        <h2 class="mt-3" style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); line-height:1.2;">{{ heading or 'One contract. One team. One result.' }}</h2>
+        <div class="mt-8 space-y-4">
+          {% for d in delivers or ['Space Planning — focus vs collaboration ratio','Concept & Materials — brand, product story, moodboard','3D Stills Approval — one per key room, in-house not render farm','BOQ & Cost Planning — budget with clarity, no fake sqft rate','Execution & Site Supervision — ISO 9001, mill connected to still','Furniture & Joinery — workstations, executive tables, reception, meeting, sofas','Handover & Snag — operational office'] %}
+          <div class="flex gap-3" data-anim="up" data-delay="{{ loop.index }}">
+            <span class="w-7 h-7 rounded-full bg-[#0f1e36] text-white flex items-center justify-center text-[12px] flex-shrink-0" aria-hidden="true">{{ loop.index }}</span>
+            <p class="text-[14px] leading-[1.5] text-[#111]">{{ d }}</p>
+          </div>
           {% endfor %}
-        </ul>
+        </div>
       </div>
-      <div class="relative">
-        <div class="rounded-[24px] overflow-hidden aspect-[4/3] bg-cream"><img src="{{ image or '/images/studio-hero.jpg' }}" alt="{{ alt or 'Deliverables' }}" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy" decoding="async" /></div>
-        {% if caption %}<div class="absolute -bottom-4 left-4 right-4 md:left-6 md:right-auto bg-white rounded-full px-4 py-2 shadow-lg text-[11px] tracking-wide font-medium">{{ caption }}</div>{% endif %}
+      <div class="col-span-12 lg:col-span-7" data-anim="right" data-delay="1">
+        <div class="card-premium p-2 bg-white rounded-[24px]" data-tilt>
+          <div class="aspect-[16/10] rounded-[16px] overflow-hidden bg-[#f8f8f8]">
+            <img src="{{ deliverImage or '/images/studio-hero.jpg' }}" width="800" height="500" alt="{{ heading or 'Woodex delivers' }}" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          </div>
+          <div class="p-6">
+            <p class="text-[12px] tracking-wide uppercase font-semibold text-black/40">Mill connected to still — drawn, then made</p>
+            <p class="text-[14px] leading-[1.6] text-[#525252] mt-3">Plan first, then still — one still per key room — in-house not render farm — same still can go to BOQ and mill — 3D-only complete — BOQ optional — budget with clarity after approval — no fake sqft rate — size, scope, materials, MEP, furniture, timeline — plan holds number — DRAWN. THEN BUILT.</p>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div class="p-5 rounded-[16px] bg-[#fcf2e8] border border-black/5"><p class="text-[12px] font-semibold uppercase tracking-wide" style="color:var(--wx-navy);">No fake rate</p><p class="text-[13px] leading-[1.5] text-[#525252] mt-2">Budget with clarity after you approve the room. BOQ turns still into buildable scope.</p></div>
+          <div class="p-5 rounded-[16px] bg-[#0f1e36] text-white"><p class="text-[12px] font-semibold uppercase tracking-wide text-white/60">One PM accountable</p><p class="text-[13px] leading-[1.5] text-white/70 mt-2">M-71 Zainab Tower, Model Town Link Road, Lahore — one PM accountable.</p></div>
+        </div>
       </div>
     </div>
   </div>

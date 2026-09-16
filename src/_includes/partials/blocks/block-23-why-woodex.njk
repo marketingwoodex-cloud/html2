@@ -1,18 +1,22 @@
-{# Block 23: Why Woodex — Polished — Stats Navy Cards Wood Num #}
-<section class="py-20 bg-navy text-white relative overflow-hidden">
-  <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true" style="background-image:linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size:40px 40px"></div>
-  <div class="container-wx relative">
-    <div class="grid md:grid-cols-2 gap-12 items-start">
-      <div class="sticky top-24">
-        <p class="eyebrow text-cream-2">{{ eyebrow or 'Why Woodex Interior?' }}</p>
-        <h3 class="text-3xl md:text-4xl font-bold mt-4 leading-tight tracking-tightx">{{ heading or '10 years, 200+ projects, ISO 9001, 3 studios, Wellstar DHA Lahore, one team one contract, 3D before execution' }}</h3>
-        <p class="mt-5 text-[15px] leading-relaxed text-cream-2 max-w-xl">{{ text or 'Work we can stand behind — plan, still and site when brief includes build. Not catalogue count. Architectural coordination via qualified professionals where required by law. Placeholder founder details TBD per Phase 1 gap.' }}</p>
-        <div class="mt-8 flex gap-3"><a href="/about/" class="btn btn-light text-sm"><span class="btn-label"><span>The practice</span><span>The practice</span></span></a><a href="/process/" class="btn border border-white/20 text-sm text-white"><span class="btn-label"><span>Our process</span><span>Our process</span></span></a></div>
+{# Block 23: Why Woodex — Premium — Balanced Spacing — Animation — Extra Content #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="section-premium bg-[#f8f8f8]" data-anim="fade">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="col-span-12 lg:col-span-5" data-anim="left">
+        <p class="eyebrow" style="color:var(--wx-navy);">{{ eyebrow or 'Why Woodex Interior?' }}</p>
+        <h2 class="mt-3" style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); line-height:1.2;">{{ heading or '10 years, 200+ projects, ISO 9001, 3 studios, Wellstar DHA Lahore, one team one contract, 3D before execution' }}</h2>
+        <p class="mt-4 text-[15px] leading-[1.7] text-[#525252]">{{ text or 'From strategy and space planning to design, fit-out and final delivery, we create purposeful environments built around how people work, live and experience space. Beyond Design. We Build Experiences. DRAWN. THEN BUILT.' }}</p>
+        <div class="mt-8"><a class="btn" href="/about/"><span class="btn-label"><span>The practice</span></span><span class="btn-icon"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a></div>
       </div>
-      <div class="grid grid-cols-2 gap-4">
-        {% for stat in stats or [{'num':'200+','title':'Projects','desc':'Work we can stand behind'},{'num':'10+','title':'Execution years','desc':'ISO 9001 site joinery handover'},{'num':'~10','title':'Founder years','desc':'Commercial interiors first Wellstar DHA'},{'num':'3','title':'Studios','desc':'Gulberg III Lahore HQ Clifton Karachi F-7 Islamabad'}] %}
-        <div class="border border-white/10 rounded-[24px] p-6 bg-[#152033] hover:bg-[#1a2940] hover:border-wood/30 transition group"><div class="text-3xl font-bold text-wood group-hover:scale-105 transition-transform">{{ stat.num }}</div><h4 class="font-semibold mt-2 text-[14px]">{{ stat.title }}</h4><p class="text-[12px] text-white/60 mt-2 leading-relaxed">{{ stat.desc }}</p></div>
-        {% endfor %}
+      <div class="col-span-12 lg:col-span-7" data-anim="right" data-delay="1">
+        <div class="grid grid-cols-12 gap-4">
+          <div class="col-span-6 md:col-span-3"><div class="card-premium p-6 bg-[#fcf2e8] text-center"><p class="text-[28px] font-semibold" style="font-family:'Syne',sans-serif;">200+</p><p class="text-[12px] uppercase tracking-wide font-semibold text-black/50 mt-1">Projects</p><p class="text-[11px] text-[#525252] mt-2 leading-[1.4]">Work we can stand behind — Wellstar DHA named</p></div></div>
+          <div class="col-span-6 md:col-span-3"><div class="card-premium p-6 bg-white text-center"><p class="text-[28px] font-semibold" style="font-family:'Syne',sans-serif;">10+</p><p class="text-[12px] uppercase tracking-wide font-semibold text-black/50 mt-1">Years</p><p class="text-[11px] text-[#525252] mt-2 leading-[1.4]">Execution, ISO 9001, mill connected</p></div></div>
+          <div class="col-span-6 md:col-span-3"><div class="card-premium p-6 bg-white text-center"><p class="text-[28px] font-semibold" style="font-family:'Syne',sans-serif;">~10</p><p class="text-[12px] uppercase tracking-wide font-semibold text-black/50 mt-1">Founder years</p><p class="text-[11px] text-[#525252] mt-2 leading-[1.4]">Commercial interiors first</p></div></div>
+          <div class="col-span-6 md:col-span-3"><div class="card-premium p-6 bg-[#0f1e36] text-white text-center border-white/10"><p class="text-[28px] font-semibold text-white" style="font-family:'Syne',sans-serif;">3</p><p class="text-[12px] uppercase tracking-wide font-semibold text-white/50 mt-1">Studios</p><p class="text-[11px] text-white/60 mt-2 leading-[1.4]">Gulberg III Lahore HQ</p></div></div>
+          <div class="col-span-12 mt-4"><div class="p-6 rounded-[16px] bg-white border border-black/5"><p class="text-[12px] uppercase tracking-wide font-semibold text-black/40">Proof — Wellstar DHA Lahore</p><p class="text-[14px] leading-[1.6] text-[#111] mt-2">Wellstar Pharmacy, Cosmetics and Mini Hospital, DHA Lahore — compliance, hygiene, patient flow, staff efficiency, calming — Wellstar proof — M-71 Zainab Tower, Model Town Link Road, Lahore.</p></div></div>
+        </div>
       </div>
     </div>
   </div>

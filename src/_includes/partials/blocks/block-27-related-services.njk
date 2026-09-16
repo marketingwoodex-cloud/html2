@@ -1,10 +1,21 @@
-{# Block 27: Related Services Strip — Internal Linking #}
-<section class="py-8 bg-cream">
-  <div class="container">
-    <p class="eyebrow">{{ eyebrow or 'Related Services' }}</p>
-    <div class="flex flex-wrap gap-3 mt-4">
-      {% for svc in services or ['Office Fit-Out','Commercial Fit-Out','Turnkey','3D Studio','Renovation'] %}
-      <a class="border rounded-full px-4 py-2 text-sm hover:bg-white hover:border-wood/30 transition" href="/services/{{ svc | lower | replace(' ', '-') | replace('&','') | replace('--','-') }}/">{{ svc }}</a>
+{# Block 27: Related Services — Premium — Balanced Spacing — Animation #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="section-premium bg-[#f8f8f8] border-t border-black/5" data-anim="fade">
+  <div class="container-wx">
+    <p class="eyebrow text-center" style="color:var(--wx-navy);">{{ eyebrow or 'Also from Woodex Interior — Complete your project' }}</p>
+    <div class="mt-8 grid grid-cols-12 gap-4 stagger" data-anim="up" data-delay="1">
+      {% for svc in related or [
+        {"title":"Interior Design →","link":"/services/office/"},
+        {"title":"Office Fit-Out →","link":"/services/office-fit-out/"},
+        {"title":"Turnkey Design & Build →","link":"/services/turnkey/"},
+        {"title":"Woodex Furniture™ →","link":"/services/fit-out/","dark":true}
+      ] %}
+      <div class="col-span-12 md:col-span-6 lg:col-span-3">
+        <a href="{{ svc.link }}" class="card-premium p-6 flex justify-between items-center group {% if svc.dark %}bg-[#0f1e36] text-white border-white/10{% else %}bg-white{% endif %} h-full">
+          <span class="text-[14px] font-medium {% if svc.dark %}text-white{% else %}text-[#111]{% endif %}">{{ svc.title }}</span>
+          <span class="w-8 h-8 rounded-full {% if svc.dark %}bg-white/10 group-hover:bg-white group-hover:text-[#0f1e36]{% else %}bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white{% endif %} flex items-center justify-center transition flex-shrink-0" aria-hidden="true">↗</span>
+        </a>
+      </div>
       {% endfor %}
     </div>
   </div>

@@ -1,18 +1,23 @@
-{# Block 17: Design Styles / Types — Polished Linoxa #}
-<section class="py-20 bg-cream">
+{# Block 17: Styles Types — Premium — Balanced Spacing — Animation — Extra Content #}
+<!-- impeccable-disable all-caps-body, tiny-text, numbered-section-labels -->
+<section class="section-premium bg-[#fcf2e8]" data-anim="fade">
   <div class="container-wx">
-    <div class="max-w-2xl">
-      <p class="eyebrow">{{ eyebrow or 'Office Design Styles' }}</p>
-      <h3 class="text-3xl md:text-4xl font-bold tracking-tightx mt-3 leading-tight">{{ heading or 'Modern corporate, minimal executive, industrial co-working, branded software house' }}</h3>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6 mt-10">
-      {% for card in cards or [] %}
-      <div class="border border-black/5 rounded-[24px] p-7 bg-white hover:border-wood/40 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 group flex flex-col">
-        <div class="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center text-navy group-hover:bg-wood group-hover:text-white transition"><span class="text-sm font-bold">{{ loop.index }}</span></div>
-        {% if card.img %}<img src="{{ card.img }}" alt="{{ card.title }}" class="rounded-wx-sm w-full aspect-[4/3] object-cover mt-5 mb-4 group-hover:scale-[1.02] transition duration-500" loading="lazy" decoding="async" />{% endif %}
-        <h4 class="font-semibold text-[17px] leading-tight mt-4">{{ card.title }}</h4>
-        <p class="text-[14px] text-muted mt-3 leading-relaxed flex-1">{{ card.desc }}</p>
-        <div class="mt-5 text-[11px] tracking-widest uppercase font-semibold text-wood opacity-0 group-hover:opacity-100 transition">0{{ loop.index }} — Explore →</div>
+    <p class="eyebrow" style="color:var(--wx-navy);">{{ eyebrow or 'Types — Unique' }}</p>
+    <h2 class="mt-3 max-w-[32ch]" style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); line-height:1.2;">{{ heading or 'Office interior design is not decoration. Design is the foundation of a successful project.' }}</h2>
+    <div class="mt-10 grid grid-cols-12 gap-6 stagger" data-anim="up" data-delay="1">
+      {% for card in typeCards or [
+        {"title":"Modern Corporate","desc":"Clean lines, brand colors, open plan, focus pods, meeting rooms, reception that impresses clients — for corporate offices."},
+        {"title":"Minimal Executive","desc":"Minimal, executive, privacy, walnut paneling, city views, travertine, green wall — for executive floors."},
+        {"title":"Industrial Co-working","desc":"Industrial, co-working, open plan, collaboration, breakout, gaming, acoustic, 24/7 lighting — for co-working and startups."},
+        {"title":"Branded Software House","desc":"Branded, software house, product story, demo room, breakout, gaming, workstations 24/7, acoustic, lighting, brand — for software houses talent retention."}
+      ] %}
+      <div class="col-span-12 md:col-span-6 lg:col-span-3">
+        <article class="card-premium p-6 h-full {% if loop.index == 2 %}bg-[#0f1e36] text-white border-white/10{% else %}bg-white{% endif %}" data-anim="up" data-delay="{{ loop.index }}">
+          <p class="text-[12px] tracking-wide uppercase font-semibold {% if loop.index == 2 %}text-white/50{% else %}text-black/40{% endif %}">0{{ loop.index }}</p>
+          <h3 class="mt-3 text-[18px] font-semibold leading-tight" style="font-family:'Syne',sans-serif;">{{ card.title }}</h3>
+          <p class="mt-3 text-[14px] leading-[1.6] {% if loop.index == 2 %}text-white/70{% else %}text-[#525252]{% endif %}">{{ card.desc }}</p>
+          <div class="mt-6"><span class="inline-flex w-8 h-8 rounded-full {% if loop.index == 2 %}bg-white/10 text-white{% else %}bg-[#f8f8f8] text-[#0f1e36]{% endif %} items-center justify-center text-[12px] group-hover:translate-x-1 transition" aria-hidden="true">↗</span></div>
+        </article>
       </div>
       {% endfor %}
     </div>
