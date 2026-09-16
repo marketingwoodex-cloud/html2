@@ -1,0 +1,13 @@
+# Woodex Interior — Eleventy Build
+_site/
+node_modules/
+dist/
+.cache/
+*.zip
+screenshots/
+2-html/
+2-html.zip
+screensort .zip
+.DS_Store
+.env
+.claude/

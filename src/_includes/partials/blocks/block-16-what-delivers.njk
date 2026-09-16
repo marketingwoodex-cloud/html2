@@ -1,0 +1,20 @@
+{# Block 16: What Woodex Delivers — Polished #}
+<section class="py-20 bg-white">
+  <div class="container-wx">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <p class="eyebrow">{{ eyebrow or 'What Woodex Delivers' }}</p>
+        <h3 class="text-3xl font-bold mt-3 tracking-tightx leading-tight">{{ heading or 'One contract. One team. One result.' }}</h3>
+        <ul class="mt-8 space-y-4">
+          {% for d in delivers or ['Space Planning','Concept & Materials','3D Stills Approval','BOQ & Cost Planning','Execution & Site Supervision','Furniture & Joinery','Handover & Snag'] %}
+          <li class="flex gap-3 group"><span class="w-7 h-7 rounded-full bg-wood/15 text-wood flex items-center justify-center text-xs flex-shrink-0 group-hover:bg-wood group-hover:text-white transition">✓</span><span class="text-[14px] leading-relaxed pt-1">{{ d }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="relative">
+        <div class="rounded-[24px] overflow-hidden aspect-[4/3] bg-cream"><img src="{{ image or '/images/studio-hero.jpg' }}" alt="{{ alt or 'Deliverables' }}" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy" decoding="async" /></div>
+        {% if caption %}<div class="absolute -bottom-4 left-4 right-4 md:left-6 md:right-auto bg-white rounded-full px-4 py-2 shadow-lg text-[11px] tracking-wide font-medium">{{ caption }}</div>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>

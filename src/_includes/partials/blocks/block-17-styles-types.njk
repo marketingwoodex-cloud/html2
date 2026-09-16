@@ -1,0 +1,20 @@
+{# Block 17: Design Styles / Types — Polished Linoxa #}
+<section class="py-20 bg-cream">
+  <div class="container-wx">
+    <div class="max-w-2xl">
+      <p class="eyebrow">{{ eyebrow or 'Office Design Styles' }}</p>
+      <h3 class="text-3xl md:text-4xl font-bold tracking-tightx mt-3 leading-tight">{{ heading or 'Modern corporate, minimal executive, industrial co-working, branded software house' }}</h3>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      {% for card in cards or [] %}
+      <div class="border border-black/5 rounded-[24px] p-7 bg-white hover:border-wood/40 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 group flex flex-col">
+        <div class="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center text-navy group-hover:bg-wood group-hover:text-white transition"><span class="text-sm font-bold">{{ loop.index }}</span></div>
+        {% if card.img %}<img src="{{ card.img }}" alt="{{ card.title }}" class="rounded-wx-sm w-full aspect-[4/3] object-cover mt-5 mb-4 group-hover:scale-[1.02] transition duration-500" loading="lazy" decoding="async" />{% endif %}
+        <h4 class="font-semibold text-[17px] leading-tight mt-4">{{ card.title }}</h4>
+        <p class="text-[14px] text-muted mt-3 leading-relaxed flex-1">{{ card.desc }}</p>
+        <div class="mt-5 text-[11px] tracking-widest uppercase font-semibold text-wood opacity-0 group-hover:opacity-100 transition">0{{ loop.index }} — Explore →</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

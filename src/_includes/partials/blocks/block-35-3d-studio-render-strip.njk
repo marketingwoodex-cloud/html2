@@ -1,0 +1,112 @@
+{# Block 35: 3D Studio — Rich Cinematic Hero — Fixed Spacing — Linoxa Home Two + Screenshot 1 #}
+<section class="relative bg-navy text-white overflow-hidden" style="min-height:100svh">
+  {# Background image — rich cinematic like screenshot 1 #}
+  <div class="absolute inset-0">
+    <img src="{{ heroImage or '/images/studio-hero.jpg' }}" alt="Woodex 3D Studio — See the room before it exists — photorealistic render" class="w-full h-full object-cover" fetchpriority="high" decoding="async" />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-navy/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-black/20"></div>
+  </div>
+  {# Vertical grid lines 4x — Linoxa — screenshot shows faint lines #}
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="h-full w-full max-w-[1360px] mx-auto px-6 lg:px-8 flex justify-between">
+      <span class="w-px bg-white/[0.08] h-full block"></span>
+      <span class="w-px bg-white/[0.08] h-full block"></span>
+      <span class="w-px bg-white/[0.08] h-full block"></span>
+      <span class="w-px bg-white/[0.08] h-full block"></span>
+    </div>
+  </div>
+  {# Giant word DRAWN behind — Linoxa — very faint like screenshot #}
+  <div class="absolute bottom-0 left-0 right-0 pointer-events-none select-none overflow-hidden leading-none" aria-hidden="true">
+    <div class="text-[28vw] font-black tracking-[-0.05em] leading-[0.75] text-white/[0.06] translate-y-[15%] whitespace-nowrap">DRAWN</div>
+  </div>
+
+  {# Main hero content — 12 col grid — left huge H1, middle small list, right trust vertical with dots #}
+  <div class="relative container-wx" style="min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding-top:96px; padding-bottom:48px">
+    <div class="grid grid-cols-12 gap-6 lg:gap-8 items-start">
+      {# Left — Huge H1 — screenshot: See the room before it exists. — fix top cut #}
+      <div class="col-span-12 lg:col-span-5">
+        <h1 class="text-[48px] md:text-[64px] lg:text-[72px] font-bold leading-[0.88] tracking-[-0.04em] text-white">
+          <span class="block">See</span>
+          <span class="block">the</span>
+          <span class="block">room</span>
+          <span class="block">before</span>
+          <span class="block">it</span>
+          <span class="block">exists.</span>
+        </h1>
+        {# Mobile description — hide on desktop, show middle column on desktop #}
+        <p class="lg:hidden mt-6 text-[13px] leading-relaxed text-white/70 max-w-[320px]">
+          — in-house, not render farm<br>
+          — Stills first — Walkthrough when path matters — 3D-only is complete — Same still can go to BOQ and mill — Woodex Interior — M-71 Zainab Tower, Model Town Link Road, Lahore.
+        </p>
+      </div>
+
+      {# Middle — Small list — screenshot middle column #}
+      <div class="hidden lg:block col-span-3 pt-4">
+        <div class="text-[12px] leading-[1.7] tracking-wide text-white/75 max-w-[260px] space-y-1">
+          <p>— in-house, not render farm</p>
+          <p>— Stills first — Walkthrough when path matters — 3D-only is complete — Same still can go to BOQ and mill —</p>
+          <p class="text-white/90 font-medium">Woodex Interior — M-71 Zainab Tower, Model Town Link Road, Lahore.</p>
+        </div>
+        {# View Projects button — centered like screenshot, dark pill #}
+        <div class="mt-16">
+          <a href="{{ heroCta2Link or '/projects/' }}" class="inline-flex items-center gap-3 bg-[#0f1f38] hover:bg-[#162a4a] text-white rounded-full px-6 py-3 text-[13px] font-semibold tracking-wide transition shadow-[0_8px_24px_rgba(0,0,0,0.3)] border border-white/10">
+            <span>{{ heroCta2Text or 'View Projects' }}</span>
+          </a>
+        </div>
+      </div>
+
+      {# Right — Vertical trust with dots + pips 01 02 03 — screenshot right side #}
+      <div class="hidden lg:flex col-span-4 flex-col gap-8 pt-2 pl-8">
+        <div class="space-y-6">
+          {% set trustItems = trust or ["STILLS FIRST","3D-ONLY COMPLETE","BOQ + MILL CONNECTED","WELLSTAR DHA LAHORE","10 YEARS 200+ PROJECTS"] %}
+          {% for t in trustItems %}
+          <div class="flex items-start gap-3">
+            <span class="mt-1.5 w-1 h-1 rounded-full bg-white block flex-shrink-0"></span>
+            <span class="text-[11px] tracking-[0.18em] uppercase font-semibold text-white/90 leading-tight">{{ t }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        {# Pips 01 02 03 — Linoxa #}
+        <div class="mt-8 flex items-center gap-6">
+          <button class="flex items-center gap-2 text-[11px] tracking-widest uppercase text-white" type="button"><span>01</span><span class="w-8 h-px bg-white block"></span></button>
+          <button class="flex items-center gap-2 text-[11px] tracking-widest uppercase text-white/40 hover:text-white/70 transition" type="button"><span>02</span><span class="w-8 h-px bg-white/20 block"></span></button>
+          <button class="flex items-center gap-2 text-[11px] tracking-widest uppercase text-white/40 hover:text-white/70 transition" type="button"><span>03</span><span class="w-8 h-px bg-white/20 block"></span></button>
+        </div>
+      </div>
+    </div>
+
+    {# Mobile bottom bar — trust + pips + CTA #}
+    <div class="lg:hidden mt-12 flex flex-col gap-6">
+      <div class="flex flex-wrap gap-4 text-[10px] tracking-widest uppercase text-white/60">
+        <span>STILLS FIRST</span><span>•</span><span>3D-ONLY COMPLETE</span><span>•</span><span>BOQ + MILL</span>
+      </div>
+      <a href="{{ heroCta2Link or '/projects/' }}" class="inline-flex self-start bg-[#0f1f38] text-white rounded-full px-6 py-3 text-[13px] font-semibold">View Projects</a>
+    </div>
+
+    {# WhatsApp — hide on hero desktop to avoid overlap, show mobile fixed — will be handled by layout #}
+  </div>
+</section>
+
+{# Render strip — A SELECTION OF RENDERS — polished spacing #}
+<section class="py-10 bg-[#f9f5ed] border-y border-black/[0.04]">
+  <div class="container-wx">
+    <div class="flex items-center justify-between mb-6">
+      <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-black/50">A SELECTION OF RENDERS — WOODEX 3D STUDIO™ — DRAWN. THEN BUILT.</p>
+      <p class="hidden md:block text-[11px] tracking-widest uppercase text-black/30">Scroll → Drag → Explore</p>
+    </div>
+    <div class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory" style="scrollbar-width:none; -ms-overflow-style:none">
+      {% for r in renders %}
+      {% set _img = r.img if r.img is defined else r %}
+      {% set _alt = r.alt if r.alt is defined else '3D Render — Woodex 3D Studio' %}
+      {% set _title = r.title if r.title is defined else _alt %}
+      <div class="min-w-[200px] md:min-w-[260px] rounded-[20px] overflow-hidden aspect-[4/3] relative group snap-start bg-navy flex-shrink-0">
+        <img src="{{ _img }}" alt="{{ _alt }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" loading="lazy" decoding="async" width="640" height="480" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-3 translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition duration-300">
+          <p class="text-white text-[11px] font-semibold leading-tight line-clamp-2">{{ _title }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

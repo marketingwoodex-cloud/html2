@@ -1,0 +1,27 @@
+{
+  "name": "woodex-interior",
+  "version": "2.0.0",
+  "description": "Woodex Interior — Design + Build Company — Beyond Design. We Build Experiences.",
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --config=eleventy.config.cjs --serve --port=8000 --host=0.0.0.0",
+    "build": "eleventy --config=eleventy.config.cjs",
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./_site/css/tailwind.css --minify",
+    "build:all": "eleventy --config=eleventy.config.cjs && npm run build:css",
+    "serve": "eleventy --config=eleventy.config.cjs --serve --port=8000 --host=0.0.0.0"
+  },
+  "keywords": [
+    "interior design",
+    "office fit-out",
+    "woodex"
+  ],
+  "author": "Woodex Interior",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "autoprefixer": "^10.4.19",
+    "playwright": "^1.63.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.1"
+  }
+}

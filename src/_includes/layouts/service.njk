@@ -1,0 +1,244 @@
+---
+layout: base.njk
+---
+{# SERVICE INSIDE PREMIUM V2 — Linoxa — Balanced — Creative Director + UX + Motion + FE + Perf — 7 sections #}
+<style>
+  :root{ --linoxa-navy:#0f1e36; --linoxa-navy-2:#0c1628; --linoxa-cream:#fcf2e8; --linoxa-black:#111; --linoxa-charcoal:#525252; --linoxa-radius:16px; --linoxa-section:clamp(64px,8vw,128px); }
+  .linoxa-h1{font-size:clamp(2.2rem,4.5vw,4rem); line-height:112%; font-weight:500; letter-spacing:-0.02em}
+  .linoxa-h2{font-size:clamp(1.6rem,3vw,2.5rem); line-height:122%; font-weight:500; letter-spacing:-0.015em}
+  .linoxa-sub{font-size:0.875rem; line-height:185%; font-weight:400}
+  .linoxa-card{border-radius:var(--linoxa-radius); overflow:hidden; background:white; border:1px solid rgba(0,0,0,0.06); transition:border-color 200ms ease, box-shadow 200ms ease} .linoxa-card:hover{border-color:rgba(15,30,54,0.12); box-shadow:0 12px 40px rgba(0,0,0,0.06)}
+  .linoxa-card-dark{border-radius:var(--linoxa-radius); overflow:hidden; background:var(--linoxa-navy); border:1px solid rgba(255,255,255,0.08)}
+  .linoxa-btn{display:inline-flex; align-items:center; gap:12px; background:var(--linoxa-navy); color:white; border-radius:999px; padding:14px 20px 14px 24px; font-size:0.9375rem; font-weight:500; cursor:pointer; transition:all 200ms ease} .linoxa-btn:hover{background:#1a2f4f; transform:translateY(-1px)} .linoxa-btn .arrow{width:28px; height:28px; border-radius:999px; background:white; color:var(--linoxa-navy); display:flex; align-items:center; justify-content:center; transition:transform 200ms ease} .linoxa-btn:hover .arrow{transform:translate(2px,-2px)}
+  .linoxa-btn-white{background:white; color:var(--linoxa-navy); border:1px solid rgba(0,0,0,0.08)} .linoxa-btn-white .arrow{background:var(--linoxa-navy); color:white}
+  .linoxa-grid-lines{position:absolute; inset:0; pointer-events:none; opacity:0.08} .linoxa-grid-lines-inner{max-width:1360px; margin:0 auto; padding:0 24px; height:100%; display:flex; justify-content:space-between} .linoxa-grid-lines-inner span{width:1px; background:white; height:100%}
+  .linoxa-giant{font-size:clamp(6rem,18vw,18rem); font-weight:700; line-height:0.85; letter-spacing:-0.06em; color:white; opacity:0.08; white-space:nowrap; pointer-events:none; user-select:none}
+  .hero-fallback{min-height:100vh} @supports (min-height:100svh){.hero-fallback{min-height:100svh}}
+  .scrollbar-hide{-ms-overflow-style:none; scrollbar-width:none} .scrollbar-hide::-webkit-scrollbar{display:none}
+  .bp-prose{max-width:720px; margin:0 auto; padding:0 24px} .bp-prose p{font-size:16px; line-height:1.75; color:#111; margin:20px 0} .bp-prose h2{font-size:24px; font-weight:600; margin:48px 0 16px; color:#111} .bp-prose h3{font-size:18px; font-weight:600; margin:32px 0 12px; color:#111}
+  :focus-visible{outline:2px solid var(--linoxa-navy); outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-duration:0.01ms !important; transition-duration:0.01ms !important} }
+</style>
+
+{# HERO — Service Inside — Balanced #}
+<section class="relative bg-[#0f1e36] text-white overflow-hidden hero-reduced-70" style="padding-top:80px">
+  <div class="absolute inset-0">
+    <img src="{{ heroImage or '/images/hero-1.jpg' }}" width="1600" height="1000" alt="{{ title }}" class="w-full h-full object-cover" fetchpriority="high" decoding="async" style="object-position:center" />
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/85 via-[#0f1e36]/35 to-transparent"></div>
+  </div>
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="absolute bottom-0 left-0 right-0 overflow-hidden translate-y-[15%] hidden lg:block" aria-hidden="true"><div class="linoxa-giant px-6 lg:px-8" style="font-size:clamp(6rem,12vw,12rem); opacity:0.06;">{{ giant or 'SERVICE' }}</div></div>
+  <div class="relative container-wx flex flex-col justify-center" style="min-height:calc(70svh - 80px); padding-top:32px; padding-bottom:48px">
+    <div class="max-w-[760px]">
+      <nav aria-label="Breadcrumb" class="text-[11px] tracking-[0.12em] uppercase text-white/50">Home → Services → {{ breadcrumbTitle or title }}</nav>
+      <p class="mt-6 text-[11px] tracking-[0.18em] uppercase font-semibold text-white/60">{{ eyebrow or category or 'Service — Beyond Design' }}</p>
+      <h1 class="linoxa-h1 mt-4 text-white">{{ title }}</h1>
+      <p class="mt-6 text-[15px] leading-[1.6] text-white/75 max-w-[560px]">{{ description }}</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#content" class="linoxa-btn"><span>Explore Service</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+        <a href="/services/" class="linoxa-btn linoxa-btn-white"><span>All Services</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+      </div>
+      <div class="mt-12 flex flex-wrap gap-6 text-[11px] tracking-[0.18em] uppercase font-semibold text-white/60">
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>10 Years</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>200+ Projects</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>3D Before Execution</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>One Contract One PM</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>ISO 9001</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# WHO FOR — 2 cols — Balanced #}
+<section class="bg-white py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12">
+      <div class="col-span-12 lg:col-span-5">
+        <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-[#0f1e36]/60">{{ whoEyebrow or 'Who This Service Is For' }}</p>
+        <h2 class="linoxa-h2 mt-3 text-[#111]">{{ whoHeading or 'Corporate offices — first 10 seconds judgment, new hire career decision' }}</h2>
+        <p class="linoxa-sub mt-4 text-[#525252]">{{ whoText or 'Corporate offices — first 10 seconds judgment, new hire career decision — Software houses — talent retention focus vs collaboration demo room — Co-working — focus vs collaboration — Executive — brand and privacy — Startups — growth and flexibility' }}</p>
+        <div class="mt-8 space-y-3">
+          {% for item in whoList or ['Space Planning — focus vs collaboration ratio','Concept & Materials — brand, product story, moodboard','3D Stills Approval — one per key room, in-house not render farm','BOQ & Cost Planning — budget with clarity, no fake sqft rate','Execution & Site Supervision — ISO 9001, mill connected to still'] %}
+          <p class="flex gap-3 text-[13px] text-[#111]"><span class="w-5 h-5 rounded-full bg-[#fcf2e8] flex items-center justify-center text-[10px] shrink-0">✓</span><span>{{ item }}</span></p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-7">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 md:col-span-6"><div class="linoxa-card p-6 bg-[#fcf2e8]"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">{{ col1Title or 'Fit-Out Visitor' }}</p><ul class="mt-3 space-y-2 text-[13px] text-[#525252]">{% for i in col1 or ['Has new or empty space','Excited about creating','Needs creative partner','Fear: wrong design','Question: What will it look like?'] %}<li class="flex gap-2"><span>→</span><span>{{ i }}</span></li>{% endfor %}</ul></div></div>
+          <div class="col-span-12 md:col-span-6"><div class="linoxa-card p-6 bg-white"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">{{ col2Title or 'Renovation Visitor' }}</p><ul class="mt-3 space-y-2 text-[13px] text-[#525252]">{% for i in col2 or ['Has existing space','Frustrated with current','Needs reliable problem-solver','Fear: more disruption','Question: Can you do without shutting down?'] %}<li class="flex gap-2"><span>→</span><span>{{ i }}</span></li>{% endfor %}</ul></div></div>
+          <div class="col-span-12"><div class="linoxa-card-dark p-6 bg-[#0f1e36] flex gap-4 items-start"><div class="linoxa-icon bg-white/10 text-white"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="1.5"/></svg></div><div><p class="text-[13px] font-semibold text-white">One contract. One team. One result.</p><p class="text-[13px] text-white/60 mt-2">Space planning, concept, materials, 3D stills approval, BOQ, execution, furniture, handover — one contract, one team, 3D before execution — one PM accountable — M-71 Zainab Tower, Model Town Link Road, Lahore.</p></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# WHAT DELIVERS — 5/7 split — Balanced #}
+<section class="bg-[#f8f8f8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="col-span-12 lg:col-span-5">
+        <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-[#0f1e36]/60">What Woodex Delivers — {{ breadcrumbTitle }}</p>
+        <h2 class="linoxa-h2 mt-3 text-[#111]">One contract. One team. One result. — {{ breadcrumbTitle }}</h2>
+        <div class="mt-8 space-y-4">
+          {% for d in delivers or ['Space Planning — focus vs collaboration ratio','Concept & Materials — brand, product story, moodboard','3D Stills Approval — one per key room, in-house not render farm','BOQ & Cost Planning — budget with clarity, no fake sqft rate','Execution & Site Supervision — ISO 9001, mill connected to still','Furniture & Joinery — workstations, executive tables, reception, meeting, sofas','Handover & Snag — operational office'] %}
+          <div class="flex gap-3"><span class="w-6 h-6 rounded-full bg-[#0f1e36] text-white flex items-center justify-center text-[11px] shrink-0">{{ loop.index }}</span><p class="text-[13px] text-[#111] leading-[1.5]">{{ d }}</p></div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-7">
+        <div class="linoxa-card p-2 bg-white rounded-[16px]">
+          <div class="aspect-[16/10] rounded-[12px] overflow-hidden bg-[#f8f8f8]"><img src="{{ deliverImage or '/images/studio-hero.jpg' }}" width="800" height="500" alt="{{ breadcrumbTitle }} deliverables" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+          <div class="p-6"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/40">Mill connected to still — drawn, then made — {{ breadcrumbTitle }}</p><p class="text-[13px] text-[#525252] mt-2">Plan first, then still — one still per key room — in-house not render farm — same still can go to BOQ and mill — 3D-only complete — BOQ optional — budget with clarity after approval — no fake sqft rate — size, scope, materials, MEP, furniture, timeline — plan holds number — DRAWN. THEN BUILT.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# CONTENT — What is — Balanced #}
+<div id="content" class="bg-white py-[var(--linoxa-section)]">
+  <div class="bp-prose">
+    {{ content | safe }}
+  </div>
+</div>
+
+{# TYPES — 4 cols #}
+<section class="bg-[#fcf2e8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-black/50">{{ typesEyebrow or 'Types — Unique' }}</p>
+    <h2 class="linoxa-h2 mt-3 text-[#111] max-w-[560px]">{{ typesHeading or 'Office interior design is not decoration. Design is the foundation of a successful project.' }}</h2>
+    <div class="mt-10 grid grid-cols-12 gap-6">
+      {% for card in typeCards or [
+        {"title":"Modern Corporate","desc":"Clean lines, brand colors, open plan, focus pods, meeting rooms, reception that impresses clients — for corporate offices."},
+        {"title":"Minimal Executive","desc":"Minimal, executive, privacy, walnut paneling, city views, travertine, green wall — for executive floors."},
+        {"title":"Industrial Co-working","desc":"Industrial, co-working, open plan, collaboration, breakout, gaming, acoustic, 24/7 lighting — for co-working and startups."},
+        {"title":"Branded Software House","desc":"Branded, software house, product story, demo room, breakout, gaming, workstations 24/7, acoustic, lighting, brand — for software houses talent retention."}
+      ] %}
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="linoxa-card bg-white p-6 h-full {% if loop.index == 2 %}bg-[#0f1e36] text-white{% endif %}"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold {% if loop.index == 2 %}text-white/50{% else %}text-black/40{% endif %}">0{{ loop.index }}</p><h3 class="text-[16px] font-semibold mt-3">{{ card.title }}</h3><p class="text-[13px] mt-3 leading-[1.6] {% if loop.index == 2 %}text-white/70{% else %}text-[#525252]{% endif %}">{{ card.desc }}</p></div></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# PROCESS — 7 gates #}
+<section class="bg-white py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-[#0f1e36]/60">The {{ breadcrumbTitle }} Process — 7 Gates — Discover → Deliver</p>
+    <h2 class="linoxa-h2 mt-3 text-[#111]">Discover → Design → Visualize → Plan (Budget + BOQ) → Build → Install → Deliver — Stop at gate you choose</h2>
+    <div class="mt-10 hidden lg:flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
+      {% for gate in gates or [
+        {"num":"01","title":"Discover","desc":"Brief — what space is today, must become, usage, city, budget band, plan/photos — consultation, site survey"},
+        {"num":"02","title":"Design","desc":"Space planning, concept, materials, moodboard, drawings — plan first, then still"},
+        {"num":"03","title":"Visualize","desc":"3D stills first — one per key room, in-house not render farm, walkthrough/360 only if path matters — DRAWN THEN BUILT"},
+        {"num":"04","title":"Plan","desc":"Budget with clarity, BOQ turns still into buildable scope, cost planning, vendor management, no fake sqft rate"},
+        {"num":"05","title":"Build","desc":"Civil, MEP, execution, site supervision, ISO 9001, mill connected to still, kitchens/wardrobes/counters drawn then made"},
+        {"num":"06","title":"Install","desc":"Furniture, joinery, lighting, signage, branding, MEP final"},
+        {"num":"07","title":"Deliver","desc":"Handover, snag list, warranty, aftercare — Turnkey goes all gates under one contract, one PM accountable"}
+      ] %}
+      <div class="min-w-[280px] snap-start linoxa-card p-7 {% if loop.index == 3 %}bg-[#0f1e36] text-white{% else %}bg-white{% endif %}"><p class="text-[11px] tracking-[0.18em] uppercase font-semibold {% if loop.index == 3 %}text-white/50{% else %}text-black/40{% endif %}">{{ gate.num }}</p><h3 class="text-[16px] font-semibold mt-3">{{ gate.title }}</h3><p class="text-[13px] mt-3 leading-[1.6] {% if loop.index == 3 %}text-white/70{% else %}text-[#525252]{% endif %}">{{ gate.desc }}</p></div>
+      {% endfor %}
+    </div>
+    <div class="mt-8 lg:hidden space-y-3">
+      {% for gate in gates or [
+        {"num":"01","title":"Discover","desc":"Brief — what space is today, must become, usage, city, budget band, plan/photos"},
+        {"num":"02","title":"Design","desc":"Space planning, concept, materials, moodboard, drawings — plan first, then still"},
+        {"num":"03","title":"Visualize","desc":"3D stills first — one per key room — DRAWN THEN BUILT"},
+        {"num":"04","title":"Plan","desc":"Budget with clarity, BOQ turns still into buildable scope, no fake sqft rate"},
+        {"num":"05","title":"Build","desc":"Civil, MEP, execution, site supervision, ISO 9001"},
+        {"num":"06","title":"Install","desc":"Furniture, joinery, lighting, signage, branding"},
+        {"num":"07","title":"Deliver","desc":"Handover, snag list, warranty, aftercare — one PM accountable"}
+      ] %}
+      <details class="linoxa-card bg-white p-5 group"><summary class="flex justify-between items-center cursor-pointer list-none"><span class="flex gap-3 items-center"><span class="text-[11px] tracking-widest text-black/40">{{ gate.num }}</span><span class="text-[14px] font-semibold">{{ gate.title }}</span></span><span class="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center group-open:rotate-45 transition">+</span></summary><p class="mt-4 text-[13px] text-[#525252] leading-[1.6]">{{ gate.desc }}</p></details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# COST FACTORS — Balanced 2 cols #}
+<section class="bg-[#f8f8f8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 lg:col-span-5">
+        <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-[#0f1e36]/60">What Affects the Cost of {{ breadcrumbTitle }}?</p>
+        <h2 class="linoxa-h2 mt-3 text-[#111]">Size — sqft, floors, zones — Scope — design only, fit-out, turnkey — Materials — MEP — Furniture — Branding — Timeline</h2>
+        <p class="linoxa-sub mt-4 text-[#525252]">We do not publish a fake square-foot rate. Budget with clarity after you approve the room. BOQ turns the still into a buildable scope. — {{ breadcrumbTitle }} — Size, scope, materials, MEP, furniture, timeline — no fake rate — plan holds number.</p>
+        <div class="mt-8 p-6 linoxa-card-dark bg-[#0f1e36]"><p class="text-[13px] font-semibold text-white">No fake sqft rate — {{ breadcrumbTitle }}</p><p class="text-[13px] text-white/60 mt-2">Budget with clarity after you approve the room. BOQ turns the still into a buildable scope. Size, scope, materials, MEP, furniture, timeline — no fake rate — plan holds number — DRAWN. THEN BUILT.</p></div>
+      </div>
+      <div class="col-span-12 lg:col-span-7">
+        <div class="grid grid-cols-12 gap-4">
+          {% for factor in costFactors or ['Workstations — open, focus pods, executive, 25 team, client-facing reception','Acoustic — panels, ceiling, partitions, 24/7 lighting','Lighting — task, ambient, brand, 24/7, travertine, green wall','Flooring — carpet, vinyl, raised, durable, footfall','Glass — partitions, manifestation, acoustic, privacy','Joinery — reception, meeting tables, media walls, custom'] %}
+          <div class="col-span-12 md:col-span-6"><div class="linoxa-card bg-white p-5 flex gap-3"><span class="w-6 h-6 rounded-full bg-[#fcf2e8] flex items-center justify-center text-[11px] shrink-0">{{ loop.index }}</span><p class="text-[13px] text-[#111] leading-[1.5]">{{ factor }}</p></div></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# WHY WOODEX — Balanced #}
+<section class="bg-white py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 items-start">
+      <div class="col-span-12 lg:col-span-5"><p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-[#0f1e36]/60">Why Woodex Interior for {{ breadcrumbTitle }}?</p><h2 class="linoxa-h2 mt-3 text-[#111]">10 years, 200+ projects, ISO 9001, 3 studios, Wellstar DHA Lahore, one team one contract, 3D before execution</h2><p class="linoxa-sub mt-4 text-[#525252]">From strategy and space planning to design, fit-out and final delivery, we create purposeful environments built around how people work, live and experience space. Beyond Design. We Build Experiences. DRAWN. THEN BUILT. See the room before it exists. M-71 Zainab Tower, Model Town Link Road, Lahore — 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof — Architectural design and coordination are provided through qualified professionals and specialist consultants where required by law. PCATP/PEC TBD.</p></div>
+      <div class="col-span-12 lg:col-span-7"><div class="grid grid-cols-12 gap-4">
+        <div class="col-span-6 md:col-span-3"><div class="linoxa-card bg-[#fcf2e8] p-6 text-center"><p class="text-[24px] font-semibold text-[#111]">200+</p><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50 mt-1">Projects</p><p class="text-[11px] text-[#525252] mt-2">Work we can stand behind — Wellstar DHA Lahore named</p></div></div>
+        <div class="col-span-6 md:col-span-3"><div class="linoxa-card bg-white p-6 text-center"><p class="text-[24px] font-semibold text-[#111]">10+</p><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50 mt-1">Execution years</p><p class="text-[11px] text-[#525252] mt-2">ISO 9001 site joinery handover mill connected</p></div></div>
+        <div class="col-span-6 md:col-span-3"><div class="linoxa-card bg-white p-6 text-center"><p class="text-[24px] font-semibold text-[#111]">~10</p><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50 mt-1">Founder years</p><p class="text-[11px] text-[#525252] mt-2">Commercial interiors first Wellstar DHA</p></div></div>
+        <div class="col-span-6 md:col-span-3"><div class="linoxa-card bg-[#0f1e36] p-6 text-center"><p class="text-[24px] font-semibold text-white">3</p><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-white/50 mt-1">Studios</p><p class="text-[11px] text-white/60 mt-2">Gulberg III Lahore HQ Clifton Karachi F-7 Islamabad</p></div></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+{# FAQ — Balanced accordion #}
+<section class="bg-[#f8f8f8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-[#0f1e36]/60">FAQ — {{ breadcrumbTitle }}</p>
+    <h2 class="linoxa-h2 mt-3 text-[#111]">What you need to know about {{ breadcrumbTitle }} before you start</h2>
+    <div class="mt-10 grid grid-cols-12 gap-8">
+      <div class="col-span-12 lg:col-span-8">
+        <div class="space-y-3">
+          {% for faq in faqs or [
+            {"q":"What is " + (breadcrumbTitle or "this service") + "?","a":"Not decoration, foundation of successful project. Plan first, then still. Room has to work before anyone decorates it."},
+            {"q":"Who is " + (breadcrumbTitle or "this service") + " for?","a":"Corporate offices — first 10 seconds judgment, new hire career decision — Software houses — talent retention focus vs collaboration demo room."},
+            {"q":"What does " + (breadcrumbTitle or "this service") + " include?","a":"Space planning, concept, materials, 3D stills approval, BOQ, execution, furniture, handover — one contract, one team, 3D before execution."},
+            {"q":"What affects cost of " + (breadcrumbTitle or "this service") + "?","a":"Size, scope, materials, MEP, furniture, branding, timeline — no fake sqft rate, BOQ after 3D approval. Budget with clarity."},
+            {"q":"Why Woodex for " + (breadcrumbTitle or "this service") + "?","a":"10 years, 200+ projects, ISO 9001, 3 studios, Wellstar DHA Lahore named, one team one contract, 3D before execution, architectural coordination via qualified professionals."}
+          ] %}
+          <details class="linoxa-card bg-white p-6 group"><summary class="flex justify-between items-start gap-4 cursor-pointer list-none"><span class="text-[14px] font-semibold text-[#111]">{{ faq.q }}</span><span class="shrink-0 w-7 h-7 rounded-full border border-black/10 flex items-center justify-center group-open:rotate-45 group-open:bg-[#0f1e36] group-open:text-white group-open:border-[#0f1e36] transition">+</span></summary><p class="mt-4 text-[13px] text-[#525252] leading-[1.6]">{{ faq.a }}</p></details>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-4"><div class="linoxa-card p-6 bg-[#fcf2e8]"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Need direct answer?</p><p class="text-[14px] font-semibold mt-2 text-[#111]">Tell us about your space — {{ breadcrumbTitle }}</p><p class="text-[13px] text-[#525252] mt-3">Empty hall, floor plan, brand, or drawings. We answer with the next gate — not a brochure. M-71 Zainab Tower, Model Town Link Road, Lahore — +92 322 4000768.</p><a href="https://wa.me/923224000768" target="_blank" rel="noopener" class="linoxa-btn mt-6 w-full justify-center"><span>WhatsApp Woodex</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a></div></div>
+    </div>
+  </div>
+</section>
+
+{# FINAL CTA — Dark #}
+<section class="bg-[#0f1e36] text-white py-[var(--linoxa-section)] relative overflow-hidden">
+  <div class="absolute inset-0"><img src="/images/hero-2.jpg" width="1600" height="900" alt="Final CTA" class="w-full h-full object-cover opacity-20" loading="lazy" decoding="async" /><div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/90 via-[#0f1e36]/70 to-[#0f1e36]/40"></div></div>
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="container-wx relative">
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 lg:col-span-6"><h2 class="linoxa-h2 text-white">Tell us about your {{ breadcrumbTitle or 'office' }} space</h2><p class="mt-4 text-white/70 max-w-[480px]">Empty hall, floor plan, brand, or drawings. We answer with the next gate — not a brochure. {{ breadcrumbTitle }} — M-71 Zainab Tower, Model Town Link Road, Lahore — +92 322 4000768 — info@woodex.com.pk — 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof.</p><div class="mt-6 flex gap-3"><a href="https://wa.me/923224000768" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[12px] bg-white/10 border border-white/10 rounded-full px-4 py-2 hover:bg-white/15 transition">WhatsApp <span aria-hidden="true">↗</span></a><a href="tel:+923224000768" class="inline-flex items-center gap-2 text-[12px] bg-white text-[#0f1e36] rounded-full px-4 py-2 font-medium">Call Now</a></div></div>
+      <div class="col-span-12 lg:col-span-6"><div class="linoxa-card bg-white p-8 rounded-[16px]"><p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-black/50">{{ breadcrumbTitle }} — Book a Consultation</p><form name="{{ formName or 'service' }}" method="POST" data-netlify="true" class="mt-4 space-y-4"><input type="hidden" name="form-name" value="{{ formName or 'service' }}" /><input name="full-name" required placeholder="Full Name *" autocomplete="name" class="w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] bg-white" /><input name="phone" required type="tel" placeholder="Phone *" autocomplete="tel" class="w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] bg-white" /><textarea name="brief" required rows="3" placeholder="What is your space today? What must it become?" class="w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] bg-white resize-y"></textarea><button type="submit" class="linoxa-btn w-full justify-center"><span>Book a {{ breadcrumbTitle }} Consultation</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></button></form></div></div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://woodex.com.pk/"},
+      {"@type":"ListItem","position":2,"name":"Services","item":"https://woodex.com.pk/services/"},
+      {"@type":"ListItem","position":3,"name":"{{ title | safe }}","item":"https://woodex.com.pk/services/{{ page.fileSlug }}/"}
+    ]},
+    {"@type":"Service","name":"{{ title | safe }}","description":"{{ description | safe }}","provider":{"@type":"Organization","name":"Woodex Interior","url":"https://woodex.com.pk"},"areaServed":"Lahore, Karachi, Islamabad, Pakistan"}
+  ]
+}
+</script>

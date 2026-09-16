@@ -1,0 +1,19 @@
+{# Block 23: Why Woodex — Polished — Stats Navy Cards Wood Num #}
+<section class="py-20 bg-navy text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true" style="background-image:linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size:40px 40px"></div>
+  <div class="container-wx relative">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="sticky top-24">
+        <p class="eyebrow text-cream-2">{{ eyebrow or 'Why Woodex Interior?' }}</p>
+        <h3 class="text-3xl md:text-4xl font-bold mt-4 leading-tight tracking-tightx">{{ heading or '10 years, 200+ projects, ISO 9001, 3 studios, Wellstar DHA Lahore, one team one contract, 3D before execution' }}</h3>
+        <p class="mt-5 text-[15px] leading-relaxed text-cream-2 max-w-xl">{{ text or 'Work we can stand behind — plan, still and site when brief includes build. Not catalogue count. Architectural coordination via qualified professionals where required by law. Placeholder founder details TBD per Phase 1 gap.' }}</p>
+        <div class="mt-8 flex gap-3"><a href="/about/" class="btn btn-light text-sm"><span class="btn-label"><span>The practice</span><span>The practice</span></span></a><a href="/process/" class="btn border border-white/20 text-sm text-white"><span class="btn-label"><span>Our process</span><span>Our process</span></span></a></div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        {% for stat in stats or [{'num':'200+','title':'Projects','desc':'Work we can stand behind'},{'num':'10+','title':'Execution years','desc':'ISO 9001 site joinery handover'},{'num':'~10','title':'Founder years','desc':'Commercial interiors first Wellstar DHA'},{'num':'3','title':'Studios','desc':'Gulberg III Lahore HQ Clifton Karachi F-7 Islamabad'}] %}
+        <div class="border border-white/10 rounded-[24px] p-6 bg-[#152033] hover:bg-[#1a2940] hover:border-wood/30 transition group"><div class="text-3xl font-bold text-wood group-hover:scale-105 transition-transform">{{ stat.num }}</div><h4 class="font-semibold mt-2 text-[14px]">{{ stat.title }}</h4><p class="text-[12px] text-white/60 mt-2 leading-relaxed">{{ stat.desc }}</p></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+{# Block 34: Projects — Studies — Before/After #}
+<section class="py-20 bg-cream">
+  <div class="container">
+    <p class="eyebrow">{{ eyebrow or 'Projects — Studies' }}</p>
+    <h2 class="text-4xl font-bold tracking-tightx mt-3">{{ heading or 'Studies — rooms drawn so they can be built' }}</h2>
+    <p class="text-muted mt-3 max-w-2xl">{{ subheading or 'Placeholder per Phase 1 gap — real photography TBD — Wellstar DHA Lahore named client confirmed. Studies stay labelled studies.' }}</p>
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      {% for proj in projects or [] %}
+      <a href="{{ proj.link }}" class="group rounded-wx overflow-hidden border bg-white hover:border-wood/30 hover:shadow-lg transition block">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="{{ proj.img }}" alt="{{ proj.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-600" loading="lazy" />
+          <span class="absolute top-3 left-3 bg-navy/80 backdrop-blur text-white text-[11px] tracking-[0.18em] uppercase px-3 py-1 rounded-full">Study</span>
+        </div>
+        <div class="p-4"><h3 class="font-semibold">{{ proj.title }}</h3><p class="text-xs text-muted mt-1">{{ proj.desc }}</p></div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

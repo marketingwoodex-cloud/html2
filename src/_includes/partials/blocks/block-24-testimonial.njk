@@ -1,0 +1,13 @@
+{# Block 24: Testimonial — Named Client #}
+<section class="py-16 bg-cream">
+  <div class="container max-w-3xl">
+    <div class="bg-white rounded-wx p-8 border">
+      <p class="text-lg italic leading-relaxed">"{{ quote or 'Woodex Interior delivered our corporate office in Lahore under one contract, with 3D approval before any physical work. One PM accountable. No chaos. Wellstar DHA Lahore is proof.' }}"</p>
+      <div class="mt-6 flex items-center gap-4">
+        <img src="{{ avatar or '/images/project-minimal.jpg' }}" alt="{{ name or 'Client' }}" class="w-10 h-10 rounded-full object-cover" loading="lazy" />
+        <div><p class="font-semibold text-sm">{{ name or 'Wellstar Team — DHA Lahore' }}</p><p class="text-xs text-muted">{{ role or 'Pharmacy / Cosmetics / Mini Hospital — DHA Lahore — Named Client' }}</p><p class="text-[11px] tracking-[0.18em] uppercase text-wood mt-1">{{ project or 'Corporate Office Fit-Out — Lahore' }}</p></div>
+      </div>
+    </div>
+    <p class="text-xs text-muted mt-3">{{ note or 'Placeholder testimonial TBD per Phase 1 gap — need real testimonials with names and project details.' }}</p>
+  </div>
+</section>

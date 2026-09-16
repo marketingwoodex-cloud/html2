@@ -1,0 +1,10 @@
+{# Block 29: The [Sector] Interior Challenge — Problem Definition #}
+<section class="py-16 bg-white">
+  <div class="container max-w-3xl">
+    <p class="eyebrow">{{ eyebrow or 'The Corporate Office Interior Challenge' }}</p>
+    <h2 class="text-3xl font-bold tracking-tightx mt-3">{{ heading or 'Do you understand my business?' }}</h2>
+    {% for p in paragraphs or ['A corporate office is no longer simply a place where employees go to work. It is a physical statement of what your company is — its culture, its ambition, its standards and its brand.','The challenge for most corporate clients is not the absence of a design vision — it is the absence of a delivery system that can take that vision from a brief to a completed, furnished and functional office without creating operational chaos.','Woodex Interior designs, plans, builds and furnishes corporate offices in Lahore and across Pakistan — under one contract, managed by one team, with 3D approval before any physical work begins.'] %}
+    <p class="mt-4 text-muted leading-relaxed">{{ p }}</p>
+    {% endfor %}
+  </div>
+</section>

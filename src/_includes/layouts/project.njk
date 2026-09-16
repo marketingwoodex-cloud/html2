@@ -1,0 +1,155 @@
+---
+layout: base.njk
+---
+{# PROJECT INSIDE PREMIUM V2 — Linoxa — Balanced — Creative Director + UX + Motion + FE + Perf #}
+<style>
+  :root{ --linoxa-navy:#0f1e36; --linoxa-navy-2:#0c1628; --linoxa-cream:#fcf2e8; --linoxa-black:#111; --linoxa-charcoal:#525252; --linoxa-radius:16px; --linoxa-section:clamp(64px,8vw,128px); }
+  .linoxa-h1{font-size:clamp(2.2rem,4vw,3.75rem); line-height:112%; font-weight:500; letter-spacing:-0.02em}
+  .linoxa-h2{font-size:clamp(1.6rem,3vw,2.5rem); line-height:122%; font-weight:500; letter-spacing:-0.015em}
+  .linoxa-sub{font-size:0.875rem; line-height:185%; font-weight:400}
+  .linoxa-card{border-radius:var(--linoxa-radius); overflow:hidden; background:white; border:1px solid rgba(0,0,0,0.06); transition:border-color 200ms ease, box-shadow 200ms ease} .linoxa-card:hover{border-color:rgba(15,30,54,0.12); box-shadow:0 12px 40px rgba(0,0,0,0.06)}
+  .linoxa-card-dark{border-radius:var(--linoxa-radius); overflow:hidden; background:var(--linoxa-navy); border:1px solid rgba(255,255,255,0.08)}
+  .linoxa-btn{display:inline-flex; align-items:center; gap:12px; background:var(--linoxa-navy); color:white; border-radius:999px; padding:14px 20px 14px 24px; font-size:0.9375rem; font-weight:500; cursor:pointer; transition:all 200ms ease} .linoxa-btn:hover{background:#1a2f4f; transform:translateY(-1px)} .linoxa-btn .arrow{width:28px; height:28px; border-radius:999px; background:white; color:var(--linoxa-navy); display:flex; align-items:center; justify-content:center; transition:transform 200ms ease} .linoxa-btn:hover .arrow{transform:translate(2px,-2px)}
+  .linoxa-btn-white{background:white; color:var(--linoxa-navy); border:1px solid rgba(0,0,0,0.08)} .linoxa-btn-white .arrow{background:var(--linoxa-navy); color:white}
+  .linoxa-grid-lines{position:absolute; inset:0; pointer-events:none; opacity:0.08} .linoxa-grid-lines-inner{max-width:1360px; margin:0 auto; padding:0 24px; height:100%; display:flex; justify-content:space-between} .linoxa-grid-lines-inner span{width:1px; background:white; height:100%}
+  .linoxa-giant{font-size:clamp(6rem,18vw,18rem); font-weight:700; line-height:0.85; letter-spacing:-0.06em; color:white; opacity:0.08; white-space:nowrap; pointer-events:none; user-select:none}
+  .hero-fallback{min-height:100vh} @supports (min-height:100svh){.hero-fallback{min-height:100svh}}
+  .scrollbar-hide{-ms-overflow-style:none; scrollbar-width:none} .scrollbar-hide::-webkit-scrollbar{display:none}
+  .bp-prose{max-width:720px; margin:0 auto; padding:0 24px} .bp-prose p{font-size:16px; line-height:1.75; color:#111; margin:20px 0} .bp-prose h2{font-size:24px; font-weight:600; margin:48px 0 16px; color:#111}
+  :focus-visible{outline:2px solid var(--linoxa-navy); outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-duration:0.01ms !important; transition-duration:0.01ms !important} }
+</style>
+
+{# HERO — Project Inside — Balanced 100vh fallback #}
+<section class="relative bg-[#0c1628] text-white overflow-hidden hero-fallback" style="padding-top:96px">
+  <div class="absolute inset-0">
+    <img src="{{ heroImage or '/images/hero-1.jpg' }}" width="1600" height="1000" alt="{{ title }}" class="w-full h-full object-cover" fetchpriority="high" decoding="async" />
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0c1628]/90 via-[#0c1628]/40 to-transparent"></div>
+  </div>
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="absolute bottom-0 left-0 right-0 overflow-hidden translate-y-[18%]" aria-hidden="true"><div class="linoxa-giant px-6 lg:px-8">{{ giant or 'PROJECT' }}</div></div>
+  <div class="relative container-wx flex flex-col justify-center hero-fallback" style="min-height:calc(100vh - 96px); padding-top:48px; padding-bottom:96px">
+    <div class="max-w-[760px]">
+      <nav aria-label="Breadcrumb" class="text-[11px] tracking-[0.12em] uppercase text-white/50">Home → Projects → {{ breadcrumbTitle or title }}</nav>
+      <p class="mt-6 text-[11px] tracking-[0.18em] uppercase font-semibold text-white/60">{{ category or 'Study — Rooms Drawn So They Can Be Built' }}</p>
+      <h1 class="linoxa-h1 mt-4 text-white">{{ title }}</h1>
+      <p class="mt-6 text-[15px] leading-[1.6] text-white/75 max-w-[560px]">{{ description }}</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#gallery" class="linoxa-btn"><span>View Gallery</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+        <a href="/projects/" class="linoxa-btn linoxa-btn-white"><span>All Projects</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+      </div>
+      <div class="mt-12 grid grid-cols-3 gap-6 max-w-[480px] text-[11px]">
+        <div><p class="tracking-[0.12em] uppercase text-white/40">Location</p><p class="mt-1 text-white font-medium">{{ location or 'Lahore — M-71 Zainab Tower' }}</p></div>
+        <div><p class="tracking-[0.12em] uppercase text-white/40">Scope</p><p class="mt-1 text-white font-medium">{{ scope or 'Study — Rooms Drawn So They Can Be Built' }}</p></div>
+        <div><p class="tracking-[0.12em] uppercase text-white/40">Type</p><p class="mt-1 text-white font-medium">{{ type or 'Study — Real Photography TBD' }}</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SPECS — Balanced 4 cols #}
+<section class="bg-white py-16 border-b border-black/5">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-3"><div class="linoxa-card p-6 bg-[#fcf2e8]"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Client</p><p class="mt-2 text-[14px] font-semibold text-[#111]">{{ client or 'Study — Rooms Drawn So They Can Be Built — Placeholder' }}</p><p class="mt-2 text-[12px] text-[#525252]">Real project photography with before/after TBD per Phase 1 gap analysis. Wellstar DHA Lahore is only named client proof.</p></div></div>
+      <div class="col-span-12 md:col-span-3"><div class="linoxa-card p-6 bg-white"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Location</p><p class="mt-2 text-[14px] font-semibold text-[#111]">{{ location or 'Lahore, Pakistan — M-71 Zainab Tower, Model Town Link Road' }}</p><p class="mt-2 text-[12px] text-[#525252]">Studios Gulberg III Lahore HQ, Clifton Karachi support, F-7 Islamabad support.</p></div></div>
+      <div class="col-span-12 md:col-span-3"><div class="linoxa-card p-6 bg-white"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Scope</p><p class="mt-2 text-[14px] font-semibold text-[#111]">{{ scopeDetail or 'Design + 3D Visualization + BOQ — Study' }}</p><p class="mt-2 text-[12px] text-[#525252]">Plan first, then still — one still per key room — in-house not render farm — same still can go to BOQ and mill.</p></div></div>
+      <div class="col-span-12 md:col-span-3"><div class="linoxa-card-dark p-6 bg-[#0f1e36]"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-white/50">Budget Note</p><p class="mt-2 text-[14px] font-semibold text-white">No fake sqft rate</p><p class="mt-2 text-[12px] text-white/60">Size, scope, materials, MEP, furniture, timeline — no fake rate. Budget with clarity after approval. Plan holds number.</p></div></div>
+    </div>
+  </div>
+</section>
+
+{# GALLERY — Balanced masonry #}
+<section id="gallery" class="bg-[#f8f8f8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-[#0f1e36]/60">{{ category }} — Gallery — Studies</p>
+    <h2 class="linoxa-h2 mt-3 text-[#111] max-w-[560px]">Studies — rooms drawn so they can be built — placeholder — real photography TBD</h2>
+    <div class="mt-12 grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-8"><div class="linoxa-card aspect-[16/10] overflow-hidden bg-white"><img src="{{ gallery1 or '/images/project-facade.jpg' }}" width="800" height="500" alt="{{ title }} render 1" class="w-full h-full object-cover hover:scale-[1.02] transition duration-700" loading="lazy" decoding="async" /></div></div>
+      <div class="col-span-12 md:col-span-4"><div class="linoxa-card aspect-[4/5] overflow-hidden bg-white"><img src="{{ gallery2 or '/images/project-spatial.jpg' }}" width="600" height="750" alt="{{ title }} render 2" class="w-full h-full object-cover hover:scale-[1.02] transition duration-700" loading="lazy" decoding="async" /></div></div>
+      <div class="col-span-12 md:col-span-4"><div class="linoxa-card aspect-[4/5] overflow-hidden bg-white"><img src="{{ gallery3 or '/images/project-minimal.jpg' }}" width="600" height="750" alt="{{ title }} render 3" class="w-full h-full object-cover hover:scale-[1.02] transition duration-700" loading="lazy" decoding="async" /></div></div>
+      <div class="col-span-12 md:col-span-8"><div class="linoxa-card aspect-[16/10] overflow-hidden bg-[#0f1e36]"><img src="{{ gallery4 or '/images/studio-hero.jpg' }}" width="800" height="500" alt="{{ title }} render 4 3D Studio" class="w-full h-full object-cover hover:scale-[1.02] transition duration-700 opacity-90" loading="lazy" decoding="async" /></div></div>
+    </div>
+    <p class="mt-8 text-[11px] tracking-[0.12em] uppercase text-black/40">Note: Images marked as Studies — rooms drawn so they can be built. Real project photography with before/after TBD per Phase 1 gap analysis. Wellstar DHA Lahore confirmed — Pharmacy, Cosmetics and Mini Hospital, DHA Lahore — proof — plan, still and site when brief includes build. Not catalogue count.</p>
+  </div>
+</section>
+
+{# CONTENT — What is — Balanced #}
+<div class="bg-white py-[var(--linoxa-section)]">
+  <div class="bp-prose">
+    {{ content | safe }}
+  </div>
+</div>
+
+{# PROCESS — 7 gates horizontal #}
+<section class="bg-[#fcf2e8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-black/50">The {{ breadcrumbTitle or 'Project' }} Process — 7 Gates — Discover → Deliver</p>
+    <h2 class="linoxa-h2 mt-3 text-[#111]">Discover → Design → Visualize → Plan (Budget + BOQ) → Build → Install → Deliver</h2>
+    <div class="mt-10 hidden lg:flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
+      {% for gate in gates or [
+        {"num":"01","title":"Discover","desc":"Brief — what space is today, must become, usage, city, budget band, plan/photos — consultation, site survey"},
+        {"num":"02","title":"Design","desc":"Space planning, concept, materials, moodboard, drawings — plan first, then still"},
+        {"num":"03","title":"Visualize","desc":"3D stills first — one per key room, in-house not render farm, walkthrough/360 only if path matters — DRAWN THEN BUILT"},
+        {"num":"04","title":"Plan","desc":"Budget with clarity, BOQ turns still into buildable scope, cost planning, vendor management, no fake sqft rate"},
+        {"num":"05","title":"Build","desc":"Civil, MEP, execution, site supervision, ISO 9001, mill connected to still, kitchens/wardrobes/counters drawn then made"},
+        {"num":"06","title":"Install","desc":"Furniture, joinery, lighting, signage, branding, MEP final"},
+        {"num":"07","title":"Deliver","desc":"Handover, snag list, warranty, aftercare — Turnkey goes all gates under one contract, one PM accountable"}
+      ] %}
+      <div class="min-w-[280px] snap-start linoxa-card bg-white p-7 {% if loop.index == 3 %}bg-[#0f1e36] text-white{% endif %}"><p class="text-[11px] tracking-[0.18em] uppercase font-semibold {% if loop.index == 3 %}text-white/50{% else %}text-black/40{% endif %}">{{ gate.num }}</p><h3 class="text-[16px] font-semibold mt-3">{{ gate.title }}</h3><p class="text-[13px] mt-3 leading-[1.6] {% if loop.index == 3 %}text-white/70{% else %}text-[#525252]{% endif %}">{{ gate.desc }}</p></div>
+      {% endfor %}
+    </div>
+    <div class="mt-8 lg:hidden space-y-3">
+      {% for gate in gates or [
+        {"num":"01","title":"Discover","desc":"Brief — what space is today, must become, usage, city, budget band, plan/photos"},
+        {"num":"02","title":"Design","desc":"Space planning, concept, materials, moodboard, drawings — plan first, then still"},
+        {"num":"03","title":"Visualize","desc":"3D stills first — one per key room — DRAWN THEN BUILT"},
+        {"num":"04","title":"Plan","desc":"Budget with clarity, BOQ turns still into buildable scope, no fake sqft rate"},
+        {"num":"05","title":"Build","desc":"Civil, MEP, execution, site supervision, ISO 9001"},
+        {"num":"06","title":"Install","desc":"Furniture, joinery, lighting, signage, branding"},
+        {"num":"07","title":"Deliver","desc":"Handover, snag list, warranty, aftercare — one PM accountable"}
+      ] %}
+      <details class="linoxa-card bg-white p-5 group"><summary class="flex justify-between items-center cursor-pointer list-none"><span class="flex gap-3 items-center"><span class="text-[11px] tracking-widest text-black/40">{{ gate.num }}</span><span class="text-[14px] font-semibold">{{ gate.title }}</span></span><span class="w-6 h-6 rounded-full border border-black/10 flex items-center justify-center group-open:rotate-45 transition">+</span></summary><p class="mt-4 text-[13px] text-[#525252] leading-[1.6]">{{ gate.desc }}</p></details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# RELATED PROJECTS — Balanced #}
+<section class="bg-white py-[var(--linoxa-section)] border-t border-black/5">
+  <div class="container-wx">
+    <div class="flex justify-between items-end gap-6"><h2 class="linoxa-h2 text-[#111]">Related Projects — Studies</h2><a href="/projects/" class="text-[12px] font-medium text-[#0f1e36] hover:underline">View all projects →</a></div>
+    <div class="mt-10 grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-4"><a href="/projects/contemporary-retreat/" class="linoxa-card group block h-full"><div class="aspect-[16/10] bg-[#f8f8f8] overflow-hidden"><img src="/images/project-facade.jpg" width="400" height="250" alt="Contemporary retreat study" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div><div class="p-5"><p class="text-[11px] uppercase tracking-wide text-black/40">Study — Residential</p><h3 class="text-[14px] font-semibold mt-2 leading-tight">Contemporary Retreat — Study — Rooms Drawn So They Can Be Built</h3></div></a></div>
+      <div class="col-span-12 md:col-span-4"><a href="/projects/modern-facade-study/" class="linoxa-card group block h-full"><div class="aspect-[16/10] bg-[#f8f8f8] overflow-hidden"><img src="/images/project-spatial.jpg" width="400" height="250" alt="Modern facade study" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div><div class="p-5"><p class="text-[11px] uppercase tracking-wide text-black/40">Study — Facade</p><h3 class="text-[14px] font-semibold mt-2 leading-tight">Modern Facade Study — Study — Front Elevation</h3></div></a></div>
+      <div class="col-span-12 md:col-span-4"><a href="/projects/studio-hero/" class="linoxa-card group block h-full bg-[#0f1e36]"><div class="aspect-[16/10] bg-[#0c1628] overflow-hidden"><img src="/images/studio-hero.jpg" width="400" height="250" alt="Studio hero study" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div><div class="p-5"><p class="text-[11px] uppercase tracking-wide text-white/50">Study — 3D Studio</p><h3 class="text-[14px] font-semibold mt-2 leading-tight text-white">Studio Hero — Study — 3D Studio™ — DRAWN THEN BUILT</h3></div></a></div>
+    </div>
+  </div>
+</section>
+
+{# FINAL CTA — Dark #}
+<section id="cta" class="bg-[#0f1e36] text-white py-[var(--linoxa-section)] relative overflow-hidden">
+  <div class="absolute inset-0"><img src="/images/hero-2.jpg" width="1600" height="900" alt="Final CTA" class="w-full h-full object-cover opacity-20" loading="lazy" decoding="async" /><div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/90 via-[#0f1e36]/70 to-[#0f1e36]/40"></div></div>
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="container-wx relative">
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 lg:col-span-6"><h2 class="linoxa-h2 text-white">Tell us about your {{ breadcrumbTitle or 'project' }} space</h2><p class="mt-4 text-white/70 max-w-[480px]">Empty hall, floor plan, brand, or drawings. We answer with the next gate — not a brochure. M-71 Zainab Tower, Model Town Link Road, Lahore — +92 322 4000768 — 10 years, 200+ projects, ISO 9001 — Wellstar DHA Lahore proof.</p><div class="mt-6 flex gap-3"><a href="https://wa.me/923224000768" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[12px] bg-white/10 border border-white/10 rounded-full px-4 py-2 hover:bg-white/15 transition">WhatsApp <span aria-hidden="true">↗</span></a><a href="tel:+923224000768" class="inline-flex items-center gap-2 text-[12px] bg-white text-[#0f1e36] rounded-full px-4 py-2 font-medium">Call Now</a></div></div>
+      <div class="col-span-12 lg:col-span-6"><div class="linoxa-card bg-white p-8 rounded-[16px]"><p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-black/50">Start Similar Project — {{ breadcrumbTitle }}</p><form name="{{ formName or 'project' }}" method="POST" data-netlify="true" class="mt-4 space-y-4"><input type="hidden" name="form-name" value="{{ formName or 'project' }}" /><input name="full-name" required placeholder="Full Name *" autocomplete="name" class="w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] bg-white" /><input name="phone" required type="tel" placeholder="Phone *" autocomplete="tel" class="w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] bg-white" /><textarea name="brief" required rows="3" placeholder="What is your space today? What must it become?" class="w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] bg-white resize-y"></textarea><button type="submit" class="linoxa-btn w-full justify-center"><span>Start Similar Project</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></button></form></div></div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://woodex.com.pk/"},
+      {"@type":"ListItem","position":2,"name":"Projects","item":"https://woodex.com.pk/projects/"},
+      {"@type":"ListItem","position":3,"name":"{{ title | safe }}","item":"https://woodex.com.pk/projects/{{ page.fileSlug }}/"}
+    ]},
+    {"@type":"CreativeWork","name":"{{ title | safe }}","description":"{{ description | safe }}","creator":{"@type":"Organization","name":"Woodex Interior"},"locationCreated":{"@type":"Place","name":"M-71 Zainab Tower, Model Town Link Road, Lahore"}}
+  ]
+}
+</script>

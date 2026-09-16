@@ -1,0 +1,15 @@
+{# Block 25: FAQ — 5-7 Qs — FAQPage Schema #}
+<section class="py-16 bg-white">
+  <div class="container max-w-3xl">
+    <p class="eyebrow">{{ eyebrow or 'Frequently Asked Questions' }}</p>
+    <h3 class="text-3xl font-bold tracking-tightx mt-3">{{ heading or 'What you need to know before you start' }}</h3>
+    <div class="faq mt-8">
+      {% for faq in faqs or [] %}
+      <article class="faq-item {% if loop.first %}is-open{% endif %}">
+        <button class="faq-q" type="button">{{ faq.q }}<span class="plus"></span></button>
+        <div class="faq-a">{{ faq.a }}</div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

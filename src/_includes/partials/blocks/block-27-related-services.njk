@@ -1,0 +1,11 @@
+{# Block 27: Related Services Strip — Internal Linking #}
+<section class="py-8 bg-cream">
+  <div class="container">
+    <p class="eyebrow">{{ eyebrow or 'Related Services' }}</p>
+    <div class="flex flex-wrap gap-3 mt-4">
+      {% for svc in services or ['Office Fit-Out','Commercial Fit-Out','Turnkey','3D Studio','Renovation'] %}
+      <a class="border rounded-full px-4 py-2 text-sm hover:bg-white hover:border-wood/30 transition" href="/services/{{ svc | lower | replace(' ', '-') | replace('&','') | replace('--','-') }}/">{{ svc }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

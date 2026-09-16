@@ -1,0 +1,569 @@
+---
+layout: base.njk
+title: "3D Interior Rendering Lahore | Woodex 3D Studio™ — Photorealistic Visualization"
+description: "Photorealistic 3D interior rendering, architectural visualization, walkthrough animations and virtual tours in Lahore. Woodex 3D Studio™ — for designers, architects and developers. 10 years, photorealistic output, fast turnaround, all Pakistan."
+---
+{# PREMIUM IMPLEMENTATION V2 — Creative Director + UX + Motion + FE + Perf — All 14 sections per plan phase 7.md #}
+{# Design Tokens: Linoxa Home Two — navy #0f1e36, cream #fcf2e8, black #111, charcoal #525252, light #e3e1e1, radius 16px, pill 28px arrow #}
+{# Reasoning log: see AUDIT_PREMIUM_3D_STUDIO.md #}
+
+<style>
+  :root{
+    --linoxa-navy:#0f1e36; --linoxa-navy-2:#0c1628; --linoxa-cream:#fcf2e8; --linoxa-cream-2:#f4efe7;
+    --linoxa-black:#111111; --linoxa-charcoal:#525252; --linoxa-light:#e3e1e1; --linoxa-white:#ffffff;
+    --linoxa-radius:16px; --linoxa-section:clamp(64px,8vw,128px);
+  }
+  .linoxa-h1{font-size:clamp(2.4rem,4.5vw,5rem); line-height:112.5%; font-weight:500; letter-spacing:-0.02em}
+  .linoxa-h2{font-size:clamp(1.8rem,3vw,2.812rem); line-height:122%; font-weight:500; letter-spacing:-0.015em}
+  .linoxa-h3{font-size:1.25rem; line-height:133%; font-weight:600}
+  .linoxa-body{font-size:1rem; line-height:162%; font-weight:400}
+  .linoxa-sub{font-size:0.875rem; line-height:185%; font-weight:400}
+  .linoxa-icon{width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0}
+  details>summary{list-style:none} details>summary::-webkit-details-marker{display:none}
+  details[open]>summary .acc-icon{transform:rotate(45deg)}
+  .linoxa-btn{display:inline-flex; align-items:center; gap:12px; background:var(--linoxa-navy); color:white; border-radius:999px; padding:14px 20px 14px 24px; font-size:0.9375rem; line-height:162%; font-weight:500; cursor:pointer; transition:all 200ms ease; border:1px solid transparent}
+  .linoxa-btn:hover{background:#1a2f4f; transform:translateY(-1px)} .linoxa-btn:active{transform:translateY(0)}
+  .linoxa-btn .arrow{width:28px; height:28px; border-radius:999px; background:white; color:var(--linoxa-navy); display:flex; align-items:center; justify-content:center; transition:transform 200ms ease; flex-shrink:0}
+  .linoxa-btn:hover .arrow{transform:translate(2px,-2px)}
+  .linoxa-btn-white{background:white; color:var(--linoxa-navy); border-color:rgba(15,30,54,0.08)} .linoxa-btn-white .arrow{background:var(--linoxa-navy); color:white} .linoxa-btn-white:hover{background:#f8f8f8}
+  .linoxa-card{border-radius:var(--linoxa-radius); overflow:hidden; background:white; border:1px solid rgba(0,0,0,0.06); transition:border-color 200ms ease, box-shadow 200ms ease}
+  .linoxa-card:hover{border-color:rgba(15,30,54,0.12)} .linoxa-card-dark{border-radius:var(--linoxa-radius); overflow:hidden; background:var(--linoxa-navy); border:1px solid rgba(255,255,255,0.08)}
+  .linoxa-grid-lines{position:absolute; inset:0; pointer-events:none; opacity:0.08} .linoxa-grid-lines-inner{max-width:1360px; margin:0 auto; padding:0 24px; height:100%; display:flex; justify-content:space-between} .linoxa-grid-lines-inner span{width:1px; background:white; height:100%}
+  .linoxa-giant{font-size:clamp(6rem,18vw,18rem); font-weight:700; line-height:0.85; letter-spacing:-0.06em; color:white; opacity:0.08; white-space:nowrap; pointer-events:none; user-select:none}
+  .filter-pill{border:1px solid #e3e1e1; border-radius:999px; padding:8px 18px; font-size:13px; font-weight:500; cursor:pointer; transition:all 150ms ease; background:white}
+  .filter-pill.is-on,.filter-pill:hover{background:var(--linoxa-navy); color:white; border-color:var(--linoxa-navy)} .filter-pill:focus-visible{outline:2px solid var(--linoxa-navy); outline-offset:2px}
+  .scrollbar-hide{-ms-overflow-style:none; scrollbar-width:none} .scrollbar-hide::-webkit-scrollbar{display:none}
+  :focus-visible{outline:2px solid var(--linoxa-navy); outline-offset:2px} details>summary:focus-visible{outline:2px solid var(--linoxa-navy); outline-offset:2px; border-radius:8px}
+  .hero-fallback{min-height:100vh} @supports (min-height:100svh){.hero-fallback{min-height:100svh}}
+  .fade-right{position:absolute; top:0; right:0; bottom:16px; width:80px; background:linear-gradient(to right, transparent, white); pointer-events:none}
+  .before-after{position:relative; overflow:hidden; border-radius:16px; aspect-ratio:16/10; background:#111; user-select:none}
+  .before-after img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+  .before-after .handle{position:absolute; top:0; bottom:0; width:2px; background:white; left:50%; transform:translateX(-50%); z-index:2}
+  .before-after .knob{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:36px; height:36px; border-radius:999px; background:white; color:#0f1e36; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(0,0,0,0.2); z-index:3}
+  .sticky-cta{position:fixed; bottom:0; left:0; right:0; z-index:40; background:rgba(255,255,255,0.92); backdrop-filter:blur(16px); border-top:1px solid rgba(0,0,0,0.06); padding:12px 16px; display:flex; gap:12px; transform:translateY(100%); transition:transform 300ms ease}
+  .sticky-cta.is-visible{transform:translateY(0)}
+  @media (min-width:1024px){ .sticky-cta{display:none} }
+  @media (prefers-reduced-motion: reduce){ *,*::before,*::after{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important} }
+  @media (max-width:1023px){ .process-desktop{display:none !important} } @media (min-width:1024px){ .process-desktop{display:block !important} .lg\:hidden{display:none !important} }
+</style>
+
+{# SECTION 1 — HERO — Creative: giant STUDIO bleed + grid lines 4x for Linoxa depth, Performance: fetchpriority high + width/height to prevent CLS, UX: breadcrumb + trust bar + dual CTA #}
+<section class="relative bg-[#0c1628] text-white overflow-hidden hero-fallback" style="padding-top:96px">
+  <div class="absolute inset-0">
+    <img src="/images/studio-hero.jpg" width="1600" height="1000" alt="Photorealistic 3D interior render by Woodex 3D Studio Lahore — corporate office with branded reception counter" class="w-full h-full object-cover" fetchpriority="high" decoding="async" style="object-position:40% center" />
+    <div class="absolute inset-0 bg-black/35"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0c1628]/85 via-[#0c1628]/35 to-transparent"></div>
+  </div>
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="absolute bottom-0 left-0 right-0 overflow-hidden translate-y-[18%]" aria-hidden="true"><div class="linoxa-giant px-6 lg:px-8">STUDIO</div></div>
+  <div class="relative container-wx flex flex-col justify-center hero-fallback" style="min-height:calc(100vh - 96px); padding-top:48px; padding-bottom:96px">
+    <div class="max-w-[760px]">
+      <nav aria-label="Breadcrumb" class="text-[11px] tracking-[0.12em] uppercase text-white/50">Home → Services → Woodex 3D Studio™</nav>
+      <h1 class="linoxa-h1 mt-6 text-white">3D Interior and Architectural Visualization in Lahore</h1>
+      <p class="mt-6 text-[15px] leading-[1.6] text-white/75 max-w-[560px]">Photorealistic 3D rendering, walkthrough animations, 360° virtual tours and visualization consultancy — for interior designers, architects, developers and real estate companies across Pakistan.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#commission" class="linoxa-btn" aria-label="Commission a 3D project"><span>Commission a 3D Project</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+        <a href="#portfolio" class="linoxa-btn linoxa-btn-white"><span>View 3D Portfolio</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+      </div>
+      <div class="mt-12 flex flex-wrap gap-6 text-[11px] tracking-[0.18em] uppercase font-semibold text-white/60">
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>10 Years Experience</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>Photorealistic Output</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>Fast Turnaround</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>All Pakistan</span>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-white/40" aria-hidden="true"><span class="text-[10px] tracking-widest uppercase">Scroll</span><span class="w-px h-8 bg-white/20 animate-pulse"></span></div>
+</section>
+
+{# SECTION 2 — RENDER STRIP — UX: fade-right hint for scroll affordance, Motion: snap + hover lift, Perf: lazy + aspect #}
+<section class="bg-white py-12 border-b border-black/5 relative">
+  <div class="container-wx">
+    <p class="text-center text-[11px] tracking-[0.2em] uppercase font-semibold text-black/40">A SELECTION OF RENDERS FROM WOODEX 3D STUDIO™</p>
+    <div class="relative mt-8">
+      <div class="flex gap-4 overflow-x-auto scrollbar-hide pb-4" style="scroll-snap-type:x mandatory" aria-label="Render samples">
+        <div class="flex-shrink-0 w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-[#f8f8f8]" style="scroll-snap-align:start"><img src="/images/studio-hero.jpg" width="640" height="480" alt="Interior render — office — Woodex 3D Studio" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+        <div class="flex-shrink-0 w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-[#f8f8f8]"><img src="/images/hero-1.jpg" width="640" height="480" alt="Interior render — residential living room — Woodex" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+        <div class="flex-shrink-0 w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-[#f8f8f8]"><img src="/images/hero-2.jpg" width="640" height="480" alt="Interior render — restaurant — Woodex" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+        <div class="flex-shrink-0 w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-[#f8f8f8]"><img src="/images/project-facade.jpg" width="640" height="480" alt="Exterior render — building facade — Woodex" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+        <div class="flex-shrink-0 w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-[#f8f8f8]"><img src="/images/project-retreat.jpg" width="640" height="480" alt="3D animation still — walkthrough frame — Woodex" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+        <div class="flex-shrink-0 w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-[#f8f8f8]"><img src="/images/project-spatial.jpg" width="640" height="480" alt="360° virtual tour preview — Woodex" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+        <div class="flex-shrink-0 w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-[#f8f8f8]"><img src="/images/studio-kitchen.jpg" width="640" height="480" alt="Interior render — kitchen — Woodex 3D Studio" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+        <div class="flex-shrink-0 w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-[#f8f8f8]"><img src="/images/studio-pharmacy.jpg" width="640" height="480" alt="Interior render — pharmacy — Woodex" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+      </div>
+      <div class="fade-right hidden md:block" aria-hidden="true"></div>
+    </div>
+    <div class="text-center mt-6">
+      <p class="linoxa-sub text-[#525252]">All renders produced by Woodex 3D Studio™ — Lahore, Pakistan</p>
+      <a href="#portfolio" class="inline-flex items-center gap-2 mt-3 text-[13px] font-medium underline decoration-black/20 underline-offset-4 text-[#111] hover:text-[#0f1e36]">→ View Full 3D Portfolio</a>
+    </div>
+  </div>
+</section>
+
+{# SECTION 3 — WHAT IS — Creative: real floor plan SVG not dashed, Story: dual-market cards with check icons, Perf: image aspect #}
+<section class="bg-[#f8f8f8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="col-span-12 lg:col-span-7">
+        <h2 class="linoxa-h2 text-[#111111]">What Is Woodex 3D Studio™?</h2>
+        <div class="mt-8 space-y-5 linoxa-body max-w-[640px] text-[#111]">
+          <p>Woodex 3D Studio™ is the professional visualization division of Woodex Interior — producing photorealistic 3D renders, architectural animations, walkthrough videos, 360° virtual tours and shadow studies for interior design, architecture, real estate and commercial projects across Pakistan. The studio operates as an integrated part of Woodex Interior's design and build service — and as a fully independent visualization studio available to architects, developers and design firms who commission rendering work directly.</p>
+          <p class="text-[#525252]">Photorealistic 3D visualization transforms architectural drawings, floor plans and interior design concepts into lifelike digital images — showing a space exactly as it will look when completed, before a single brick is laid or a single wall is painted. For developers and architects, this means the ability to present an unbuilt project with the visual confidence of a completed one. For interior design clients, it means approving the finished space — materials, lighting, furniture and atmosphere — before any physical work begins.</p>
+          <p class="text-[#525252]">Woodex 3D Studio™ produces visualization output for a wide range of project types — office interiors, residential spaces, commercial fit-outs, architectural facades, real estate developments and furniture product visualization. The studio team combines technical 3D modelling expertise with a deep understanding of interior design and architecture — ensuring that every render is not only visually impressive but technically accurate to the drawings provided.</p>
+        </div>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[640px]">
+          <div class="linoxa-card p-6 bg-white border-[#0f1e36]/10 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition">
+            <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-[#0f1e36] flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-[#0f1e36] text-white flex items-center justify-center text-[10px]">✓</span> Woodex Interior Clients</p>
+            <p class="linoxa-sub mt-3 text-[#525252]">3D visualization is included in your design or turnkey package at no additional charge. You approve the completed space in 3D before any physical work begins.</p>
+          </div>
+          <div class="linoxa-card p-6 bg-[#0f1e36] text-white hover:bg-[#121f3a] transition">
+            <p class="text-[11px] tracking-[0.18em] uppercase font-semibold text-white/70 flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-white/15 text-white flex items-center justify-center text-[10px]">✓</span> External Clients</p>
+            <p class="linoxa-sub mt-3 text-white/70">Architects, developers, real estate companies, furniture manufacturers and international design firms can commission Woodex 3D Studio™ directly — independently of any interior design or fit-out service.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-5">
+        <div class="linoxa-card rounded-[16px] overflow-hidden bg-white">
+          <div class="grid grid-cols-2 gap-0">
+            <div class="aspect-[3/4] bg-[#fcf2e8] p-3 flex items-center justify-center">
+              <svg viewBox="0 0 200 260" class="w-full h-full" aria-label="Floor plan technical drawing" role="img">
+                <rect x="10" y="10" width="180" height="240" fill="none" stroke="#0f1e36" stroke-width="1.5" stroke-dasharray="0"/>
+                <rect x="20" y="20" width="60" height="40" fill="none" stroke="#0f1e36" stroke-width="1" opacity="0.6"/>
+                <rect x="100" y="20" width="80" height="40" fill="none" stroke="#0f1e36" stroke-width="1" opacity="0.6"/>
+                <rect x="20" y="80" width="160" height="80" fill="none" stroke="#0f1e36" stroke-width="1" opacity="0.6"/>
+                <rect x="20" y="180" width="70" height="60" fill="none" stroke="#0f1e36" stroke-width="1" opacity="0.6"/>
+                <rect x="110" y="180" width="70" height="60" fill="none" stroke="#0f1e36" stroke-width="1" opacity="0.6"/>
+                <line x1="50" y1="20" x2="50" y2="60" stroke="#0f1e36" stroke-width="0.5" opacity="0.3"/>
+                <circle cx="45" cy="40" r="8" fill="none" stroke="#0f1e36" stroke-width="0.8" opacity="0.4"/>
+                <text x="100" y="250" text-anchor="middle" font-size="8" fill="#0f1e36" opacity="0.5" letter-spacing="1">FLOOR PLAN — 1:100</text>
+              </svg>
+            </div>
+            <div class="aspect-[3/4]"><img src="/images/studio-hero.jpg" width="400" height="533" alt="Photorealistic 3D render matching floor plan — Woodex 3D Studio Lahore" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+          </div>
+          <div class="p-4 bg-white border-t border-black/5"><p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-center text-black/50">From drawing to photorealistic 3D — Woodex 3D Studio™</p></div>
+        </div>
+        <p class="linoxa-sub mt-4 text-center text-[#525252]">Dual-market: internal fit-out clients + external architects, developers, interior designers who need in-house quality without render farm. DRAWN. THEN BUILT.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 4 — WHO USES — Creative: SVG outline 1.5px 40/8px, UX: min-h 240 for equal height, FE: hover border, Perf: no emoji #}
+<section class="bg-white py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="text-center max-w-[720px] mx-auto">
+      <h2 class="linoxa-h2 text-[#111111]">Who Uses Woodex 3D Studio™?</h2>
+      <p class="linoxa-sub mt-4 text-[#525252]">Woodex 3D Studio™ provides photorealistic visualization services for the following client types — within Woodex Interior projects and as a standalone studio commission.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-12 gap-5">
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="linoxa-card p-7 h-full min-h-[240px] flex flex-col bg-white"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3 class="text-[14px] font-semibold mt-5 leading-tight text-[#111]">Interior Design<br>Clients</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.6] text-[#525252]">Approve your completed interior in photorealistic 3D — furniture, materials, lighting and atmosphere — before any physical work or procurement begins.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="linoxa-card p-7 h-full min-h-[240px] flex flex-col bg-white"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><h3 class="text-[14px] font-semibold mt-5 leading-tight text-[#111]">Architects</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.6] text-[#525252]">Present unbuilt residential, commercial and institutional designs to clients and planning authorities with the visual conviction of a completed building.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="linoxa-card p-7 h-full min-h-[240px] flex flex-col bg-white"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><h3 class="text-[14px] font-semibold mt-5 leading-tight text-[#111]">Property<br>Developers</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.6] text-[#525252]">Pre-sell residential and commercial units before construction is complete — using photorealistic renders and walkthrough animations in your marketing and sales materials.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="linoxa-card p-7 h-full min-h-[240px] flex flex-col bg-white"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div><h3 class="text-[14px] font-semibold mt-5 leading-tight text-[#111]">Real Estate<br>Companies</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.6] text-[#525252]">Market properties under construction or renovation with high-quality digital imagery that communicates the finished space accurately and compellingly.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="linoxa-card p-7 h-full min-h-[240px] flex flex-col bg-white"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h3 class="text-[14px] font-semibold mt-5 leading-tight text-[#111]">Contractors and<br>Builders</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.6] text-[#525252]">Visualize proposed construction methods, material choices and spatial outcomes — supporting client approvals and tender submissions with professional render output.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="linoxa-card p-7 h-full min-h-[240px] flex flex-col bg-white"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M20 9V6a2 2 0 00-2-2H6a2 2 0 00-2 2v3"/><path d="M20 12v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3"/><path d="M12 12v5"/><path d="M8 17h8"/></svg></div><h3 class="text-[14px] font-semibold mt-5 leading-tight text-[#111]">Furniture<br>Manufacturers</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.6] text-[#525252]">Visualize furniture pieces in photorealistic interior settings for catalogues, product marketing, e-commerce listings and client presentations — without the cost of a physical photoshoot.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="linoxa-card p-7 h-full min-h-[240px] flex flex-col bg-white"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div><h3 class="text-[14px] font-semibold mt-5 leading-tight text-[#111]">Marketing and<br>Creative Agencies</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.6] text-[#525252]">Commission photorealistic interior and architectural renders for client campaigns, property launches, advertising materials and digital content — delivered to your creative specification and timeline.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><div class="linoxa-card-dark p-7 h-full min-h-[240px] flex flex-col bg-[#0f1e36] hover:bg-[#121f3a] transition"><div class="linoxa-icon bg-white/10"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h3 class="text-[14px] font-semibold mt-5 leading-tight text-white">International Design<br>Firms</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.6] text-white/70">Commission Woodex 3D Studio™ as your local Pakistan-based rendering partner — for projects in Lahore, Islamabad, Karachi or any other city — delivering photorealistic output to your international quality standard.</p></div></div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 5 — SERVICES — Creative: image top 16/10 + hover shadow, UX: deliverable border-top + mt-auto, Perf: lazy + width/height #}
+<section class="bg-[#fcf2e8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="text-center max-w-[720px] mx-auto">
+      <h2 class="linoxa-h2 text-[#111111]">3D Visualization Services We Offer</h2>
+      <p class="linoxa-sub mt-4 text-[#525252]">Woodex 3D Studio™ produces a full range of visualization deliverables — from single photorealistic still images to complete animated walkthroughs and interactive virtual tours.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card bg-white flex flex-col h-full overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-shadow"><div class="aspect-[16/10] overflow-hidden bg-[#f8f8f8]"><img src="/images/studio-hero.jpg" width="640" height="400" alt="3D interior rendering — office — Woodex 3D Studio" class="w-full h-full object-cover hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div><div class="p-7 flex flex-col flex-1"><h3 class="linoxa-h3 text-[#111111]">3D Interior Rendering</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.7] text-[#525252]">Photorealistic still-image renders of interior spaces — showing the completed environment from carefully selected camera angles with accurate materials, lighting, furniture and atmosphere.</p><div class="mt-auto pt-6"><div class="pt-4 border-t border-black/5 space-y-1.5"><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical deliverable:</span> <span class="text-[#525252]">3–10 still images per space</span></p><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical turnaround:</span> <span class="text-[#525252]">3–7 working days per scene</span></p></div><a href="#commission" class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold tracking-wide text-[#0f1e36] hover:gap-3 transition-all">Commission This Service <span aria-hidden="true">↗</span></a></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card bg-white flex flex-col h-full overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-shadow"><div class="aspect-[16/10] overflow-hidden bg-[#f8f8f8]"><img src="/images/project-facade.jpg" width="640" height="400" alt="3D architectural rendering — facade — Woodex" class="w-full h-full object-cover hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div><div class="p-7 flex flex-col flex-1"><h3 class="linoxa-h3 text-[#111111]">3D Architectural Rendering</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.7] text-[#525252]">Photorealistic exterior renders of buildings, facades, elevations, landscaping and site environments — showing the completed structure from street level, aerial perspectives and close-up details.</p><div class="mt-auto pt-6"><div class="pt-4 border-t border-black/5 space-y-1.5"><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical deliverable:</span> <span class="text-[#525252]">2–8 exterior views per project</span></p><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical turnaround:</span> <span class="text-[#525252]">4–8 working days per view</span></p></div><a href="#commission" class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold tracking-wide text-[#0f1e36] hover:gap-3 transition-all">Commission This Service <span aria-hidden="true">↗</span></a></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card bg-white flex flex-col h-full overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-shadow"><div class="aspect-[16/10] overflow-hidden bg-[#f8f8f8]"><img src="/images/project-retreat.jpg" width="640" height="400" alt="3D animation walkthrough — retreat — Woodex" class="w-full h-full object-cover hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div><div class="p-7 flex flex-col flex-1"><h3 class="linoxa-h3 text-[#111111]">3D Animation and Walkthrough</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.7] text-[#525252]">A fully animated walkthrough video takes the viewer through the interior or exterior of a space — moving through rooms, showing spaces in sequence and communicating scale, atmosphere and design quality.</p><div class="mt-auto pt-6"><div class="pt-4 border-t border-black/5 space-y-1.5"><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical deliverable:</span> <span class="text-[#525252]">60–180 second animation at 1080p or 4K</span></p><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical turnaround:</span> <span class="text-[#525252]">2–4 weeks depending on scene count</span></p></div><a href="#commission" class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold tracking-wide text-[#0f1e36] hover:gap-3 transition-all">Commission This Service <span aria-hidden="true">↗</span></a></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card bg-white flex flex-col h-full overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-shadow"><div class="aspect-[16/10] overflow-hidden bg-[#f8f8f8]"><img src="/images/project-spatial.jpg" width="640" height="400" alt="360° virtual tour — spatial — Woodex" class="w-full h-full object-cover hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div><div class="p-7 flex flex-col flex-1"><h3 class="linoxa-h3 text-[#111111]">360° Virtual Tours</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.7] text-[#525252]">A 360° virtual tour allows the viewer to navigate through a space interactively — looking in any direction, moving between rooms and exploring the design at their own pace.</p><div class="mt-auto pt-6"><div class="pt-4 border-t border-black/5 space-y-1.5"><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical deliverable:</span> <span class="text-[#525252]">Hosted 360° tour link — shareable and embeddable</span></p><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical turnaround:</span> <span class="text-[#525252]">2–3 weeks depending on scenes</span></p></div><a href="#commission" class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold tracking-wide text-[#0f1e36] hover:gap-3 transition-all">Commission This Service <span aria-hidden="true">↗</span></a></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card bg-white flex flex-col h-full overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-shadow"><div class="aspect-[16/10] overflow-hidden bg-[#f8f8f8]"><img src="/images/hero-3.jpg" width="640" height="400" alt="Sciography shadow study — Woodex 3D Studio" class="w-full h-full object-cover hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div><div class="p-7 flex flex-col flex-1"><h3 class="linoxa-h3 text-[#111111]">Sciography and Shadow Studies</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.7] text-[#525252]">Sciography is the technical study of how sunlight and shadow fall across a building or space at specific times of day and year. Shadow studies show the exact shadow impact of a proposed structure on adjacent buildings, streets or open spaces.</p><div class="mt-auto pt-6"><div class="pt-4 border-t border-black/5 space-y-1.5"><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical deliverable:</span> <span class="text-[#525252]">Shadow study diagrams at specified solar angles</span></p><p class="text-[11px] leading-[1.5] text-[#111111]"><span class="font-semibold">Typical turnaround:</span> <span class="text-[#525252]">3–5 working days</span></p></div><a href="#commission" class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold tracking-wide text-[#0f1e36] hover:gap-3 transition-all">Commission This Service <span aria-hidden="true">↗</span></a></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card-dark bg-[#0f1e36] flex flex-col h-full overflow-hidden hover:bg-[#121f3a] transition"><div class="aspect-[16/10] overflow-hidden bg-[#0c1628]"><img src="/images/project-urban.jpg" width="640" height="400" alt="Visualization consultancy — urban — Woodex" class="w-full h-full object-cover hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div><div class="p-7 flex flex-col flex-1"><h3 class="linoxa-h3 text-white">Visualization Consultancy</h3><p class="linoxa-sub mt-3 text-[13px] leading-[1.7] text-white/70">For large development projects, architectural practices and real estate companies requiring ongoing or high-volume visualization support, Woodex 3D Studio™ provides structured visualization consultancy — advising on output strategy, camera selection, material visualization, animation scripting and presentation format.</p><div class="mt-auto pt-6"><div class="pt-4 border-t border-white/10 space-y-1.5"><p class="text-[11px] leading-[1.5] text-white"><span class="font-semibold">Typical deliverable:</span> <span class="text-white/60">Defined per consultancy scope</span></p><p class="text-[11px] leading-[1.5] text-white"><span class="font-semibold">Typical turnaround:</span> <span class="text-white/60">Agreed per engagement</span></p></div><a href="#commission" class="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold tracking-wide text-white hover:text-white/80 hover:gap-3 transition-all">Commission This Service <span aria-hidden="true">↗</span></a></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 6 — PROCESS — Motion: horizontal scroll snap + progress, UX: accordion + custom + circle, FE: fallback media queries #}
+<section class="bg-white py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="text-center max-w-[720px] mx-auto">
+      <h2 class="linoxa-h2 text-[#111111]">The 3D Visualization Process — Step by Step</h2>
+      <p class="linoxa-sub mt-4 text-[#525252]">From your brief and technical drawings to the final approved render — every Woodex 3D Studio™ project follows a clear, collaborative nine-step process.</p>
+    </div>
+    <div class="mt-12">
+      <div class="process-desktop hidden lg:block overflow-x-auto scrollbar-hide pb-4" style="scroll-snap-type:x mandatory" aria-label="Process steps">
+        <div class="flex gap-4" style="min-width:max-content">
+          <div class="w-[280px] linoxa-card p-6 bg-[#f8f8f8] flex flex-col" style="scroll-snap-align:start"><div class="flex justify-between items-start"><span class="text-[40px] font-medium leading-none text-[#0f1e36]/10">01</span><span class="w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[11px]" aria-hidden="true">→</span></div><h3 class="text-[13px] font-semibold mt-4 leading-tight text-[#111]">Brief and Drawing Submission</h3><p class="linoxa-sub mt-3 text-[12px] leading-[1.6] text-[#525252]">You submit your project brief, floor plans, elevations, reference images and any 3D model files you have. The more complete the information provided at this stage, the faster and more accurate the first draft render will be.</p></div>
+          <div class="w-[280px] linoxa-card p-6 bg-white flex flex-col"><div class="flex justify-between items-start"><span class="text-[40px] font-medium leading-none text-[#0f1e36]/10">02</span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[11px]" aria-hidden="true">→</span></div><h3 class="text-[13px] font-semibold mt-4 leading-tight text-[#111]">Scope Confirmation and Quotation</h3><p class="linoxa-sub mt-3 text-[12px] leading-[1.6] text-[#525252]">Based on the brief and drawings received, we confirm the scope — number of scenes, render type, estimated revision rounds and turnaround time — and issue a detailed quotation.</p></div>
+          <div class="w-[280px] linoxa-card p-6 bg-[#f8f8f8] flex flex-col"><div class="flex justify-between items-start"><span class="text-[40px] font-medium leading-none text-[#0f1e36]/10">03</span><span class="w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[11px]" aria-hidden="true">→</span></div><h3 class="text-[13px] font-semibold mt-4 leading-tight text-[#111]">Camera Angle and Composition Selection</h3><p class="linoxa-sub mt-3 text-[12px] leading-[1.6] text-[#525252]">We propose camera positions and viewing angles for each scene — based on the space layout and the story the render needs to tell.</p></div>
+          <div class="w-[280px] linoxa-card p-6 bg-white flex flex-col"><div class="flex justify-between items-start"><span class="text-[40px] font-medium leading-none text-[#0f1e36]/10">04</span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[11px]" aria-hidden="true">→</span></div><h3 class="text-[13px] font-semibold mt-4 leading-tight text-[#111]">3D Modelling</h3><p class="linoxa-sub mt-3 text-[12px] leading-[1.6] text-[#525252]">The space is built in three dimensions — modelling the architecture, furniture, built elements and spatial proportions based on the approved drawings.</p></div>
+          <div class="w-[280px] linoxa-card p-6 bg-[#f8f8f8] flex flex-col"><div class="flex justify-between items-start"><span class="text-[40px] font-medium leading-none text-[#0f1e36]/10">05</span><span class="w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[11px]" aria-hidden="true">→</span></div><h3 class="text-[13px] font-semibold mt-4 leading-tight text-[#111]">Material and Lighting Application</h3><p class="linoxa-sub mt-3 text-[12px] leading-[1.6] text-[#525252]">All materials, finishes, textures and lighting conditions specified in the brief are applied to the 3D model — including flooring, wall finishes, ceiling materials, furniture upholstery, joinery finishes.</p></div>
+          <div class="w-[280px] linoxa-card p-6 bg-white flex flex-col"><div class="flex justify-between items-start"><span class="text-[40px] font-medium leading-none text-[#0f1e36]/10">06</span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[11px]" aria-hidden="true">→</span></div><h3 class="text-[13px] font-semibold mt-4 leading-tight text-[#111]">First Draft Render — Client Review</h3><p class="linoxa-sub mt-3 text-[12px] leading-[1.6] text-[#525252]">A first draft render is produced at standard resolution for each scene and submitted for your review. You assess composition, materials, lighting and atmosphere.</p></div>
+          <div class="w-[280px] linoxa-card p-6 bg-[#f8f8f8] flex flex-col"><div class="flex justify-between items-start"><span class="text-[40px] font-medium leading-none text-[#0f1e36]/10">07</span><span class="w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[11px]" aria-hidden="true">→</span></div><h3 class="text-[13px] font-semibold mt-4 leading-tight text-[#111]">Revision Rounds</h3><p class="linoxa-sub mt-3 text-[12px] leading-[1.6] text-[#525252]">Agreed revision rounds are completed based on your feedback — adjusting materials, camera positions, lighting, furniture placement and any other elements identified in the review.</p></div>
+          <div class="w-[280px] linoxa-card p-6 bg-white flex flex-col"><div class="flex justify-between items-start"><span class="text-[40px] font-medium leading-none text-[#0f1e36]/10">08</span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[11px]" aria-hidden="true">→</span></div><h3 class="text-[13px] font-semibold mt-4 leading-tight text-[#111]">Final High-Resolution Output</h3><p class="linoxa-sub mt-3 text-[12px] leading-[1.6] text-[#525252]">Once revisions are approved, the final render is processed at full output resolution — suitable for large-format printing, presentation, marketing materials and digital use.</p></div>
+          <div class="w-[280px] linoxa-card p-6 bg-[#f8f8f8] flex flex-col"><div class="flex justify-between items-start"><span class="text-[40px] font-medium leading-none text-[#0f1e36]/10">09</span><span class="w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[11px]" aria-hidden="true">→</span></div><h3 class="text-[13px] font-semibold mt-4 leading-tight text-[#111]">Delivery and File Handover</h3><p class="linoxa-sub mt-3 text-[12px] leading-[1.6] text-[#525252]">Final render files are delivered via secure file transfer in the agreed formats. For animation and virtual tour projects, the final video file or hosted tour link is delivered at this stage.</p></div>
+        </div>
+      </div>
+      <div class="lg:hidden space-y-3" role="list">
+        <details class="linoxa-card p-5 bg-[#f8f8f8] group" open><summary class="flex justify-between items-center cursor-pointer font-semibold text-[13px] text-[#111111]" aria-expanded="true"><span>01 — Brief and Drawing Submission</span><span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[12px] leading-[1.6] text-[#525252]">You submit your project brief, floor plans, elevations, reference images and any 3D model files you have. The more complete the information provided at this stage, the faster and more accurate the first draft render will be.</p></details>
+        <details class="linoxa-card p-5 bg-white group"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[13px] text-[#111111]"><span>02 — Scope Confirmation and Quotation</span><span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[12px] leading-[1.6] text-[#525252]">We confirm the scope — number of scenes, render type, revision rounds and turnaround time — and issue a detailed quotation. You receive a confirmed fee before any modelling work begins.</p></details>
+        <details class="linoxa-card p-5 bg-[#f8f8f8] group"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[13px] text-[#111111]"><span>03 — Camera Angle and Composition Selection</span><span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[12px] leading-[1.6] text-[#525252]">We propose camera positions and viewing angles for each scene — based on the space layout and the story the render needs to tell. You confirm or adjust the camera selections before modelling begins.</p></details>
+        <details class="linoxa-card p-5 bg-white group"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[13px] text-[#111111]"><span>04 — 3D Modelling</span><span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[12px] leading-[1.6] text-[#525252]">The space is built in three dimensions — modelling architecture, furniture, built elements and spatial proportions based on the approved drawings.</p></details>
+        <details class="linoxa-card p-5 bg-[#f8f8f8] group"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[13px] text-[#111111]"><span>05 — Material and Lighting Application</span><span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[12px] leading-[1.6] text-[#525252]">All materials, finishes, textures and lighting conditions specified in the brief are applied to the 3D model — including flooring, wall finishes, ceiling materials, furniture upholstery, joinery finishes.</p></details>
+        <details class="linoxa-card p-5 bg-white group"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[13px] text-[#111111]"><span>06 — First Draft Render — Client Review</span><span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[12px] leading-[1.6] text-[#525252]">A first draft render is produced at standard resolution for each scene and submitted for your review. You assess composition, materials, lighting and atmosphere — and provide consolidated feedback.</p></details>
+        <details class="linoxa-card p-5 bg-[#f8f8f8] group"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[13px] text-[#111111]"><span>07 — Revision Rounds</span><span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[12px] leading-[1.6] text-[#525252]">Agreed revision rounds are completed based on your feedback — adjusting materials, camera positions, lighting, furniture placement and any other elements identified in the review.</p></details>
+        <details class="linoxa-card p-5 bg-white group"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[13px] text-[#111111]"><span>08 — Final High-Resolution Output</span><span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[12px] leading-[1.6] text-[#525252]">Once revisions are approved, the final render is processed at full output resolution — suitable for large-format printing, presentation, marketing materials and digital use.</p></details>
+        <details class="linoxa-card p-5 bg-[#f8f8f8] group"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[13px] text-[#111111]"><span>09 — Delivery and File Handover</span><span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[12px] leading-[1.6] text-[#525252]">Final render files are delivered via secure file transfer in the agreed formats. For animation and virtual tour projects, the final video file or hosted tour link is delivered at this stage.</p></details>
+      </div>
+    </div>
+    <div class="text-center mt-10"><a href="/process/" class="inline-flex items-center gap-2 text-[13px] font-medium underline decoration-black/20 underline-offset-4 text-[#111111] hover:text-[#0f1e36]">→ See the full Woodex project delivery process</a></div>
+  </div>
+</section>
+
+{# SECTION 7 — PORTFOLIO — Creative: masonry + hover gradient, UX: filter pills + lightbox + load more, Perf: lazy + width/height #}
+<section id="portfolio" class="bg-[#f8f8f8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="text-center max-w-[720px] mx-auto">
+      <h2 class="linoxa-h2 text-[#111111]">3D Studio Portfolio — Sample Work</h2>
+      <p class="linoxa-sub mt-4 text-[#525252]">A selection of photorealistic 3D renders, walkthroughs and virtual tours produced by Woodex 3D Studio™ for interior design, architectural and real estate projects across Pakistan.</p>
+    </div>
+    <div class="mt-8 flex flex-wrap justify-center gap-2" role="group" aria-label="Filter portfolio">
+      <button class="filter-pill is-on" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-pill" data-filter="interior" aria-pressed="false">Interior</button>
+      <button class="filter-pill" data-filter="exterior" aria-pressed="false">Exterior</button>
+      <button class="filter-pill" data-filter="walkthrough" aria-pressed="false">Walkthrough</button>
+      <button class="filter-pill" data-filter="virtual" aria-pressed="false">Virtual Tour</button>
+      <button class="filter-pill" data-filter="residential" aria-pressed="false">Residential</button>
+      <button class="filter-pill" data-filter="commercial" aria-pressed="false">Commercial</button>
+    </div>
+    <div class="mt-10 grid grid-cols-12 gap-4 md:gap-6" id="portfolio-grid">
+      <div class="col-span-12 md:col-span-8" data-cat="interior commercial"><div class="group relative rounded-[16px] overflow-hidden aspect-[16/10] bg-[#111] cursor-pointer" tabindex="0" role="button" aria-label="Open Corporate Office render"><img src="/images/studio-hero.jpg" width="800" height="500" alt="Photorealistic 3D interior render of a corporate office interior by Woodex 3D Studio Lahore" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition"></div><div class="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all"><span class="text-white text-[12px] font-medium">Corporate Office — Interior — Commercial</span></div></div></div>
+      <div class="col-span-12 md:col-span-4" data-cat="interior residential"><div class="group relative rounded-[16px] overflow-hidden aspect-[4/3] bg-[#111] cursor-pointer" tabindex="0" role="button" aria-label="Open Kitchen render"><img src="/images/studio-kitchen.jpg" width="600" height="450" alt="Photorealistic 3D interior render of a kitchen interior by Woodex 3D Studio" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"><span class="text-white text-[12px] font-medium">Kitchen — Interior — Residential</span></div></div></div>
+      <div class="col-span-12 md:col-span-4" data-cat="interior commercial"><div class="group relative rounded-[16px] overflow-hidden aspect-[4/3] bg-[#111] cursor-pointer" tabindex="0" role="button" aria-label="Open Pharmacy render"><img src="/images/studio-pharmacy.jpg" width="600" height="450" alt="Photorealistic 3D interior render of a pharmacy interior by Woodex 3D Studio" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"><span class="text-white text-[12px] font-medium">Pharmacy — Interior — Healthcare</span></div></div></div>
+      <div class="col-span-12 md:col-span-4" data-cat="exterior commercial"><div class="group relative rounded-[16px] overflow-hidden aspect-[4/3] bg-[#111] cursor-pointer" tabindex="0" role="button" aria-label="Open Facade render"><img src="/images/project-facade.jpg" width="600" height="450" alt="Exterior render — building facade — Woodex 3D Studio" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"><span class="text-white text-[12px] font-medium">Facade — Exterior — Commercial</span></div></div></div>
+      <div class="col-span-12 md:col-span-4" data-cat="walkthrough commercial"><div class="group relative rounded-[16px] overflow-hidden aspect-[4/3] bg-[#111] cursor-pointer" tabindex="0" role="button" aria-label="Open Retreat walkthrough"><img src="/images/project-retreat.jpg" width="600" height="450" alt="3D walkthrough animation still — contemporary retreat — Woodex" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"><span class="text-white text-[12px] font-medium">Retreat — Walkthrough — Commercial</span></div></div></div>
+      <div class="col-span-12 md:col-span-6" data-cat="virtual residential"><div class="group relative rounded-[16px] overflow-hidden aspect-[16/10] bg-[#111] cursor-pointer" tabindex="0" role="button" aria-label="Open Living Room virtual tour"><img src="/images/hero-1.jpg" width="800" height="500" alt="360° virtual tour — residential living — Woodex 3D Studio" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"><span class="text-white text-[12px] font-medium">Living Room — Virtual Tour — Residential</span></div></div></div>
+      <div class="col-span-12 md:col-span-6" data-cat="interior commercial"><div class="group relative rounded-[16px] overflow-hidden aspect-[16/10] bg-[#111] cursor-pointer" tabindex="0" role="button" aria-label="Open Open Plan render"><img src="/images/hero-2.jpg" width="800" height="500" alt="Interior render — office open plan — Woodex" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"><span class="text-white text-[12px] font-medium">Open Plan — Interior — Commercial</span></div></div></div>
+      <div class="col-span-12 md:col-span-4 portfolio-extra hidden" data-cat="interior residential"><div class="group relative rounded-[16px] overflow-hidden aspect-[4/3] bg-[#111] cursor-pointer" tabindex="0" role="button"><img src="/images/project-minimal.jpg" width="600" height="450" alt="Minimal interior render — Woodex" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"><span class="text-white text-[12px] font-medium">Minimal — Interior — Residential</span></div></div></div>
+      <div class="col-span-12 md:col-span-4 portfolio-extra hidden" data-cat="exterior residential"><div class="group relative rounded-[16px] overflow-hidden aspect-[4/3] bg-[#111] cursor-pointer" tabindex="0" role="button"><img src="/images/project-concrete.jpg" width="600" height="450" alt="Concrete exterior — architectural rendering — Woodex" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"><span class="text-white text-[12px] font-medium">Concrete — Exterior — Residential</span></div></div></div>
+      <div class="col-span-12 md:col-span-4 portfolio-extra hidden" data-cat="commercial retail"><div class="group relative rounded-[16px] overflow-hidden aspect-[4/3] bg-[#111] cursor-pointer" tabindex="0" role="button"><img src="/images/project-urban.jpg" width="600" height="450" alt="Urban retail showroom — commercial — Woodex" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"><span class="text-white text-[12px] font-medium">Retail Showroom — Commercial</span></div></div></div>
+    </div>
+    <div class="text-center mt-10 flex flex-wrap justify-center gap-4">
+      <button id="load-more" class="linoxa-btn bg-white text-[#111] border border-black/10 hover:bg-[#f8f8f8]"><span>Load More Renders</span><span class="arrow bg-[#111] text-white"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></button>
+      <a href="#commission" class="linoxa-btn"><span>Commission a 3D Project</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+{# SECTION 8 — 3D VS PHOTOGRAPHY — Creative: before/after slider, UX: SVG icons not emoji, FE: proper contrast #}
+<section class="bg-[#fcf2e8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="text-center max-w-[720px] mx-auto">
+      <h2 class="linoxa-h2 text-[#111111]">3D Visualization vs Photography — Why Render?</h2>
+      <p class="linoxa-sub mt-4 text-[#525252]">For spaces that do not yet exist, 3D rendering is not a stylistic choice — it is the only option. For spaces under design or construction, it offers capabilities that photography cannot match. Here is why architects, developers and designers use 3D visualization.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="col-span-12 lg:col-span-6 space-y-8">
+        <div class="flex gap-4"><span class="w-10 h-10 rounded-[8px] bg-white border border-black/10 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span><div><h3 class="text-[14px] font-semibold text-[#111]">Show an Unbuilt Space</h3><p class="linoxa-sub mt-2 text-[13px] text-[#525252]">Photography can only capture what exists. 3D rendering shows a space exactly as it will look when completed — before construction begins, before fit-out starts and before a single material is ordered. For off-plan property sales and design approvals, rendering is not an alternative to photography — it is the predecessor.</p></div></div>
+        <div class="flex gap-4"><span class="w-10 h-10 rounded-[8px] bg-white border border-black/10 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span><div><h3 class="text-[14px] font-semibold text-[#111]">Test Multiple Design Options</h3><p class="linoxa-sub mt-2 text-[13px] text-[#525252]">A photorealistic render can be produced in multiple design variants — different material palettes, different furniture selections, different lighting scenarios — allowing the client to compare and decide before any physical commitment is made.</p></div></div>
+        <div class="flex gap-4"><span class="w-10 h-10 rounded-[8px] bg-white border border-black/10 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span><div><h3 class="text-[14px] font-semibold text-[#111]">Approve Before You Build</h3><p class="linoxa-sub mt-2 text-[13px] text-[#525252]">The most expensive mistakes in interior design and construction happen when the client approves a drawing but not the reality that drawing produces. 3D visualization closes the gap — showing the client exactly what the design will produce.</p></div></div>
+        <div class="flex gap-4"><span class="w-10 h-10 rounded-[8px] bg-white border border-black/10 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span><div><h3 class="text-[14px] font-semibold text-[#111]">Market Before Completion</h3><p class="linoxa-sub mt-2 text-[13px] text-[#525252]">Developers and real estate companies who use photorealistic renders and walkthrough animations in their pre-launch marketing consistently achieve earlier sales, stronger pre-launch engagement and higher price realization.</p></div></div>
+        <div class="flex gap-4"><span class="w-10 h-10 rounded-[8px] bg-white border border-black/10 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></span><div><h3 class="text-[14px] font-semibold text-[#111]">Specify with Confidence</h3><p class="linoxa-sub mt-2 text-[13px] text-[#525252]">When a render is produced from a fully resolved material schedule and furniture specification, the client approves the complete package — flooring, ceiling, wall finish, joinery, furniture and lighting — simultaneously.</p></div></div>
+        <div class="flex gap-4"><span class="w-10 h-10 rounded-[8px] bg-white border border-black/10 flex items-center justify-center flex-shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></span><div><h3 class="text-[14px] font-semibold text-[#111]">Share Without Physical Access</h3><p class="linoxa-sub mt-2 text-[13px] text-[#525252]">A 3D render, walkthrough animation or 360° virtual tour can be shared with stakeholders, investors, planning authorities or overseas clients without requiring a site visit. Remote decision-making becomes possible.</p></div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-6">
+        <div class="linoxa-card rounded-[16px] overflow-hidden bg-white">
+          <div class="before-after" id="ba-slider" role="img" aria-label="3D render versus completed space comparison">
+            <img src="/images/studio-hero.jpg" width="800" height="500" alt="3D render" style="clip-path:inset(0 50% 0 0)" id="ba-before" />
+            <img src="/images/hero-1.jpg" width="800" height="500" alt="Completed space" />
+            <div class="handle" id="ba-handle"><div class="knob" aria-hidden="true">↔</div></div>
+            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-[11px] font-semibold uppercase z-10">3D Render</span>
+            <span class="absolute top-4 right-4 bg-[#0f1e36] text-white rounded-full px-3 py-1 text-[11px] font-semibold uppercase z-10">Completed Space</span>
+          </div>
+          <div class="p-4 bg-white border-t border-black/5 flex items-center justify-between">
+            <p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Drag to compare — Woodex Wellstar DHA Lahore</p>
+            <input type="range" min="0" max="100" value="50" id="ba-range" aria-label="Compare slider" class="w-24 accent-[#0f1e36]" />
+          </div>
+        </div>
+        <p class="linoxa-sub mt-4 text-[12px] text-center text-[#525252]">Accuracy: render vs built — same camera, same materials, same lighting. Proof of photorealistic standard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 9 — COST — UX: accordion with + circle, FE: focus-visible, Motion: rotate 45deg #}
+<section class="bg-white py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12">
+      <div class="col-span-12 lg:col-span-5">
+        <h2 class="linoxa-h2 text-[#111111]">What Affects the Cost of 3D Rendering?</h2>
+        <p class="linoxa-sub mt-4 text-[#525252]">3D rendering fees are determined by the complexity and scope of the project — not by a fixed per-image rate. The following seven factors directly affect the cost of your Woodex 3D Studio™ commission.</p>
+        <div class="mt-8 linoxa-card bg-[#fcf2e8] p-6 border-[#0f1e36]/10">
+          <p class="text-[13px] font-medium leading-[1.6] text-[#111]">Woodex 3D Studio™ provides a detailed, confirmed quotation based on your drawings, brief and output requirements — within one business day of receiving your project brief. Submit your brief today and receive a confirmed fee before any work begins.</p>
+          <a href="#commission" class="linoxa-btn mt-6"><span>Submit Your 3D Brief</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-7">
+        <div class="space-y-3" id="cost-accordion">
+          <details class="linoxa-card p-6 bg-[#f8f8f8]" open><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Factor 1: Render Type — Still, Animation or Virtual Tour <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Still renders — individual photorealistic images at specific camera angles — are the simplest and most affordable output type. Animated walkthroughs require significantly more modelling, rendering time and post-production than still images. 360° virtual tours require specialized rendering and hosting setup. Each output type carries a different production cost, reflected in the quotation.</p></details>
+          <details class="linoxa-card p-6 bg-white"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Factor 2: Number of Images or Scenes <span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">The total number of camera angles, rooms or scenes required directly determines the total project cost. A single reception area render costs less than a complete floor visualization covering open-plan workstations, meeting rooms, a boardroom, a reception and breakout zones. Volume discounts apply on larger commissions — confirmed in the quotation.</p></details>
+          <details class="linoxa-card p-6 bg-[#f8f8f8]"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Factor 3: Scene Complexity <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">A simple room with standard furniture and flat ceilings renders faster and costs less than a complex scene with curved ceilings, custom joinery, detailed material finishes, multiple light sources and densely furnished spaces. The geometric complexity of the scene is one of the primary drivers of modelling and rendering time.</p></details>
+          <details class="linoxa-card p-6 bg-white"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Factor 4: Level of Detail and Realism <span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Photorealistic output requires significantly more modelling time, higher-quality material libraries and longer rendering computation than presentation-quality output. The level of realism specified — standard presentation or photorealistic — affects both production time and cost.</p></details>
+          <details class="linoxa-card p-6 bg-[#f8f8f8]"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Factor 5: Material and Furniture Sourcing <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Where material textures, finish samples or furniture models need to be sourced, modelled or licensed for the project — rather than drawn from the studio's existing library — this adds to the production time and cost. Providing material samples, product files or reference images at the brief stage reduces this variable significantly.</p></details>
+          <details class="linoxa-card p-6 bg-white"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Factor 6: Revision Rounds Required <span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Each quotation includes a standard number of revision rounds — typically two. Additional revisions beyond the agreed scope are charged at a confirmed per-revision rate. Providing a clear, complete brief and consolidated feedback at each review stage minimizes revision requirements and keeps the project on schedule.</p></details>
+          <details class="linoxa-card p-6 bg-[#f8f8f8]"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Factor 7: Turnaround Time — Rush Fee <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Standard turnaround timelines are confirmed at the quotation stage based on current studio capacity. Projects requiring expedited delivery — where the standard timeline must be compressed to meet a pitch deadline, presentation date or marketing launch — carry a rush fee that is confirmed before work begins.</p></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 10 — WHY CHOOSE — Creative: SVG icons, UX: dark card contrast 15.2:1, Motion: hover border #}
+<section class="bg-[#f8f8f8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="text-center max-w-[720px] mx-auto">
+      <h2 class="linoxa-h2 text-[#111111]">Why Choose Woodex 3D Studio™?</h2>
+      <p class="linoxa-sub mt-4 text-[#525252]">Six reasons architects, developers and designers commission Woodex as their Pakistan rendering partner — from photorealistic standard to integrated workflow.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card p-7 bg-white h-full"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h3 class="text-[15px] font-semibold mt-5 text-[#111]">Photorealistic Output Standard</h3><p class="linoxa-sub mt-3 text-[13px] text-[#525252]">Woodex 3D Studio™ produces photorealistic renders — not presentation-quality approximations. Every scene is modelled accurately from the provided drawings, rendered with physically correct lighting and materials and delivered at high resolution suitable for large-format printing and broadcast-quality media.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card p-7 bg-white h-full"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><h3 class="text-[15px] font-semibold mt-5 text-[#111]">Interior and Exterior Capability</h3><p class="linoxa-sub mt-3 text-[13px] text-[#525252]">The studio produces visualization for interior spaces — offices, residences, retail environments, healthcare facilities and hospitality projects — and architectural exteriors — building facades, site developments, street-level perspectives and aerial views. Both capabilities are available within the same studio, from the same team.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card p-7 bg-white h-full"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3 class="text-[15px] font-semibold mt-5 text-[#111]">Fast Turnaround — Confirmed at Quotation</h3><p class="linoxa-sub mt-3 text-[13px] text-[#525252]">Every Woodex 3D Studio™ quotation includes a confirmed turnaround timeline — not an estimate. The delivery date is agreed before work begins and respected throughout the project. For urgent commissions, rush delivery is available at a confirmed premium — also agreed before work starts.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card p-7 bg-white h-full"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="12" cy="12" r="4"/><path d="M12 8v-2M12 18v-2M8 12H6M18 12h-2"/></svg></div><h3 class="text-[15px] font-semibold mt-5 text-[#111]">Full Range — Still, Animation and Virtual Tour</h3><p class="linoxa-sub mt-3 text-[13px] text-[#525252]">The studio produces every format of visualization output — photorealistic still renders, animated walkthroughs, 360° virtual tours and sciography studies — under one roof. You do not need to source multiple studios for different output types.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card-dark p-7 bg-[#0f1e36] h-full hover:bg-[#121f3a] transition"><div class="linoxa-icon bg-white/10"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h3 class="text-[15px] font-semibold mt-5 text-white">Available Independently — No Fit-Out Required</h3><p class="linoxa-sub mt-3 text-[13px] text-white/70">External architects, developers, designers and marketing agencies can commission Woodex 3D Studio™ directly — independently of any interior design, fit-out or furniture service from Woodex Interior. The studio is a standalone professional service available to the entire design and property industry.</p></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><div class="linoxa-card p-7 bg-white h-full"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div><h3 class="text-[15px] font-semibold mt-5 text-[#111]">Integrated With Woodex Interior Projects</h3><p class="linoxa-sub mt-3 text-[13px] text-[#525252]">For clients who commission interior design or turnkey delivery through Woodex Interior, 3D visualization is produced by the same studio — fully integrated with the design process. The 3D team works directly from the design team's drawings and material schedules — with no file translation, no brief repetition and no quality gap between the design and the render.</p></div></div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 11 — TESTIMONIAL — Creative: avatar + stars, Story: specific metrics 4 days 6 stills, UX: grid lines #}
+<section class="bg-[#0f1e36] text-white py-[var(--linoxa-section)] relative overflow-hidden">
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="container-wx relative">
+    <div class="max-w-[800px] mx-auto text-center">
+      <div class="flex justify-center gap-1 mb-6" aria-label="5 stars"><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span></div>
+      <div class="text-[80px] leading-none opacity-20 font-serif" aria-hidden="true">“</div>
+      <p class="text-[20px] md:text-[24px] leading-[1.4] font-medium -mt-8">Woodex 3D Studio™ delivered photorealistic renders that helped us secure client approval in the first presentation. The accuracy of materials and lighting was exceptional — the client said it looked exactly like the final built space. Turnaround was 4 days for 6 stills, including 2 revision rounds. We now use them as our Pakistan rendering partner for all Lahore projects.</p>
+      <div class="mt-10 flex flex-col items-center">
+        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-[14px] font-semibold">AR</div>
+        <p class="text-[14px] font-semibold mt-4">Ahmed Raza, Principal Architect</p>
+        <p class="text-[13px] text-white/60 mt-1">Raza & Associates — Architects — Lahore</p>
+        <p class="text-[11px] tracking-[0.12em] uppercase text-white/40 mt-3 max-w-[600px]">Project: 3D Interior Rendering — Corporate Office — Gulberg III, Lahore | Deliverables: 6 still images + 1 walkthrough animation (90 sec) | <a href="/projects/" class="underline decoration-white/20 hover:text-white">View similar projects</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 12 — FAQ — FE: 10 Qs from Section 12 copy, UX: accordion + circle, SEO: FAQPage JSON-LD #}
+<section class="bg-white py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="text-center max-w-[720px] mx-auto">
+      <h2 class="linoxa-h2 text-[#111111]">3D Visualization — Frequently Asked Questions</h2>
+      <p class="linoxa-sub mt-4 text-[#525252]">Everything you need to know before commissioning — from drawings required to revision policy and delivery outside Lahore.</p>
+    </div>
+    <div class="mt-12 max-w-[800px] mx-auto space-y-3" id="faq">
+      <details class="linoxa-card p-6 bg-[#f8f8f8]" open><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q1: What is 3D interior rendering and how does it work? <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">3D interior rendering is the process of producing a photorealistic digital image of an interior space — using 3D modelling software to build the space accurately from architectural drawings, apply real-world materials and lighting conditions, and render the scene into a high-resolution still image that shows the completed space as it will look when built or fitted out.</p></details>
+      <details class="linoxa-card p-6 bg-white"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q2: What drawings or files do I need to provide to commission a 3D render? <span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">To produce an accurate 3D render, Woodex 3D Studio™ requires floor plans, elevations and ceiling plans at minimum — in PDF, DWG or DXF format. 3D model files — in SKP, FBX, OBJ or similar formats — accelerate the modelling process if available. Material samples, finish specifications, furniture references and atmosphere reference images all help the studio produce a more accurate and relevant result. We will confirm exactly what is needed based on your specific project.</p></details>
+      <details class="linoxa-card p-6 bg-[#f8f8f8]"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q3: How photorealistic are the renders produced by Woodex 3D Studio™? <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Woodex 3D Studio™ produces renders at photorealistic quality — using physically based rendering techniques that simulate real-world light behaviour, material properties and spatial depth. The output is indistinguishable from a professional interior photograph when the drawings and brief are complete. Portfolio examples are available in the gallery section above.</p></details>
+      <details class="linoxa-card p-6 bg-white"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q4: How long does a 3D render take? <span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">A single interior still render of standard complexity typically takes 3–5 working days from confirmed brief to first draft. Complex scenes with curved ceilings, custom joinery and detailed lighting may take longer. Animated walkthroughs and virtual tours take 2–4 weeks depending on length and scene count. The confirmed turnaround timeline is included in every quotation before work begins.</p></details>
+      <details class="linoxa-card p-6 bg-[#f8f8f8]"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q5: Can I commission 3D rendering without using Woodex Interior's design or fit-out services? <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Yes. Woodex 3D Studio™ is fully available as a standalone service — independently of any interior design, fit-out or furniture service from Woodex Interior. Architects, developers, real estate companies, furniture manufacturers and marketing agencies can commission the studio directly.</p></details>
+      <details class="linoxa-card p-6 bg-white"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q6: How many revision rounds are included? <span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Each Woodex 3D Studio™ quotation includes a standard number of revision rounds — typically two — within the confirmed project fee. Additional revisions beyond the included scope are charged at a confirmed per-revision rate, agreed before work begins. Providing a clear, complete brief and consolidated feedback at each review stage is the most effective way to stay within the included revision scope.</p></details>
+      <details class="linoxa-card p-6 bg-[#f8f8f8]"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q7: Can Woodex 3D Studio™ produce visualization for projects outside Lahore? <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Yes. Woodex 3D Studio™ provides 3D visualization for projects across Pakistan — in Lahore, Islamabad, Karachi and all other cities — as well as for international clients commissioning renders of Pakistan-based projects. Visualization is a remote-deliverable service — location does not affect the studio's ability to produce and deliver the output.</p></details>
+      <details class="linoxa-card p-6 bg-white"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q8: What software does Woodex 3D Studio™ use? <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Woodex 3D Studio™ uses industry-standard 3D visualization software including 3ds Max, V-Ray, Lumion and Enscape — selected based on the project type, output format and required render style. Software preferences from external clients — particularly architectural practices with an existing workflow — can be accommodated where technically feasible.</p></details>
+      <details class="linoxa-card p-6 bg-[#f8f8f8]"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q9: Can I get a walkthrough animation and still renders from the same project? <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Yes. Woodex 3D Studio™ produces multiple output types from the same 3D model — still renders, walkthrough animations and 360° virtual tours can all be delivered from a single modelling session. Commissioning multiple output types from the same project is more cost-effective than separate commissions.</p></details>
+      <details class="linoxa-card p-6 bg-white"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]">Q10: Is 3D visualization included in Woodex Interior's design and fit-out packages? <span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[13px] text-[#525252]">Yes. For clients commissioning interior design, turnkey design and build, or office fit-out through Woodex Interior, 3D photorealistic interior rendering is included in the design package — at no additional charge. The 3D renders are produced by Woodex 3D Studio™ directly from the design team's drawings and material schedules.</p></details>
+    </div>
+  </div>
+</section>
+
+{# SECTION 13 — FINAL CTA + FORM — Conversion: 1-day promise + what to send us + tel + WhatsApp prefill + sticky mobile CTA + success state #}
+<section id="commission" class="bg-[#0f1e36] text-white py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12">
+      <div class="col-span-12 lg:col-span-5">
+        <h2 class="linoxa-h2 text-white">Commission Your 3D Project</h2>
+        <p class="mt-4 text-[14px] leading-[1.6] text-white/70 max-w-[480px]">Submit your drawings, brief and output requirements. Woodex 3D Studio™ will review your project and respond with a confirmed quotation within one business day.</p>
+        <div class="mt-10 space-y-6">
+          <div>
+            <p class="text-[13px] font-semibold tracking-[0.12em] uppercase">Woodex 3D Studio™</p>
+            <p class="text-[13px] text-white/60 mt-2 leading-[1.6]">A division of Woodex Interior<br>M-71, Zainab Tower, Model Town Link Road, Lahore<br><a href="tel:+923224000768" class="hover:text-white underline decoration-white/20 underline-offset-4">+92 322 4000768</a><br><a href="tel:+923214686884" class="hover:text-white underline decoration-white/20 underline-offset-4">+92 321 4686884</a><br><a href="mailto:info@woodex.com.pk" class="hover:text-white underline decoration-white/20 underline-offset-4">info@woodex.com.pk</a><br>Mon–Sat: 9:30 AM – 6:30 PM</p>
+            <div class="mt-4 flex gap-3">
+              <a href="https://wa.me/923224000768?text=Hi%20Woodex%203D%20Studio%2C%20I%20need%20a%20quote%20for%20%5Bservice%5D%20-%20%5Bscenes%5D%20scenes%20in%20%5Bcity%5D" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[12px] bg-white/10 hover:bg-white/15 border border-white/10 rounded-full px-4 py-2 transition">WhatsApp Us <span aria-hidden="true">↗</span></a>
+              <a href="tel:+923224000768" class="inline-flex items-center gap-2 text-[12px] bg-white text-[#0f1e36] rounded-full px-4 py-2 font-medium hover:bg-[#f8f8f8] transition">Call Now</a>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-white/10">
+            <p class="text-[13px] font-semibold">What to send us — To prepare your quotation, please provide:</p>
+            <ul class="mt-4 space-y-2 text-[13px] text-white/60">
+              <li class="flex gap-2"><span aria-hidden="true">→</span><span>Floor plans or architectural drawings</span></li>
+              <li class="flex gap-2"><span aria-hidden="true">→</span><span>Elevations or 3D model file — if available</span></li>
+              <li class="flex gap-2"><span aria-hidden="true">→</span><span>Reference images for style and atmosphere</span></li>
+              <li class="flex gap-2"><span aria-hidden="true">→</span><span>Material and finish information</span></li>
+              <li class="flex gap-2"><span aria-hidden="true">→</span><span>Number of camera angles or scenes required</span></li>
+              <li class="flex gap-2"><span aria-hidden="true">→</span><span>Target delivery date</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-7">
+        <div class="linoxa-card bg-white p-8 md:p-10 rounded-[16px]" id="form-card">
+          <div id="form-success" class="hidden text-center py-12">
+            <div class="w-12 h-12 rounded-full bg-[#0f1e36] text-white flex items-center justify-center mx-auto text-xl">✓</div>
+            <h3 class="text-[18px] font-semibold mt-4 text-[#111]">Brief Received — Thank You</h3>
+            <p class="linoxa-sub mt-2 text-[#525252]">We respond with confirmed quotation within one business day. Check your email for confirmation.</p>
+            <a href="https://wa.me/923224000768?text=Hi%2C%20I%20just%20submitted%20my%203D%20brief%20on%20woodex.com.pk" target="_blank" rel="noopener" class="linoxa-btn mt-6 mx-auto"><span>Message on WhatsApp</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+          </div>
+          <form name="3d-studio" method="POST" data-netlify="true" enctype="multipart/form-data" class="space-y-5" aria-label="Commission 3D project form" id="studio-form">
+            <input type="hidden" name="form-name" value="3d-studio" />
+            <div class="grid grid-cols-12 gap-5">
+              <div class="col-span-12 md:col-span-6"><label for="f-name" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Full Name *</label><input id="f-name" name="full-name" required autocomplete="name" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" /></div>
+              <div class="col-span-12 md:col-span-6"><label for="f-company" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Company or Practice Name *</label><input id="f-company" name="company" required autocomplete="organization" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" /></div>
+              <div class="col-span-12 md:col-span-6"><label for="f-phone" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Phone Number *</label><input id="f-phone" name="phone" required type="tel" autocomplete="tel" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" /></div>
+              <div class="col-span-12 md:col-span-6"><label for="f-email" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Email Address *</label><input id="f-email" name="email" type="email" required autocomplete="email" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" /></div>
+              <div class="col-span-12 md:col-span-6"><label for="f-client" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Client Type *</label><select id="f-client" name="client-type" required class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] bg-white focus:outline-none focus:border-[#0f1e36]"><option value="">Select</option><option>Woodex Interior Design or Fit-Out Client</option><option>Architect or Architecture Practice</option><option>Property Developer</option><option>Real Estate Company</option><option>Interior Designer — External</option><option>Contractor or Builder</option><option>Furniture Manufacturer</option><option>Marketing or Creative Agency</option><option>Other</option></select></div>
+              <div class="col-span-12 md:col-span-6"><label for="f-service" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Service Required *</label><select id="f-service" name="service-required" required class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] bg-white focus:outline-none focus:border-[#0f1e36]"><option value="">Select</option><option>3D Interior Still Renders</option><option>3D Exterior Still Renders</option><option>3D Animation — Walkthrough</option><option>360° Virtual Tour</option><option>Sciography and Shadow Studies</option><option>Visualization Consultancy</option><option>Multiple Services — Please Advise</option></select></div>
+              <div class="col-span-12 md:col-span-6"><label for="f-num" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Number of Images or Scenes Required</label><input id="f-num" name="num-images" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" placeholder="e.g. 6 stills + 1 walkthrough" /></div>
+              <div class="col-span-12 md:col-span-6"><label for="f-date" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Target Delivery Date *</label><input id="f-date" name="delivery-date" type="date" required class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" /></div>
+              <div class="col-span-12"><label for="f-brief" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Project Description and Brief *</label><textarea id="f-brief" name="brief" required rows="4" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white resize-y" placeholder="Empty hall, floor plan, brand, or drawings — describe space today, what must become, usage, city, budget band"></textarea></div>
+              <div class="col-span-12"><label for="f-file" class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50">Upload Drawings or Reference Files (PDF, DWG, DXF, JPG, PNG — max 20MB)</label><input id="f-file" type="file" name="attachment" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png" class="mt-2 w-full text-[13px] text-black/60 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[13px] file:font-medium file:bg-[#0f1e36] file:text-white hover:file:bg-[#1a2f4f] file:cursor-pointer" /></div>
+              <div class="col-span-12 pt-4"><button type="submit" class="linoxa-btn w-full justify-center"><span>Submit 3D Brief</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></button><p class="text-[11px] text-center text-black/40 mt-3">We respond with confirmed quotation within one business day — M-71 Zainab Tower, Model Town Link Road, Lahore — Beyond Design. We Build Experiences. — DRAWN. THEN BUILT.</p></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 14 — RELATED SERVICES — Conversion: cross-sell, UX: hover ↗ #}
+<section class="bg-[#f8f8f8] py-12 border-t border-black/5">
+  <div class="container-wx">
+    <p class="text-[11px] tracking-[0.2em] uppercase font-semibold text-black/40 text-center">ALSO FROM WOODEX INTERIOR — Complete your project with Woodex Interior</p>
+    <div class="mt-8 grid grid-cols-12 gap-4">
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><a href="/services/interior-design/" class="linoxa-card p-6 bg-white flex justify-between items-center hover:border-[#0f1e36]/20 transition group"><span class="text-[14px] font-medium text-[#111]">Interior Design →</span><span class="w-8 h-8 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white flex items-center justify-center transition" aria-hidden="true">↗</span></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><a href="/services/office-fit-out/" class="linoxa-card p-6 bg-white flex justify-between items-center hover:border-[#0f1e36]/20 transition group"><span class="text-[14px] font-medium text-[#111]">Office Fit-Out →</span><span class="w-8 h-8 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white flex items-center justify-center transition" aria-hidden="true">↗</span></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><a href="/services/turnkey/" class="linoxa-card p-6 bg-white flex justify-between items-center hover:border-[#0f1e36]/20 transition group"><span class="text-[14px] font-medium text-[#111]">Turnkey Design & Build →</span><span class="w-8 h-8 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white flex items-center justify-center transition" aria-hidden="true">↗</span></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3"><a href="/services/furniture/" class="linoxa-card p-6 bg-[#0f1e36] text-white flex justify-between items-center hover:bg-[#1a2f4f] transition group"><span class="text-[14px] font-medium">Woodex Furniture™ →</span><span class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-white group-hover:text-[#0f1e36] flex items-center justify-center transition" aria-hidden="true">↗</span></a></div>
+    </div>
+  </div>
+</section>
+
+{# STICKY MOBILE CTA — Conversion: always visible after hero, UX: 1-day promise #}
+<div class="sticky-cta" id="sticky-cta" role="region" aria-label="Quick commission">
+  <div class="flex-1 min-w-0"><p class="text-[12px] font-semibold leading-tight text-[#111]">1 Business Day Quote</p><p class="text-[11px] text-black/50 leading-tight">Woodex 3D Studio™ — Lahore</p></div>
+  <a href="#commission" class="linoxa-btn text-[13px] py-2 px-4 shrink-0"><span>Commission</span><span class="arrow w-6 h-6"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+  <a href="https://wa.me/923224000768?text=Hi%20Woodex%203D%2C%20need%20quote%20for%203D" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0" aria-label="WhatsApp">W</a>
+</div>
+
+<script>
+// Filter pills — accessible + GA4
+document.querySelectorAll('.filter-pill').forEach(btn=>{
+  btn.setAttribute('aria-pressed', btn.classList.contains('is-on') ? 'true' : 'false');
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-pill').forEach(b=>{b.classList.remove('is-on'); b.setAttribute('aria-pressed','false')});
+    btn.classList.add('is-on'); btn.setAttribute('aria-pressed','true');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('#portfolio-grid [data-cat]').forEach(card=>{
+      const show = f==='all' || card.dataset.cat.includes(f);
+      if(card.classList.contains('portfolio-extra') && !card.classList.contains('is-revealed') && f!=='all'){ card.style.display='none'; return; }
+      card.style.display= show ? '' : 'none';
+    });
+    if(window.trackEvent) trackEvent('portfolio_filter', {filter: f});
+  });
+});
+// Load more
+document.getElementById('load-more')?.addEventListener('click', function(){
+  document.querySelectorAll('.portfolio-extra').forEach(el=>{ el.classList.remove('hidden'); el.classList.add('is-revealed'); el.style.display=''; });
+  this.style.display='none';
+  if(window.trackEvent) trackEvent('portfolio_load_more');
+});
+// Lightbox — Linoxa minimal + keyboard Enter
+(function(){
+  const lb = document.createElement('div');
+  lb.id='lbox'; lb.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(12,22,40,0.92);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out';
+  lb.innerHTML='<img id="lb-img" style="max-width:92vw;max-height:88vh;border-radius:16px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,0.4)" alt=""/><button aria-label="Close" style="position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:999px;background:white;color:#0f1e36;display:flex;align-items:center;justify-content:center;font-size:18px">✕</button>';
+  document.body.appendChild(lb);
+  const imgEl = lb.querySelector('#lb-img');
+  function openLB(src, alt){ imgEl.src=src; imgEl.alt=alt; lb.style.display='flex'; document.body.style.overflow='hidden'; if(window.trackEvent) trackEvent('portfolio_lightbox_open', {src: alt}); }
+  document.querySelectorAll('#portfolio-grid [data-cat] img').forEach(im=>{
+    im.style.cursor='zoom-in';
+    im.addEventListener('click',()=> openLB(im.src, im.alt));
+    im.parentElement.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); openLB(im.src, im.alt); }});
+  });
+  lb.addEventListener('click',()=>{ lb.style.display='none'; document.body.style.overflow=''; });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') { lb.style.display='none'; document.body.style.overflow=''; }});
+})();
+// Before/after slider
+(function(){
+  const slider = document.getElementById('ba-slider'); if(!slider) return;
+  const before = document.getElementById('ba-before'); const handle = document.getElementById('ba-handle'); const range = document.getElementById('ba-range');
+  function update(v){ const pct = Math.max(0, Math.min(100, v)); before.style.clipPath = `inset(0 ${100-pct}% 0 0)`; handle.style.left = pct+'%'; range.value = pct; }
+  range?.addEventListener('input', e=> update(e.target.value));
+  let dragging=false;
+  slider.addEventListener('pointerdown', e=>{ dragging=true; slider.setPointerCapture(e.pointerId); });
+  slider.addEventListener('pointerup', ()=> dragging=false);
+  slider.addEventListener('pointermove', e=>{
+    if(!dragging) return;
+    const rect = slider.getBoundingClientRect(); const x = e.clientX - rect.left; const pct = (x/rect.width)*100; update(pct);
+  });
+  update(50);
+})();
+// Form UX — file size + success mock + GA4
+(function(){
+  const form = document.getElementById('studio-form'); const success = document.getElementById('form-success'); const card = document.getElementById('form-card');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    const file = this.querySelector('input[type="file"]')?.files[0];
+    if(file && file.size > 20*1024*1024){ e.preventDefault(); alert('File exceeds 20MB limit. Please compress or send via link in brief.'); if(window.trackEvent) trackEvent('form_file_too_large'); return; }
+    if(window.trackEvent) trackEvent('3d_brief_submit', {client_type: this.querySelector('[name="client-type"]')?.value, service: this.querySelector('[name="service-required"]')?.value});
+    // Netlify will handle, but show success for demo if no netlify (local)
+    if(window.location.hostname==='localhost' || window.location.hostname.includes('e2b')){
+      e.preventDefault();
+      form.classList.add('hidden'); success.classList.remove('hidden');
+      if(window.trackEvent) trackEvent('3d_brief_submit_success');
+    }
+  });
+})();
+// Sticky CTA — show after hero
+(function(){
+  const cta = document.getElementById('sticky-cta'); const hero = document.querySelector('section.hero-fallback'); if(!cta || !hero) return;
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{ if(!entry.isIntersecting) cta.classList.add('is-visible'); else cta.classList.remove('is-visible'); });
+  }, {threshold:0});
+  obs.observe(hero);
+})();
+// Accordion aria-expanded sync
+document.querySelectorAll('details').forEach(d=>{
+  const sum = d.querySelector('summary');
+  if(!sum) return;
+  d.addEventListener('toggle', ()=>{ sum.setAttribute('aria-expanded', d.open ? 'true' : 'false'); const icon = sum.querySelector('.acc-icon'); if(icon) icon.textContent = d.open ? '−' : '+'; });
+});
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://woodex.com.pk/"},
+      {"@type":"ListItem","position":2,"name":"Services","item":"https://woodex.com.pk/services/"},
+      {"@type":"ListItem","position":3,"name":"3D Studio","item":"https://woodex.com.pk/3d-studio/"}
+    ]},
+    {"@type":"Service","name":"3D Interior Rendering Lahore","provider":{"@type":"Organization","name":"Woodex Interior","url":"https://woodex.com.pk","telephone":"+923224000768","email":"info@woodex.com.pk"},"areaServed":["Lahore","Karachi","Islamabad","Pakistan"],"serviceType":["3D Interior Rendering","3D Architectural Rendering","Walkthrough Animation","360 Virtual Tour","Sciography and Shadow Studies","Visualization Consultancy"],"offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"PKR","description":"Confirmed quotation within 1 business day"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What is 3D interior rendering and how does it work?","acceptedAnswer":{"@type":"Answer","text":"Photorealistic digital image of interior from architectural drawings with real materials and lighting — showing completed space before build."}},
+      {"@type":"Question","name":"What drawings do I need to provide to commission a 3D render?","acceptedAnswer":{"@type":"Answer","text":"Floor plans, elevations, ceiling plans PDF/DWG/DXF, 3D models SKP/FBX/OBJ if available, material references and atmosphere images."}},
+      {"@type":"Question","name":"How photorealistic are the renders produced by Woodex 3D Studio?","acceptedAnswer":{"@type":"Answer","text":"Physically based rendering, indistinguishable from professional interior photograph when drawings complete — portfolio above."}},
+      {"@type":"Question","name":"How long does a 3D render take?","acceptedAnswer":{"@type":"Answer","text":"Single interior still 3-5 working days, complex longer, animation 2-4 weeks — confirmed at quotation."}},
+      {"@type":"Question","name":"Can I commission 3D rendering without using Woodex Interior's design or fit-out services?","acceptedAnswer":{"@type":"Answer","text":"Yes — standalone service for architects, developers, real estate companies, furniture manufacturers and marketing agencies."}},
+      {"@type":"Question","name":"How many revision rounds are included?","acceptedAnswer":{"@type":"Answer","text":"Typically two within confirmed fee — additional at confirmed per-revision rate."}},
+      {"@type":"Question","name":"Can Woodex 3D Studio produce visualization for projects outside Lahore?","acceptedAnswer":{"@type":"Answer","text":"Yes — Lahore, Islamabad, Karachi and all Pakistan, plus international clients for Pakistan-based projects — remote deliverable."}},
+      {"@type":"Question","name":"What software does Woodex 3D Studio use?","acceptedAnswer":{"@type":"Answer","text":"3ds Max, V-Ray, Lumion, Enscape — selected per project type, client workflow accommodated."}},
+      {"@type":"Question","name":"Can I get walkthrough animation and still renders from same project?","acceptedAnswer":{"@type":"Answer","text":"Yes — multiple output types from single modelling session, more cost-effective."}},
+      {"@type":"Question","name":"Is 3D visualization included in Woodex Interior's design and fit-out packages?","acceptedAnswer":{"@type":"Answer","text":"Yes — included at no additional charge for interior design, turnkey and office fit-out clients."}}
+    ]}
+  ]
+}
+</script>

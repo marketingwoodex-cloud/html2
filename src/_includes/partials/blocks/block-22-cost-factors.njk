@@ -1,0 +1,13 @@
+{# Block 22: Cost Factors — No Fake Sqft Rate #}
+<section class="py-16 bg-white">
+  <div class="container max-w-3xl">
+    <h3 class="text-2xl font-bold">{{ heading or 'What Affects the Cost?' }}</h3>
+    <p class="mt-3 text-muted">{{ text or 'Size, scope, materials, MEP, furniture, branding, timeline — no fake sqft rate, BOQ after 3D approval. Budget with clarity.' }}</p>
+    <ul class="mt-6 space-y-2">
+      {% for f in factors or ['Size — sqft, floors, zones','Scope — design only, fit-out, turnkey','Materials — workstations, acoustic, glass, lighting, flooring','MEP — electrical, HVAC, plumbing, fire','Furniture — workstations, executive, meeting, reception, sofas','Branding — signage, manifestation, colors','Timeline — fast-track vs phased'] %}
+      <li class="flex gap-2 text-sm"><span class="text-wood">•</span> {{ f }}</li>
+      {% endfor %}
+    </ul>
+    <p class="mt-6 text-sm bg-cream p-4 rounded-wx-sm border-l-4 border-wood"><strong>No fake sqft rate:</strong> {{ noFake or 'We do not publish a fake square-foot rate. Budget with clarity after you approve the room. BOQ turns the still into a buildable scope.' }}</p>
+  </div>
+</section>

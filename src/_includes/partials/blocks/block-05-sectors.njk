@@ -1,0 +1,23 @@
+{# Block 05: Sectors — Premium — Do You Understand My Business? — Balanced Spacing — Animation #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="section-premium bg-white" data-anim="fade">
+  <div class="container-wx">
+    <div class="max-w-[720px] mb-12" data-anim="up">
+      <p class="eyebrow" style="color:var(--wx-navy);">{{ eyebrow or 'Sectors — Do you understand my business?' }}</p>
+      <h2 class="mt-4" style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); line-height:1.2; letter-spacing:-0.02em;">{{ heading or 'Service pages tell what we do. Sector pages show we understand your business.' }}</h2>
+      <p class="mt-4" style="color:var(--wx-charcoal); font-size:16px; line-height:1.6;">{{ subheading or 'Specificity converts higher. A restaurant operator landing on a restaurant-specific page feels understood immediately.' }}</p>
+    </div>
+    <div class="grid grid-cols-12 gap-6 stagger" data-anim="up" data-delay="1">
+      {% for sector in sectors or [] %}
+      <div class="col-span-12 md:col-span-6 lg:col-span-4">
+        <a href="{{ sector.link }}" class="card-premium group block p-6 h-full" data-anim="up" data-delay="{{ loop.index }}">
+          <p class="text-[11px] tracking-[0.12em] uppercase font-semibold text-black/40">{{ sector.eyebrow }}</p>
+          <h3 class="mt-3 text-[20px] font-semibold leading-tight group-hover:text-[#0f1e36] transition" style="font-family:'Syne',sans-serif;">{{ sector.title }}</h3>
+          <p class="mt-3 text-[14px] leading-[1.6] text-[#525252]">{{ sector.desc }}</p>
+          <span class="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold tracking-wide">Explore <span class="w-6 h-6 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white flex items-center justify-center transition" aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

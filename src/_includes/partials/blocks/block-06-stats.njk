@@ -1,0 +1,20 @@
+{# Block 06: Stats — Premium — One Team One Process One Result — Balanced Spacing — Animation #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="section-premium {% if dark %}bg-[#0f1e36] text-white{% else %}bg-[#fcf2e8]{% endif %}" data-anim="fade">
+  <div class="container-wx">
+    <div class="max-w-[720px] mb-12" data-anim="up">
+      <p class="eyebrow" style="{% if dark %}color:rgba(255,255,255,0.5);{% else %}color:var(--wx-navy);{% endif %}">{{ eyebrow or 'One team. One process. One result.' }}</p>
+      <h2 class="mt-4" style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2.2rem); line-height:1.2; {% if dark %}color:#fff;{% endif %}">{{ heading or 'Discover → Design → Visualize → Plan (Budget + BOQ) → Build → Install → Deliver — Stop at gate you choose' }}</h2>
+    </div>
+    <div class="grid grid-cols-12 gap-6 stagger" data-anim="up" data-delay="1">
+      {% for stat in stats or [] %}
+      <div class="col-span-12 md:col-span-6 lg:col-span-3">
+        <article class="card-premium p-7 h-full {% if stat.accent %}bg-[#0f1e36] text-white border-white/10{% elif dark %}bg-white/5 border-white/10 text-white{% else %}bg-white{% endif %}" data-anim="up" data-delay="{{ loop.index }}">
+          <div class="text-[48px] font-medium leading-none" style="font-family:'Syne',sans-serif; color:{% if stat.accent or dark %}#fcf2e8{% else %}var(--wx-navy){% endif %}; line-height:1.1;">{{ stat.num }}</div>
+          <div class="mt-6"><h3 class="text-[18px] font-semibold leading-tight" style="font-family:'Syne',sans-serif;">{{ stat.title }}</h3><p class="mt-3 text-[13px] leading-[1.6]" style="{% if stat.accent or dark %}color:rgba(255,255,255,0.7);{% else %}color:var(--wx-charcoal);{% endif %}">{{ stat.desc }}</p></div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

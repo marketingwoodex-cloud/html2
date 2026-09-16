@@ -1,0 +1,29 @@
+{# Block 14: What Is — Polished Linoxa 3-col left sticky 30% center image 40% right stack #}
+<section class="py-20 bg-white">
+  <div class="container-wx">
+    <div class="grid md:grid-cols-12 gap-8">
+      <div class="md:col-span-4">
+        <p class="eyebrow">{{ eyebrow or 'What is Office Interior Design?' }}</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tightx mt-3 leading-tight">{{ heading or 'Design is not decoration. Design is the foundation of a successful project.' }}</h2>
+        {% if whatIsCtaLink %}
+        <a class="btn mt-6 bg-navy text-white" href="{{ whatIsCtaLink }}"><span class="btn-label"><span>{{ whatIsCtaText or 'Learn more' }}</span><span>{{ whatIsCtaText or 'Learn more' }}</span></span><span class="btn-icon bg-white text-navy"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+        {% endif %}
+      </div>
+      <div class="md:col-span-4">
+        {% if whatIsImage %}
+        <div class="rounded-wx overflow-hidden aspect-[4/5] bg-cream"><img src="{{ whatIsImage }}" alt="{{ whatIsAlt or heading }}" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+        {% else %}
+        <div class="rounded-wx overflow-hidden aspect-[4/5] bg-navy/5 p-6 flex flex-col justify-between">
+          <div class="text-6xl font-black tracking-tightx text-navy/10 leading-none">3D</div>
+          <div><p class="text-sm font-semibold text-navy">DRAWN. THEN BUILT.</p><p class="text-[13px] text-muted mt-2">See the room before it exists. In-house, not render farm.</p></div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="md:col-span-4 space-y-4">
+        {% for p in paragraphs or ['Plan first. Then the still. The room has to work before anyone decorates it.','Not a moodboard pack. Survey, still, sheets. Then budget and BOQ if you want it built.','Architectural coordination through qualified professionals where required by law.'] %}
+        <p class="text-[15px] leading-relaxed text-muted">{{ p }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+{# Block 21: Materials and Finishes / Systems #}
+<section class="py-16 bg-cream">
+  <div class="container">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <p class="eyebrow">{{ eyebrow or 'Materials and Finishes' }}</p>
+        <h3 class="text-2xl font-bold mt-2">{{ heading or 'Workstations, acoustic, lighting, flooring, glass partitions' }}</h3>
+        <ul class="mt-6 space-y-3">
+          {% for m in materials or ['Workstations — open, focus pods, executive','Acoustic — panels, ceiling, partitions','Lighting — task, ambient, brand, 24/7','Flooring — carpet, vinyl, raised, durable','Glass — partitions, manifestation, acoustic','Joinery — kitchens, wardrobes, media walls, counters'] %}
+          <li class="flex gap-3"><span class="text-wood">•</span> {{ m }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <img src="{{ image or '/images/craft-joinery.jpg' }}" alt="{{ alt or 'Materials board' }}" class="rounded-wx w-full aspect-[4/3] object-cover" loading="lazy" />
+        <p class="text-xs text-muted mt-3">{{ caption or 'Mill connected to still — drawn, then made.' }}</p>
+      </div>
+    </div>
+  </div>
+</section>

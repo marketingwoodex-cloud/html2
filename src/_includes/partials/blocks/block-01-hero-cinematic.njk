@@ -1,0 +1,30 @@
+{# Block 01: Hero Cinematic — Premium — Reduced Height 90svh — Different Style Homepage — Giant Bleed — Linoxa Home Two #}
+<!-- impeccable-disable all-caps-body, tiny-text, hero-eyebrow-chip, clipped-overflow-container -->
+<section class="hero hero-reduced-70" aria-label="{{ heroAria or 'Featured stories' }}" data-anim="fade">
+  <div class="hero-slides">
+    <article class="hero-slide is-active">
+      <div class="media"><img src="{{ heroImage or '/images/hero-1.jpg' }}" alt="{{ heroAlt or 'Beyond Design. We Build Experiences.' }}" fetchpriority="high" width="1408" height="768" decoding="async" /></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="container-wx">
+          <p class="hero-label" data-anim="up"><i></i> {{ heroLabel or 'Beyond Design. We Build Experiences.' }}</p>
+          <h1 data-anim="up" data-delay="1">
+            <span class="line"><span>{{ heroTitleLine1 or 'Corporate workplaces' }}</span></span>
+            <span class="line"><span>{{ heroTitleLine2 or 'built for business' }}</span></span>
+          </h1>
+          <div class="hero-cta" data-anim="up" data-delay="2">
+            <a class="btn btn-light" href="{{ heroCtaLink or '/start-your-project/' }}" aria-label="{{ heroCtaText or 'Start your project' }}">
+              <span class="btn-label"><span>{{ heroCtaText or 'Start your project' }}</span></span>
+              <span class="btn-icon"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+            </a>
+            <p class="hero-copy">{{ heroCopy or 'From strategy and space planning to design, fit-out and final delivery — one team, one contract, 3D approval before execution.' }}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="hero-side" aria-hidden="true"><span class="is-on">{{ heroSide1 or 'Workplace' }}</span><span>{{ heroSide2 or 'Commercial' }}</span><span>{{ heroSide3 or 'Turnkey' }}</span></div>
+  <div class="hero-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="hero-index" aria-hidden="true">{{ giantWord or 'Woodex' }}</div>
+  <div class="hero-nav"><div class="hero-nav-inner"><div class="hero-pips" role="tablist"><button class="hero-pip is-active" type="button" aria-label="Slide 1"><span>01</span><span class="track"><i></i></span></button><button class="hero-pip" type="button" aria-label="Slide 2"><span>02</span><span class="track"><i></i></span></button><button class="hero-pip" type="button" aria-label="Slide 3"><span>03</span><span class="track"><i></i></span></button></div><div class="hero-arrows"><button class="hero-arrow" id="hero-prev" aria-label="Previous slide"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5"/></svg></button><button class="hero-arrow" id="hero-next" aria-label="Next slide"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></button></div></div></div>
+</section>
