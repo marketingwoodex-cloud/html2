@@ -13,7 +13,7 @@ layout: base.njk
   .linoxa-btn-white{background:white; color:var(--linoxa-navy); border:1px solid rgba(0,0,0,0.08)} .linoxa-btn-white .arrow{background:var(--linoxa-navy); color:white}
   .linoxa-grid-lines{position:absolute; inset:0; pointer-events:none; opacity:0.08} .linoxa-grid-lines-inner{max-width:1360px; margin:0 auto; padding:0 24px; height:100%; display:flex; justify-content:space-between} .linoxa-grid-lines-inner span{width:1px; background:white; height:100%}
   .linoxa-giant{font-size:clamp(6rem,18vw,18rem); font-weight:700; line-height:0.85; letter-spacing:-0.06em; color:white; opacity:0.08; white-space:nowrap; pointer-events:none; user-select:none}
-  .hero-fallback{min-height:100vh} @supports (min-height:100svh){.hero-fallback{min-height:100svh}}
+  .hero-fallback{min-height:70svh} @supports (min-height:70svh){.hero-fallback{min-height:70svh}}
   .scrollbar-hide{-ms-overflow-style:none; scrollbar-width:none} .scrollbar-hide::-webkit-scrollbar{display:none}
   .bp-prose{max-width:720px; margin:0 auto; padding:0 24px} .bp-prose p{font-size:16px; line-height:1.75; color:#111; margin:20px 0} .bp-prose h2{font-size:24px; font-weight:600; margin:48px 0 16px; color:#111}
   :focus-visible{outline:2px solid var(--linoxa-navy); outline-offset:2px}
@@ -29,7 +29,7 @@ layout: base.njk
   </div>
   <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
   <div class="absolute bottom-0 left-0 right-0 overflow-hidden translate-y-[18%]" aria-hidden="true"><div class="linoxa-giant px-6 lg:px-8">{{ giant or 'PROJECT' }}</div></div>
-  <div class="relative container-wx flex flex-col justify-center hero-fallback" style="min-height:calc(100vh - 96px); padding-top:48px; padding-bottom:96px">
+  <div class="relative container-wx flex flex-col justify-center hero-fallback" style="min-height:calc(70svh - 80px); padding-top:48px; padding-bottom:96px">
     <div class="max-w-[760px]">
       <nav aria-label="Breadcrumb" class="text-[11px] tracking-[0.12em] uppercase text-white/50">Home → Projects → {{ breadcrumbTitle or title }}</nav>
       <p class="mt-6 text-[11px] tracking-[0.18em] uppercase font-semibold text-white/60">{{ category or 'Study — Rooms Drawn So They Can Be Built' }}</p>
