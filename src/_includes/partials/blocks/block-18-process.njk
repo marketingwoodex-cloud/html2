@@ -1,0 +1,43 @@
+{# Block 18: Process — Premium — 7 Gates — Balanced Spacing — Animation — Slider + Accordion #}
+<!-- impeccable-disable all-caps-body, tiny-text, numbered-section-labels, tight-leading -->
+<section class="section-premium bg-white" data-anim="fade">
+  <div class="container-wx">
+    <p class="eyebrow" style="color:var(--wx-navy);">{{ eyebrow or 'The Process — 7 Gates — Discover → Deliver' }}</p>
+    <h2 class="mt-3 max-w-[40ch]" style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); line-height:1.2;">{{ heading or 'Discover → Design → Visualize → Plan (Budget + BOQ) → Build → Install → Deliver — Stop at gate you choose' }}</h2>
+    <div class="mt-10 hidden lg:flex gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4" data-anim="up" data-delay="1">
+      {% for gate in gates or [
+        {"num":"01","title":"Discover","desc":"Brief — what space is today, must become, usage, city, budget band, plan/photos — consultation, site survey"},
+        {"num":"02","title":"Design","desc":"Space planning, concept, materials, moodboard, drawings — plan first, then still"},
+        {"num":"03","title":"Visualize","desc":"3D stills first — one per key room, in-house not render farm, walkthrough/360 only if path matters — DRAWN THEN BUILT"},
+        {"num":"04","title":"Plan","desc":"Budget with clarity, BOQ turns still into buildable scope, cost planning, vendor management, no fake sqft rate"},
+        {"num":"05","title":"Build","desc":"Civil, MEP, execution, site supervision, ISO 9001, mill connected to still, kitchens/wardrobes/counters drawn then made"},
+        {"num":"06","title":"Install","desc":"Furniture, joinery, lighting, signage, branding, MEP final"},
+        {"num":"07","title":"Deliver","desc":"Handover, snag list, warranty, aftercare — Turnkey goes all gates under one contract, one PM accountable"}
+      ] %}
+      <article class="min-w-[300px] snap-start card-premium p-7 {% if loop.index == 3 %}bg-[#0f1e36] text-white border-white/10{% else %}bg-white{% endif %}" data-anim="up" data-delay="{{ loop.index }}">
+        <p class="text-[12px] tracking-wide uppercase font-semibold {% if loop.index == 3 %}text-white/50{% else %}text-black/40{% endif %}">{{ gate.num }} — {{ gate.title }}</p>
+        <h3 class="mt-4 text-[18px] font-semibold leading-tight" style="font-family:'Syne',sans-serif;">{{ gate.title }}</h3>
+        <p class="mt-3 text-[14px] leading-[1.6] {% if loop.index == 3 %}text-white/70{% else %}text-[#525252]{% endif %}">{{ gate.desc }}</p>
+        <div class="mt-6 w-full h-px {% if loop.index == 3 %}bg-white/10{% else %}bg-black/5{% endif %}"></div>
+        <p class="mt-3 text-[11px] uppercase tracking-wide {% if loop.index == 3 %}text-white/40{% else %}text-black/30{% endif %}">{% if loop.index == 3 %}Drawn then built{% else %}Gate {{ loop.index }} of 7{% endif %}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="mt-8 lg:hidden space-y-3" data-anim="up">
+      {% for gate in gates or [
+        {"num":"01","title":"Discover","desc":"Brief — what space is today, must become, usage, city, budget band, plan/photos"},
+        {"num":"02","title":"Design","desc":"Space planning, concept, materials, moodboard, drawings — plan first, then still"},
+        {"num":"03","title":"Visualize","desc":"3D stills first — one per key room — DRAWN THEN BUILT"},
+        {"num":"04","title":"Plan","desc":"Budget with clarity, BOQ turns still into buildable scope, no fake sqft rate"},
+        {"num":"05","title":"Build","desc":"Civil, MEP, execution, site supervision, ISO 9001"},
+        {"num":"06","title":"Install","desc":"Furniture, joinery, lighting, signage, branding"},
+        {"num":"07","title":"Deliver","desc":"Handover, snag list, warranty, aftercare — one PM accountable"}
+      ] %}
+      <details class="card-premium bg-white p-5 group {% if loop.index == 3 %}bg-[#0f1e36] text-white border-white/10{% endif %}" {% if loop.index == 3 %}open{% endif %}>
+        <summary class="flex justify-between items-center cursor-pointer list-none"><span class="flex gap-3 items-center"><span class="text-[12px] tracking-widest {% if loop.index == 3 %}text-white/50{% else %}text-black/40{% endif %}">{{ gate.num }}</span><span class="text-[15px] font-semibold">{{ gate.title }}</span></span><span class="w-7 h-7 rounded-full border {% if loop.index == 3 %}border-white/20 text-white{% else %}border-black/10{% endif %} flex items-center justify-center group-open:rotate-45 transition flex-shrink-0" aria-hidden="true">+</span></summary>
+        <p class="mt-4 text-[14px] leading-[1.6] {% if loop.index == 3 %}text-white/70{% else %}text-[#525252]{% endif %}">{{ gate.desc }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>

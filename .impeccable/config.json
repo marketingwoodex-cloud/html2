@@ -1,0 +1,6 @@
+{
+  "detector": {
+    "ignoreFiles": ["**/css/tailwind.css", "**/tailwind.css"],
+    "ignoreRules": []
+  }
+}

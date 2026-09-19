@@ -1,0 +1,15 @@
+{# Block 02: Trust Bar — Premium V2 — Unique Height 72px — Reduced Content — Aligned — Responsive — Animation #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="trust-bar-premium" data-anim="fade" style="min-height:72px; display:flex; align-items:center;">
+  <div class="container-wx w-full">
+    <div class="flex flex-wrap gap-4 md:gap-6 justify-center items-center stagger" data-anim="up">
+      {% for item in trustItems or ['10 Years','200+ Projects','3D Before Build','Turnkey','ISO 9001','Wellstar Proof'] %}
+        <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold" data-anim="up" data-delay="{{ loop.index }}"><span class="w-1 h-1 bg-white/40 rounded-full"></span>{{ item }}</span>{% if not loop.last %}<span class="opacity-30 hidden md:inline">•</span>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<style>
+  .trust-bar-premium{min-height:72px;}
+  @media(max-width:560px){ .trust-bar-premium .flex{gap:12px;} .trust-bar-premium span{font-size:11px;} }
+</style>

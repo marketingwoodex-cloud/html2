@@ -1,0 +1,36 @@
+{# Block 25: FAQ — Premium — Balanced Spacing — Animation — Accordion #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="section-premium bg-[#f8f8f8]" data-anim="fade">
+  <div class="container-wx">
+    <div class="max-w-[720px] mb-10" data-anim="up">
+      <p class="eyebrow" style="color:var(--wx-navy);">{{ eyebrow or 'FAQ' }}</p>
+      <h2 class="mt-3" style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.5rem); line-height:1.2;">{{ heading or 'What you need to know before you start' }}</h2>
+    </div>
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 lg:col-span-8">
+        <div class="space-y-3" data-anim="up" data-delay="1">
+          {% for faq in faqs or [
+            {"q":"What is office interior design?","a":"Not decoration, foundation of successful project. Plan first, then still. Room has to work before anyone decorates it."},
+            {"q":"Who is it for?","a":"Corporate offices — first 10 seconds judgment, new hire career decision — Software houses — talent retention focus vs collaboration demo room."},
+            {"q":"What does it include?","a":"Space planning, concept, materials, 3D stills approval, BOQ, execution, furniture, handover — one contract, one team, 3D before execution."},
+            {"q":"What affects cost?","a":"Size, scope, materials, MEP, furniture, branding, timeline — no fake sqft rate, BOQ after 3D approval. Budget with clarity."},
+            {"q":"Why Woodex?","a":"10 years, 200+ projects, ISO 9001, 3 studios, Wellstar DHA Lahore named, one team one contract, 3D before execution, architectural coordination via qualified professionals."}
+          ] %}
+          <details class="card-premium bg-white p-6 group" {% if loop.first %}open{% endif %}>
+            <summary class="flex justify-between items-start gap-4 cursor-pointer list-none"><span class="text-[15px] font-semibold text-[#111] leading-tight">{{ faq.q }}</span><span class="flex-shrink-0 w-8 h-8 rounded-full border border-black/10 flex items-center justify-center group-open:rotate-45 group-open:bg-[#0f1e36] group-open:text-white group-open:border-[#0f1e36] transition" aria-hidden="true">+</span></summary>
+            <p class="mt-4 text-[14px] leading-[1.6] text-[#525252]">{{ faq.a }}</p>
+          </details>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-4" data-anim="right" data-delay="2">
+        <div class="p-6 rounded-[16px] bg-[#fcf2e8] border border-black/5">
+          <p class="text-[12px] tracking-wide uppercase font-semibold text-black/50">Need direct answer?</p>
+          <p class="text-[15px] font-semibold mt-2 text-[#111] leading-tight">Tell us about your space</p>
+          <p class="text-[14px] leading-[1.6] text-[#525252] mt-3">Empty hall, floor plan, brand, or drawings. We answer with the next gate — not a brochure. M-71 Zainab Tower, Model Town Link Road, Lahore — +92 322 4000768.</p>
+          <div class="mt-6"><a href="https://wa.me/923224000768" target="_blank" rel="noopener" class="btn w-full justify-center"><span class="btn-label"><span>WhatsApp Woodex</span></span><span class="btn-icon"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

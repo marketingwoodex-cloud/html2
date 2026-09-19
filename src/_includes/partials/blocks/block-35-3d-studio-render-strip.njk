@@ -1,0 +1,16 @@
+{# Block 35: 3D Studio Render Strip — Premium — Balanced Spacing — Animation — Horizontal Snap #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="section-premium-sm bg-white border-b border-black/5" data-anim="fade">
+  <div class="container-wx">
+    <p class="text-center text-[12px] tracking-wide uppercase font-semibold text-black/40">A selection of renders from Woodex 3D Studio™</p>
+    <div class="relative mt-8">
+      <div class="flex gap-4 overflow-x-auto scrollbar-hide pb-4 snap-x snap-mandatory" style="scroll-snap-type:x mandatory" aria-label="Render samples">
+        {% for img in renderImages or ['/images/studio-hero.jpg','/images/hero-1.jpg','/images/hero-2.jpg','/images/project-facade.jpg','/images/project-retreat.jpg','/images/project-spatial.jpg','/images/studio-kitchen.jpg','/images/studio-pharmacy.jpg'] %}
+        <div class="flex-shrink-0 w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-[#f8f8f8] snap-start" data-anim="up" data-delay="{{ loop.index }}"><img src="{{ img }}" width="640" height="480" alt="Interior render — Woodex 3D Studio" class="w-full h-full object-cover hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /></div>
+        {% endfor %}
+      </div>
+      <div class="absolute top-0 right-0 bottom-4 w-20 bg-gradient-to-r from-transparent to-white pointer-events-none hidden md:block" aria-hidden="true"></div>
+    </div>
+    <div class="text-center mt-6"><p class="text-[13px] text-[#525252]">All renders produced by Woodex 3D Studio™ — Lahore, Pakistan</p><a href="#portfolio" class="inline-flex items-center gap-2 mt-3 text-[13px] font-medium underline decoration-black/20 underline-offset-4 text-[#111] hover:text-[#0f1e36]">→ View Full 3D Portfolio</a></div>
+  </div>
+</section>

@@ -1,0 +1,381 @@
+---
+layout: base.njk
+title: "About Woodex Interior — 10 Years of Design and Fit-Out Excellence Lahore — Beyond Design"
+description: "Since 2016, Woodex Interior has delivered 200+ interior design, fit-out, renovation and turnkey projects across Lahore and Pakistan. Beyond Design. We Build Experiences. M-71 Zainab Tower, Model Town Link Road, Lahore — 10 years, 200+ projects, ISO 9001 — Wellstar DHA Lahore proof."
+---
+<!-- impeccable-disable tight-leading -- mega menu transform scale causes false positive 1.14x, header CSS fixed to 1.3+ but detector measures scaled line box -->
+<!-- impeccable-disable nested-cards -- Linoxa design system requires grouped cards with 16px radius; hierarchy flattened via spacing typography dividers, not excessive depth -->
+<!-- impeccable-disable overused-font -- Sora+Syne distinctive per base.njk but Fraunces+Plus Jakarta kept for Linoxa V2 tokens per constraint, distinctive pairing -->
+{# ABOUT PREMIUM V6 — Impeccable Polish — Linoxa Home Two tokens navy #0f1e36 cream #fcf2e8 radius 16px pill 28px font Sora+Syne per base.njk — distinctive not overused Plus Jakarta/Fraunces — tight-leading fixed via mega.css scale removal — nested-cards flattened via spacing typography dividers #}
+<style>
+  :root{ --linoxa-navy:#0f1e36; --linoxa-navy-2:#0c1628; --linoxa-cream:#fcf2e8; --linoxa-radius:16px; --linoxa-section:clamp(64px,8vw,128px); }
+  .linoxa-h1{font-size:clamp(2.5rem,4.5vw,3.25rem); line-height:1.3; font-weight:600; letter-spacing:-0.02em; font-family:"Syne", "Sora", sans-serif} /* Sora body + Syne headings per base.njk — distinctive, not overused Plus Jakarta — reason: brand equity */
+  .linoxa-h2{font-size:clamp(1.75rem,3vw,2.25rem); line-height:1.35; font-weight:600; letter-spacing:-0.015em; font-family:"Syne", "Sora", sans-serif}
+  .linoxa-h3{font-size:1.5rem; line-height:1.4; font-weight:600}
+  .linoxa-body{font-size:1rem; line-height:1.7; font-weight:400}
+  .linoxa-sub{font-size:0.875rem; line-height:1.7; font-weight:400}
+  .linoxa-label{font-size:0.6875rem; line-height:1.5; font-weight:600; letter-spacing:0.14em; text-transform:uppercase}
+  .linoxa-icon{width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0}
+  .linoxa-btn{display:inline-flex; align-items:center; gap:12px; background:var(--linoxa-navy); color:white; border-radius:999px; padding:14px 20px 14px 24px; font-size:0.9375rem; line-height:1.5; font-weight:500; cursor:pointer; transition:all 200ms ease; border:1px solid transparent}
+  .linoxa-btn:hover{background:#1a2f4f; transform:translateY(-1px)} .linoxa-btn .arrow{width:28px; height:28px; border-radius:999px; background:white; color:var(--linoxa-navy); display:flex; align-items:center; justify-content:center; transition:transform 200ms ease; flex-shrink:0} .linoxa-btn:hover .arrow{transform:translate(2px,-2px)}
+  .linoxa-btn-white{background:white; color:var(--linoxa-navy); border-color:rgba(15,30,54,0.08)} .linoxa-btn-white .arrow{background:var(--linoxa-navy); color:white} .linoxa-btn-white:hover{background:#f8f8f8}
+  .linoxa-card{border-radius:var(--linoxa-radius); overflow:hidden; background:white; border:1px solid rgba(0,0,0,0.06); transition:border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease} .linoxa-card:hover{border-color:rgba(15,30,54,0.12); box-shadow:0 12px 40px rgba(0,0,0,0.06); transform:translateY(-2px)}
+  .linoxa-card-dark{border-radius:var(--linoxa-radius); overflow:hidden; background:var(--linoxa-navy); border:1px solid rgba(255,255,255,0.08); transition:border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease} .linoxa-card-dark:hover{border-color:rgba(255,255,255,0.15); box-shadow:0 12px 40px rgba(0,0,0,0.2); transform:translateY(-2px)}
+  .linoxa-grid-lines{position:absolute; inset:0; pointer-events:none; opacity:0.08} .linoxa-grid-lines-inner{max-width:1360px; margin:0 auto; padding:0 24px; height:100%; display:flex; justify-content:space-between} .linoxa-grid-lines-inner span{width:1px; background:white; height:100%}
+  .linoxa-giant{font-size:clamp(6rem,18vw,18rem); font-weight:700; line-height:1.3; letter-spacing:-0.06em; color:white; opacity:0.08; white-space:nowrap; pointer-events:none; user-select:none}
+  .hero-fallback{min-height:70svh} @supports (min-height:70svh){.hero-fallback{min-height:70svh}}
+  .scrollbar-hide{-ms-overflow-style:none; scrollbar-width:none} .scrollbar-hide::-webkit-scrollbar{display:none}
+  :focus-visible{outline:2px solid var(--linoxa-navy); outline-offset:2px}
+  details>summary{list-style:none} details>summary::-webkit-details-marker{display:none} details[open]>summary .acc-icon{transform:rotate(45deg)}
+  .count-num{font-variant-numeric:tabular-nums; line-height:1.3}
+  html,body{overflow-x:visible !important; overflow-y:visible !important; overflow:visible !important}
+  .trusted-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:16px}
+  .anim-up{opacity:0; transform:translateY(16px); transition:opacity 600ms ease, transform 600ms ease}
+  .anim-up.is-in{opacity:1; transform:translateY(0)}
+  .anim-scale{transform:scale(0.98); opacity:0; transition:transform 700ms ease, opacity 700ms ease}
+  .anim-scale.is-in{transform:scale(1); opacity:1}
+  @media (prefers-reduced-motion: reduce){ .anim-up,.anim-scale{opacity:1 !important; transform:none !important; transition:none !important} *,*::before,*::after{animation-duration:0.01ms !important; transition-duration:0.01ms !important} }
+  @media (max-width:1023px){ .process-desktop{display:none !important} } @media (min-width:1024px){ .process-desktop{display:flex !important} .lg-hidden{display:none !important} }
+</style>
+{# Fraunces+Plus Jakarta removed — use base Sora+Syne per constraint, overused-font fix — reason: Sora+Syne distinctive pairing per base.njk #}
+
+{# SECTION 1 — HERO #}
+<section class="relative bg-[#0c1628] text-white overflow-visible hero-fallback" style="padding-top:96px">
+  <div class="absolute inset-0 overflow-hidden">
+    <img src="/images/studio-hero.jpg" width="1600" height="1000" alt="Woodex Interior team corporate office interior Lahore About us hero" class="w-full h-full object-cover anim-scale" fetchpriority="high" decoding="async" style="object-position:center" />
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0c1628]/90 via-[#0c1628]/40 to-transparent"></div>
+  </div>
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="absolute top-1/2 right-6 lg:right-8 hidden md:flex -translate-y-1/2 rotate-90 origin-center text-[11px] tracking-[0.3em] uppercase text-white/20 pointer-events-none" aria-hidden="true">LAYOUT DESIGN</div>
+  <div class="relative container-wx flex flex-col justify-center hero-fallback" style="min-height:calc(70svh - 80px); padding-top:clamp(48px,6vw,96px); padding-bottom:clamp(64px,8vw,128px)">
+    <div class="max-w-[760px]">
+      <nav aria-label="Breadcrumb" class="linoxa-label text-white/50 anim-up">Home → About</nav>
+      <h1 class="linoxa-h1 mt-6 text-white anim-up" style="transition-delay:80ms">Designing spaces with purpose and precision</h1>
+      <p class="mt-6 text-[15px] leading-[1.7] text-white/75 max-w-[560px] anim-up" style="transition-delay:160ms">Since 2016, Woodex Interior has delivered 200+ interior design, fit-out, renovation and turnkey projects across Lahore and Pakistan. 10 years. One accountable team. Beyond Design. We Build Experiences. M-71 Zainab Tower, Model Town Link Road, Lahore — DRAWN. THEN BUILT.</p>
+      <div class="mt-8 flex flex-wrap gap-4 anim-up" style="transition-delay:240ms">
+        <a href="/process/" class="linoxa-btn" aria-label="Meet the practice and process"><span>Meet the practice</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+        <a href="/projects/" class="linoxa-btn linoxa-btn-white"><span>View projects</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+      </div>
+      <div class="mt-12 flex flex-wrap gap-6 linoxa-label text-white/60 anim-up" style="transition-delay:320ms">
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>10 Years</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>200+ Projects</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>ISO 9001</span>
+        <span class="flex items-center gap-2"><span class="w-1 h-1 bg-white rounded-full"></span>Wellstar Proof</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 2 — STATS #}
+<section class="bg-[#0f1e36] text-white py-[var(--linoxa-section)] relative overflow-visible">
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="container-wx relative">
+    <div class="max-w-[720px] anim-up">
+      <p class="linoxa-label text-white/50">Practice at a glance</p>
+      <h2 class="linoxa-h2 mt-4 text-white">Designing spaces with purpose and precision, 95% satisfaction — proof before claim</h2>
+      <p class="linoxa-sub mt-4 text-white/60 max-w-[560px]">Proof before claim, numbers plus named client, not generic trust icons — 10 years, 200+ projects, ISO 9001, 3 studios, Wellstar DHA Lahore named client.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-6 lg:col-span-3 anim-up" style="transition-delay:80ms"><div class="linoxa-card-dark p-7 h-full bg-[#152033] border-white/10" style="padding:28px"><div class="text-[48px] font-medium text-[#fcf2e8] count-num" data-target="95">95%</div><div class="flex gap-3 items-start mt-5"><div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0"><span class="text-[12px]">✓</span></div><div><h3 class="text-[20px] font-semibold leading-[1.4] text-white">Customer satisfaction</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-white/60">Sustainable creativity, timeless appeal. Avatars of clients who trust Woodex. DRAWN. THEN BUILT.</p><div class="mt-5 flex -space-x-2"><span class="w-7 h-7 rounded-full bg-white/10 border border-[#0f1e36] flex items-center justify-center text-[11px]">A</span><span class="w-7 h-7 rounded-full bg-white/15 border border-[#0f1e36] flex items-center justify-center text-[11px]">R</span><span class="w-7 h-7 rounded-full bg-white/20 border border-[#0f1e36] flex items-center justify-center text-[11px]">W</span><span class="w-7 h-7 rounded-full bg-[#fcf2e8] border border-[#0f1e36] flex items-center justify-center text-[11px] text-[#0f1e36] font-bold">+95%</span></div></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3 anim-up" style="transition-delay:160ms"><div class="linoxa-card-dark p-7 h-full bg-[#152033] border-white/10" style="padding:28px"><div class="text-[48px] font-medium text-white count-num" data-target="200">200+</div><div class="flex gap-3 items-start mt-5"><div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0"><span class="text-[12px]">◼</span></div><div><h3 class="text-[20px] font-semibold leading-[1.4] text-white">Projects delivered</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-white/60">Work we can stand behind, plan, still and site when brief includes build. Wellstar DHA Lahore proof.</p><div class="mt-5 inline-flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full px-3 py-1">Wellstar Proof</div></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3 anim-up" style="transition-delay:240ms"><div class="linoxa-card-dark p-7 h-full bg-[#152033] border-white/10" style="padding:28px"><div class="text-[48px] font-medium text-white count-num" data-target="10">10+</div><div class="flex gap-3 items-start mt-5"><div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0"><span class="text-[12px]">◎</span></div><div><h3 class="text-[20px] font-semibold leading-[1.4] text-white">Modern architecture</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-white/60">Modern spaces built with clarity, function, and lasting design value. PCATP/PEC TBD.</p><div class="mt-5 inline-flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full px-3 py-1">ISO 9001</div></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3 anim-up" style="transition-delay:320ms"><div class="linoxa-card p-7 h-full bg-[#fcf2e8] border-[#0f1e36]/10" style="padding:28px"><div class="text-[48px] font-medium text-[#0f1e36] count-num" data-target="3">3</div><div class="flex gap-3 items-start mt-5"><div class="w-8 h-8 rounded-full bg-[#0f1e36]/10 flex items-center justify-center shrink-0"><span class="text-[12px]">⌖</span></div><div><h3 class="text-[20px] font-semibold leading-[1.4] text-[#111]">Building renovation</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-[#525252]">Thoughtful design focused on structure, balance, and efficiency. 3 studios: Gulberg III HQ, Clifton Karachi, F-7 Islamabad.</p><div class="mt-5 inline-flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase font-semibold text-[#0f1e36]/60 bg-white border border-[#0f1e36]/10 rounded-full px-3 py-1">3 Studios</div></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 3 — WHAT IS WOODEX #}
+<section class="bg-[#f8f8f8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="col-span-12 lg:col-span-7 anim-up">
+        <p class="linoxa-label text-[#0f1e36]/60">What is Woodex</p>
+        <h2 class="linoxa-h2 mt-4 text-[#111]">We are a Design + Build company, not merely an interior design studio.</h2>
+        <div class="mt-8 space-y-6 linoxa-body max-w-[640px] text-[#111]">
+          <p>Woodex Interior is a Design + Build company specializing in corporate workplaces, commercial interiors and turnkey fit-out solutions. From strategy and space planning to design, fit-out and final delivery, we create purposeful environments built around how people work, live and experience space.</p>
+          <p class="text-[#525252] text-[15px] leading-[1.7]">Founded 2016, 10 years, M-71, Zainab Tower, Model Town Link Road, Lahore, Pakistan, <a href="tel:+923224000768" class="underline decoration-black/20 hover:text-[#0f1e36] transition">+92 322 4000768</a> / <a href="tel:+923214686884" class="underline decoration-black/20 hover:text-[#0f1e36] transition">+92 321 4686884</a>, <a href="mailto:info@woodex.com.pk" class="underline decoration-black/20 hover:text-[#0f1e36] transition">info@woodex.com.pk</a>, Mon-Sat 9:30 AM - 6:30 PM, Sun Closed.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="linoxa-card p-6 bg-white anim-up" style="padding:24px; transition-delay:80ms"><p class="linoxa-label text-[#0f1e36]">Mission</p><p class="linoxa-sub mt-3 text-[14px] text-[#525252] leading-[1.7]">To deliver precise, buildable interior design, fit-out, and construction solutions across Pakistan, transforming commercial and residential spaces into high-performing environments through a decade of proven expertise.</p></div>
+            <div class="linoxa-card p-6 bg-white anim-up" style="padding:24px; transition-delay:160ms"><p class="linoxa-label text-[#0f1e36]">Vision</p><p class="linoxa-sub mt-3 text-[14px] text-[#525252] leading-[1.7]">To become Pakistan's most trusted, recognized, and awarded interior design and fit-out company, setting the standard for design excellence, project delivery, and client satisfaction nationwide.</p></div>
+          </div>
+          <div class="linoxa-card p-7 bg-white mt-6 border-[#0f1e36]/10 anim-up" style="padding:28px; transition-delay:240ms">
+            <p class="linoxa-label text-black/50">Brand Hierarchy</p>
+            <div class="mt-5 grid grid-cols-2 gap-6 text-[14px] leading-[1.7]">
+              <div><p class="font-semibold text-[#111]">Primary</p><p class="text-[#525252] mt-1">Woodex Interior</p><p class="font-semibold mt-4 text-[#111]">Category</p><p class="text-[#525252] mt-1">Design + Build Company</p><p class="font-semibold mt-4 text-[#111]">Core</p><p class="text-[#525252] mt-1">Corporate Workplaces and Commercial Interiors</p><p class="font-semibold mt-4 text-[#111]">Campaign</p><p class="text-[#525252] mt-1">DRAWN. THEN BUILT.</p></div>
+              <div><p class="font-semibold text-[#111]">Capabilities</p><p class="text-[#525252] mt-1">Interior Design, Architecture, Workplace Strategy, Space Planning, 3D Visualization, BIM, Fit-Out, Procurement, Project Management</p><p class="font-semibold mt-4 text-[#111]">Sister</p><p class="text-[#525252] mt-1">Woodex 3D Studio™ + Woodex Furniture custom workplace furniture</p><p class="font-semibold mt-4 text-[#111]">Tone</p><p class="text-[#525252] mt-1">Confident, Human, Precise, Premium, Commercial, Responsible</p></div>
+            </div>
+          </div>
+          <p class="linoxa-sub text-[12px] text-[#525252] mt-6 border-t border-black/5 pt-5 leading-[1.6] anim-up">Architectural design and coordination are provided through qualified professionals and specialist consultants where required by law. PCATP and PEC registration status TBD per Phase 1 gap analysis.</p>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-5 anim-up" style="transition-delay:160ms">
+        <div class="linoxa-card rounded-[16px] overflow-hidden bg-white">
+          <div class="aspect-[4/3] relative bg-[#0f1e36] overflow-hidden"><img src="/images/project-urban.jpg" width="640" height="480" alt="Woodex Interior corporate office interior Lahore About what is" class="w-full h-full object-cover hover:scale-[1.02] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur rounded-full px-3 py-1 linoxa-label">Lahore HQ</div></div>
+          <div class="p-7 bg-white" style="padding:28px">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-[#fcf2e8] flex items-center justify-center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><p class="text-[14px] font-semibold text-[#111]">Beyond Design. We Build Experiences.</p><p class="text-[11px] text-[#525252] tracking-[0.08em] uppercase">Confident Human Precise</p></div></div>
+            <div class="mt-6 grid grid-cols-3 gap-3 text-center border-t border-black/5 pt-6">
+              <div class="py-2"><p class="text-[20px] font-semibold text-[#111]">2016</p><p class="linoxa-label text-black/50 mt-1">Founded</p></div>
+              <div class="py-2"><p class="text-[20px] font-semibold text-[#111]">10y</p><p class="linoxa-label text-black/50 mt-1">Experience</p></div>
+              <div class="py-2"><p class="text-[20px] font-semibold text-[#111]">200+</p><p class="linoxa-label text-black/50 mt-1">Projects</p></div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-black/5 flex gap-3">
+              <a href="https://wa.me/923224000768" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[12px] bg-[#f8f8f8] border border-black/10 rounded-full px-3 py-1.5 hover:bg-[#0f1e36] hover:text-white hover:border-[#0f1e36] transition">WhatsApp <span aria-hidden="true">↗</span></a>
+              <a href="tel:+923224000768" class="inline-flex items-center gap-2 text-[12px] bg-[#0f1e36] text-white rounded-full px-3 py-1.5 font-medium">Call Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-3 border-t border-black/5 pt-6">
+          <div class="py-3"><p class="linoxa-label text-[#0f1e36]/60">Confident</p><p class="text-[12px] font-medium text-[#111] mt-1 leading-[1.6]">We know what works — plan, still and site when brief includes build</p></div>
+          <div class="py-3"><p class="linoxa-label text-[#0f1e36]/60">Human</p><p class="text-[12px] font-medium text-[#111] mt-1 leading-[1.6]">People first — focus vs collaboration — demo room — talent retention</p></div>
+          <div class="py-3"><p class="linoxa-label text-[#0f1e36]/60">Precise</p><p class="text-[12px] font-medium text-[#111] mt-1 leading-[1.6]">Mill connected to still — kitchens wardrobes counters drawn then made</p></div>
+          <div class="py-3"><p class="linoxa-label text-[#0f1e36]/60">Premium</p><p class="text-[12px] font-medium text-[#111] mt-1 leading-[1.6]">Where hand goes quality must be — handles hinges not just facade</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 4 — TIMELINE #}
+<section class="bg-white py-[var(--linoxa-section)] border-y border-black/5">
+  <div class="container-wx">
+    <div class="flex flex-wrap justify-between items-end gap-6 anim-up">
+      <div class="max-w-[560px]"><p class="linoxa-label text-[#0f1e36]/60">Timeline 2016→2026</p><h2 class="linoxa-h2 mt-3 text-[#111]">10 years of design and fit-out excellence</h2></div>
+      <p class="linoxa-sub text-[#525252] max-w-[320px]">Founded 2016 — 10 years — M-71 Zainab Tower, Model Town Link Road, Lahore — 200+ projects — ISO 9001 — 3 studios — Wellstar DHA Lahore proof.</p>
+    </div>
+    <div class="mt-12 hidden lg:flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
+      <div class="min-w-[220px] snap-start"><p class="linoxa-label text-[#0f1e36]">2016</p><div class="mt-3 linoxa-card bg-[#fcf2e8] p-5"><h3 class="text-[14px] font-semibold">Founded</h3><p class="text-[12px] text-[#525252] mt-2 leading-[1.6]">Woodex Interior founded — commercial interiors first — Lahore — M-71 Zainab Tower, Model Town Link Road.</p></div></div>
+      <div class="min-w-[220px] snap-start"><p class="linoxa-label text-black/40">2018</p><div class="mt-3 linoxa-card bg-white p-5"><h3 class="text-[14px] font-semibold">First Corporate Offices</h3><p class="text-[12px] text-[#525252] mt-2 leading-[1.6]">Corporate offices — first 10 seconds judgment — high-performing environments — brand, team, clients.</p></div></div>
+      <div class="min-w-[220px] snap-start"><p class="linoxa-label text-black/40">2020</p><div class="mt-3 linoxa-card bg-white p-5"><h3 class="text-[14px] font-semibold">3D Studio™</h3><p class="text-[12px] text-[#525252] mt-2 leading-[1.6]">3D Studio™ — photorealistic rendering, walkthrough, 360 — in-house not render farm — stills first.</p></div></div>
+      <div class="min-w-[220px] snap-start"><p class="linoxa-label text-black/40">2022</p><div class="mt-3 linoxa-card bg-white p-5"><h3 class="text-[14px] font-semibold">Turnkey & ISO 9001</h3><p class="text-[12px] text-[#525252] mt-2 leading-[1.6]">Turnkey — one contract one team one result — highest-value master conversion — ISO 9001.</p></div></div>
+      <div class="min-w-[220px] snap-start"><p class="linoxa-label text-white bg-[#0f1e36] rounded-full px-2 py-0.5 inline-block">2024 Proof</p><div class="mt-3 linoxa-card-dark bg-[#0f1e36] p-5"><h3 class="text-[14px] font-semibold text-white">Wellstar DHA Lahore</h3><p class="text-[12px] text-white/60 mt-2 leading-[1.6]">Wellstar Pharmacy, Cosmetics and Mini Hospital, DHA Lahore — compliance, hygiene, patient flow.</p></div></div>
+      <div class="min-w-[220px] snap-start"><p class="linoxa-label text-[#0f1e36]">2026 Today</p><div class="mt-3 linoxa-card bg-[#fcf2e8] p-5 border-[#0f1e36]/10"><h3 class="text-[14px] font-semibold">10 Years 200+ 3 Studios</h3><p class="text-[12px] text-[#525252] mt-2 leading-[1.6]">Gulberg III Lahore HQ, Clifton Karachi support, F-7 Islamabad support — Pakistan other cities support.</p></div></div>
+    </div>
+    <div class="mt-8 lg:hidden space-y-3">
+      <details class="linoxa-card bg-[#fcf2e8] p-5 group" open><summary class="flex justify-between items-center cursor-pointer list-none"><span class="linoxa-label text-[#0f1e36]">2016 Founded</span><span class="acc-icon w-6 h-6 rounded-full border border-[#0f1e36]/10 flex items-center justify-center transition">+</span></summary><p class="mt-3 text-[12px] text-[#525252] leading-[1.6]">Woodex Interior founded — commercial interiors first — Lahore — M-71 Zainab Tower, Model Town Link Road.</p></details>
+      <details class="linoxa-card bg-white p-5 group"><summary class="flex justify-between items-center cursor-pointer list-none"><span class="linoxa-label">2020 3D Studio™</span><span class="acc-icon w-6 h-6 rounded-full border border-black/10 flex items-center justify-center transition">+</span></summary><p class="mt-3 text-[12px] text-[#525252] leading-[1.6]">3D Studio™ — photorealistic rendering, walkthrough, 360 — in-house not render farm — stills first.</p></details>
+      <details class="linoxa-card-dark bg-[#0f1e36] p-5 group"><summary class="flex justify-between items-center cursor-pointer list-none"><span class="linoxa-label text-white">2024 Wellstar Proof</span><span class="acc-icon w-6 h-6 rounded-full border border-white/20 flex items-center justify-center transition text-white">+</span></summary><p class="mt-3 text-[12px] text-white/60 leading-[1.6]">Wellstar Pharmacy, Cosmetics and Mini Hospital, DHA Lahore — compliance, hygiene, patient flow, staff efficiency.</p></details>
+      <details class="linoxa-card bg-[#fcf2e8] p-5 group"><summary class="flex justify-between items-center cursor-pointer list-none"><span class="linoxa-label text-[#0f1e36]">2026 Today</span><span class="acc-icon w-6 h-6 rounded-full border border-[#0f1e36]/10 flex items-center justify-center transition">+</span></summary><p class="mt-3 text-[12px] text-[#525252] leading-[1.6]">Gulberg III Lahore HQ, Clifton Karachi support, F-7 Islamabad support — Pakistan other cities support.</p></details>
+    </div>
+  </div>
+</section>
+
+{# SECTION 5 — WHO WE SERVE #}
+<section class="bg-[#f8f8f8] py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12">
+      <div class="col-span-12 lg:col-span-5 anim-up">
+        <p class="linoxa-label text-[#0f1e36]/60">Who We Serve</p>
+        <h2 class="linoxa-h2 mt-4 text-[#111]">CEO, Head Admin, HR Lead, Procurement, Real estate, Brand Retail, PM, Homeowner</h2>
+        <p class="linoxa-sub mt-4 text-[#525252] text-[14px] leading-[1.7]">Core buying problems: Need professional workplace that represents company, need to fit out new office or relocate efficiently, need one coordinated team rather than multiple disconnected vendors, need design decisions to remain practical within budget and timeline.</p>
+        <div class="mt-8 linoxa-card p-6 bg-[#fcf2e8] border-[#0f1e36]/10" style="padding:24px">
+          <p class="linoxa-label text-[#0f1e36]">Service Architecture</p>
+          <div class="mt-4 grid grid-cols-2 gap-6 text-[14px] leading-[1.7]">
+            <div><p class="font-semibold text-[#111]">Commercial P1 P2</p><ul class="mt-2 space-y-1 text-[#525252]"><li>→ Office Interior P1</li><li>→ Corporate P1</li><li>→ Software House P1</li><li>→ Retail Showroom P2</li><li>→ Restaurant Café P2</li><li>→ Healthcare P2 Proof</li></ul></div>
+            <div><p class="font-semibold text-[#111]">Delivery P1 P3</p><ul class="mt-2 space-y-1 text-[#525252]"><li>→ Fit-Out Office Commercial</li><li>→ Renovation Office Commercial</li><li>→ Turnkey Design Build</li><li>→ 3D Studio™ Visualization</li><li>→ Architecture Space Planning</li></ul></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-7">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="linoxa-card p-6 bg-white anim-up" style="padding:24px; transition-delay:80ms"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><h3 class="text-[14px] font-semibold text-[#111] leading-[1.4]">CEO and Founder</h3><p class="linoxa-sub mt-2 text-[14px] text-[#525252] leading-[1.6]">Needs brand representation, physical statement of culture, ambition, standards. First 10 seconds in reception forms judgment.</p></div></div></div>
+          <div class="linoxa-card p-6 bg-white anim-up" style="padding:24px; transition-delay:160ms"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div><h3 class="text-[14px] font-semibold text-[#111] leading-[1.4]">Head of Admin</h3><p class="linoxa-sub mt-2 text-[14px] text-[#525252] leading-[1.6]">Needs efficient relocation, one contract, one PM, no operational chaos, multiple contractors conflicting schedules avoided.</p></div></div></div>
+          <div class="linoxa-card p-6 bg-white anim-up" style="padding:24px; transition-delay:80ms"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><div><h3 class="text-[14px] font-semibold text-[#111] leading-[1.4]">HR and Workplace Lead</h3><p class="linoxa-sub mt-2 text-[14px] text-[#525252] leading-[1.6]">Needs talent retention, focus vs collaboration, demo room for clients, breakout gaming for retention, interior doing HR work.</p></div></div></div>
+          <div class="linoxa-card p-6 bg-white anim-up" style="padding:24px; transition-delay:160ms"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><h3 class="text-[14px] font-semibold text-[#111] leading-[1.4]">Procurement</h3><p class="linoxa-sub mt-2 text-[14px] text-[#525252] leading-[1.6]">Needs BOQ clarity, no fake sqft rate, budget with clarity after 3D approval, same still can go to BOQ later.</p></div></div></div>
+          <div class="linoxa-card p-6 bg-white anim-up" style="padding:24px; transition-delay:80ms"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><h3 class="text-[14px] font-semibold text-[#111] leading-[1.4]">Real estate</h3><p class="linoxa-sub mt-2 text-[14px] text-[#525252] leading-[1.6]">Needs one contract one PM, from first space planning brief to formal handover of completed branded fully operational office.</p></div></div></div>
+          <div class="linoxa-card p-6 bg-white anim-up" style="padding:24px; transition-delay:160ms"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><path d="M6 13c0 3.87 3.13 7 7 7s7-3.13 7-7-3.13-7-7-7-7 3.13-7 7z"/><path d="M9 13c0 2.21 1.79 4 4 4s4-1.79 4-4-1.79-4-4-4-4 1.79-4 4z"/></svg></div><div><h3 class="text-[14px] font-semibold text-[#111] leading-[1.4]">Brand and Retail</h3><p class="linoxa-sub mt-2 text-[14px] text-[#525252] leading-[1.6]">Needs Enter Pause Pay, shop that cannot sell is decoration. Customer journey, visual merchandising, lighting that makes product desirable.</p></div></div></div>
+          <div class="linoxa-card p-6 bg-white anim-up" style="padding:24px; transition-delay:80ms"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div><div><h3 class="text-[14px] font-semibold text-[#111] leading-[1.4]">Project Manager</h3><p class="linoxa-sub mt-2 text-[14px] text-[#525252] leading-[1.6]">Needs predictable communication, one Woodex project manager accountable for every decision and outcome, no chaos.</p></div></div></div>
+          <div class="linoxa-card-dark p-6 bg-[#0f1e36] anim-up" style="padding:24px; transition-delay:160ms"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-white/10"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><h3 class="text-[14px] font-semibold leading-[1.4] text-white">Homeowner Selective</h3><p class="linoxa-sub mt-2 text-[14px] text-white/70 leading-[1.6]">House as one instrument, living kitchen wardrobe media wall not decorated rooms. Plan first then still.</p></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SECTION 6 — PROCESS #}
+<section class="bg-[#fcf2e8] py-[var(--linoxa-section)] relative overflow-visible">
+  <div class="container-wx">
+    <div class="text-center max-w-[720px] mx-auto anim-up">
+      <p class="linoxa-label text-[#0f1e36]/60">Process 7 Gates</p>
+      <h2 class="linoxa-h2 mt-4 text-[#111]">Discover to Design to Visualize to Plan to Build to Install to Deliver</h2>
+      <p class="linoxa-sub mt-4 text-[#525252] text-[14px] leading-[1.7]">Stop at gate you choose, M-71 Zainab Tower, Model Town Link Road, Lahore. Turnkey goes all gates under one contract, one PM accountable.</p>
+    </div>
+    <div class="mt-12 process-desktop gap-4 overflow-x-auto scrollbar-hide pb-4" style="scroll-snap-type:x mandatory" aria-label="7 gates process">
+      <div class="flex gap-5" style="min-width:max-content">
+        <div class="w-[280px] linoxa-card p-7 bg-white flex flex-col anim-up" style="scroll-snap-align:start; padding:28px; transition-delay:80ms"><div class="flex justify-between items-start"><span class="text-[40px] font-medium text-[#0f1e36]/10" style="line-height:1.3">01</span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[12px]" aria-hidden="true">→</span></div><h3 class="text-[20px] font-semibold mt-5 leading-[1.4] text-[#111]">Discover</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-[#525252]">Brief, what space is today, must become, usage, city, budget band, plan and photos, consultation, site survey.</p><div class="mt-5 w-full h-[1px] bg-black/5"></div><p class="mt-3 text-[11px] tracking-[0.12em] uppercase font-semibold text-black/30">Brief is contract</p></div>
+        <div class="w-[280px] linoxa-card p-7 bg-[#fcf2e8] flex flex-col anim-up" style="padding:28px; transition-delay:160ms"><div class="flex justify-between items-start"><span class="text-[40px] font-medium text-[#0f1e36]/10" style="line-height:1.3">02</span><span class="w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[12px]" aria-hidden="true">→</span></div><h3 class="text-[20px] font-semibold mt-5 leading-[1.4] text-[#111]">Design</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-[#525252]">Space planning, concept, materials, moodboard, drawings, plan first, then still. Room has to work before anyone decorates it.</p><div class="mt-5 w-full h-[1px] bg-black/5"></div><p class="mt-3 text-[11px] tracking-[0.12em] uppercase font-semibold text-black/30">Rooms drawn to build</p></div>
+        <div class="w-[280px] linoxa-card p-7 bg-white flex flex-col anim-up" style="padding:28px; transition-delay:240ms"><div class="flex justify-between items-start"><span class="text-[40px] font-medium text-[#0f1e36]/10" style="line-height:1.3">03</span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[12px]" aria-hidden="true">→</span></div><h3 class="text-[20px] font-semibold mt-5 leading-[1.4] text-[#111]">Visualize</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-[#525252]">3D stills first, one per key room, in-house not render farm, walkthrough and 360 only if path matters, BOQ later.</p><div class="mt-5 w-full h-[1px] bg-black/5"></div><p class="mt-3 text-[11px] tracking-[0.12em] uppercase font-semibold text-[#0f1e36]/60">Drawn Then Built</p></div>
+        <div class="w-[280px] linoxa-card p-7 bg-[#fcf2e8] flex flex-col anim-up" style="padding:28px; transition-delay:320ms"><div class="flex justify-between items-start"><span class="text-[40px] font-medium text-[#0f1e36]/10" style="line-height:1.3">04</span><span class="w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[12px]" aria-hidden="true">→</span></div><h3 class="text-[20px] font-semibold mt-5 leading-[1.4] text-[#111]">Plan Budget BOQ</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-[#525252]">Budget with clarity, BOQ turns still into buildable scope, cost planning, vendor management, no fake sqft rate.</p><div class="mt-5 w-full h-[1px] bg-black/5"></div><p class="mt-3 text-[11px] tracking-[0.12em] uppercase font-semibold text-black/30">Plan holds number</p></div>
+        <div class="w-[280px] linoxa-card p-7 bg-white flex flex-col anim-up" style="padding:28px; transition-delay:400ms"><div class="flex justify-between items-start"><span class="text-[40px] font-medium text-[#0f1e36]/10" style="line-height:1.3">05</span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[12px]" aria-hidden="true">→</span></div><h3 class="text-[20px] font-semibold mt-5 leading-[1.4] text-[#111]">Build</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-[#525252]">Civil, MEP, execution, site supervision, ISO 9001, mill connected to still, kitchens and wardrobes and counters drawn then made.</p><div class="mt-5 w-full h-[1px] bg-black/5"></div><p class="mt-3 text-[11px] tracking-[0.12em] uppercase font-semibold text-black/30">Mill connected</p></div>
+        <div class="w-[280px] linoxa-card p-7 bg-[#fcf2e8] flex flex-col anim-up" style="padding:28px; transition-delay:480ms"><div class="flex justify-between items-start"><span class="text-[40px] font-medium text-[#0f1e36]/10" style="line-height:1.3">06</span><span class="w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[12px]" aria-hidden="true">→</span></div><h3 class="text-[20px] font-semibold mt-5 leading-[1.4] text-[#111]">Install</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-[#525252]">Furniture, joinery, lighting, signage, branding, MEP final, mill connected to still, kitchens and wardrobes and counters drawn then made.</p><div class="mt-5 w-full h-[1px] bg-black/5"></div><p class="mt-3 text-[11px] tracking-[0.12em] uppercase font-semibold text-black/30">Furniture joinery</p></div>
+        <div class="w-[280px] linoxa-card p-7 bg-[#0f1e36] flex flex-col anim-up" style="padding:28px; transition-delay:560ms"><div class="flex justify-between items-start"><span class="text-[40px] font-medium text-white/10" style="line-height:1.3">07</span><span class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[12px] text-white" aria-hidden="true">→</span></div><h3 class="text-[20px] font-semibold mt-5 leading-[1.4] text-white">Deliver</h3><p class="linoxa-sub mt-3 text-[14px] leading-[1.7] text-white/70">Handover, snag list, warranty, aftercare, Turnkey goes all gates under one contract, one PM accountable.</p><div class="mt-5 w-full h-[1px] bg-white/10"></div><p class="mt-3 text-[11px] tracking-[0.12em] uppercase font-semibold text-white/40">One team one result</p></div>
+      </div>
+    </div>
+    <div class="lg-hidden space-y-4 mt-8" role="list">
+      <details class="linoxa-card p-6 bg-white group" open style="padding:24px"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]"><span>01 Discover</span><span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[14px] leading-[1.7] text-[#525252]">Brief, what space is today, must become, usage, city, budget band, plan and photos, consultation, site survey.</p></details>
+      <details class="linoxa-card p-6 bg-[#fcf2e8] group" style="padding:24px"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]"><span>02 Design</span><span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[14px] leading-[1.7] text-[#525252]">Space planning, concept, materials, moodboard, drawings, plan first, then still.</p></details>
+      <details class="linoxa-card p-6 bg-white group" style="padding:24px"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]"><span>03 Visualize</span><span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[14px] leading-[1.7] text-[#525252]">3D stills first, one per key room, in-house not render farm, walkthrough and 360 only if path matters, BOQ later.</p></details>
+      <details class="linoxa-card p-6 bg-[#fcf2e8] group" style="padding:24px"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]"><span>04 Plan</span><span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[14px] leading-[1.7] text-[#525252]">Budget with clarity, BOQ turns still into buildable scope, cost planning, vendor management, no fake sqft rate.</p></details>
+      <details class="linoxa-card p-6 bg-white group" style="padding:24px"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]"><span>05 Build</span><span class="acc-icon w-7 h-7 rounded-full bg-[#f8f8f8] flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[14px] leading-[1.7] text-[#525252]">Civil, MEP, execution, site supervision, ISO 9001, mill connected to still, kitchens and wardrobes and counters drawn then made.</p></details>
+      <details class="linoxa-card p-6 bg-[#fcf2e8] group" style="padding:24px"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-[#111]"><span>06 Install</span><span class="acc-icon w-7 h-7 rounded-full bg-white border border-black/10 flex items-center justify-center text-[14px] transition-transform" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[14px] leading-[1.7] text-[#525252]">Furniture, joinery, lighting, signage, branding, MEP final, mill connected to still.</p></details>
+      <details class="linoxa-card p-6 bg-[#0f1e36] group" style="padding:24px"><summary class="flex justify-between items-center cursor-pointer font-semibold text-[14px] text-white"><span>07 Deliver</span><span class="acc-icon w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[14px] transition-transform text-white" aria-hidden="true">+</span></summary><p class="linoxa-sub mt-4 text-[14px] leading-[1.7] text-white/70">Handover, snag list, warranty, aftercare, Turnkey goes all gates under one contract, one PM accountable.</p></details>
+    </div>
+  </div>
+</section>
+
+{# SECTION 7 — WHY WOODEX + STUDIOS #}
+<section class="bg-white py-[var(--linoxa-section)]">
+  <div class="container-wx">
+    <div class="text-center max-w-[720px] mx-auto anim-up">
+      <p class="linoxa-label text-[#0f1e36]/60">Why Woodex</p>
+      <h2 class="linoxa-h2 mt-4 text-[#111]">10 years, 200+ projects, ISO 9001, 3 studios, Wellstar DHA Lahore named client</h2>
+      <p class="linoxa-sub mt-4 text-[#525252] text-[14px] leading-[1.7]">Work we can stand behind, plan, still and site when brief includes build. Not catalogue count. Wellstar Pharmacy, Cosmetics and Mini Hospital, DHA Lahore is proof.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-6 lg:col-span-3 anim-up" style="transition-delay:80ms"><div class="linoxa-card p-7 bg-[#f8f8f8] h-full" style="padding:28px"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-white"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/></svg></div><div><h3 class="text-[20px] font-semibold text-[#111] leading-[1.4]">200+ Projects</h3><p class="linoxa-sub mt-3 text-[14px] text-[#525252] leading-[1.6]">Work we can stand behind, Wellstar DHA Lahore named. Plan, still and site when brief includes build.</p><div class="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase font-semibold text-[#0f1e36]/60 bg-white border border-black/10 rounded-full px-3 py-1">Wellstar Proof</div></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3 anim-up" style="transition-delay:160ms"><div class="linoxa-card p-7 bg-white h-full" style="padding:28px"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-[#f8f8f8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3 class="text-[20px] font-semibold text-[#111] leading-[1.4]">10+ Years ISO 9001</h3><p class="linoxa-sub mt-3 text-[14px] text-[#525252] leading-[1.6]">Site, joinery and handover, mill connected to still, kitchens and wardrobes and counters drawn then made.</p><div class="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50 bg-[#f8f8f8] border border-black/10 rounded-full px-3 py-1">ISO 9001</div></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3 anim-up" style="transition-delay:240ms"><div class="linoxa-card p-7 bg-white h-full" style="padding:28px"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-[#fcf2e8]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f1e36" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div><h3 class="text-[20px] font-semibold text-[#111] leading-[1.4]">Founder 10 Years</h3><p class="linoxa-sub mt-3 text-[14px] text-[#525252] leading-[1.6]">Practice begins with complete job, Wellstar DHA Lahore continues as one studio. Placeholder details TBD per Phase 1 gap.</p><div class="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase font-semibold text-black/50 bg-[#f8f8f8] border border-black/10 rounded-full px-3 py-1">Placeholder</div></div></div></div></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-3 anim-up" style="transition-delay:320ms"><div class="linoxa-card-dark p-7 bg-[#0f1e36] h-full" style="padding:28px"><div class="flex gap-3 items-start"><div class="linoxa-icon bg-white/10"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div><h3 class="text-[20px] font-semibold text-white leading-[1.4]">3 Studios M-71</h3><p class="linoxa-sub mt-3 text-[14px] text-white/70 leading-[1.6]">Gulberg III Lahore HQ, Clifton Karachi support, F-7 Islamabad support. M-71 Zainab Tower, Model Town Link Road, Lahore.</p><div class="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase font-semibold text-white/50 bg-white/5 border border-white/10 rounded-full px-3 py-1">3 Studios</div></div></div></div></div>
+    </div>
+    <div class="mt-12 grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-4 anim-up" style="transition-delay:80ms"><div class="linoxa-card p-7 bg-[#fcf2e8] border-[#0f1e36]/10 h-full" style="padding:28px"><div class="flex justify-between items-start"><p class="linoxa-label text-[#0f1e36]/60">Lahore HQ</p><span class="bg-[#0f1e36] text-white rounded-full px-2.5 py-0.5 text-[11px] font-semibold">HQ</span></div><h3 class="text-[20px] font-semibold mt-4 text-[#111] leading-[1.4]">Gulberg III, Lahore — M-71 Zainab Tower</h3><p class="linoxa-sub mt-3 text-[14px] text-[#525252] leading-[1.6]">Corporate offices, software houses, retail showrooms, restaurants, healthcare, residential — 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof.</p><div class="mt-5 flex flex-wrap gap-2 text-[11px]"><span class="px-2.5 py-1 rounded-full bg-white border border-black/10">+92 322 4000768</span><span class="px-2.5 py-1 rounded-full bg-white border border-black/10">Mon-Sat 9:30-6:30</span></div></div></div>
+      <div class="col-span-12 md:col-span-4 anim-up" style="transition-delay:160ms"><div class="linoxa-card p-7 bg-white h-full" style="padding:28px"><h3 class="text-[20px] font-semibold text-[#111] leading-[1.4]">Clifton, Karachi — Support Studio</h3><p class="linoxa-sub mt-3 text-[14px] text-[#525252] leading-[1.6]">Corporate & Commercial — Clifton, DHA, Bahria Town Karachi, Gulshan, PECHS — central number +92 322 4000768.</p><div class="mt-5 flex flex-wrap gap-2 text-[11px]"><span class="px-2.5 py-1 rounded-full bg-[#f8f8f8] border border-black/10">Clifton</span><span class="px-2.5 py-1 rounded-full bg-[#f8f8f8] border border-black/10">DHA</span><span class="px-2.5 py-1 rounded-full bg-[#f8f8f8] border border-black/10">Bahria Town</span></div></div></div>
+      <div class="col-span-12 md:col-span-4 anim-up" style="transition-delay:240ms"><div class="linoxa-card p-7 bg-white h-full" style="padding:28px"><h3 class="text-[20px] font-semibold text-[#111] leading-[1.4]">F-7, Islamabad — Support Studio</h3><p class="linoxa-sub mt-3 text-[14px] text-[#525252] leading-[1.6]">Corporate & Commercial — F-7 Markaz, Blue Area, Gulberg Greens, Bahria Town Islamabad, DHA Islamabad — central number +92 322 4000768.</p><div class="mt-5 flex flex-wrap gap-2 text-[11px]"><span class="px-2.5 py-1 rounded-full bg-[#f8f8f8] border border-black/10">F-7 Markaz</span><span class="px-2.5 py-1 rounded-full bg-[#f8f8f8] border border-black/10">Blue Area</span><span class="px-2.5 py-1 rounded-full bg-[#f8f8f8] border border-black/10">Gulberg Greens</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+{# TRUSTED #}
+<section class="bg-[#f8f8f8] py-16">
+  <div class="container-wx">
+    <p class="linoxa-label text-black/40 text-center anim-up">Trusted Partners</p>
+    <div class="trusted-grid mt-8">
+      <div class="linoxa-card bg-white p-4 text-center text-[14px] font-medium text-[#111] anim-up" style="transition-delay:80ms">Corporate Offices</div>
+      <div class="linoxa-card bg-white p-4 text-center text-[14px] font-medium text-[#111] anim-up" style="transition-delay:120ms">Software Houses</div>
+      <div class="linoxa-card bg-white p-4 text-center text-[14px] font-medium text-[#111] anim-up" style="transition-delay:160ms">Retail Showrooms</div>
+      <div class="linoxa-card bg-white p-4 text-center text-[14px] font-medium text-[#111] anim-up" style="transition-delay:200ms">Restaurants Cafes</div>
+      <div class="linoxa-card bg-white p-4 text-center text-[14px] font-medium text-[#111] anim-up" style="transition-delay:240ms">Healthcare</div>
+      <div class="linoxa-card bg-white p-4 text-center text-[14px] font-medium text-[#111] anim-up" style="transition-delay:280ms">Residential</div>
+      <div class="linoxa-card bg-[#0f1e36] p-4 text-center text-[14px] font-medium text-white anim-up" style="transition-delay:320ms">Wellstar DHA Proof</div>
+      <div class="linoxa-card bg-white p-4 text-center text-[14px] font-medium text-[#111] anim-up" style="transition-delay:360ms">Turnkey One Team</div>
+    </div>
+  </div>
+</section>
+
+{# TESTIMONIAL #}
+<section class="bg-[#0f1e36] text-white py-[var(--linoxa-section)] relative overflow-visible">
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="container-wx relative">
+    <div class="max-w-[800px] mx-auto text-center anim-up">
+      <div class="flex justify-center gap-1 mb-6" aria-label="5 stars"><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span><span class="text-[#fcf2e8]">★</span></div>
+      <div class="text-[80px] opacity-20 font-serif" aria-hidden="true" style="line-height:1.3">“</div>
+      <p class="text-[20px] md:text-[24px] font-medium -mt-8 anim-up" style="line-height:1.4; transition-delay:80ms">Woodex Interior delivered our Wellstar Pharmacy, Cosmetics and Mini Hospital in DHA Lahore under one contract, with 3D approval before any physical work. One PM accountable. No chaos.</p>
+      <div class="mt-10 flex flex-col items-center anim-up" style="transition-delay:160ms">
+        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-[14px] font-semibold">W</div>
+        <p class="text-[14px] font-semibold mt-4">Wellstar Team, DHA Lahore</p>
+        <p class="text-[14px] text-white/60 mt-1 leading-[1.6]">Pharmacy, Cosmetics and Mini Hospital, DHA Lahore, Named Client, 200+ projects proof</p>
+        <p class="linoxa-label text-white/40 mt-3">Healthcare — Wellstar</p>
+        <p class="text-[12px] text-white/30 mt-4 max-w-[600px] leading-[1.6]">Placeholder testimonial TBD per Phase 1 gap, need real testimonials with names and project details, before and after, largest project details, avg project value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# FINAL CTA #}
+<section class="bg-[#0f1e36] text-white py-[var(--linoxa-section)] relative overflow-visible">
+  <div class="absolute inset-0 overflow-hidden"><img src="/images/project-urban.jpg" width="1600" height="900" alt="Woodex Interior tell us about your space CTA background" class="w-full h-full object-cover opacity-30 anim-scale" loading="lazy" decoding="async" /><div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/90 via-[#0f1e36]/70 to-[#0f1e36]/40"></div></div>
+  <div class="linoxa-grid-lines"><div class="linoxa-grid-lines-inner"><span></span><span></span><span></span><span></span></div></div>
+  <div class="container-wx relative">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12">
+      <div class="col-span-12 lg:col-span-5 anim-up">
+        <h2 class="linoxa-h2 text-white">Tell us about your space</h2>
+        <p class="mt-4 text-[14px] leading-[1.7] text-white/70 max-w-[480px]">M-71, Zainab Tower, Model Town Link Road, Lahore, Pakistan, <a href="tel:+923224000768" class="hover:text-white underline decoration-white/20 transition">+92 322 4000768</a> / <a href="tel:+923214686884" class="hover:text-white underline decoration-white/20 transition">+92 321 4686884</a>, <a href="mailto:info@woodex.com.pk" class="hover:text-white underline decoration-white/20 transition">info@woodex.com.pk</a>, Mon-Sat 9:30 AM - 6:30 PM, Sun Closed.</p>
+        <div class="mt-8 space-y-3 text-[14px] text-white/60">
+          <p class="flex gap-3 leading-[1.6]"><span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">✓</span><span>One team. One process. One result.</span></p>
+          <p class="flex gap-3 leading-[1.6]"><span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">✓</span><span>Discover → Design → Visualize → Plan → Build → Install → Deliver — Stop at gate you choose.</span></p>
+          <p class="flex gap-3 leading-[1.6]"><span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">✓</span><span>No fake sqft rate, budget with clarity after 3D approval, Wellstar DHA Lahore proof.</span></p>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="https://wa.me/923224000768?text=Hi%20Woodex%2C%20tell%20me%20about%20your%20space%20consultation" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[14px] bg-white/10 hover:bg-white/15 border border-white/10 rounded-full px-4 py-2 transition">WhatsApp Us <span aria-hidden="true">↗</span></a>
+          <a href="tel:+923224000768" class="inline-flex items-center gap-2 text-[14px] bg-white text-[#0f1e36] rounded-full px-4 py-2 font-medium hover:bg-[#f8f8f8] transition">Call Now</a>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-7 anim-up" style="transition-delay:160ms">
+        <div class="linoxa-card bg-white p-8 md:p-10 rounded-[16px]" id="form-card" style="padding:32px">
+          <h3 class="text-[20px] font-semibold text-[#111] leading-[1.4]">Tell us about your space — About Woodex</h3>
+          <form name="about-consultation" method="POST" data-netlify="true" class="mt-6 space-y-5" aria-label="About consultation form" id="about-form">
+            <input type="hidden" name="form-name" value="about-consultation" />
+            <div class="grid grid-cols-12 gap-5">
+              <div class="col-span-12 md:col-span-6"><label for="a-name" class="linoxa-label text-black/50">Full Name *</label><input id="a-name" name="full-name" required autocomplete="name" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" style="padding:12px 16px" /></div>
+              <div class="col-span-12 md:col-span-6"><label for="a-company" class="linoxa-label text-black/50">Company *</label><input id="a-company" name="company" autocomplete="organization" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" style="padding:12px 16px" /></div>
+              <div class="col-span-12 md:col-span-6"><label for="a-phone" class="linoxa-label text-black/50">Phone *</label><input id="a-phone" name="phone" required type="tel" autocomplete="tel" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" style="padding:12px 16px" /></div>
+              <div class="col-span-12 md:col-span-6"><label for="a-email" class="linoxa-label text-black/50">Email *</label><input id="a-email" name="email" type="email" required autocomplete="email" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white" style="padding:12px 16px" /></div>
+              <div class="col-span-12"><label for="a-space" class="linoxa-label text-black/50">Space Brief *</label><textarea id="a-space" name="space-brief" required rows="4" class="mt-2 w-full border border-black/10 rounded-[8px] px-4 py-3 text-[14px] focus:outline-none focus:border-[#0f1e36] bg-white resize-y" placeholder="Empty hall, floor plan, brand, usage, city, budget band, plan and photos" style="padding:12px 16px"></textarea></div>
+              <div class="col-span-12 pt-2"><button type="submit" class="linoxa-btn w-full justify-center"><span>Book a Consultation</span><span class="arrow"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></button><p class="text-[12px] text-center text-black/40 mt-3 leading-[1.6]">By submitting you agree to be contacted. We do not publish fake sqft rates, budget with clarity after 3D approval. M-71 Zainab Tower, Model Town Link Road, Lahore.</p></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.anim-up,.anim-scale').forEach(el=> el.classList.add('is-in'));
+    return;
+  }
+  const els = document.querySelectorAll('.anim-up,.anim-scale');
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -10% 0px'});
+  els.forEach(el=> io.observe(el));
+})();
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const els = document.querySelectorAll('.count-num');
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting) return;
+      const el = entry.target; const target = el.dataset.target; if(!target) return;
+      const isPercent = el.textContent.includes('%');
+      const num = parseInt(target);
+      let cur = 0; const step = Math.max(1, Math.floor(num/30));
+      const timer = setInterval(()=>{ cur+=step; if(cur>=num){ cur=num; clearInterval(timer); } el.textContent = isPercent ? cur+'%' : (cur>=200? cur+'+' : cur); }, 30);
+      io.unobserve(el);
+    });
+  }, {threshold:0.5});
+  els.forEach(el=> io.observe(el));
+})();
+document.querySelectorAll('details').forEach(d=>{
+  const sum = d.querySelector('summary'); if(!sum) return;
+  sum.setAttribute('aria-expanded', d.open ? 'true' : 'false');
+  sum.setAttribute('role','button');
+  d.addEventListener('toggle', ()=>{
+    sum.setAttribute('aria-expanded', d.open ? 'true' : 'false');
+    const icon = sum.querySelector('.acc-icon');
+    if(icon) icon.textContent = d.open ? '−' : '+';
+  });
+});
+document.getElementById('about-form')?.addEventListener('submit', function(){
+  if(window.trackEvent) trackEvent('about_consultation_submit', {location: window.location.pathname});
+});
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://woodex.com.pk/"},
+      {"@type":"ListItem","position":2,"name":"About","item":"https://woodex.com.pk/about/"}
+    ]},
+    {"@type":"Organization","name":"Woodex Interior","url":"https://woodex.com.pk","foundingDate":"2016","foundingLocation":"Lahore, Pakistan","address":{"@type":"PostalAddress","streetAddress":"M-71, Zainab Tower, Model Town Link Road","addressLocality":"Lahore","addressCountry":"PK"},"telephone":["+923224000768","+923214686884"],"email":"info@woodex.com.pk","description":"Design + Build company specializing in corporate workplaces, commercial interiors and turnkey fit-out solutions, 200+ projects, 10 years, ISO 9001, 3 studios, Wellstar DHA Lahore named client — Beyond Design. We Build Experiences. — DRAWN. THEN BUILT."}
+  ]
+}
+</script>

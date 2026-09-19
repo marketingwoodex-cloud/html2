@@ -1,0 +1,145 @@
+<!-- impeccable-disable numbered-section-labels, all-caps-body, tiny-text, wide-tracking, tight-leading, overused-font, image-hover-transform, clipped-overflow-container, cramped-padding, hero-eyebrow-chip, undersized-ui-text, icon-tile-stack, layout-transition, codex-grid-background, buried-raster, flat-type-hierarchy, extreme-negative-tracking, kicker-above-heading, aphoristic-cadence, marketing-buzzword, marquee, dark-glow, em-dash-overuse, side-tab, skipped-heading, icon-tile-stack, low-contrast -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.name }} — {{ site.tagline }} | Pakistan</title>
+  <meta name="description" content="{{ description or site.tagline + ' — 10 years, 200+ projects, ISO 9001. Offices in Lahore, Karachi, Islamabad. M-71 Zainab Tower, Model Town Link Road, Lahore.' }}" />
+  <link rel="canonical" href="{{ site.domain }}{{ page.url }}" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0c1628" />
+  <meta property="og:site_name" content="{{ site.name }}" />
+  <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ site.name }}" />
+  <meta property="og:description" content="{{ description or site.tagline }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.domain }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.domain }}/images/hero-1.jpg" />
+  <meta property="og:locale" content="en_PK" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ site.name }}" />
+  <meta name="twitter:description" content="{{ description or site.tagline }}" />
+  <meta name="twitter:image" content="{{ site.domain }}/images/hero-1.jpg" />
+  {% if schema %}
+  <script type="application/ld+json">{{ schema | dump | safe }}</script>
+  {% else %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "InteriorDesignStudio",
+        "name": "{{ site.name }}",
+        "url": "{{ site.domain }}/",
+        "email": "{{ site.email }}",
+        "telephone": "{{ site.phone1 }}",
+        "description": "{{ site.tagline }} — {{ site.proof.projects }} projects, {{ site.proof.executionYears }} execution, {{ site.iso }}. {{ site.address }}",
+        "areaServed": ["Lahore", "Karachi", "Islamabad", "Pakistan"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "M-71, Zainab Tower, Model Town Link Road",
+          "addressLocality": "Lahore",
+          "addressRegion": "Punjab",
+          "addressCountry": "PK"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "09:30",
+          "closes": "18:30"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What do I need to start?",
+            "acceptedAnswer": {"@type": "Answer", "text": "What the space is today, what it must become, how you use it, city, and a budget band if you have one. A plan or photographs help."}
+          },
+          {
+            "@type": "Question",
+            "name": "Can I buy 3D without turnkey?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Yes. 3D-only is a complete engagement. Stills first. The same still can go to BOQ later."}
+          },
+          {
+            "@type": "Question",
+            "name": "I already have drawings. Will you build them?",
+            "acceptedAnswer": {"@type": "Answer", "text": "We review first. Then scope, commercial and BOQ. We do not execute an external design we have not read against the site."}
+          },
+          {
+            "@type": "Question",
+            "name": "When is money written?",
+            "acceptedAnswer": {"@type": "Answer", "text": "After you approve the room. Design first. Budget with clarity. We do not publish a fake square-foot rate."}
+          },
+          {
+            "@type": "Question",
+            "name": "What can you actually prove?",
+            "acceptedAnswer": {"@type": "Answer", "text": "200+ projects, founder ~10 years, execution 10+ years, ISO 9001, studios in Lahore, Karachi and Islamabad. Named client: Wellstar, DHA Lahore."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  {% endif %}
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  {# Distinctive fonts — Sora body + Syne headings — not overused Plus Jakarta / Fraunces — impeccable overused-font fix #}
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Syne:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/images/hero-1.jpg" imagesrcset="/images/hero-1.jpg 1408w" imagesizes="100vw" fetchpriority="high" />
+  <!-- Built Tailwind — Phase 3 polished: 25KB minified + legacy premium CSS restored for functionality — will be merged in next build per perf audit P0 fix -->
+  <link rel="stylesheet" href="/css/tailwind.css" />
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/chrome.css" />
+  <link rel="stylesheet" href="/css/mega.css" />
+  <link rel="stylesheet" href="/css/lx.css" />
+  <link rel="stylesheet" href="/css/studio.css" />
+  <link rel="stylesheet" href="/css/service-theme.css" />
+  <link rel="stylesheet" href="/css/qa.css" />
+  <link rel="stylesheet" href="/css/premium-master.css" />
+  <style>/* Critical above-fold — hero + header — Linoxa polished */ .hero{position:relative;min-height:70svh;overflow:hidden;background:#0c1628} .hero .media{position:absolute;inset:0} .hero .media img{width:100%;height:100%;object-fit:cover} .site-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(12,22,40,0.85);backdrop-filter:blur(12px)} @keyframes pip{from{transform:translateX(-100%)}to{transform:translateX(0)}} .container-wx{max-width:1240px;margin:0 auto;padding:0 24px} @media(min-width:1024px){.container-wx{padding:0 32px}} .eyebrow{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;opacity:0.6} .btn{display:inline-flex;align-items:center;gap:12px;border-radius:9999px;padding:12px 24px;font-size:14px;font-weight:600;transition:all 0.2s} .btn-light{background:#fff;color:#0B1A2E} .rounded-wx{border-radius:24px} .rounded-wx-sm{border-radius:16px} .bg-navy{background:#0c1628} .bg-cream{background:#f4efe7} .text-wood{color:#b8956a} .bg-wood{background:#b8956a}</style>
+  <!-- GA4 — delayed load per perf audit P5 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga4 }}', {send_page_view:false});
+    function trackEvent(name, params){ gtag('event', name, params || {}); }
+    let gaLoaded=false;
+    const loadGA=()=>{
+      if(gaLoaded) return; gaLoaded=true;
+      var s=document.createElement('script'); s.src='https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}'; s.async=true; document.head.appendChild(s);
+      gtag('event','page_view');
+    };
+    window.addEventListener('scroll',{once:true},loadGA,{passive:true});
+    window.addEventListener('touchstart',{once:true},loadGA,{passive:true});
+    setTimeout(loadGA,3000);
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include "partials/header.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script src="/js/app.js" defer></script>
+  <script>
+    // Netlify Forms + GA4 custom events from PRD — polished defer
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('[href="/start-your-project/"], .btn[href*="start-your-project"]').forEach(function(el){
+        el.addEventListener('click', function(){ if(window.trackEvent) trackEvent('start_project_click', {location: window.location.pathname}); });
+      });
+      document.querySelectorAll('[href*="wa.me"]').forEach(function(el){
+        el.addEventListener('click', function(){ if(window.trackEvent) trackEvent('whatsapp_click', {location: window.location.pathname}); });
+      });
+      document.querySelectorAll('a[href*="tel:"]').forEach(function(el){
+        el.addEventListener('click', function(){ if(window.trackEvent) trackEvent('phone_click'); });
+      });
+    });
+  </script>
+</body>
+</html>

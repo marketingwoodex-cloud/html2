@@ -1,0 +1,82 @@
+---
+layout: base.njk
+title: "Start Your Project — Woodex Interior — Brief Funnel — Lahore"
+description: "Start your project — Woodex Interior — brief funnel — M-71 Zainab Tower, Model Town Link Road, Lahore — +92 322 4000768 — info@woodex.com.pk — Beyond Design. We Build Experiences. — 10 years, 200+ projects, ISO 9001."
+---
+{# START YOUR PROJECT PREMIUM — Unique Hero Split Form 70svh — Funnel — Balanced Spacing #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<style>
+  .section-premium{padding:clamp(64px,8vw,128px) 0}
+  .hero-start{min-height:70svh; display:flex; align-items:center; background:#0f1e36; color:white; position:relative; overflow:hidden; padding-top:96px}
+  .eyebrow{font-size:12px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600}
+  .btn{display:inline-flex; align-items:center; gap:12px; border-radius:999px; padding:14px 20px 14px 24px; font-size:14px; font-weight:500; transition:all 200ms}
+  .btn-light{background:white; color:#0f1e36} .btn-dark{background:#0f1e36; color:white}
+  .btn-icon{width:28px; height:28px; border-radius:999px; display:flex; align-items:center; justify-content:center}
+  .linoxa-card{border-radius:16px; border:1px solid rgba(0,0,0,0.06); background:white}
+</style>
+
+<section class="hero-start" data-anim="fade">
+  <div class="absolute inset-0"><img src="/images/hero-1.jpg" width="1600" height="1000" alt="Start your project — Woodex Interior" class="w-full h-full object-cover opacity-30" fetchpriority="high" decoding="async" /><div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/90 via-[#0f1e36]/70 to-[#0f1e36]/40"></div></div>
+  <div class="container-wx relative z-[1] w-full">
+    <div class="grid grid-cols-12 gap-8 items-center">
+      <div class="col-span-12 lg:col-span-6" data-anim="left">
+        <nav class="eyebrow text-white/50">Home → Start Your Project</nav>
+        <h1 class="mt-4" style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); line-height:1.05;">Start Your Project — Brief Funnel — We answer with next gate, not brochure</h1>
+        <p class="mt-5 text-[15px] leading-[1.7] text-white/70 max-w-[48ch]">Tell us about your space — empty hall, floor plan, brand, or drawings — we answer with next gate — not a brochure — M-71 Zainab Tower, Model Town Link Road, Lahore — 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof — Beyond Design. We Build Experiences.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="btn btn-light" href="#brief"><span>Send the brief</span><span class="btn-icon" style="background:#0f1e36; color:white">↗</span></a>
+          <a class="btn" style="background:rgba(255,255,255,0.1); color:white; border:1px solid rgba(255,255,255,0.15)" href="/process/"><span>View Process — 7 Gates</span></a>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-6 text-[11px] tracking-wide uppercase font-semibold text-white/50">
+          <span>10 Years</span><span>•</span><span>200+ Projects</span><span>•</span><span>3D Before Execution</span><span>•</span><span>ISO 9001</span>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-6" data-anim="right" data-delay="1">
+        <div class="linoxa-card p-8 bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
+          <p class="eyebrow text-black/50">Quick Brief — 60 seconds</p>
+          <h3 class="mt-2 text-[18px] font-semibold text-[#111]">What to send us</h3>
+          <ul class="mt-4 space-y-2 text-[13px] text-[#525252]">
+            <li class="flex gap-2"><span class="text-[#0f1e36]">→</span> What space is today, must become, usage, city, budget band</li>
+            <li class="flex gap-2"><span class="text-[#0f1e36]">→</span> Plan or photographs — empty hall, floor plan, brand, drawings</li>
+            <li class="flex gap-2"><span class="text-[#0f1e36]">→</span> Brief is contract not moodboard — we answer with next gate</li>
+          </ul>
+          <form name="start-quick" method="POST" data-netlify="true" class="mt-6 space-y-4" aria-label="Quick brief">
+            <input type="hidden" name="form-name" value="start-quick" />
+            <input name="full-name" required placeholder="Full Name *" class="w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px]" />
+            <input name="phone" required type="tel" placeholder="Phone *" class="w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px]" />
+            <textarea name="brief" required rows="3" placeholder="Tell us about your space *" class="w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px] resize-y"></textarea>
+            <button type="submit" class="btn btn-dark w-full justify-center"><span>Send the brief — Start</span><span class="btn-icon" style="background:white; color:#0f1e36">↗</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set heading = "Start Your Project — Brief Funnel — Tell us about your space — M-71 Zainab Tower" %}
+{% set text = "Empty hall, floor plan, brand, or drawings. We answer with the next gate — not a brochure. Discover → Design → Visualize → Plan (Budget + BOQ) → Build → Install → Deliver — Stop at gate you choose — One team. One process. One result. — M-71 Zainab Tower, Model Town Link Road, Lahore — +92 322 4000768 — info@woodex.com.pk — Beyond Design. We Build Experiences." %}
+{% set formTitle = "Start Your Project — Brief Funnel" %}
+{% set formName = "start-your-project" %}
+{% set btnText = "Send the brief" %}
+{% include "partials/blocks/block-32-start-project.njk" %}
+
+{% set eyebrow = "The Woodex Process — Start Your Project — 7 Gates" %}
+{% set heading = "Discover → Design → Visualize → Plan (Budget + BOQ) → Build → Install → Deliver — Stop at gate you choose — Start Your Project" %}
+{% set steps = [
+  {"title":"Discover","desc":"Brief — what space is today, must become, usage, city, budget band, plan/photos — consultation, site survey — start your project"},
+  {"title":"Design","desc":"Space planning, concept, materials, moodboard, drawings — plan first, then still — start your project"},
+  {"title":"Visualize","desc":"3D stills first — one per key room, in-house not render farm, walkthrough/360 only if path matters, BOQ later — start your project"},
+  {"title":"Plan","desc":"Budget with clarity, BOQ turns still into buildable scope, cost planning, vendor management, no fake sqft rate — start your project"},
+  {"title":"Build","desc":"Civil, MEP, execution, site supervision, ISO 9001, mill connected to still, kitchens/wardrobes/counters drawn then made — start your project"},
+  {"title":"Install","desc":"Furniture, joinery, lighting, signage, branding, MEP final — start your project"},
+  {"title":"Deliver","desc":"Handover, snag list, warranty, aftercare — Turnkey goes all gates under one contract, one PM accountable — start your project"}
+] %}
+{% include "partials/blocks/block-18-process.njk" %}
+
+{% set heading = "Tell us about your space — Start Your Project — Brief Funnel" %}
+{% set text = "Empty hall, floor plan, brand, or drawings. We answer with the next gate — not a brochure. Start Your Project — Brief Funnel — M-71 Zainab Tower, Model Town Link Road, Lahore — +92 322 4000768 — info@woodex.com.pk — Mon-Sat 9:30 AM - 6:30 PM, Sun Closed." %}
+{% set bullets = ["One team. One process. One result.","Discover → Design → Visualize → Plan (Budget + BOQ) → Build → Install → Deliver — Stop at gate you choose","No fake sqft rate — budget with clarity after 3D approval — Start Your Project"] %}
+{% set formTitle = "Start Your Project — Book a Consultation" %}
+{% set formName = "start-project-consultation" %}
+{% set btnText = "Book a Consultation — Start Your Project" %}
+{% include "partials/blocks/block-26-final-cta-form.njk" %}

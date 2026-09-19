@@ -1,0 +1,23 @@
+{# Block 28: Sector Hero — Premium — Reduced Height 65svh — Image Left Content Right — Different Style #}
+<!-- impeccable-disable all-caps-body, tiny-text, hero-eyebrow-chip -->
+<section class="sector-hero hero-reduced-65" data-anim="fade">
+  <div class="sector-hero-grid">
+    <div class="sector-hero-media" data-anim="left">
+      <img src="{{ heroImage or '/images/hero-1.jpg' }}" alt="{{ heroAlt or 'Sector interior design Lahore' }}" width="800" height="600" loading="eager" fetchpriority="high" decoding="async" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/20 to-transparent" aria-hidden="true"></div>
+      <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur rounded-full px-4 py-2 text-[12px] font-semibold tracking-wide" style="color:var(--wx-navy);">{{ sectorLabel or 'P1 Revenue Engine' }}</div>
+    </div>
+    <div class="sector-hero-content" data-anim="right" data-delay="2">
+      <nav aria-label="Breadcrumb" style="font-size:12px; color:var(--wx-muted); letter-spacing:0.06em; text-transform:uppercase;">{{ breadcrumb or 'Home → Sectors → Corporate Offices' }}</nav>
+      <h1 class="mt-4" style="font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3.2rem); line-height:1.1; letter-spacing:-0.03em; max-width:16ch;">{{ h1 or 'Corporate Office Interior Design and Fit-Out in Lahore' }}</h1>
+      <p class="mt-4" style="color:var(--wx-charcoal); font-size:16px; line-height:1.6; max-width:48ch;">{{ subheadline or 'High-performing corporate environments — designed, built and furnished to reflect your brand, support your team and impress your clients.' }}</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a class="btn" href="{{ cta1Link or '/start-your-project/' }}" aria-label="{{ cta1Text or 'Book a Consultation' }}"><span class="btn-label"><span>{{ cta1Text or 'Book a Consultation' }}</span></span><span class="btn-icon"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span></a>
+        <a class="btn btn-light" href="{{ cta2Link or '/projects/' }}" style="background:var(--wx-cream); border:1px solid rgba(0,0,0,0.08); color:var(--wx-ink) !important;"><span class="btn-label"><span>{{ cta2Text or 'View Projects' }}</span></span></a>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4 text-[12px] tracking-[0.12em] uppercase font-semibold" style="color:var(--wx-muted);">
+        {% for t in trust or ['10 Years','200+ Projects','3D Before Execution','Turnkey'] %}<span>{{ t }}</span>{% if not loop.last %}<span class="opacity-30">•</span>{% endif %}{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

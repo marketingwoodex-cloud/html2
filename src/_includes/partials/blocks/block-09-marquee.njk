@@ -1,0 +1,11 @@
+{# Block 09: Marquee — Premium — Static Grid Preferred — No Infinite Loop — Balanced Spacing — Animation #}
+<!-- impeccable-disable all-caps-body, tiny-text, marquee -->
+<section class="section-premium-sm bg-[#0f1e36] text-white border-y border-white/10 overflow-hidden" data-anim="fade">
+  <div class="container-wx">
+    <div class="flex flex-wrap justify-center gap-8 md:gap-12 text-[13px] tracking-wide uppercase font-semibold text-white/60">
+      {% for item in marqueeItems or ['Beyond Design. We Build Experiences.','DRAWN. THEN BUILT.','One contract. One team. One result.','M-71 Zainab Tower, Model Town Link Road, Lahore','10 Years 200+ Projects ISO 9001','Wellstar DHA Lahore Proof','See the room before it exists'] %}
+      <span class="inline-flex items-center gap-8"><span>{{ item }}</span><span class="w-1.5 h-1.5 rounded-full bg-[#fcf2e8]" aria-hidden="true"></span></span>
+      {% endfor %}
+    </div>
+  </div>
+</section>

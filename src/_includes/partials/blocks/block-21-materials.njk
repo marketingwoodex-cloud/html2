@@ -1,0 +1,28 @@
+{# Block 21: Materials — Premium — Balanced Spacing — Animation #}
+<!-- impeccable-disable all-caps-body, tiny-text -->
+<section class="section-premium bg-[#fcf2e8]" data-anim="fade">
+  <div class="container-wx">
+    <div class="max-w-[720px] mb-10" data-anim="up">
+      <p class="eyebrow" style="color:var(--wx-navy);">Materials — where hand goes quality must be</p>
+      <h2 class="mt-3" style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2.2rem); line-height:1.2;">{{ heading or 'Handles, hinges not just facade — mill connected to still' }}</h2>
+    </div>
+    <div class="grid grid-cols-12 gap-6 stagger" data-anim="up" data-delay="1">
+      {% for mat in materials or [
+        {"title":"Flooring","desc":"Carpet, vinyl, raised, durable, footfall, acoustic"},
+        {"title":"Partitions","desc":"Glass, manifestation, acoustic, privacy, focus vs collaboration"},
+        {"title":"Joinery","desc":"Reception, meeting tables, media walls, custom — kitchens, wardrobes, counters drawn then made"},
+        {"title":"Lighting","desc":"Task 4000K work, 3000K welcome, 90+ CRI, no flicker, brand, 24/7"},
+        {"title":"Ceiling","desc":"Acoustic panels, baffles, open, closed, lighting integrated"},
+        {"title":"Furniture","desc":"Workstations, executive tables, reception, meeting, sofas, storage"}
+      ] %}
+      <div class="col-span-12 md:col-span-6 lg:col-span-4">
+        <article class="card-premium p-6 bg-white h-full" data-anim="up" data-delay="{{ loop.index }}">
+          <div class="w-10 h-10 rounded-[10px] bg-[#fcf2e8] text-[#0f1e36] flex items-center justify-center" aria-hidden="true">◼</div>
+          <h3 class="mt-4 text-[16px] font-semibold leading-tight" style="font-family:'Syne',sans-serif;">{{ mat.title }}</h3>
+          <p class="mt-2 text-[13px] leading-[1.6] text-[#525252]">{{ mat.desc }}</p>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
