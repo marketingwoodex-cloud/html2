@@ -1,210 +1,133 @@
 ---
 layout: base.njk
-title: "Woodex Interior — Beyond Design. We Build Experiences. — Commercial Interior Design Lahore"
-description: "Woodex Interior — Beyond Design. We Build Experiences. DRAWN. THEN BUILT. Commercial interior design, office fit-out, turnkey, 3D Studio™ in Lahore. 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof. M-71 Zainab Tower, Model Town Link Road."
+title: "Woodex Interior — Commercial Interior Design & Office Fit-Out Lahore"
+description: "Woodex Interior — Beyond Design. We Build Experiences. DRAWN. THEN BUILT. Commercial interior design, office fit-out, turnkey, 3D Studio™ Lahore. 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof."
 ---
-{# 
-HOME — AGENCY-CALIBER INTERACTIVE CONCEPT — Award-winning Digital Creative Director + 3D Art Director
-====================================================================================================
-Visual Narrative:
-Woodex is not a decorator. It is a Design + Build practice that draws a room so it can be built. The narrative is "DRAWN. THEN BUILT." — from plan to still to site. Every section moves from abstract (idea) to concrete (material). The user journeys from seeing to understanding to approving to building.
-
-Art Direction:
-Cinematic but quiet. No stock gradients. Real materials as heroes: walnut, brushed brass, poured concrete, fluted glass, boucle. Lighting is soft studio, 3200K key + 5600K fill, subtle AO. Composition uses 12-col grid, 1240px container, 24px gap, but breaks grid intentionally with giant bleed WOODEX 14rem 0.06 opacity. Depth via 3 layers: background (concrete), mid (wood), foreground (brass detail).
-
-Typography:
-Syne 600 for display (distinctive, architectural, not overused Plus Jakarta), Sora 400/600 for body (humanist, readable). H1 clamp 2.8-4.8rem -0.03em 1.05, H2 clamp 1.8-2.6rem -0.02em 1.2, eyebrow 11px 0.12em uppercase 600. Tight-leading fixed to 1.2+ for body, 1.05 for hero impact.
-
-Color Palette:
-Navy #0c1628 (ink, header), #0f1e36 (primary), Cream #fcf2e8 (air, Linoxa), #f4efe7 (warm), Charcoal #525252 (body), Wood #b8956a (accent, but used as brass not wood for contrast), White #fff. No fake gradients. All dark sections use white 0.7 for secondary to ensure 4.5:1.
-
-Composition:
-12-col, but each section breaks differently: Hero 6/6 split with layered depth, Services 7/5 with tilt image, Sectors 4/4/4 with icons, Stats 3/3/3/3 dark, Materials 6x 2-col, Process 7 gates snap 300px, Projects masonry 8/4 + 4/4/4, Wellstar 5/7 split, CTA 60/40.
-
-Materials:
-Walnut (hero side table), Concrete (hero overlay, trust bar), Brass (button icon circle, sector number), Glass (fluted glass in materials section), Boucle (soft seating), Stone (project plinths). Each material has its own light response: wood warm, concrete matte, brass specular.
-
-Lighting:
-Hero: softbox top-left 45deg, 3200K warm, falloff 70%. Services image: studio softbox + rim light. Materials: each card has its own HDRI — wood warm, concrete cool, brass highlight. No harsh shadows, only 0 20px 60px rgba(0,0,0,0.12) soft.
-
-Atmosphere:
-Calm, precise, confident. No bounce easing, only cubic-bezier(0.22,1,0.36,1) — Linoxa ease. No autoplay marquee, only static grid. No generic lorem, only client-driven language: CEO, Admin, HR, Procurement.
-
-Depth:
-Parallax: hero layers move on mouse (0.02, 0.05, 0.08). Tilt: cards tilt 8deg on mouse. Shadows: layered. Z: background 1, content 3, nav 50, giant bleed 2 with mask. Scroll progress bar top 2px navy.
-
-Emotional Journey:
-1. Arrival: Hero — first 10 seconds judgment, brand statement
-2. Proof: Trust — 10y 200+ ISO Wellstar — proof before claim
-3. Understanding: Services — what you can actually buy, not cloned cards
-4. Seeing: 3D Studio Pin — see room before it exists, still is meeting
-5. Belonging: Sectors — do you understand my business? 6 distinct visitors
-6. Confidence: Stats + Materials — mill connected to still
-7. Clarity: Process 7 gates — stop at gate you choose
-8. Desire: Projects — studies drawn so they can be built
-9. Trust: Wellstar — named client, not fake wall
-10. Action: CTA — tell us about your space, next gate not brochure
-
-Every decision intentional, distinctive, premium. Avoid generic templates.
-#}
-<!-- impeccable-disable all-caps-body, tiny-text, clipped-overflow-container, tight-leading -->
+{# HOME V4 — COMPLETE FRONTEND REDESIGN — Fixed Alignment, Spacing, Responsive — Agency Caliber — Impeccable 0 #}
+<!-- impeccable-disable all-caps-body, tiny-text, clipped-overflow-container -->
 <style>
-  :root{ --navy:#0f1e36; --navy2:#0c1628; --cream:#fcf2e8; --cream2:#f4efe7; --ink:#111; --charcoal:#525252; --wood:#b8956a; --radius:16px; --radius-lg:24px; --ease:cubic-bezier(0.22,1,0.36,1); }
-  .agency-hero{position:relative; min-height:85svh; background:var(--navy2); color:#fff; overflow:hidden; display:flex; align-items:center; padding-top:80px;}
-  .agency-hero .bg{position:absolute; inset:0; z-index:1;}
-  .agency-hero .bg img{width:100%; height:100%; object-fit:cover; transform:scale(1.08); transition:transform 12s linear;}
-  .agency-hero.is-in .bg img{transform:scale(1);}
-  .agency-hero .overlay{position:absolute; inset:0; z-index:2; background:linear-gradient(90deg, rgba(12,22,40,0.92) 0%, rgba(12,22,40,0.72) 45%, rgba(12,22,40,0.2) 100%);}
-  .agency-hero .grid-lines{position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:repeat(4,1fr); pointer-events:none;}
-  .agency-hero .grid-lines i{border-right:1px solid rgba(255,255,255,0.06);}
-  .agency-hero .content{position:relative; z-index:3; width:100%;}
-  .agency-hero .layers{position:absolute; inset:0; z-index:2; pointer-events:none;}
-  .agency-hero .layer{position:absolute; border-radius:16px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.25); will-change:transform;}
-  .agency-hero .layer-1{width:42%; aspect-ratio:4/3; right:8%; top:18%; background:#0f1e36; transform:translateZ(0);}
-  .agency-hero .layer-2{width:28%; aspect-ratio:3/4; right:18%; bottom:12%; background:#fcf2e8; border:1px solid rgba(255,255,255,0.1);}
-  .agency-hero .layer-3{width:14%; aspect-ratio:1; right:6%; top:52%; background:#b8956a; display:grid; place-items:center; color:#fff; font-family:'Syne',sans-serif; font-weight:600;}
-  .eyebrow{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.5);}
-  .eyebrow.dark{color:rgba(15,30,54,0.6);}
-  .btn{display:inline-flex; align-items:center; gap:12px; height:52px; padding:0 8px 0 24px; border-radius:999px; background:#fff; color:var(--navy); font-size:14px; font-weight:600; transition:transform 0.4s var(--ease), box-shadow 0.3s var(--ease); text-decoration:none;}
-  .btn:hover{transform:translateY(-2px); box-shadow:0 12px 32px rgba(0,0,0,0.15);}
-  .btn .ic{width:28px; height:28px; border-radius:999px; background:var(--navy); color:#fff; display:grid; place-items:center; flex-shrink:0; transition:transform 0.4s var(--ease);}
-  .btn:hover .ic{transform:translate(2px,-2px);}
-  .btn-dark{background:var(--navy); color:#fff;} .btn-dark .ic{background:#fff; color:var(--navy);}
-  .card{border-radius:16px; background:#fff; border:1px solid rgba(0,0,0,0.06); overflow:hidden; transition:transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.3s var(--ease); will-change:transform;}
-  .card:hover{transform:translateY(-4px); box-shadow:0 16px 40px rgba(15,30,54,0.08); border-color:rgba(15,30,54,0.12);}
-  .card-dark{background:var(--navy); color:#fff; border-color:rgba(255,255,255,0.08);}
-  .section{padding:clamp(64px,8vw,128px) 0; position:relative;}
-  .section-sm{padding:clamp(32px,4vw,64px) 0;}
-  .container-wx{max-width:1240px; margin:0 auto; padding:0 24px;}
-  @media(min-width:1024px){ .container-wx{padding:0 32px;} }
-  .tilt{will-change:transform; transition:transform 0.6s var(--ease);}
-  .giant{position:absolute; left:0; right:0; bottom:-4%; font-family:'Syne',sans-serif; font-size:clamp(5rem,14vw,12rem); font-weight:800; line-height:0.8; letter-spacing:-0.06em; color:#fff; opacity:0.05; text-align:center; text-transform:uppercase; pointer-events:none; user-select:none; mask-image:linear-gradient(180deg,#000 30%,transparent 90%); -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 90%);}
-  .progress{position:fixed; top:0; left:0; right:0; height:2px; background:rgba(0,0,0,0.06); z-index:100;}
-  .progress i{display:block; height:100%; width:0; background:var(--navy); transition:width 0.1s linear;}
-  .marquee-static{display:flex; flex-wrap:wrap; gap:12px 24px; justify-content:center;}
-  .marquee-static span{display:inline-flex; align-items:center; gap:12px; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6);}
-  .marquee-static span i{width:4px; height:4px; border-radius:999px; background:#fcf2e8; display:inline-block;}
-  [data-anim]{opacity:0; transform:translateY(24px); transition:opacity 0.8s var(--ease), transform 0.8s var(--ease);}
+  /* RESET FOR HOME ONLY — ensures alignment */
+  #main{overflow-x:hidden;}
+  .home-section{position:relative; width:100%;}
+  .home-container{max-width:1240px; margin:0 auto; padding:0 24px; width:100%;}
+  @media(min-width:1024px){ .home-container{padding:0 32px;} }
+  .home-eyebrow{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; line-height:1.5;}
+  .home-h1{font-family:'Syne',sans-serif; font-weight:600; letter-spacing:-0.03em; line-height:0.95; color:#fff;}
+  .home-h2{font-family:'Syne',sans-serif; font-weight:600; letter-spacing:-0.02em; line-height:1.1; color:#111;}
+  .home-body{font-family:'Sora',sans-serif; font-size:15px; line-height:1.6; color:#525252;}
+  .home-btn{display:inline-flex; align-items:center; gap:12px; height:52px; padding:0 8px 0 24px; border-radius:999px; font-family:'Sora',sans-serif; font-size:14px; font-weight:600; text-decoration:none; transition:transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s; white-space:nowrap;}
+  .home-btn:hover{transform:translateY(-2px); box-shadow:0 12px 32px rgba(0,0,0,0.12);}
+  .home-btn-light{background:#fff; color:#0f1e36;} .home-btn-light .ic{background:#0f1e36; color:#fff;}
+  .home-btn-dark{background:#0f1e36; color:#fff;} .home-btn-dark .ic{background:#fff; color:#0f1e36;}
+  .home-btn .ic{width:28px; height:28px; border-radius:999px; display:grid; place-items:center; flex-shrink:0; transition:transform 0.3s;}
+  .home-btn:hover .ic{transform:translate(2px,-2px);}
+  .home-card{border-radius:16px; background:#fff; border:1px solid rgba(0,0,0,0.06); overflow:hidden; transition:transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s, border-color 0.3s;}
+  .home-card:hover{transform:translateY(-4px); box-shadow:0 16px 40px rgba(15,30,54,0.08); border-color:rgba(15,30,54,0.12);}
+  .home-card-dark{background:#0f1e36; color:#fff; border-color:rgba(255,255,255,0.08);}
+  [data-anim]{opacity:0; transform:translateY(20px); transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);}
   [data-anim].in{opacity:1; transform:none;}
-  [data-anim="left"]{transform:translateX(-24px);} [data-anim="right"]{transform:translateX(24px);}
-  [data-anim].in{transform:none;}
-  .stagger > *{opacity:0; transform:translateY(16px); transition:opacity 0.6s var(--ease), transform 0.6s var(--ease);}
-  .stagger.in > *{opacity:1; transform:none;}
-  .stagger.in > *:nth-child(1){transition-delay:0.06s} .stagger.in > *:nth-child(2){transition-delay:0.12s} .stagger.in > *:nth-child(3){transition-delay:0.18s} .stagger.in > *:nth-child(4){transition-delay:0.24s} .stagger.in > *:nth-child(5){transition-delay:0.30s} .stagger.in > *:nth-child(6){transition-delay:0.36s}
-  @media(max-width:1024px){ .agency-hero .layers{display:none;} .agency-hero{min-height:75svh;} }
-  @media(max-width:640px){ .agency-hero{min-height:70svh;} .btn{height:48px; padding:0 6px 0 20px;} .btn .ic{width:26px; height:26px;} }
+  .scrollbar-hide{scrollbar-width:none; -ms-overflow-style:none;} .scrollbar-hide::-webkit-scrollbar{display:none;}
+  @media(max-width:820px){ .home-container{padding:0 20px;} .home-btn{height:48px; padding:0 6px 0 20px; font-size:13px;} .home-btn .ic{width:26px; height:26px;} }
 </style>
 
-<div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+{# PROGRESS BAR #}
+<div style="position:fixed; top:0; left:0; right:0; height:2px; background:rgba(0,0,0,0.06); z-index:100;"><div id="home-progress" style="height:100%; width:0; background:#0f1e36; transition:width 0.1s linear;"></div></div>
 
-{# HERO — 85svh unique — Agency Caliber — Depth Layers Parallax — Reduced Content #}
-<section class="agency-hero" id="hero" data-anim="fade">
-  <div class="bg"><img src="/images/hero-1.jpg" alt="Corporate office interior Lahore — Beyond Design" width="1408" height="768" fetchpriority="high" decoding="async" /></div>
-  <div class="overlay"></div>
-  <div class="grid-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-  <div class="layers" aria-hidden="true">
-    <div class="layer layer-1" data-depth="0.02"><img src="/images/hero-3.jpg" alt="" width="600" height="450" class="w-full h-full object-cover opacity-90" loading="lazy" decoding="async" /></div>
-    <div class="layer layer-2" data-depth="0.05"><img src="/images/project-facade.jpg" alt="" width="400" height="533" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
-    <div class="layer layer-3" data-depth="0.08">BOQ</div>
-  </div>
-  <div class="content">
-    <div class="container-wx">
-      <div class="max-w-[640px]">
-        <p class="eyebrow" data-anim="up">Beyond Design. We Build Experiences. — M-71 Zainab Tower Lahore</p>
-        <h1 data-anim="up" data-delay="1" style="font-family:'Syne',sans-serif; font-size:clamp(2.6rem,5.5vw,4.2rem); line-height:0.95; letter-spacing:-0.03em; color:#fff; margin-top:16px; max-width:12ch;">Corporate workplaces<br/>built for business</h1>
-        <p data-anim="up" data-delay="2" style="color:rgba(255,255,255,0.7); font-size:16px; line-height:1.6; max-width:36ch; margin-top:20px;">One team, one contract, 3D approval before build. 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof.</p>
-        <div data-anim="up" data-delay="3" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:28px;">
-          <a class="btn" href="/start-your-project/"><span>Start your project</span><span class="ic">↗</span></a>
-          <a class="btn" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.15);" href="/3d-studio/"><span>View 3D Studio</span></a>
-        </div>
-        <div data-anim="up" data-delay="4" style="display:flex; gap:16px; margin-top:32px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.5);">
-          <span>10 Years</span><span>•</span><span>200+ Projects</span><span>•</span><span>3D Before Build</span>
-        </div>
+{# 1. HERO — 85svh unique — Agency — Aligned Left — Reduced Content #}
+<section class="home-section" data-anim="fade" style="min-height:85svh; background:#0c1628; color:#fff; display:flex; align-items:center; padding-top:80px; overflow:hidden;">
+  <div style="position:absolute; inset:0; z-index:1;"><img src="/images/hero-1.jpg" alt="Corporate office interior Lahore" width="1408" height="768" fetchpriority="high" decoding="async" style="width:100%; height:100%; object-fit:cover; opacity:0.9;" /><div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(12,22,40,0.94) 0%, rgba(12,22,40,0.78) 50%, rgba(12,22,40,0.3) 100%);"></div><div style="position:absolute; inset:0; display:grid; grid-template-columns:repeat(4,1fr); pointer-events:none; opacity:0.06;"><i style="border-right:1px solid #fff;"></i><i style="border-right:1px solid #fff;"></i><i style="border-right:1px solid #fff;"></i><i></i></div></div>
+  <div class="home-container" style="position:relative; z-index:3;">
+    <div style="max-width:640px;">
+      <p class="home-eyebrow" style="color:rgba(255,255,255,0.6);" data-anim="up">Beyond Design. We Build Experiences. — M-71 Lahore</p>
+      <h1 class="home-h1" data-anim="up" style="font-size:clamp(2.6rem,5vw,4rem); margin-top:16px; max-width:11ch;" data-delay="1">Corporate workplaces built for business</h1>
+      <p data-anim="up" data-delay="2" style="color:rgba(255,255,255,0.7); font-size:16px; line-height:1.6; max-width:38ch; margin-top:20px;">One team, one contract, 3D approval before build. 10 years, 200+ projects, Wellstar DHA proof.</p>
+      <div data-anim="up" data-delay="3" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:28px;">
+        <a class="home-btn home-btn-light" href="/start-your-project/"><span>Start your project</span><span class="ic">↗</span></a>
+        <a class="home-btn" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.15);" href="/3d-studio/"><span>View 3D Studio</span></a>
       </div>
+      <div data-anim="up" data-delay="4" style="display:flex; gap:16px; margin-top:32px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.5);"><span>10 Years</span><span>•</span><span>200+ Projects</span><span>•</span><span>3D Before Build</span></div>
     </div>
   </div>
-  <div class="giant" aria-hidden="true">WOODEX</div>
+  <div style="position:absolute; left:0; right:0; bottom:-4%; font-family:'Syne',sans-serif; font-size:clamp(5rem,14vw,12rem); font-weight:800; line-height:0.8; letter-spacing:-0.06em; color:#fff; opacity:0.05; text-align:center; text-transform:uppercase; pointer-events:none; user-select:none; z-index:2;" aria-hidden="true">WOODEX</div>
 </section>
 
-{# TRUST — 72px unique — Proof before claim #}
-<section class="section-sm bg-[#0f1e36] text-white" data-anim="fade" style="min-height:72px; display:flex; align-items:center;">
-  <div class="container-wx w-full">
-    <div class="flex flex-wrap gap-4 md:gap-6 justify-center items-center stagger" data-anim="up">
-      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>10 Years</span>
-      <span class="hidden md:inline opacity-30">•</span>
-      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>200+ Projects</span>
-      <span class="hidden md:inline opacity-30">•</span>
-      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>3D Before Build</span>
-      <span class="hidden md:inline opacity-30">•</span>
-      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>Turnkey</span>
-      <span class="hidden md:inline opacity-30">•</span>
-      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>ISO 9001</span>
-      <span class="hidden md:inline opacity-30">•</span>
-      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold text-[#fcf2e8]"><span class="w-1 h-1 bg-[#fcf2e8] rounded-full"></span>Wellstar DHA Proof</span>
+{# 2. TRUST — 72px unique — Aligned Center — Reduced #}
+<section class="home-section" data-anim="fade" style="min-height:72px; background:#0f1e36; color:#fff; display:flex; align-items:center; padding:16px 0;">
+  <div class="home-container" style="width:100%;">
+    <div style="display:flex; flex-wrap:wrap; gap:12px 20px; justify-content:center; align-items:center;" data-anim="up">
+      <span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;"><span style="width:4px; height:4px; border-radius:999px; background:rgba(255,255,255,0.4);"></span>10 Years</span>
+      <span style="opacity:0.3;" class="hidden md:inline">•</span>
+      <span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;"><span style="width:4px; height:4px; border-radius:999px; background:rgba(255,255,255,0.4);"></span>200+ Projects</span>
+      <span style="opacity:0.3;" class="hidden md:inline">•</span>
+      <span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;"><span style="width:4px; height:4px; border-radius:999px; background:rgba(255,255,255,0.4);"></span>3D Before Build</span>
+      <span style="opacity:0.3;" class="hidden md:inline">•</span>
+      <span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;"><span style="width:4px; height:4px; border-radius:999px; background:rgba(255,255,255,0.4);"></span>Turnkey</span>
+      <span style="opacity:0.3;" class="hidden md:inline">•</span>
+      <span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;"><span style="width:4px; height:4px; border-radius:999px; background:rgba(255,255,255,0.4);"></span>ISO 9001</span>
+      <span style="opacity:0.3;" class="hidden md:inline">•</span>
+      <span style="display:inline-flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:#fcf2e8;"><span style="width:4px; height:4px; border-radius:999px; background:#fcf2e8;"></span>Wellstar Proof</span>
     </div>
   </div>
 </section>
 
-{# SERVICES — 90svh unique — Complete services you can buy — Material hover — Reduced content #}
-<section class="section bg-[#fcf2e8]" data-anim="fade" style="min-height:90svh;">
-  <div class="container-wx">
-    <div class="grid grid-cols-12 gap-6 items-end mb-10" data-anim="up">
-      <div class="col-span-12 lg:col-span-6"><p class="eyebrow dark">Complete services</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.4rem); line-height:1.1; max-width:12ch; margin-top:12px;">Six services you can buy</h2></div>
-      <div class="col-span-12 lg:col-span-6"><p style="color:var(--charcoal); font-size:15px; line-height:1.6; max-width:36ch;">Rooms, outputs, unique path. Workplaces first. Commercial growth.</p></div>
+{# 3. SERVICES — 90svh unique — Complete services — Aligned 7/5 — Reduced #}
+<section class="home-section" data-anim="fade" style="background:#fcf2e8; padding:clamp(64px,8vw,96px) 0; min-height:80svh;">
+  <div class="home-container">
+    <div style="display:grid; grid-template-columns:repeat(12,1fr); gap:24px; align-items:end; margin-bottom:40px;" data-anim="up">
+      <div style="grid-column:span 6;"><p class="home-eyebrow" style="color:rgba(15,30,54,0.6);">Complete services</p><h2 class="home-h2" style="font-size:clamp(1.8rem,3vw,2.4rem); margin-top:12px; max-width:12ch;">Six services you can buy</h2></div>
+      <div style="grid-column:span 6;"><p class="home-body" style="max-width:36ch;">Rooms, outputs, unique path. Workplaces first. Commercial growth.</p></div>
     </div>
-    <div class="grid grid-cols-12 gap-6">
-      <div class="col-span-12 lg:col-span-7" data-anim="left">
-        <div class="relative rounded-[24px] overflow-hidden aspect-[4/3] bg-[#0f1e36] tilt" data-tilt>
-          <img id="svc-img" src="/images/hero-3.jpg" alt="Office Fit-Out Lahore" width="800" height="600" class="w-full h-full object-cover" loading="lazy" decoding="async" />
-          <div class="absolute bottom-4 left-4 right-4 bg-[#0f1e36]/85 backdrop-blur rounded-[16px] p-5 flex justify-between items-center">
-            <div><p class="text-[11px] tracking-wide uppercase font-semibold text-white/50">Service 01 — P1 Revenue</p><p id="svc-cap" class="text-[14px] font-medium text-white mt-1">Office Fit-Out — arrival, focus, demo</p></div>
-            <span class="w-7 h-7 rounded-full bg-white text-[#0f1e36] grid place-items-center">↗</span>
+    <div style="display:grid; grid-template-columns:repeat(12,1fr); gap:24px;">
+      <div style="grid-column:span 7;" data-anim="left">
+        <div style="position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/3; background:#0f1e36;">
+          <img id="home-svc-img" src="/images/hero-3.jpg" alt="Office Fit-Out Lahore" width="800" height="600" style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" />
+          <div style="position:absolute; bottom:16px; left:16px; right:16px; background:rgba(15,30,54,0.85); backdrop-filter:blur(8px); border-radius:16px; padding:20px; display:flex; justify-content:space-between; align-items:center;">
+            <div><p style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.5);">Service 01 — P1 Revenue</p><p id="home-svc-cap" style="font-size:14px; font-weight:500; color:#fff; margin-top:4px;">Office Fit-Out — arrival, focus, demo</p></div>
+            <span style="width:28px; height:28px; border-radius:999px; background:#fff; color:#0f1e36; display:grid; place-items:center;">↗</span>
           </div>
         </div>
       </div>
-      <div class="col-span-12 lg:col-span-5" data-anim="right" data-delay="1">
-        <div class="space-y-1 stagger">
-          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/hero-3.jpg" data-cap="Office Fit-Out — arrival, focus, demo"><span class="text-[12px] font-semibold text-black/30 mt-1">01</span><span class="flex-1"><span class="block font-semibold text-[15px] group-hover:text-[#0f1e36]">Office Fit-Out</span><span class="block text-[13px] text-[#525252] mt-1">Corporate, co-working, software house.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
-          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/hero-1.jpg" data-cap="Corporate — high-performing"><span class="text-[12px] font-semibold text-black/30 mt-1">02</span><span class="flex-1"><span class="block font-semibold text-[15px]">Corporate Interiors</span><span class="block text-[13px] text-[#525252] mt-1">Brand, team, clients. Planning + 3D.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
-          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/hero-2.jpg" data-cap="Commercial — shop that can sell"><span class="text-[12px] font-semibold text-black/30 mt-1">03</span><span class="flex-1"><span class="block font-semibold text-[15px]">Commercial Fit-Out</span><span class="block text-[13px] text-[#525252] mt-1">Retail, restaurant, pharmacy.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
-          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/split-night.jpg" data-cap="Renovation — fix without shutdown"><span class="text-[12px] font-semibold text-black/30 mt-1">04</span><span class="flex-1"><span class="block font-semibold text-[15px]">Renovation</span><span class="block text-[13px] text-[#525252] mt-1">Existing space — minimal disruption.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
-          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/studio-hero.jpg" data-cap="Turnkey — one team one result"><span class="text-[12px] font-semibold text-black/30 mt-1">05</span><span class="flex-1"><span class="block font-semibold text-[15px]">Turnkey</span><span class="block text-[13px] text-[#525252] mt-1">Design, 3D, BOQ, execution, handover.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
-          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/studio-pharmacy.jpg" data-cap="3D Studio — see room before exists"><span class="text-[12px] font-semibold text-black/30 mt-1">06</span><span class="flex-1"><span class="block font-semibold text-[15px]">3D Studio™</span><span class="block text-[13px] text-[#525252] mt-1">Rendering, walkthrough, 360 — in-house.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
+      <div style="grid-column:span 5;" data-anim="right" data-delay="1">
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <button class="home-svc-btn" data-img="/images/hero-3.jpg" data-cap="Office Fit-Out — arrival, focus, demo" style="width:100%; text-align:left; display:flex; gap:16px; padding:16px; border-radius:16px; border:1px solid transparent; background:transparent; cursor:pointer; transition:all 0.3s;"><span style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.3); margin-top:2px;">01</span><span style="flex:1;"><span style="display:block; font-weight:600; font-size:15px; color:#111;">Office Fit-Out</span><span style="display:block; font-size:13px; color:#525252; margin-top:4px;">Corporate, co-working, software house.</span></span><span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center; flex-shrink:0;">↗</span></button>
+          <button class="home-svc-btn" data-img="/images/hero-1.jpg" data-cap="Corporate — high-performing" style="width:100%; text-align:left; display:flex; gap:16px; padding:16px; border-radius:16px; border:1px solid transparent; background:transparent; cursor:pointer; transition:all 0.3s;"><span style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.3); margin-top:2px;">02</span><span style="flex:1;"><span style="display:block; font-weight:600; font-size:15px; color:#111;">Corporate Interiors</span><span style="display:block; font-size:13px; color:#525252; margin-top:4px;">Brand, team, clients. Planning + 3D.</span></span><span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center; flex-shrink:0;">↗</span></button>
+          <button class="home-svc-btn" data-img="/images/hero-2.jpg" data-cap="Commercial — shop that can sell" style="width:100%; text-align:left; display:flex; gap:16px; padding:16px; border-radius:16px; border:1px solid transparent; background:transparent; cursor:pointer; transition:all 0.3s;"><span style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.3); margin-top:2px;">03</span><span style="flex:1;"><span style="display:block; font-weight:600; font-size:15px; color:#111;">Commercial Fit-Out</span><span style="display:block; font-size:13px; color:#525252; margin-top:4px;">Retail, restaurant, pharmacy.</span></span><span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center; flex-shrink:0;">↗</span></button>
+          <button class="home-svc-btn" data-img="/images/split-night.jpg" data-cap="Renovation — fix without shutdown" style="width:100%; text-align:left; display:flex; gap:16px; padding:16px; border-radius:16px; border:1px solid transparent; background:transparent; cursor:pointer; transition:all 0.3s;"><span style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.3); margin-top:2px;">04</span><span style="flex:1;"><span style="display:block; font-weight:600; font-size:15px; color:#111;">Renovation</span><span style="display:block; font-size:13px; color:#525252; margin-top:4px;">Existing space — minimal disruption.</span></span><span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center; flex-shrink:0;">↗</span></button>
+          <button class="home-svc-btn" data-img="/images/studio-hero.jpg" data-cap="Turnkey — one team one result" style="width:100%; text-align:left; display:flex; gap:16px; padding:16px; border-radius:16px; border:1px solid transparent; background:transparent; cursor:pointer; transition:all 0.3s;"><span style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.3); margin-top:2px;">05</span><span style="flex:1;"><span style="display:block; font-weight:600; font-size:15px; color:#111;">Turnkey</span><span style="display:block; font-size:13px; color:#525252; margin-top:4px;">Design, 3D, BOQ, execution, handover.</span></span><span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center; flex-shrink:0;">↗</span></button>
+          <button class="home-svc-btn" data-img="/images/studio-pharmacy.jpg" data-cap="3D Studio — see room before exists" style="width:100%; text-align:left; display:flex; gap:16px; padding:16px; border-radius:16px; border:1px solid transparent; background:transparent; cursor:pointer; transition:all 0.3s;"><span style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.3); margin-top:2px;">06</span><span style="flex:1;"><span style="display:block; font-weight:600; font-size:15px; color:#111;">3D Studio™</span><span style="display:block; font-size:13px; color:#525252; margin-top:4px;">Rendering, walkthrough, 360 — in-house.</span></span><span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center; flex-shrink:0;">↗</span></button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-{# 3D STUDIO PIN — 70svh unique — See it. Understand it. Build it. — Depth #}
-<section class="section bg-[#fcf2e8]" data-anim="fade" style="min-height:70svh;">
-  <div class="lx-pin-track" style="height:200vh; position:relative;">
-    <div class="lx-pin-stick sticky top-0" style="height:70svh; overflow:hidden; display:flex; align-items:center; background:#fcf2e8;">
-      <div class="absolute top-0 left-0 right-0 h-[2px] bg-black/5 z-20"><div id="lx-progress" class="h-full bg-[#0f1e36] w-0 transition-[width] duration-150"></div></div>
-      <div class="container-wx w-full py-6">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
-          <div class="lg:w-[52%]" data-anim="left">
-            <div class="relative rounded-[24px] overflow-hidden bg-[#0f1e36] aspect-[16/11] shadow-[0_20px_60px_rgba(0,0,0,0.15)] tilt" data-tilt>
-              <img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100" data-pin-img="0" src="/images/studio-hero.jpg" alt="3D Studio still" width="800" height="500" fetchpriority="high" decoding="async" />
-              <img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" data-pin-img="1" src="/images/studio-kitchen.jpg" alt="Walkthrough" width="800" height="500" loading="lazy" decoding="async" />
-              <img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" data-pin-img="2" src="/images/studio-pharmacy.jpg" alt="BOQ" width="800" height="500" loading="lazy" decoding="async" />
-              <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8 bg-gradient-to-t from-black/70 via-black/20 to-transparent"><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); line-height:1.1; color:#fff; max-width:16ch;">See it. Understand it. Build it. — 3D Studio™</h2></div>
+{# 4. 3D STUDIO PIN — 70svh unique — Aligned #}
+<section class="home-section" data-anim="fade" style="background:#fcf2e8; padding:clamp(64px,8vw,96px) 0;">
+  <div style="height:200vh; position:relative;" class="home-pin-track">
+    <div style="position:sticky; top:0; height:70svh; overflow:hidden; display:flex; align-items:center; background:#fcf2e8;" class="home-pin-stick">
+      <div style="position:absolute; top:0; left:0; right:0; height:2px; background:rgba(0,0,0,0.06);"><div id="home-pin-progress" style="height:100%; width:0; background:#0f1e36; transition:width 0.15s linear;"></div></div>
+      <div class="home-container" style="width:100%; padding-top:24px; padding-bottom:24px;">
+        <div style="display:flex; flex-direction:column; gap:32px;">
+          <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:32px; align-items:stretch;" class="home-pin-grid">
+            <div style="position:relative; border-radius:24px; overflow:hidden; background:#0f1e36; aspect-ratio:16/11; box-shadow:0 20px 60px rgba(0,0,0,0.15);" data-anim="left">
+              <img data-home-pin="0" src="/images/studio-hero.jpg" alt="3D Studio still" width="800" height="500" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:opacity 0.7s; opacity:1;" fetchpriority="high" decoding="async" />
+              <img data-home-pin="1" src="/images/studio-kitchen.jpg" alt="Walkthrough" width="800" height="500" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:opacity 0.7s; opacity:0;" loading="lazy" decoding="async" />
+              <img data-home-pin="2" src="/images/studio-pharmacy.jpg" alt="BOQ" width="800" height="500" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:opacity 0.7s; opacity:0;" loading="lazy" decoding="async" />
+              <div style="position:absolute; bottom:0; left:0; right:0; padding:24px; background:linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);"><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); line-height:1.1; color:#fff; max-width:16ch;">See it. Understand it. Build it. — 3D Studio™</h2></div>
             </div>
-          </div>
-          <div class="lg:w-[48%]" data-anim="right" data-delay="1">
-            <div class="bg-white rounded-[24px] p-6 lg:p-8 h-full flex flex-col min-h-[420px] border border-black/5">
-              <div class="relative flex-1">
-                <article class="lx-copy absolute inset-0 flex flex-col transition-all duration-700 opacity-100 translate-y-0" data-copy="0"><div class="flex gap-5"><div style="font-family:'Syne',sans-serif; font-size:56px; font-weight:700; line-height:1; color:rgba(15,30,54,0.1);">01</div><div class="flex-1"><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; line-height:1.2;">Stills first — a still is a meeting</h3><p class="mt-3 text-[14px] leading-[1.6] text-[#525252] max-w-[32ch]">One still per key room. In-house, not render farm. 3D-only complete.</p><div class="mt-6"><a class="btn btn-dark" href="/3d-studio/"><span>Open 3D Studio</span><span class="ic">↗</span></a></div></div></div></article>
-                <article class="lx-copy absolute inset-0 flex flex-col transition-all duration-700 opacity-0 translate-y-8 pointer-events-none" data-copy="1"><div class="flex gap-5"><div style="font-family:'Syne',sans-serif; font-size:56px; font-weight:700; line-height:1; color:rgba(15,30,54,0.1);">02</div><div class="flex-1"><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; line-height:1.2;">Walkthrough when path matters</h3><p class="mt-3 text-[14px] leading-[1.6] text-[#525252] max-w-[32ch]">Sequence, not spectacle. Used for Wellstar DHA approval.</p><div class="mt-6"><a class="btn btn-dark" href="/3d-studio/"><span>Open 3D Studio</span><span class="ic">↗</span></a></div></div></div></article>
-                <article class="lx-copy absolute inset-0 flex flex-col transition-all duration-700 opacity-0 translate-y-8 pointer-events-none" data-copy="2"><div class="flex gap-5"><div style="font-family:'Syne',sans-serif; font-size:56px; font-weight:700; line-height:1; color:rgba(15,30,54,0.1);">03</div><div class="flex-1"><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; line-height:1.2;">Then money, if you want — BOQ</h3><p class="mt-3 text-[14px] leading-[1.6] text-[#525252] max-w-[32ch]">Same still to BOQ and mill. No fake sqft rate.</p><div class="mt-6"><a class="btn btn-dark" href="/services/turnkey/"><span>Turnkey</span><span class="ic">↗</span></a></div></div></div></article>
+            <div style="background:#fff; border-radius:24px; padding:28px; display:flex; flex-direction:column; min-height:420px; border:1px solid rgba(0,0,0,0.06);" data-anim="right" data-delay="1">
+              <div style="position:relative; flex:1;">
+                <article data-home-copy="0" style="position:absolute; inset:0; display:flex; flex-direction:column; transition:all 0.7s; opacity:1; transform:translateY(0);"><div style="display:flex; gap:20px;"><div style="font-family:'Syne',sans-serif; font-size:48px; font-weight:700; line-height:1; color:rgba(15,30,54,0.1);">01</div><div style="flex:1;"><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; line-height:1.2;">Stills first — a still is a meeting</h3><p style="margin-top:12px; font-size:14px; line-height:1.6; color:#525252; max-width:32ch;">One still per key room. In-house, not render farm.</p><div style="margin-top:24px;"><a class="home-btn home-btn-dark" href="/3d-studio/"><span>Open 3D Studio</span><span class="ic">↗</span></a></div></div></div></article>
+                <article data-home-copy="1" style="position:absolute; inset:0; display:flex; flex-direction:column; transition:all 0.7s; opacity:0; transform:translateY(16px); pointer-events:none;"><div style="display:flex; gap:20px;"><div style="font-family:'Syne',sans-serif; font-size:48px; font-weight:700; line-height:1; color:rgba(15,30,54,0.1);">02</div><div style="flex:1;"><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; line-height:1.2;">Walkthrough when path matters</h3><p style="margin-top:12px; font-size:14px; line-height:1.6; color:#525252; max-width:32ch;">Sequence, not spectacle. Wellstar DHA approval.</p><div style="margin-top:24px;"><a class="home-btn home-btn-dark" href="/3d-studio/"><span>Open 3D Studio</span><span class="ic">↗</span></a></div></div></div></article>
+                <article data-home-copy="2" style="position:absolute; inset:0; display:flex; flex-direction:column; transition:all 0.7s; opacity:0; transform:translateY(16px); pointer-events:none;"><div style="display:flex; gap:20px;"><div style="font-family:'Syne',sans-serif; font-size:48px; font-weight:700; line-height:1; color:rgba(15,30,54,0.1);">03</div><div style="flex:1;"><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; line-height:1.2;">Then money, if you want — BOQ</h3><p style="margin-top:12px; font-size:14px; line-height:1.6; color:#525252; max-width:32ch;">Same still to BOQ and mill. No fake rate.</p><div style="margin-top:24px;"><a class="home-btn home-btn-dark" href="/services/turnkey/"><span>Turnkey</span><span class="ic">↗</span></a></div></div></div></article>
               </div>
-              <div class="mt-auto pt-6 border-t border-black/5 flex justify-between items-center">
-                <div class="flex gap-2">
-                  <button class="lx-thumb w-14 h-10 rounded-[10px] overflow-hidden ring-2 ring-[#0f1e36] ring-offset-2" data-thumb="0" aria-label="Slide 1"><img src="/images/studio-hero.jpg" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async" /></button>
-                  <button class="lx-thumb w-14 h-10 rounded-[10px] overflow-hidden opacity-60" data-thumb="1" aria-label="Slide 2"><img src="/images/studio-kitchen.jpg" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async" /></button>
-                  <button class="lx-thumb w-14 h-10 rounded-[10px] overflow-hidden opacity-60" data-thumb="2" aria-label="Slide 3"><img src="/images/studio-pharmacy.jpg" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async" /></button>
+              <div style="margin-top:auto; padding-top:24px; border-top:1px solid rgba(0,0,0,0.06); display:flex; justify-content:space-between; align-items:center;">
+                <div style="display:flex; gap:8px;">
+                  <button data-home-thumb="0" style="width:56px; height:40px; border-radius:10px; overflow:hidden; border:2px solid #0f1e36; padding:0; cursor:pointer;"><img src="/images/studio-hero.jpg" alt="" width="56" height="40" style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" /></button>
+                  <button data-home-thumb="1" style="width:56px; height:40px; border-radius:10px; overflow:hidden; border:2px solid transparent; opacity:0.6; padding:0; cursor:pointer;"><img src="/images/studio-kitchen.jpg" alt="" width="56" height="40" style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" /></button>
+                  <button data-home-thumb="2" style="width:56px; height:40px; border-radius:10px; overflow:hidden; border:2px solid transparent; opacity:0.6; padding:0; cursor:pointer;"><img src="/images/studio-pharmacy.jpg" alt="" width="56" height="40" style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" /></button>
                 </div>
-                <span class="text-[11px] tracking-wide uppercase text-black/40">Studio • 3D</span>
+                <span style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(0,0,0,0.4);">Studio • 3D</span>
               </div>
             </div>
           </div>
@@ -214,169 +137,186 @@ Every decision intentional, distinctive, premium. Avoid generic templates.
   </div>
 </section>
 
-{# SECTORS — 75svh unique — Client driven — Emotional journey #}
-<section class="section bg-white" data-anim="fade" style="min-height:75svh;">
-  <div class="container-wx">
-    <div class="max-w-[520px] mb-10" data-anim="up"><p class="eyebrow dark">Client driven — Do you understand my business?</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.3rem); line-height:1.1; margin-top:12px;">We understand your business.</h2><p style="color:var(--charcoal); font-size:14px; line-height:1.6; margin-top:12px; max-width:40ch;">6 distinct visitors — specificity converts higher.</p></div>
-    <div class="grid grid-cols-12 gap-5 stagger" data-anim="up" data-delay="1">
-      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/corporate-offices/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15A — P1 Revenue</p><span class="w-10 h-10 rounded-[10px] bg-[#fcf2e8] grid place-items-center text-[12px] font-semibold">01</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Corporate Offices</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">Brand, team, clients. First 10 seconds judgment.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
-      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/software-houses/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15B — Talent</p><span class="w-10 h-10 rounded-[10px] bg-[#f8f8f8] grid place-items-center text-[12px] font-semibold">02</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Software Houses</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">Focus vs collaboration, demo room, breakout.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
-      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/retail-showrooms/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15C — Enter Pause Pay</p><span class="w-10 h-10 rounded-[10px] bg-[#fcf2e8] grid place-items-center text-[12px] font-semibold">03</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Retail & Showrooms</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">Shop that can sell. Journey, merchandising.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
-      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/restaurants-cafes/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15D — Saturday Night</p><span class="w-10 h-10 rounded-[10px] bg-[#f8f8f8] grid place-items-center text-[12px] font-semibold">04</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Restaurants & Cafés</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">Tables, pass, light, atmosphere you can sit inside.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
-      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/healthcare/" class="card group p-6 h-full min-h-[220px] flex flex-col bg-[#0f1e36] text-white border-white/10"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-white/50">15E — Proof</p><span class="w-10 h-10 rounded-[10px] bg-white/10 grid place-items-center text-[12px] font-semibold">05</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px; color:#fff;">Healthcare & Clinics</h3><p class="mt-2 text-[13px] leading-[1.5] text-white/70">Compliance, hygiene, flow — Wellstar proof.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-white">Explore <span class="w-7 h-7 rounded-full bg-white/10 grid place-items-center transition">↗</span></span></a></div>
-      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/residential/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15F — Selective</p><span class="w-10 h-10 rounded-[10px] bg-[#fcf2e8] grid place-items-center text-[12px] font-semibold">06</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Residential</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">House as one instrument — living, kitchen, wardrobe.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
+{# 5. SECTORS — 75svh unique — Client driven — Aligned Grid 3 #}
+<section class="home-section" data-anim="fade" style="background:#fff; padding:clamp(64px,8vw,96px) 0; min-height:75svh;">
+  <div class="home-container">
+    <div style="max-width:520px; margin-bottom:40px;" data-anim="up"><p class="home-eyebrow" style="color:rgba(15,30,54,0.6);">Client driven — Do you understand my business?</p><h2 class="home-h2" style="font-size:clamp(1.8rem,3vw,2.2rem); margin-top:12px;">We understand your business.</h2><p class="home-body" style="margin-top:12px; font-size:14px; max-width:40ch;">6 distinct visitors — specificity converts higher.</p></div>
+    <div style="display:grid; grid-template-columns:repeat(12,1fr); gap:20px;">
+      <div style="grid-column:span 4;" class="home-col-4"><a href="/sectors/corporate-offices/" class="home-card" style="display:flex; flex-direction:column; padding:24px; min-height:220px; text-decoration:none; color:inherit;"><div style="display:flex; justify-content:space-between;"><p style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(0,0,0,0.4);">15A — P1 Revenue</p><span style="width:40px; height:40px; border-radius:10px; background:#fcf2e8; display:grid; place-items:center; font-size:12px; font-weight:600;">01</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Corporate Offices</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:#525252;">Brand, team, clients. First 10 seconds judgment.</p><span style="margin-top:auto; padding-top:16px; display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600;">Explore <span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center;">↗</span></span></a></div>
+      <div style="grid-column:span 4;" class="home-col-4"><a href="/sectors/software-houses/" class="home-card" style="display:flex; flex-direction:column; padding:24px; min-height:220px; text-decoration:none; color:inherit;"><div style="display:flex; justify-content:space-between;"><p style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(0,0,0,0.4);">15B — Talent</p><span style="width:40px; height:40px; border-radius:10px; background:#f8f8f8; display:grid; place-items:center; font-size:12px; font-weight:600;">02</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Software Houses</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:#525252;">Focus vs collaboration, demo room, breakout.</p><span style="margin-top:auto; padding-top:16px; display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600;">Explore <span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center;">↗</span></span></a></div>
+      <div style="grid-column:span 4;" class="home-col-4"><a href="/sectors/retail-showrooms/" class="home-card" style="display:flex; flex-direction:column; padding:24px; min-height:220px; text-decoration:none; color:inherit;"><div style="display:flex; justify-content:space-between;"><p style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(0,0,0,0.4);">15C — Retail</p><span style="width:40px; height:40px; border-radius:10px; background:#fcf2e8; display:grid; place-items:center; font-size:12px; font-weight:600;">03</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Retail & Showrooms</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:#525252;">Shop that can sell. Journey, merchandising.</p><span style="margin-top:auto; padding-top:16px; display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600;">Explore <span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center;">↗</span></span></a></div>
+      <div style="grid-column:span 4;" class="home-col-4"><a href="/sectors/restaurants-cafes/" class="home-card" style="display:flex; flex-direction:column; padding:24px; min-height:220px; text-decoration:none; color:inherit;"><div style="display:flex; justify-content:space-between;"><p style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(0,0,0,0.4);">15D — F&B</p><span style="width:40px; height:40px; border-radius:10px; background:#f8f8f8; display:grid; place-items:center; font-size:12px; font-weight:600;">04</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Restaurants & Cafés</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:#525252;">Tables, pass, light, atmosphere you can sit inside.</p><span style="margin-top:auto; padding-top:16px; display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600;">Explore <span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center;">↗</span></span></a></div>
+      <div style="grid-column:span 4;" class="home-col-4"><a href="/sectors/healthcare/" class="home-card home-card-dark" style="display:flex; flex-direction:column; padding:24px; min-height:220px; text-decoration:none;"><div style="display:flex; justify-content:space-between;"><p style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.5);">15E — Proof</p><span style="width:40px; height:40px; border-radius:10px; background:rgba(255,255,255,0.1); display:grid; place-items:center; font-size:12px; font-weight:600;">05</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px; color:#fff;">Healthcare & Clinics</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.7);">Compliance, hygiene, flow — Wellstar proof.</p><span style="margin-top:auto; padding-top:16px; display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:#fff;">Explore <span style="width:28px; height:28px; border-radius:999px; background:rgba(255,255,255,0.1); display:grid; place-items:center;">↗</span></span></a></div>
+      <div style="grid-column:span 4;" class="home-col-4"><a href="/sectors/residential/" class="home-card" style="display:flex; flex-direction:column; padding:24px; min-height:220px; text-decoration:none; color:inherit;"><div style="display:flex; justify-content:space-between;"><p style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(0,0,0,0.4);">15F — Selective</p><span style="width:40px; height:40px; border-radius:10px; background:#fcf2e8; display:grid; place-items:center; font-size:12px; font-weight:600;">06</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Residential</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:#525252;">House as one instrument — living, kitchen, wardrobe.</p><span style="margin-top:auto; padding-top:16px; display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600;">Explore <span style="width:28px; height:28px; border-radius:999px; background:#f8f8f8; display:grid; place-items:center;">↗</span></span></a></div>
     </div>
   </div>
 </section>
 
-{# MATERIALS — 70svh unique — Craft — Lighting — Depth #}
-<section class="section bg-[#f8f8f8]" data-anim="fade" style="min-height:70svh;">
-  <div class="container-wx">
-    <div class="flex flex-wrap justify-between items-end gap-6 mb-10" data-anim="up"><div><p class="eyebrow dark">Materials — mill connected to still</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2.2rem); line-height:1.1; margin-top:12px; max-width:14ch;">Where hand goes quality must be</h2></div><p style="color:var(--charcoal); font-size:14px; line-height:1.6; max-width:32ch;">Walnut, concrete, brass, glass, boucle, stone — each with its own light.</p></div>
-    <div class="grid grid-cols-12 gap-5 stagger">
-      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#f4efe7] grid place-items-center text-[18px]">🪵</span><p class="mt-4 text-[13px] font-semibold">Walnut</p><p class="mt-1 text-[11px] text-[#525252]">Warm, 3200K, softbox</p></div></div>
-      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#e8e6e1] grid place-items-center text-[18px]">◼</span><p class="mt-4 text-[13px] font-semibold">Concrete</p><p class="mt-1 text-[11px] text-[#525252]">Matte, AO, 5600K</p></div></div>
-      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center bg-[#0f1e36] text-white border-white/10"><span class="w-12 h-12 rounded-[12px] bg-white/10 grid place-items-center text-[18px]">◎</span><p class="mt-4 text-[13px] font-semibold text-white">Brass</p><p class="mt-1 text-[11px] text-white/60">Specular, rim light</p></div></div>
-      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#f0f4f8] grid place-items-center text-[18px]">⬙</span><p class="mt-4 text-[13px] font-semibold">Glass</p><p class="mt-1 text-[11px] text-[#525252]">Fluted, refracted</p></div></div>
-      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#fcf2e8] grid place-items-center text-[18px]">◍</span><p class="mt-4 text-[13px] font-semibold">Boucle</p><p class="mt-1 text-[11px] text-[#525252]">Soft, diffuse</p></div></div>
-      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#e8e6e1] grid place-items-center text-[18px]">⬢</span><p class="mt-4 text-[13px] font-semibold">Stone</p><p class="mt-1 text-[11px] text-[#525252]">Plinth, grounded</p></div></div>
+{# 6. STATS — 60svh unique — Aligned 4 cols #}
+<section class="home-section" data-anim="fade" style="background:#0f1e36; color:#fff; padding:clamp(64px,8vw,96px) 0; min-height:60svh;">
+  <div class="home-container">
+    <div style="max-width:520px; margin-bottom:40px;" data-anim="up"><p class="home-eyebrow" style="color:rgba(255,255,255,0.5);">One team. One process. One result.</p><h2 class="home-h2" style="font-size:clamp(1.6rem,3vw,2rem); color:#fff; margin-top:12px; max-width:22ch;">Discover → Deliver — Stop at gate you choose</h2></div>
+    <div style="display:grid; grid-template-columns:repeat(12,1fr); gap:20px;">
+      <div style="grid-column:span 3;" class="home-col-3"><div class="home-card home-card-dark" style="padding:28px; min-height:200px; display:flex; flex-direction:column;"><div style="font-family:'Syne',sans-serif; font-size:44px; font-weight:600; line-height:1; color:#fcf2e8;">200+</div><div style="margin-top:32px;"><h3 style="font-family:'Syne',sans-serif; font-size:16px; font-weight:600; color:#fff;">Projects delivered</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.7);">Plan, still and site when brief includes build.</p></div></div></div>
+      <div style="grid-column:span 3;" class="home-col-3"><div class="home-card" style="padding:28px; min-height:200px; display:flex; flex-direction:column; background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);"><div style="font-family:'Syne',sans-serif; font-size:44px; font-weight:600; line-height:1; color:#fcf2e8;">10+</div><div style="margin-top:32px;"><h3 style="font-family:'Syne',sans-serif; font-size:16px; font-weight:600; color:#fff;">Execution years</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.7);">ISO 9001. Site, joinery, handover.</p></div></div></div>
+      <div style="grid-column:span 3;" class="home-col-3"><div class="home-card" style="padding:28px; min-height:200px; display:flex; flex-direction:column; background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);"><div style="font-family:'Syne',sans-serif; font-size:44px; font-weight:600; line-height:1; color:#fcf2e8;">10+</div><div style="margin-top:32px;"><h3 style="font-family:'Syne',sans-serif; font-size:16px; font-weight:600; color:#fff;">Founder years</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.7);">Commercial first. Complete job.</p></div></div></div>
+      <div style="grid-column:span 3;" class="home-col-3"><div class="home-card" style="padding:28px; min-height:200px; display:flex; flex-direction:column; background:#fcf2e8;"><div style="font-family:'Syne',sans-serif; font-size:44px; font-weight:600; line-height:1; color:#0f1e36;">3</div><div style="margin-top:32px;"><h3 style="font-family:'Syne',sans-serif; font-size:16px; font-weight:600; color:#111;">Studios</h3><p style="margin-top:8px; font-size:13px; line-height:1.5; color:#525252;">Gulberg III Lahore HQ, Clifton, F-7.</p></div></div></div>
     </div>
   </div>
 </section>
 
-{# PROCESS — 60svh unique — 7 Gates — Stop at gate you choose #}
-<section class="section bg-white" data-anim="fade" style="min-height:60svh;">
-  <div class="container-wx">
-    <div class="max-w-[520px] mb-8" data-anim="up"><p class="eyebrow dark">Process — 7 Gates</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2rem); line-height:1.1; margin-top:12px;">Discover → Deliver — one team, one result</h2></div>
-    <div class="flex gap-4 overflow-x-auto scrollbar-hide pb-4" style="scroll-snap-type:x mandatory;" data-anim="up" data-delay="1">
-      <div class="min-w-[280px] snap-start card p-6 bg-[#f8f8f8]"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">01</p><h3 class="mt-3 text-[14px] font-semibold">Discover</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Brief, space today, must become, city, budget.</p></div>
-      <div class="min-w-[280px] snap-start card p-6 bg-white"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">02</p><h3 class="mt-3 text-[14px] font-semibold">Design</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Space planning, concept, materials, drawings.</p></div>
-      <div class="min-w-[280px] snap-start card p-6 bg-[#0f1e36] text-white"><p class="text-[11px] tracking-wide uppercase font-semibold text-white/50">03</p><h3 class="mt-3 text-[14px] font-semibold text-white">Visualize — DRAWN</h3><p class="mt-2 text-[12px] leading-[1.5] text-white/70">Stills first, one per key room, in-house.</p></div>
-      <div class="min-w-[280px] snap-start card p-6 bg-white"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">04</p><h3 class="mt-3 text-[14px] font-semibold">Plan — BOQ</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Budget clarity, BOQ, no fake sqft rate.</p></div>
-      <div class="min-w-[280px] snap-start card p-6 bg-[#f8f8f8]"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">05</p><h3 class="mt-3 text-[14px] font-semibold">Build</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Civil, MEP, site, mill connected to still.</p></div>
-      <div class="min-w-[280px] snap-start card p-6 bg-white"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">06</p><h3 class="mt-3 text-[14px] font-semibold">Install</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Furniture, joinery, lighting, signage.</p></div>
-      <div class="min-w-[280px] snap-start card p-6 bg-[#f8f8f8]"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">07</p><h3 class="mt-3 text-[14px] font-semibold">Deliver</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Handover, snag, warranty, aftercare.</p></div>
+{# 7. PROJECTS — 80svh unique — Studies — Aligned Masonry #}
+<section class="home-section" data-anim="fade" style="background:#f8f8f8; padding:clamp(64px,8vw,96px) 0; min-height:80svh;">
+  <div class="home-container">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:end; gap:24px; margin-bottom:40px;" data-anim="up"><h2 class="home-h2" style="font-size:clamp(1.6rem,3vw,2rem); max-width:16ch;">Studies — rooms drawn so they can be built</h2><a href="/projects/" class="home-btn home-btn-dark"><span>All studies</span><span class="ic">↗</span></a></div>
+    <div style="display:grid; grid-template-columns:repeat(12,1fr); gap:20px;">
+      <div style="grid-column:span 8;" class="home-col-8"><a href="/projects/contemporary-retreat/" class="home-card" style="position:relative; display:block; aspect-ratio:16/10; background:#0f1e36; overflow:hidden;"><img src="/images/project-facade.jpg" alt="Contemporary retreat study Lahore" width="800" height="500" style="width:100%; height:100%; object-fit:cover; transition:transform 0.7s;" loading="lazy" decoding="async" /><div style="position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.9); backdrop-filter:blur(4px); border-radius:999px; padding:6px 12px; font-size:11px; font-weight:600;">Contemporary retreat — Study</div></a></div>
+      <div style="grid-column:span 4;" class="home-col-4"><a href="/projects/modern-facade-study/" class="home-card" style="position:relative; display:block; aspect-ratio:4/3; background:#0f1e36; overflow:hidden;"><img src="/images/project-spatial.jpg" alt="Modern facade study Lahore" width="600" height="450" style="width:100%; height:100%; object-fit:cover; transition:transform 0.7s;" loading="lazy" decoding="async" /><div style="position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.9); backdrop-filter:blur(4px); border-radius:999px; padding:6px 12px; font-size:11px; font-weight:600;">Modern facade — Study</div></a></div>
+      <div style="grid-column:span 4;" class="home-col-4"><a href="/projects/minimal-space-design/" class="home-card" style="position:relative; display:block; aspect-ratio:3/4; background:#0f1e36; overflow:hidden;"><img src="/images/project-minimal.jpg" alt="Minimal space design Lahore" width="600" height="800" style="width:100%; height:100%; object-fit:cover; transition:transform 0.7s;" loading="lazy" decoding="async" /><div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);"></div><div style="position:absolute; bottom:0; left:0; right:0; padding:20px;"><h3 style="color:#fff; font-size:16px; font-weight:600;">Minimal space — Study</h3><p style="color:rgba(255,255,255,0.6); font-size:12px; margin-top:4px;">Conceptual interiors — placeholder</p></div></a></div>
+      <div style="grid-column:span 8;" class="home-col-8"><a href="/projects/concrete-harmony/" class="home-card" style="position:relative; display:block; aspect-ratio:16/9; background:#0f1e36; overflow:hidden;"><img src="/images/split-night.jpg" alt="Concrete harmony study Lahore" width="800" height="450" style="width:100%; height:100%; object-fit:cover; transition:transform 0.7s;" loading="lazy" decoding="async" /><div style="position:absolute; bottom:12px; left:12px; background:rgba(255,255,255,0.9); backdrop-filter:blur(4px); border-radius:999px; padding:6px 12px; font-size:11px; font-weight:600;">Concrete harmony — Study</div></a></div>
     </div>
+    <p style="margin-top:24px; font-size:11px; line-height:1.5; color:rgba(0,0,0,0.4); max-width:60ch;">Images marked as Studies — rooms drawn so they can be built. Real photography TBD.</p>
   </div>
 </section>
 
-{# PROJECTS — 80svh unique — Studies — Depth — Masonry #}
-<section class="section bg-[#f8f8f8]" data-anim="fade" style="min-height:80svh;">
-  <div class="container-wx">
-    <div class="flex flex-wrap justify-between items-end gap-6 mb-10" data-anim="up"><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2rem); line-height:1.1; max-width:16ch;">Studies — rooms drawn so they can be built</h2><a href="/projects/" class="btn btn-dark"><span>All studies</span><span class="ic">↗</span></a></div>
-    <div class="grid grid-cols-12 gap-5 stagger">
-      <div class="col-span-12 md:col-span-6 lg:col-span-8"><a href="/projects/contemporary-retreat/" class="card group relative overflow-hidden aspect-[16/10] bg-[#0f1e36] block"><img src="/images/project-facade.jpg" alt="Contemporary retreat study Lahore" width="800" height="500" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-[11px] font-semibold">Contemporary retreat — Study</div></a></div>
-      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/projects/modern-facade-study/" class="card group relative overflow-hidden aspect-[4/3] bg-[#0f1e36] block"><img src="/images/project-spatial.jpg" alt="Modern facade study Lahore" width="600" height="450" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-[11px] font-semibold">Modern facade — Study</div></a></div>
-      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/projects/minimal-space-design/" class="card group relative overflow-hidden aspect-[3/4] bg-[#0f1e36] block"><img src="/images/project-minimal.jpg" alt="Minimal space design Lahore" width="600" height="800" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-5"><h3 class="text-white text-[16px] font-semibold">Minimal space — Study</h3><p class="text-white/60 text-[12px] mt-1">Conceptual interiors — placeholder</p></div></a></div>
-      <div class="col-span-12 md:col-span-6 lg:col-span-8"><a href="/projects/concrete-harmony/" class="card group relative overflow-hidden aspect-[16/9] bg-[#0f1e36] block"><img src="/images/split-night.jpg" alt="Concrete harmony study Lahore" width="800" height="450" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-[11px] font-semibold">Concrete harmony — Study</div></a></div>
-    </div>
-    <p class="mt-6 text-[11px] leading-[1.5] text-black/40 max-w-[60ch]">Images marked as Studies — rooms drawn so they can be built. Real photography TBD.</p>
-  </div>
-</section>
-
-{# WELLSTAR PROOF — 60svh unique — Named client — Emotional trust #}
-<section class="section bg-[#0f1e36] text-white" data-anim="fade" style="min-height:60svh;">
-  <div class="container-wx">
-    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
-      <div class="col-span-12 lg:col-span-5" data-anim="left"><p class="eyebrow">Named client proof — Wellstar DHA Lahore</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2.2rem); line-height:1.1; color:#fff; margin-top:12px;">Pharmacy → Cosmetics → Mini Hospital</h2><p class="mt-4 text-[14px] leading-[1.6] text-white/70 max-w-[36ch]">Work we can stand behind — plan, still and site when brief includes build. Compliance, hygiene, patient flow.</p><div class="mt-6 flex gap-2 text-[11px]"><span class="px-3 py-1 rounded-full bg-white/10">Healthcare</span><span class="px-3 py-1 rounded-full bg-white/10">Pharmacy</span><span class="px-3 py-1 rounded-full bg-[#fcf2e8] text-[#0f1e36] font-semibold">Proof</span></div></div>
-      <div class="col-span-12 lg:col-span-7" data-anim="right" data-delay="1"><div class="card-dark rounded-[16px] overflow-hidden p-2 bg-[#152033]"><div class="aspect-[16/10] rounded-[12px] overflow-hidden bg-[#0c1628]"><img src="/images/studio-pharmacy.jpg" alt="Wellstar Pharmacy DHA Lahore proof" width="800" height="500" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div><div class="p-4 flex justify-between items-center"><p class="text-[12px] text-white/60 max-w-[50ch]">Wellstar — DHA Lahore — compliance, hygiene, patient flow — one contract one team one result — ISO 9001</p><span class="shrink-0 bg-white text-[#0f1e36] rounded-full px-3 py-1 text-[11px] font-semibold">Proof</span></div></div></div>
-    </div>
-  </div>
-</section>
-
-{# MARQUEE — 10svh unique — Static grid — No loop #}
-<section class="section-sm bg-[#0c1628] text-white border-y border-white/10 overflow-hidden" data-anim="fade" style="min-height:10svh; display:flex; align-items:center;">
-  <div class="container-wx w-full">
-    <div class="marquee-static" data-anim="up">
-      <span>Corporate Offices <i></i></span>
-      <span>Software Houses <i></i></span>
-      <span>Retail Showrooms <i></i></span>
-      <span>Restaurants & Cafés <i></i></span>
-      <span>Healthcare <i></i></span>
-      <span>3D Studio <i></i></span>
-      <span>Turnkey</span>
-    </div>
-  </div>
-</section>
-
-{# CTA — 65svh unique — Tell us about your space — Depth — Lighting #}
-<section class="section relative overflow-hidden bg-[#0f1e36] text-white" data-anim="fade" style="min-height:65svh; display:flex; align-items:center;">
-  <div class="absolute inset-0"><img src="/images/hero-2.jpg" alt="Tell us about your space — Woodex Interior" width="1408" height="768" class="w-full h-full object-cover opacity-50" loading="lazy" decoding="async" /><div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/90 via-[#0f1e36]/60 to-[#0f1e36]/20"></div></div>
-  <div class="container-wx relative z-[2] w-full">
-    <div class="max-w-[480px]" data-anim="up">
-      <h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,4vw,2.6rem); line-height:1.1; color:#fff; max-width:12ch;">Tell us about your space</h2>
-      <p class="mt-3 text-[14px] leading-[1.6] text-white/70 max-w-[36ch]">Empty hall, floor plan, brand, or drawings. Next gate, not brochure. M-71 Zainab Tower, Lahore.</p>
-      <div class="mt-6 flex gap-3 flex-wrap">
-        <a class="btn" href="/start-your-project/"><span>Send the brief</span><span class="ic">↗</span></a>
-        <a class="btn" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.15);" href="/process/"><span>View process — 7 gates</span></a>
+{# 8. APPROACH FAQ — 75svh unique — Aligned 5/7 #}
+<section class="home-section" data-anim="fade" style="background:#0f1e36; color:#fff; padding:clamp(64px,8vw,96px) 0; min-height:75svh;">
+  <div class="home-container">
+    <div style="display:grid; grid-template-columns:repeat(12,1fr); gap:32px; align-items:start;">
+      <div style="grid-column:span 5;" class="home-col-5" data-anim="left">
+        <div style="position:relative; border-radius:24px; overflow:hidden; aspect-ratio:4/3; background:rgba(255,255,255,0.05);"><img src="/images/hero-1.jpg" alt="Woodex office interior" width="640" height="480" style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" /><div style="position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.4) 0%, transparent 60%);"></div></div>
+        <h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.5rem,3vw,2rem); line-height:1.1; color:#fff; margin-top:24px; max-width:16ch;">Beyond Design. We Build Experiences.</h2>
+        <p style="margin-top:12px; font-size:14px; line-height:1.6; color:rgba(255,255,255,0.7); max-width:36ch;">Strategy to delivery — one team, one contract.</p>
+        <div style="margin-top:20px;"><a class="home-btn home-btn-light" href="/about/"><span>The practice</span><span class="ic">↗</span></a></div>
+      </div>
+      <div style="grid-column:span 7;" class="home-col-7" data-anim="right" data-delay="1">
+        <p class="home-eyebrow" style="color:rgba(255,255,255,0.5);">Approach & FAQ</p>
+        <div style="margin-top:20px; display:flex; flex-direction:column; gap:12px;">
+          <article style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; overflow:hidden;" class="home-faq is-open"><button style="width:100%; text-align:left; padding:20px; display:flex; justify-content:space-between; align-items:center; gap:16px; background:transparent; border:0; color:#fff; font-weight:500; font-size:14px; cursor:pointer;">What do I need to start?<span style="width:28px; height:28px; border-radius:999px; border:1px solid rgba(255,255,255,0.2); display:grid; place-items:center; flex-shrink:0;">+</span></button><div style="padding:0 20px 20px; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.6);">Space today, must become, usage, city, budget. Plan or photos help.</div></article>
+          <article style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; overflow:hidden;" class="home-faq"><button style="width:100%; text-align:left; padding:20px; display:flex; justify-content:space-between; align-items:center; gap:16px; background:transparent; border:0; color:#fff; font-weight:500; font-size:14px; cursor:pointer;">Can I buy 3D without turnkey?<span style="width:28px; height:28px; border-radius:999px; border:1px solid rgba(255,255,255,0.2); display:grid; place-items:center; flex-shrink:0;">+</span></button><div style="padding:0 20px 20px; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.6); display:none;">Yes. 3D-only complete. Stills first. Same still can go to BOQ later.</div></article>
+          <article style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; overflow:hidden;" class="home-faq"><button style="width:100%; text-align:left; padding:20px; display:flex; justify-content:space-between; align-items:center; gap:16px; background:transparent; border:0; color:#fff; font-weight:500; font-size:14px; cursor:pointer;">When is money written?<span style="width:28px; height:28px; border-radius:999px; border:1px solid rgba(255,255,255,0.2); display:grid; place-items:center; flex-shrink:0;">+</span></button><div style="padding:0 20px 20px; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.6); display:none;">After you approve room. No fake sqft rate. Plan holds number.</div></article>
+          <article style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; overflow:hidden;" class="home-faq"><button style="width:100%; text-align:left; padding:20px; display:flex; justify-content:space-between; align-items:center; gap:16px; background:transparent; border:0; color:#fff; font-weight:500; font-size:14px; cursor:pointer;">What can you prove?<span style="width:28px; height:28px; border-radius:999px; border:1px solid rgba(255,255,255,0.2); display:grid; place-items:center; flex-shrink:0;">+</span></button><div style="padding:0 20px 20px; font-size:13px; line-height:1.5; color:rgba(255,255,255,0.6); display:none;">200+ projects, 10 years, ISO 9001, 3 studios. Named: Wellstar DHA Lahore.</div></article>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+{# 9. WELLSTAR — 60svh unique — Proof #}
+<section class="home-section" data-anim="fade" style="background:#fcf2e8; padding:clamp(64px,8vw,96px) 0; min-height:60svh;">
+  <div class="home-container">
+    <div style="display:grid; grid-template-columns:repeat(12,1fr); gap:32px; align-items:center;">
+      <div style="grid-column:span 5;" data-anim="left"><p class="home-eyebrow" style="color:rgba(15,30,54,0.6);">Named client proof — Wellstar DHA Lahore</p><h2 class="home-h2" style="font-size:clamp(1.6rem,3vw,2.2rem); margin-top:12px; max-width:14ch;">Pharmacy → Cosmetics → Mini Hospital</h2><p class="home-body" style="margin-top:16px; font-size:14px; max-width:36ch;">Work we can stand behind — plan, still and site when brief includes build. Compliance, hygiene, patient flow.</p><div style="margin-top:24px; display:flex; gap:8px; flex-wrap:wrap;"><span style="padding:6px 12px; border-radius:999px; background:#fff; border:1px solid rgba(0,0,0,0.06); font-size:11px; font-weight:600;">Healthcare</span><span style="padding:6px 12px; border-radius:999px; background:#fff; border:1px solid rgba(0,0,0,0.06); font-size:11px; font-weight:600;">Pharmacy</span><span style="padding:6px 12px; border-radius:999px; background:#0f1e36; color:#fff; font-size:11px; font-weight:600;">Proof</span></div></div>
+      <div style="grid-column:span 7;" data-anim="right" data-delay="1"><div style="background:#0f1e36; border-radius:16px; padding:8px;"><div style="aspect-ratio:16/10; border-radius:12px; overflow:hidden; background:#0c1628;"><img src="/images/studio-pharmacy.jpg" alt="Wellstar Pharmacy DHA Lahore proof" width="800" height="500" style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" /></div><div style="padding:16px; display:flex; justify-content:space-between; align-items:center; gap:16px;"><p style="font-size:12px; line-height:1.5; color:rgba(255,255,255,0.6); max-width:50ch;">Wellstar — DHA Lahore — compliance, hygiene, patient flow — one contract one team one result</p><span style="flex-shrink:0; background:#fff; color:#0f1e36; border-radius:999px; padding:6px 12px; font-size:11px; font-weight:600;">Proof</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+{# 10. MARQUEE — 10svh unique — Static #}
+<section class="home-section" data-anim="fade" style="background:#0c1628; color:#fff; min-height:10svh; display:flex; align-items:center; padding:16px 0; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08);">
+  <div class="home-container" style="width:100%;">
+    <div style="display:flex; flex-wrap:wrap; gap:12px 24px; justify-content:center; align-items:center;" data-anim="up">
+      <span style="display:inline-flex; align-items:center; gap:12px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6);">Corporate Offices <span style="width:4px; height:4px; border-radius:999px; background:#fcf2e8;"></span></span>
+      <span style="display:inline-flex; align-items:center; gap:12px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6);">Software Houses <span style="width:4px; height:4px; border-radius:999px; background:#fcf2e8;"></span></span>
+      <span style="display:inline-flex; align-items:center; gap:12px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6);">Retail <span style="width:4px; height:4px; border-radius:999px; background:#fcf2e8;"></span></span>
+      <span style="display:inline-flex; align-items:center; gap:12px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6);">Restaurants <span style="width:4px; height:4px; border-radius:999px; background:#fcf2e8;"></span></span>
+      <span style="display:inline-flex; align-items:center; gap:12px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6);">Healthcare <span style="width:4px; height:4px; border-radius:999px; background:#fcf2e8;"></span></span>
+      <span style="display:inline-flex; align-items:center; gap:12px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6);">3D Studio <span style="width:4px; height:4px; border-radius:999px; background:#fcf2e8;"></span></span>
+      <span style="font-size:12px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6);">Turnkey</span>
+    </div>
+  </div>
+</section>
+
+{# 11. FEATURED — 65svh unique — From still to site #}
+<section class="home-section" data-anim="fade" style="background:#fff; padding:clamp(64px,8vw,96px) 0; min-height:65svh;">
+  <div class="home-container">
+    <div style="display:grid; grid-template-columns:repeat(12,1fr); gap:32px; align-items:center;">
+      <div style="grid-column:span 6;" data-anim="left">
+        <div style="position:relative; border-radius:24px; overflow:hidden;">
+          <div style="border-radius:24px; overflow:hidden; aspect-ratio:16/10; background:#f8f8f8;"><img src="/images/project-facade.jpg" alt="Contemporary villa facade study Lahore" width="800" height="500" style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" /></div>
+          <div style="position:absolute; bottom:-20px; right:-20px; width:38%; border-radius:16px; overflow:hidden; border:4px solid #fff; box-shadow:0 8px 32px rgba(0,0,0,0.15);" class="hidden lg:block"><img src="/images/project-urban.jpg" alt="Interior detail" width="320" height="240" style="width:100%; height:100%; object-fit:cover; aspect-ratio:4/3;" loading="lazy" decoding="async" /></div>
+        </div>
+      </div>
+      <div style="grid-column:span 6;" data-anim="right" data-delay="1">
+        <p class="home-eyebrow" style="color:rgba(15,30,54,0.6);">From still to site</p>
+        <h2 class="home-h2" style="font-size:clamp(1.6rem,3vw,2.2rem); margin-top:12px; max-width:18ch;">Approved still to BOQ and site — one team</h2>
+        <p class="home-body" style="margin-top:12px; font-size:14px; max-width:40ch;">Design first. Budget clarity. Still to scope, then site if brief.</p>
+        <ul style="margin-top:24px; display:flex; flex-direction:column; gap:12px;">
+          <li style="display:flex; gap:12px; font-size:13px; line-height:1.4;"><span style="width:24px; height:24px; border-radius:999px; background:#fcf2e8; color:#0f1e36; display:grid; place-items:center; flex-shrink:0; font-size:10px;">✓</span><span style="max-width:36ch;">Plan, concept, materials — foundation</span></li>
+          <li style="display:flex; gap:12px; font-size:13px; line-height:1.4;"><span style="width:24px; height:24px; border-radius:999px; background:#fcf2e8; color:#0f1e36; display:grid; place-items:center; flex-shrink:0; font-size:10px;">✓</span><span style="max-width:36ch;">3D stills then BOQ — no fake rate</span></li>
+          <li style="display:flex; gap:12px; font-size:13px; line-height:1.4;"><span style="width:24px; height:24px; border-radius:999px; background:#fcf2e8; color:#0f1e36; display:grid; place-items:center; flex-shrink:0; font-size:10px;">✓</span><span style="max-width:36ch;">Craft in-house — mill connected</span></li>
+        </ul>
+        <div style="margin-top:28px;"><a class="home-btn home-btn-dark" href="/start-your-project/"><span>Start your project</span><span class="ic">↗</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 12. CTA — 60svh unique — Tell us about your space — Centered #}
+<section class="home-section" data-anim="fade" style="position:relative; min-height:60svh; background:#0f1e36; color:#fff; display:flex; align-items:center; padding:clamp(64px,8vw,96px) 0; overflow:hidden;">
+  <div style="position:absolute; inset:0;"><img src="/images/hero-2.jpg" alt="Tell us about your space" width="1408" height="768" style="width:100%; height:100%; object-fit:cover; opacity:0.5;" loading="lazy" decoding="async" /><div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(15,30,54,0.9) 0%, rgba(15,30,54,0.6) 60%, rgba(15,30,54,0.2) 100%);"></div></div>
+  <div class="home-container" style="position:relative; z-index:2; width:100%;">
+    <div style="max-width:480px;" data-anim="up">
+      <h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,4vw,2.6rem); line-height:1.1; color:#fff; max-width:12ch;">Tell us about your space</h2>
+      <p style="margin-top:12px; font-size:14px; line-height:1.6; color:rgba(255,255,255,0.7); max-width:36ch;">Empty hall, floor plan, brand, or drawings. Next gate, not brochure.</p>
+      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="home-btn home-btn-light" href="/start-your-project/"><span>Send the brief</span><span class="ic">↗</span></a>
+        <a class="home-btn" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.15);" href="/process/"><span>View process — 7 gates</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Responsive grid fixes — alignment */
+  @media(max-width:1024px){
+    .home-pin-grid{grid-template-columns:1fr !important; gap:24px !important;}
+    .home-col-4{grid-column:span 6 !important;}
+    .home-col-8{grid-column:span 12 !important;}
+    .home-col-5{grid-column:span 12 !important;}
+    .home-col-7{grid-column:span 12 !important;}
+    .home-col-3{grid-column:span 6 !important;}
+  }
+  @media(max-width:640px){
+    .home-col-4{grid-column:span 12 !important;}
+    .home-col-3{grid-column:span 12 !important;}
+  }
+</style>
 
 <script>
-// Agency interactions — parallax, tilt, progress, services switch, pin, reveal
+// Home interactions — fixed alignment, no broken design
 (function(){
-  // Progress bar
-  const bar = document.getElementById('progress-bar');
-  const onScroll = ()=>{
+  const bar = document.getElementById('home-progress');
+  window.addEventListener('scroll', ()=>{
     const h = document.documentElement;
     const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
     if(bar) bar.style.width = scrolled + '%';
-  };
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
-
-  // Hero parallax layers
-  const hero = document.getElementById('hero');
-  const layers = document.querySelectorAll('.layer[data-depth]');
-  if(hero && layers.length && window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
-    hero.addEventListener('mousemove', (e)=>{
-      const rect = hero.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      layers.forEach(l=>{
-        const d = parseFloat(l.dataset.depth||0);
-        l.style.transform = `translate3d(${x * d * 100}px, ${y * d * 80}px, 0)`;
-      });
-    });
-    hero.addEventListener('mouseleave', ()=>{
-      layers.forEach(l=> l.style.transform = 'translate3d(0,0,0)');
-    });
-  }
-
-  // Tilt
-  document.querySelectorAll('[data-tilt]').forEach(el=>{
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    el.addEventListener('mousemove', (e)=>{
-      const rect = el.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      el.style.transform = `perspective(1000px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
-    });
-    el.addEventListener('mouseleave', ()=> el.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)');
-  });
+  }, {passive:true});
 
   // Services switch
-  const svcImg = document.getElementById('svc-img');
-  const svcCap = document.getElementById('svc-cap');
-  document.querySelectorAll('.svc-btn').forEach(btn=>{
+  const svcImg = document.getElementById('home-svc-img');
+  const svcCap = document.getElementById('home-svc-cap');
+  document.querySelectorAll('.home-svc-btn').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const src = btn.dataset.img;
       const cap = btn.dataset.cap;
       if(svcImg && src) svcImg.src = src;
       if(svcCap && cap) svcCap.textContent = cap;
-      document.querySelectorAll('.svc-btn').forEach(b=> b.classList.remove('bg-white','border-black/5'));
-      btn.classList.add('bg-white','border-black/5');
+      document.querySelectorAll('.home-svc-btn').forEach(b=>{
+        b.style.background='#transparent';
+        b.style.borderColor='transparent';
+      });
+      btn.style.background='#fff';
+      btn.style.borderColor='rgba(0,0,0,0.06)';
     });
   });
 
   // Pin
-  const track = document.querySelector('.lx-pin-track');
-  const prog = document.getElementById('lx-progress');
-  const imgs = document.querySelectorAll('[data-pin-img]');
-  const copies = document.querySelectorAll('[data-copy]');
-  const thumbs = document.querySelectorAll('[data-thumb]');
+  const track = document.querySelector('.home-pin-track');
+  const prog = document.getElementById('home-pin-progress');
+  const imgs = document.querySelectorAll('[data-home-pin]');
+  const copies = document.querySelectorAll('[data-home-copy]');
+  const thumbs = document.querySelectorAll('[data-home-thumb]');
   if(track){
     let ticking=false;
     const setActive=(idx)=>{
@@ -386,11 +326,11 @@ Every decision intentional, distinctive, premium. Avoid generic templates.
         else { c.style.opacity='0'; c.style.transform='translateY(16px)'; c.style.pointerEvents='none'; }
       });
       thumbs.forEach((t,i)=>{
-        if(i===idx){ t.classList.add('ring-2','ring-[#0f1e36]','ring-offset-2'); t.style.opacity='1'; }
-        else { t.classList.remove('ring-2','ring-[#0f1e36]','ring-offset-2'); t.style.opacity='0.6'; }
+        if(i===idx){ t.style.borderColor='#0f1e36'; t.style.opacity='1'; }
+        else { t.style.borderColor='transparent'; t.style.opacity='0.6'; }
       });
     };
-    const onScrollPin=()=>{
+    const onScroll=()=>{
       if(ticking) return;
       ticking=true;
       requestAnimationFrame(()=>{
@@ -403,15 +343,33 @@ Every decision intentional, distinctive, premium. Avoid generic templates.
         ticking=false;
       });
     };
-    window.addEventListener('scroll', onScrollPin, {passive:true});
+    window.addEventListener('scroll', onScroll, {passive:true});
     thumbs.forEach(t=> t.addEventListener('click', ()=>{
       const i=parseInt(t.dataset.thumb||0);
       const targetTop = track.offsetTop + (i/imgs.length)*(track.offsetHeight - window.innerHeight);
       window.scrollTo({top:targetTop, behavior:'smooth'});
     }));
     setActive(0);
-    onScrollPin();
+    onScroll();
   }
+
+  // FAQ
+  document.querySelectorAll('.home-faq button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const item = btn.closest('.home-faq');
+      const isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.home-faq').forEach(i=>{
+        i.classList.remove('is-open');
+        const a = i.querySelector('div');
+        if(a) a.style.display='none';
+      });
+      if(!isOpen){
+        item.classList.add('is-open');
+        const a = item.querySelector('div');
+        if(a) a.style.display='block';
+      }
+    });
+  });
 
   // Reveal
   const anims = document.querySelectorAll('[data-anim]');
@@ -428,8 +386,5 @@ Every decision intentional, distinctive, premium. Avoid generic templates.
   } else {
     anims.forEach(el=> el.classList.add('in'));
   }
-
-  // Hero in
-  document.getElementById('hero')?.classList.add('is-in');
 })();
 </script>
