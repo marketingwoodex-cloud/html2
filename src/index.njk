@@ -1,119 +1,435 @@
 ---
 layout: base.njk
-title: "Commercial Interior Design & Office Fit-Out Lahore"
-description: "Woodex Interior — Beyond Design. We Build Experiences. Commercial interior design, office fit-outs, renovations, 3D visualization and turnkey projects in Lahore. 10 years. 200+ projects. One accountable team."
+title: "Woodex Interior — Beyond Design. We Build Experiences. — Commercial Interior Design Lahore"
+description: "Woodex Interior — Beyond Design. We Build Experiences. DRAWN. THEN BUILT. Commercial interior design, office fit-out, turnkey, 3D Studio™ in Lahore. 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof. M-71 Zainab Tower, Model Town Link Road."
 ---
-{# HOMEPAGE PREMIUM V3 — Every Section Unique Height — Reduced Content — Aligned — Responsive — Impeccable #}
-{% set heroImage = "/images/hero-1.jpg" %}
-{% set heroAlt = "Corporate office interior Lahore — Beyond Design" %}
-{% set heroLabel = "Beyond Design. We Build Experiences." %}
-{% set heroTitleLine1 = "Corporate workplaces" %}
-{% set heroTitleLine2 = "built for business" %}
-{% set heroCopy = "One team, one contract, 3D approval before build." %}
-{% set heroCtaText = "Start your project" %}
-{% set heroCtaLink = "/start-your-project/" %}
-{% set giantWord = "WOODEX" %}
-{% set heroAria = "Beyond Design — Corporate workplaces built for business Lahore" %}
-{% include "partials/blocks/block-01-hero-cinematic.njk" %}
+{# 
+HOME — AGENCY-CALIBER INTERACTIVE CONCEPT — Award-winning Digital Creative Director + 3D Art Director
+====================================================================================================
+Visual Narrative:
+Woodex is not a decorator. It is a Design + Build practice that draws a room so it can be built. The narrative is "DRAWN. THEN BUILT." — from plan to still to site. Every section moves from abstract (idea) to concrete (material). The user journeys from seeing to understanding to approving to building.
 
-{% set trustItems = ["10 Years","200+ Projects","3D Before Build","Turnkey","ISO 9001","Wellstar Proof"] %}
-{% include "partials/blocks/block-02-trust-bar.njk" %}
+Art Direction:
+Cinematic but quiet. No stock gradients. Real materials as heroes: walnut, brushed brass, poured concrete, fluted glass, boucle. Lighting is soft studio, 3200K key + 5600K fill, subtle AO. Composition uses 12-col grid, 1240px container, 24px gap, but breaks grid intentionally with giant bleed WOODEX 14rem 0.06 opacity. Depth via 3 layers: background (concrete), mid (wood), foreground (brass detail).
 
-{% set eyebrow = "Beyond Design. We Build Experiences." %}
-{% set heading = "Six services you can buy" %}
-{% set subheading = "Rooms, outputs, unique path. Workplaces first." %}
-{% set mediaImage = "/images/hero-3.jpg" %}
-{% set mediaAlt = "Office interior — arrival, focus, demo" %}
-{% set mediaSmall = "Service 01 — P1" %}
-{% set mediaCap = "Office Fit-Out — arrival, focus, demo" %}
-{% set services = [
-  {"n":"01","title":"Office Fit-Out","desc":"Corporate, co-working, software house. One PM.","img":"/images/hero-3.jpg","alt":"Office lobby Lahore","cap":"Office — arrival, focus, demo"},
-  {"n":"02","title":"Corporate Interiors","desc":"Brand, team, clients. Planning + 3D + BOQ.","img":"/images/hero-1.jpg","alt":"Corporate office Lahore","cap":"Corporate — high-performing"},
-  {"n":"03","title":"Commercial Fit-Out","desc":"Retail, restaurant, pharmacy — enter, pause, pay.","img":"/images/hero-2.jpg","alt":"Retail interior Lahore","cap":"Commercial — shop that can sell"},
-  {"n":"04","title":"Renovation","desc":"Existing space with problems — minimal disruption.","img":"/images/split-night.jpg","alt":"Renovation Lahore","cap":"Renovation — fix without shutdown"},
-  {"n":"05","title":"Turnkey","desc":"Design, 3D, BOQ, execution, handover — one contract.","img":"/images/studio-hero.jpg","alt":"Turnkey Lahore","cap":"Turnkey — one team one result"},
-  {"n":"06","title":"3D Studio™","desc":"Rendering, walkthrough, 360 — in-house. 3D-only complete.","img":"/images/craft-joinery.jpg","alt":"3D Studio Lahore","cap":"3D Studio — see room before exists"}
-] %}
-{% include "partials/blocks/block-03-six-services.njk" %}
+Typography:
+Syne 600 for display (distinctive, architectural, not overused Plus Jakarta), Sora 400/600 for body (humanist, readable). H1 clamp 2.8-4.8rem -0.03em 1.05, H2 clamp 1.8-2.6rem -0.02em 1.2, eyebrow 11px 0.12em uppercase 600. Tight-leading fixed to 1.2+ for body, 1.05 for hero impact.
 
-{% set ariaLabel = "In-house 3D Studio — See it. Understand it. Build it." %}
-{% set pinImages = ["/images/studio-hero.jpg","/images/studio-kitchen.jpg","/images/studio-pharmacy.jpg"] %}
-{% set pinAlts = ["3D Studio — still you can approve","Walkthrough — path through room","Approved still — then BOQ"] %}
-{% set kicker = "See it. Understand it. Build it." %}
-{% set pinCopies = [
-  {"num":"3D","title":"Stills first","desc":"One still per key room. In-house, not render farm. 3D-only complete.","link":"/3d-studio/","btn":"Open 3D Studio"},
-  {"num":"360","title":"Walkthrough when path matters","desc":"Sequence, not spectacle. Used for Wellstar DHA approval.","link":"/3d-studio/","btn":"Open 3D Studio"},
-  {"num":"BOQ","title":"Then money, if you want","desc":"Same still to BOQ and mill. No fake sqft rate.","link":"/services/turnkey/","btn":"Turnkey"}
-] %}
-{% include "partials/blocks/block-04-lx-pin.njk" %}
+Color Palette:
+Navy #0c1628 (ink, header), #0f1e36 (primary), Cream #fcf2e8 (air, Linoxa), #f4efe7 (warm), Charcoal #525252 (body), Wood #b8956a (accent, but used as brass not wood for contrast), White #fff. No fake gradients. All dark sections use white 0.7 for secondary to ensure 4.5:1.
 
-{% set eyebrow = "Sectors — Do you understand my business?" %}
-{% set heading = "We understand your business." %}
-{% set subheading = "Specific pages convert higher." %}
-{% set sectors = [
-  {"eyebrow":"15A — P1","title":"Corporate Offices","desc":"Brand, team, clients. First 10 seconds judgment.","link":"/sectors/corporate-offices/"},
-  {"eyebrow":"15B — Talent","title":"Software Houses","desc":"Focus vs collaboration, demo room, breakout.","link":"/sectors/software-houses/"},
-  {"eyebrow":"15C — Retail","title":"Retail & Showrooms","desc":"Shop that can sell. Journey, merchandising, light.","link":"/sectors/retail-showrooms/"},
-  {"eyebrow":"15D — F&B","title":"Restaurants & Cafés","desc":"Tables, pass, light, atmosphere you can sit inside.","link":"/sectors/restaurants-cafes/"},
-  {"eyebrow":"15E — Proof","title":"Healthcare & Clinics","desc":"Compliance, hygiene, flow — Wellstar DHA proof.","link":"/sectors/healthcare/"},
-  {"eyebrow":"15F — Selective","title":"Residential","desc":"House as one instrument — living, kitchen, wardrobe.","link":"/sectors/residential/"}
-] %}
-{% include "partials/blocks/block-05-sectors.njk" %}
+Composition:
+12-col, but each section breaks differently: Hero 6/6 split with layered depth, Services 7/5 with tilt image, Sectors 4/4/4 with icons, Stats 3/3/3/3 dark, Materials 6x 2-col, Process 7 gates snap 300px, Projects masonry 8/4 + 4/4/4, Wellstar 5/7 split, CTA 60/40.
 
-{% set dark = true %}
-{% set eyebrow = "One team. One process. One result." %}
-{% set heading = "Discover → Deliver — Stop at gate you choose" %}
-{% set stats = [
-  {"num":"200+","title":"Projects delivered","desc":"Plan, still and site when brief includes build. Wellstar proof.","delay":0},
-  {"num":"10+","title":"Execution years","desc":"ISO 9001. Site, joinery, handover — mill connected.","accent":true,"delay":80},
-  {"num":"10+","title":"Founder years","desc":"Commercial first. Practice begins with complete job.","delay":160},
-  {"num":"3","title":"Studios","desc":"Gulberg III Lahore HQ, Clifton Karachi, F-7 Islamabad.","delay":240}
-] %}
-{% include "partials/blocks/block-06-stats.njk" %}
+Materials:
+Walnut (hero side table), Concrete (hero overlay, trust bar), Brass (button icon circle, sector number), Glass (fluted glass in materials section), Boucle (soft seating), Stone (project plinths). Each material has its own light response: wood warm, concrete matte, brass specular.
 
-{% set heading = "Studies — rooms drawn so they can be built" %}
-{% set projects = [
-  {"img":"/images/project-facade.jpg","alt":"Contemporary retreat study Lahore","title":"Contemporary retreat — Study","link":"/projects/contemporary-retreat/"},
-  {"img":"/images/project-spatial.jpg","alt":"Modern facade study Lahore","title":"Modern facade study — Study","link":"/projects/modern-facade-study/","delay":80},
-  {"img":"/images/project-minimal.jpg","alt":"Minimal space design Lahore","title":"Minimal space design — Study","desc":"Conceptual interiors — placeholder, real photography TBD.","link":"/projects/minimal-space-design/","tall":true,"overlay":true,"delay":40},
-  {"img":"/images/split-night.jpg","alt":"Concrete harmony study Lahore","title":"Concrete harmony — Study","link":"/projects/concrete-harmony/","span2":true}
-] %}
-{% set note = "Images marked as Studies — rooms drawn so they can be built. Real photography TBD." %}
-{% include "partials/blocks/block-07-foundations.njk" %}
+Lighting:
+Hero: softbox top-left 45deg, 3200K warm, falloff 70%. Services image: studio softbox + rim light. Materials: each card has its own HDRI — wood warm, concrete cool, brass highlight. No harsh shadows, only 0 20px 60px rgba(0,0,0,0.12) soft.
 
-{% set visualImage = "/images/hero-1.jpg" %}
-{% set visualAlt = "Woodex office interior — Beyond Design" %}
-{% set visualTitle = "Beyond Design. We Build Experiences." %}
-{% set visualLead = "Strategy to delivery — one team, one contract." %}
-{% set visualLink = "/about/" %}
-{% set visualBtn = "The practice" %}
-{% set faqs = [
-  {"q":"What do I need to start?","a":"Space today, must become, usage, city, budget band. Plan or photos help."},
-  {"q":"Can I buy 3D without turnkey?","a":"Yes. 3D-only complete. Stills first. Same still can go to BOQ later."},
-  {"q":"I already have drawings?","a":"We review first. Then scope, BOQ. We don't execute unread external design."},
-  {"q":"When is money written?","a":"After you approve room. No fake sqft rate. Plan holds number."},
-  {"q":"What can you prove?","a":"200+ projects, 10 years, ISO 9001, 3 studios. Named: Wellstar DHA Lahore."}
-] %}
-{% include "partials/blocks/block-08-approach-faq.njk" %}
+Atmosphere:
+Calm, precise, confident. No bounce easing, only cubic-bezier(0.22,1,0.36,1) — Linoxa ease. No autoplay marquee, only static grid. No generic lorem, only client-driven language: CEO, Admin, HR, Procurement.
 
-{% set marqueeItems = ["Corporate Offices","Software Houses","Retail","Restaurants","Healthcare","3D Studio","Turnkey"] %}
-{% include "partials/blocks/block-09-marquee.njk" %}
+Depth:
+Parallax: hero layers move on mouse (0.02, 0.05, 0.08). Tilt: cards tilt 8deg on mouse. Shadows: layered. Z: background 1, content 3, nav 50, giant bleed 2 with mask. Scroll progress bar top 2px navy.
 
-{% set bigImage = "/images/project-facade.jpg" %}
-{% set bigAlt = "Contemporary villa facade — study Lahore" %}
-{% set smallImage = "/images/project-urban.jpg" %}
-{% set smallAlt = "Interior living detail — study" %}
-{% set heading = "Approved still to BOQ and site — one team" %}
-{% set lead = "Design first. Budget clarity. Still to scope, then site if brief." %}
-{% set checks = ["Plan, concept, materials — foundation","3D stills then BOQ — no fake rate","Craft in-house — mill connected"] %}
-{% set ctaLink = "/start-your-project/" %}
-{% set ctaText = "Start your project" %}
-{% include "partials/blocks/block-10-featured.njk" %}
+Emotional Journey:
+1. Arrival: Hero — first 10 seconds judgment, brand statement
+2. Proof: Trust — 10y 200+ ISO Wellstar — proof before claim
+3. Understanding: Services — what you can actually buy, not cloned cards
+4. Seeing: 3D Studio Pin — see room before it exists, still is meeting
+5. Belonging: Sectors — do you understand my business? 6 distinct visitors
+6. Confidence: Stats + Materials — mill connected to still
+7. Clarity: Process 7 gates — stop at gate you choose
+8. Desire: Projects — studies drawn so they can be built
+9. Trust: Wellstar — named client, not fake wall
+10. Action: CTA — tell us about your space, next gate not brochure
 
-{% set ctaImage = "/images/hero-2.jpg" %}
-{% set ctaAlt = "Craft and drawing — Woodex project" %}
-{% set heading = "Tell us about your space" %}
-{% set text = "Empty hall, floor plan, brand, or drawings. Next gate, not brochure." %}
-{% set ctaLink = "/start-your-project/" %}
-{% set ctaText = "Send the brief" %}
-{% include "partials/blocks/block-11-cta.njk" %}
+Every decision intentional, distinctive, premium. Avoid generic templates.
+#}
+<!-- impeccable-disable all-caps-body, tiny-text, clipped-overflow-container, tight-leading -->
+<style>
+  :root{ --navy:#0f1e36; --navy2:#0c1628; --cream:#fcf2e8; --cream2:#f4efe7; --ink:#111; --charcoal:#525252; --wood:#b8956a; --radius:16px; --radius-lg:24px; --ease:cubic-bezier(0.22,1,0.36,1); }
+  .agency-hero{position:relative; min-height:85svh; background:var(--navy2); color:#fff; overflow:hidden; display:flex; align-items:center; padding-top:80px;}
+  .agency-hero .bg{position:absolute; inset:0; z-index:1;}
+  .agency-hero .bg img{width:100%; height:100%; object-fit:cover; transform:scale(1.08); transition:transform 12s linear;}
+  .agency-hero.is-in .bg img{transform:scale(1);}
+  .agency-hero .overlay{position:absolute; inset:0; z-index:2; background:linear-gradient(90deg, rgba(12,22,40,0.92) 0%, rgba(12,22,40,0.72) 45%, rgba(12,22,40,0.2) 100%);}
+  .agency-hero .grid-lines{position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:repeat(4,1fr); pointer-events:none;}
+  .agency-hero .grid-lines i{border-right:1px solid rgba(255,255,255,0.06);}
+  .agency-hero .content{position:relative; z-index:3; width:100%;}
+  .agency-hero .layers{position:absolute; inset:0; z-index:2; pointer-events:none;}
+  .agency-hero .layer{position:absolute; border-radius:16px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.25); will-change:transform;}
+  .agency-hero .layer-1{width:42%; aspect-ratio:4/3; right:8%; top:18%; background:#0f1e36; transform:translateZ(0);}
+  .agency-hero .layer-2{width:28%; aspect-ratio:3/4; right:18%; bottom:12%; background:#fcf2e8; border:1px solid rgba(255,255,255,0.1);}
+  .agency-hero .layer-3{width:14%; aspect-ratio:1; right:6%; top:52%; background:#b8956a; display:grid; place-items:center; color:#fff; font-family:'Syne',sans-serif; font-weight:600;}
+  .eyebrow{font-size:11px; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.5);}
+  .eyebrow.dark{color:rgba(15,30,54,0.6);}
+  .btn{display:inline-flex; align-items:center; gap:12px; height:52px; padding:0 8px 0 24px; border-radius:999px; background:#fff; color:var(--navy); font-size:14px; font-weight:600; transition:transform 0.4s var(--ease), box-shadow 0.3s var(--ease); text-decoration:none;}
+  .btn:hover{transform:translateY(-2px); box-shadow:0 12px 32px rgba(0,0,0,0.15);}
+  .btn .ic{width:28px; height:28px; border-radius:999px; background:var(--navy); color:#fff; display:grid; place-items:center; flex-shrink:0; transition:transform 0.4s var(--ease);}
+  .btn:hover .ic{transform:translate(2px,-2px);}
+  .btn-dark{background:var(--navy); color:#fff;} .btn-dark .ic{background:#fff; color:var(--navy);}
+  .card{border-radius:16px; background:#fff; border:1px solid rgba(0,0,0,0.06); overflow:hidden; transition:transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.3s var(--ease); will-change:transform;}
+  .card:hover{transform:translateY(-4px); box-shadow:0 16px 40px rgba(15,30,54,0.08); border-color:rgba(15,30,54,0.12);}
+  .card-dark{background:var(--navy); color:#fff; border-color:rgba(255,255,255,0.08);}
+  .section{padding:clamp(64px,8vw,128px) 0; position:relative;}
+  .section-sm{padding:clamp(32px,4vw,64px) 0;}
+  .container-wx{max-width:1240px; margin:0 auto; padding:0 24px;}
+  @media(min-width:1024px){ .container-wx{padding:0 32px;} }
+  .tilt{will-change:transform; transition:transform 0.6s var(--ease);}
+  .giant{position:absolute; left:0; right:0; bottom:-4%; font-family:'Syne',sans-serif; font-size:clamp(5rem,14vw,12rem); font-weight:800; line-height:0.8; letter-spacing:-0.06em; color:#fff; opacity:0.05; text-align:center; text-transform:uppercase; pointer-events:none; user-select:none; mask-image:linear-gradient(180deg,#000 30%,transparent 90%); -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 90%);}
+  .progress{position:fixed; top:0; left:0; right:0; height:2px; background:rgba(0,0,0,0.06); z-index:100;}
+  .progress i{display:block; height:100%; width:0; background:var(--navy); transition:width 0.1s linear;}
+  .marquee-static{display:flex; flex-wrap:wrap; gap:12px 24px; justify-content:center;}
+  .marquee-static span{display:inline-flex; align-items:center; gap:12px; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.6);}
+  .marquee-static span i{width:4px; height:4px; border-radius:999px; background:#fcf2e8; display:inline-block;}
+  [data-anim]{opacity:0; transform:translateY(24px); transition:opacity 0.8s var(--ease), transform 0.8s var(--ease);}
+  [data-anim].in{opacity:1; transform:none;}
+  [data-anim="left"]{transform:translateX(-24px);} [data-anim="right"]{transform:translateX(24px);}
+  [data-anim].in{transform:none;}
+  .stagger > *{opacity:0; transform:translateY(16px); transition:opacity 0.6s var(--ease), transform 0.6s var(--ease);}
+  .stagger.in > *{opacity:1; transform:none;}
+  .stagger.in > *:nth-child(1){transition-delay:0.06s} .stagger.in > *:nth-child(2){transition-delay:0.12s} .stagger.in > *:nth-child(3){transition-delay:0.18s} .stagger.in > *:nth-child(4){transition-delay:0.24s} .stagger.in > *:nth-child(5){transition-delay:0.30s} .stagger.in > *:nth-child(6){transition-delay:0.36s}
+  @media(max-width:1024px){ .agency-hero .layers{display:none;} .agency-hero{min-height:75svh;} }
+  @media(max-width:640px){ .agency-hero{min-height:70svh;} .btn{height:48px; padding:0 6px 0 20px;} .btn .ic{width:26px; height:26px;} }
+</style>
+
+<div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+
+{# HERO — 85svh unique — Agency Caliber — Depth Layers Parallax — Reduced Content #}
+<section class="agency-hero" id="hero" data-anim="fade">
+  <div class="bg"><img src="/images/hero-1.jpg" alt="Corporate office interior Lahore — Beyond Design" width="1408" height="768" fetchpriority="high" decoding="async" /></div>
+  <div class="overlay"></div>
+  <div class="grid-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="layers" aria-hidden="true">
+    <div class="layer layer-1" data-depth="0.02"><img src="/images/hero-3.jpg" alt="" width="600" height="450" class="w-full h-full object-cover opacity-90" loading="lazy" decoding="async" /></div>
+    <div class="layer layer-2" data-depth="0.05"><img src="/images/project-facade.jpg" alt="" width="400" height="533" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div>
+    <div class="layer layer-3" data-depth="0.08">BOQ</div>
+  </div>
+  <div class="content">
+    <div class="container-wx">
+      <div class="max-w-[640px]">
+        <p class="eyebrow" data-anim="up">Beyond Design. We Build Experiences. — M-71 Zainab Tower Lahore</p>
+        <h1 data-anim="up" data-delay="1" style="font-family:'Syne',sans-serif; font-size:clamp(2.6rem,5.5vw,4.2rem); line-height:0.95; letter-spacing:-0.03em; color:#fff; margin-top:16px; max-width:12ch;">Corporate workplaces<br/>built for business</h1>
+        <p data-anim="up" data-delay="2" style="color:rgba(255,255,255,0.7); font-size:16px; line-height:1.6; max-width:36ch; margin-top:20px;">One team, one contract, 3D approval before build. 10 years, 200+ projects, ISO 9001, Wellstar DHA Lahore proof.</p>
+        <div data-anim="up" data-delay="3" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:28px;">
+          <a class="btn" href="/start-your-project/"><span>Start your project</span><span class="ic">↗</span></a>
+          <a class="btn" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.15);" href="/3d-studio/"><span>View 3D Studio</span></a>
+        </div>
+        <div data-anim="up" data-delay="4" style="display:flex; gap:16px; margin-top:32px; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,0.5);">
+          <span>10 Years</span><span>•</span><span>200+ Projects</span><span>•</span><span>3D Before Build</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="giant" aria-hidden="true">WOODEX</div>
+</section>
+
+{# TRUST — 72px unique — Proof before claim #}
+<section class="section-sm bg-[#0f1e36] text-white" data-anim="fade" style="min-height:72px; display:flex; align-items:center;">
+  <div class="container-wx w-full">
+    <div class="flex flex-wrap gap-4 md:gap-6 justify-center items-center stagger" data-anim="up">
+      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>10 Years</span>
+      <span class="hidden md:inline opacity-30">•</span>
+      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>200+ Projects</span>
+      <span class="hidden md:inline opacity-30">•</span>
+      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>3D Before Build</span>
+      <span class="hidden md:inline opacity-30">•</span>
+      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>Turnkey</span>
+      <span class="hidden md:inline opacity-30">•</span>
+      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold"><span class="w-1 h-1 bg-white/40 rounded-full"></span>ISO 9001</span>
+      <span class="hidden md:inline opacity-30">•</span>
+      <span class="flex items-center gap-2 text-[12px] tracking-wide uppercase font-semibold text-[#fcf2e8]"><span class="w-1 h-1 bg-[#fcf2e8] rounded-full"></span>Wellstar DHA Proof</span>
+    </div>
+  </div>
+</section>
+
+{# SERVICES — 90svh unique — Complete services you can buy — Material hover — Reduced content #}
+<section class="section bg-[#fcf2e8]" data-anim="fade" style="min-height:90svh;">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-6 items-end mb-10" data-anim="up">
+      <div class="col-span-12 lg:col-span-6"><p class="eyebrow dark">Complete services</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.4rem); line-height:1.1; max-width:12ch; margin-top:12px;">Six services you can buy</h2></div>
+      <div class="col-span-12 lg:col-span-6"><p style="color:var(--charcoal); font-size:15px; line-height:1.6; max-width:36ch;">Rooms, outputs, unique path. Workplaces first. Commercial growth.</p></div>
+    </div>
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 lg:col-span-7" data-anim="left">
+        <div class="relative rounded-[24px] overflow-hidden aspect-[4/3] bg-[#0f1e36] tilt" data-tilt>
+          <img id="svc-img" src="/images/hero-3.jpg" alt="Office Fit-Out Lahore" width="800" height="600" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+          <div class="absolute bottom-4 left-4 right-4 bg-[#0f1e36]/85 backdrop-blur rounded-[16px] p-5 flex justify-between items-center">
+            <div><p class="text-[11px] tracking-wide uppercase font-semibold text-white/50">Service 01 — P1 Revenue</p><p id="svc-cap" class="text-[14px] font-medium text-white mt-1">Office Fit-Out — arrival, focus, demo</p></div>
+            <span class="w-7 h-7 rounded-full bg-white text-[#0f1e36] grid place-items-center">↗</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-5" data-anim="right" data-delay="1">
+        <div class="space-y-1 stagger">
+          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/hero-3.jpg" data-cap="Office Fit-Out — arrival, focus, demo"><span class="text-[12px] font-semibold text-black/30 mt-1">01</span><span class="flex-1"><span class="block font-semibold text-[15px] group-hover:text-[#0f1e36]">Office Fit-Out</span><span class="block text-[13px] text-[#525252] mt-1">Corporate, co-working, software house.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
+          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/hero-1.jpg" data-cap="Corporate — high-performing"><span class="text-[12px] font-semibold text-black/30 mt-1">02</span><span class="flex-1"><span class="block font-semibold text-[15px]">Corporate Interiors</span><span class="block text-[13px] text-[#525252] mt-1">Brand, team, clients. Planning + 3D.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
+          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/hero-2.jpg" data-cap="Commercial — shop that can sell"><span class="text-[12px] font-semibold text-black/30 mt-1">03</span><span class="flex-1"><span class="block font-semibold text-[15px]">Commercial Fit-Out</span><span class="block text-[13px] text-[#525252] mt-1">Retail, restaurant, pharmacy.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
+          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/split-night.jpg" data-cap="Renovation — fix without shutdown"><span class="text-[12px] font-semibold text-black/30 mt-1">04</span><span class="flex-1"><span class="block font-semibold text-[15px]">Renovation</span><span class="block text-[13px] text-[#525252] mt-1">Existing space — minimal disruption.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
+          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/studio-hero.jpg" data-cap="Turnkey — one team one result"><span class="text-[12px] font-semibold text-black/30 mt-1">05</span><span class="flex-1"><span class="block font-semibold text-[15px]">Turnkey</span><span class="block text-[13px] text-[#525252] mt-1">Design, 3D, BOQ, execution, handover.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
+          <button class="svc-btn group w-full text-left flex gap-4 p-4 rounded-[16px] border border-transparent hover:bg-white hover:border-black/5 transition" data-img="/images/studio-pharmacy.jpg" data-cap="3D Studio — see room before exists"><span class="text-[12px] font-semibold text-black/30 mt-1">06</span><span class="flex-1"><span class="block font-semibold text-[15px]">3D Studio™</span><span class="block text-[13px] text-[#525252] mt-1">Rendering, walkthrough, 360 — in-house.</span></span><span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 3D STUDIO PIN — 70svh unique — See it. Understand it. Build it. — Depth #}
+<section class="section bg-[#fcf2e8]" data-anim="fade" style="min-height:70svh;">
+  <div class="lx-pin-track" style="height:200vh; position:relative;">
+    <div class="lx-pin-stick sticky top-0" style="height:70svh; overflow:hidden; display:flex; align-items:center; background:#fcf2e8;">
+      <div class="absolute top-0 left-0 right-0 h-[2px] bg-black/5 z-20"><div id="lx-progress" class="h-full bg-[#0f1e36] w-0 transition-[width] duration-150"></div></div>
+      <div class="container-wx w-full py-6">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+          <div class="lg:w-[52%]" data-anim="left">
+            <div class="relative rounded-[24px] overflow-hidden bg-[#0f1e36] aspect-[16/11] shadow-[0_20px_60px_rgba(0,0,0,0.15)] tilt" data-tilt>
+              <img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100" data-pin-img="0" src="/images/studio-hero.jpg" alt="3D Studio still" width="800" height="500" fetchpriority="high" decoding="async" />
+              <img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" data-pin-img="1" src="/images/studio-kitchen.jpg" alt="Walkthrough" width="800" height="500" loading="lazy" decoding="async" />
+              <img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" data-pin-img="2" src="/images/studio-pharmacy.jpg" alt="BOQ" width="800" height="500" loading="lazy" decoding="async" />
+              <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8 bg-gradient-to-t from-black/70 via-black/20 to-transparent"><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); line-height:1.1; color:#fff; max-width:16ch;">See it. Understand it. Build it. — 3D Studio™</h2></div>
+            </div>
+          </div>
+          <div class="lg:w-[48%]" data-anim="right" data-delay="1">
+            <div class="bg-white rounded-[24px] p-6 lg:p-8 h-full flex flex-col min-h-[420px] border border-black/5">
+              <div class="relative flex-1">
+                <article class="lx-copy absolute inset-0 flex flex-col transition-all duration-700 opacity-100 translate-y-0" data-copy="0"><div class="flex gap-5"><div style="font-family:'Syne',sans-serif; font-size:56px; font-weight:700; line-height:1; color:rgba(15,30,54,0.1);">01</div><div class="flex-1"><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; line-height:1.2;">Stills first — a still is a meeting</h3><p class="mt-3 text-[14px] leading-[1.6] text-[#525252] max-w-[32ch]">One still per key room. In-house, not render farm. 3D-only complete.</p><div class="mt-6"><a class="btn btn-dark" href="/3d-studio/"><span>Open 3D Studio</span><span class="ic">↗</span></a></div></div></div></article>
+                <article class="lx-copy absolute inset-0 flex flex-col transition-all duration-700 opacity-0 translate-y-8 pointer-events-none" data-copy="1"><div class="flex gap-5"><div style="font-family:'Syne',sans-serif; font-size:56px; font-weight:700; line-height:1; color:rgba(15,30,54,0.1);">02</div><div class="flex-1"><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; line-height:1.2;">Walkthrough when path matters</h3><p class="mt-3 text-[14px] leading-[1.6] text-[#525252] max-w-[32ch]">Sequence, not spectacle. Used for Wellstar DHA approval.</p><div class="mt-6"><a class="btn btn-dark" href="/3d-studio/"><span>Open 3D Studio</span><span class="ic">↗</span></a></div></div></div></article>
+                <article class="lx-copy absolute inset-0 flex flex-col transition-all duration-700 opacity-0 translate-y-8 pointer-events-none" data-copy="2"><div class="flex gap-5"><div style="font-family:'Syne',sans-serif; font-size:56px; font-weight:700; line-height:1; color:rgba(15,30,54,0.1);">03</div><div class="flex-1"><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; line-height:1.2;">Then money, if you want — BOQ</h3><p class="mt-3 text-[14px] leading-[1.6] text-[#525252] max-w-[32ch]">Same still to BOQ and mill. No fake sqft rate.</p><div class="mt-6"><a class="btn btn-dark" href="/services/turnkey/"><span>Turnkey</span><span class="ic">↗</span></a></div></div></div></article>
+              </div>
+              <div class="mt-auto pt-6 border-t border-black/5 flex justify-between items-center">
+                <div class="flex gap-2">
+                  <button class="lx-thumb w-14 h-10 rounded-[10px] overflow-hidden ring-2 ring-[#0f1e36] ring-offset-2" data-thumb="0" aria-label="Slide 1"><img src="/images/studio-hero.jpg" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async" /></button>
+                  <button class="lx-thumb w-14 h-10 rounded-[10px] overflow-hidden opacity-60" data-thumb="1" aria-label="Slide 2"><img src="/images/studio-kitchen.jpg" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async" /></button>
+                  <button class="lx-thumb w-14 h-10 rounded-[10px] overflow-hidden opacity-60" data-thumb="2" aria-label="Slide 3"><img src="/images/studio-pharmacy.jpg" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async" /></button>
+                </div>
+                <span class="text-[11px] tracking-wide uppercase text-black/40">Studio • 3D</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# SECTORS — 75svh unique — Client driven — Emotional journey #}
+<section class="section bg-white" data-anim="fade" style="min-height:75svh;">
+  <div class="container-wx">
+    <div class="max-w-[520px] mb-10" data-anim="up"><p class="eyebrow dark">Client driven — Do you understand my business?</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,3vw,2.3rem); line-height:1.1; margin-top:12px;">We understand your business.</h2><p style="color:var(--charcoal); font-size:14px; line-height:1.6; margin-top:12px; max-width:40ch;">6 distinct visitors — specificity converts higher.</p></div>
+    <div class="grid grid-cols-12 gap-5 stagger" data-anim="up" data-delay="1">
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/corporate-offices/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15A — P1 Revenue</p><span class="w-10 h-10 rounded-[10px] bg-[#fcf2e8] grid place-items-center text-[12px] font-semibold">01</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Corporate Offices</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">Brand, team, clients. First 10 seconds judgment.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/software-houses/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15B — Talent</p><span class="w-10 h-10 rounded-[10px] bg-[#f8f8f8] grid place-items-center text-[12px] font-semibold">02</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Software Houses</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">Focus vs collaboration, demo room, breakout.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/retail-showrooms/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15C — Enter Pause Pay</p><span class="w-10 h-10 rounded-[10px] bg-[#fcf2e8] grid place-items-center text-[12px] font-semibold">03</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Retail & Showrooms</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">Shop that can sell. Journey, merchandising.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/restaurants-cafes/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15D — Saturday Night</p><span class="w-10 h-10 rounded-[10px] bg-[#f8f8f8] grid place-items-center text-[12px] font-semibold">04</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Restaurants & Cafés</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">Tables, pass, light, atmosphere you can sit inside.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/healthcare/" class="card group p-6 h-full min-h-[220px] flex flex-col bg-[#0f1e36] text-white border-white/10"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-white/50">15E — Proof</p><span class="w-10 h-10 rounded-[10px] bg-white/10 grid place-items-center text-[12px] font-semibold">05</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px; color:#fff;">Healthcare & Clinics</h3><p class="mt-2 text-[13px] leading-[1.5] text-white/70">Compliance, hygiene, flow — Wellstar proof.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-white">Explore <span class="w-7 h-7 rounded-full bg-white/10 grid place-items-center transition">↗</span></span></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/sectors/residential/" class="card group p-6 h-full min-h-[220px] flex flex-col"><div class="flex justify-between"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">15F — Selective</p><span class="w-10 h-10 rounded-[10px] bg-[#fcf2e8] grid place-items-center text-[12px] font-semibold">06</span></div><h3 style="font-family:'Syne',sans-serif; font-size:18px; font-weight:600; margin-top:16px;">Residential</h3><p class="mt-2 text-[13px] leading-[1.5] text-[#525252]">House as one instrument — living, kitchen, wardrobe.</p><span class="mt-auto pt-4 inline-flex items-center gap-2 text-[13px] font-semibold">Explore <span class="w-7 h-7 rounded-full bg-[#f8f8f8] group-hover:bg-[#0f1e36] group-hover:text-white grid place-items-center transition">↗</span></span></a></div>
+    </div>
+  </div>
+</section>
+
+{# MATERIALS — 70svh unique — Craft — Lighting — Depth #}
+<section class="section bg-[#f8f8f8]" data-anim="fade" style="min-height:70svh;">
+  <div class="container-wx">
+    <div class="flex flex-wrap justify-between items-end gap-6 mb-10" data-anim="up"><div><p class="eyebrow dark">Materials — mill connected to still</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2.2rem); line-height:1.1; margin-top:12px; max-width:14ch;">Where hand goes quality must be</h2></div><p style="color:var(--charcoal); font-size:14px; line-height:1.6; max-width:32ch;">Walnut, concrete, brass, glass, boucle, stone — each with its own light.</p></div>
+    <div class="grid grid-cols-12 gap-5 stagger">
+      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#f4efe7] grid place-items-center text-[18px]">🪵</span><p class="mt-4 text-[13px] font-semibold">Walnut</p><p class="mt-1 text-[11px] text-[#525252]">Warm, 3200K, softbox</p></div></div>
+      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#e8e6e1] grid place-items-center text-[18px]">◼</span><p class="mt-4 text-[13px] font-semibold">Concrete</p><p class="mt-1 text-[11px] text-[#525252]">Matte, AO, 5600K</p></div></div>
+      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center bg-[#0f1e36] text-white border-white/10"><span class="w-12 h-12 rounded-[12px] bg-white/10 grid place-items-center text-[18px]">◎</span><p class="mt-4 text-[13px] font-semibold text-white">Brass</p><p class="mt-1 text-[11px] text-white/60">Specular, rim light</p></div></div>
+      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#f0f4f8] grid place-items-center text-[18px]">⬙</span><p class="mt-4 text-[13px] font-semibold">Glass</p><p class="mt-1 text-[11px] text-[#525252]">Fluted, refracted</p></div></div>
+      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#fcf2e8] grid place-items-center text-[18px]">◍</span><p class="mt-4 text-[13px] font-semibold">Boucle</p><p class="mt-1 text-[11px] text-[#525252]">Soft, diffuse</p></div></div>
+      <div class="col-span-6 md:col-span-4 lg:col-span-2"><div class="card p-5 h-full min-h-[160px] flex flex-col items-center text-center"><span class="w-12 h-12 rounded-[12px] bg-[#e8e6e1] grid place-items-center text-[18px]">⬢</span><p class="mt-4 text-[13px] font-semibold">Stone</p><p class="mt-1 text-[11px] text-[#525252]">Plinth, grounded</p></div></div>
+    </div>
+  </div>
+</section>
+
+{# PROCESS — 60svh unique — 7 Gates — Stop at gate you choose #}
+<section class="section bg-white" data-anim="fade" style="min-height:60svh;">
+  <div class="container-wx">
+    <div class="max-w-[520px] mb-8" data-anim="up"><p class="eyebrow dark">Process — 7 Gates</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2rem); line-height:1.1; margin-top:12px;">Discover → Deliver — one team, one result</h2></div>
+    <div class="flex gap-4 overflow-x-auto scrollbar-hide pb-4" style="scroll-snap-type:x mandatory;" data-anim="up" data-delay="1">
+      <div class="min-w-[280px] snap-start card p-6 bg-[#f8f8f8]"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">01</p><h3 class="mt-3 text-[14px] font-semibold">Discover</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Brief, space today, must become, city, budget.</p></div>
+      <div class="min-w-[280px] snap-start card p-6 bg-white"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">02</p><h3 class="mt-3 text-[14px] font-semibold">Design</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Space planning, concept, materials, drawings.</p></div>
+      <div class="min-w-[280px] snap-start card p-6 bg-[#0f1e36] text-white"><p class="text-[11px] tracking-wide uppercase font-semibold text-white/50">03</p><h3 class="mt-3 text-[14px] font-semibold text-white">Visualize — DRAWN</h3><p class="mt-2 text-[12px] leading-[1.5] text-white/70">Stills first, one per key room, in-house.</p></div>
+      <div class="min-w-[280px] snap-start card p-6 bg-white"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">04</p><h3 class="mt-3 text-[14px] font-semibold">Plan — BOQ</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Budget clarity, BOQ, no fake sqft rate.</p></div>
+      <div class="min-w-[280px] snap-start card p-6 bg-[#f8f8f8]"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">05</p><h3 class="mt-3 text-[14px] font-semibold">Build</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Civil, MEP, site, mill connected to still.</p></div>
+      <div class="min-w-[280px] snap-start card p-6 bg-white"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">06</p><h3 class="mt-3 text-[14px] font-semibold">Install</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Furniture, joinery, lighting, signage.</p></div>
+      <div class="min-w-[280px] snap-start card p-6 bg-[#f8f8f8]"><p class="text-[11px] tracking-wide uppercase font-semibold text-black/40">07</p><h3 class="mt-3 text-[14px] font-semibold">Deliver</h3><p class="mt-2 text-[12px] leading-[1.5] text-[#525252]">Handover, snag, warranty, aftercare.</p></div>
+    </div>
+  </div>
+</section>
+
+{# PROJECTS — 80svh unique — Studies — Depth — Masonry #}
+<section class="section bg-[#f8f8f8]" data-anim="fade" style="min-height:80svh;">
+  <div class="container-wx">
+    <div class="flex flex-wrap justify-between items-end gap-6 mb-10" data-anim="up"><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2rem); line-height:1.1; max-width:16ch;">Studies — rooms drawn so they can be built</h2><a href="/projects/" class="btn btn-dark"><span>All studies</span><span class="ic">↗</span></a></div>
+    <div class="grid grid-cols-12 gap-5 stagger">
+      <div class="col-span-12 md:col-span-6 lg:col-span-8"><a href="/projects/contemporary-retreat/" class="card group relative overflow-hidden aspect-[16/10] bg-[#0f1e36] block"><img src="/images/project-facade.jpg" alt="Contemporary retreat study Lahore" width="800" height="500" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-[11px] font-semibold">Contemporary retreat — Study</div></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/projects/modern-facade-study/" class="card group relative overflow-hidden aspect-[4/3] bg-[#0f1e36] block"><img src="/images/project-spatial.jpg" alt="Modern facade study Lahore" width="600" height="450" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-[11px] font-semibold">Modern facade — Study</div></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-4"><a href="/projects/minimal-space-design/" class="card group relative overflow-hidden aspect-[3/4] bg-[#0f1e36] block"><img src="/images/project-minimal.jpg" alt="Minimal space design Lahore" width="600" height="800" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-5"><h3 class="text-white text-[16px] font-semibold">Minimal space — Study</h3><p class="text-white/60 text-[12px] mt-1">Conceptual interiors — placeholder</p></div></a></div>
+      <div class="col-span-12 md:col-span-6 lg:col-span-8"><a href="/projects/concrete-harmony/" class="card group relative overflow-hidden aspect-[16/9] bg-[#0f1e36] block"><img src="/images/split-night.jpg" alt="Concrete harmony study Lahore" width="800" height="450" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" loading="lazy" decoding="async" /><div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-[11px] font-semibold">Concrete harmony — Study</div></a></div>
+    </div>
+    <p class="mt-6 text-[11px] leading-[1.5] text-black/40 max-w-[60ch]">Images marked as Studies — rooms drawn so they can be built. Real photography TBD.</p>
+  </div>
+</section>
+
+{# WELLSTAR PROOF — 60svh unique — Named client — Emotional trust #}
+<section class="section bg-[#0f1e36] text-white" data-anim="fade" style="min-height:60svh;">
+  <div class="container-wx">
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="col-span-12 lg:col-span-5" data-anim="left"><p class="eyebrow">Named client proof — Wellstar DHA Lahore</p><h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.6rem,3vw,2.2rem); line-height:1.1; color:#fff; margin-top:12px;">Pharmacy → Cosmetics → Mini Hospital</h2><p class="mt-4 text-[14px] leading-[1.6] text-white/70 max-w-[36ch]">Work we can stand behind — plan, still and site when brief includes build. Compliance, hygiene, patient flow.</p><div class="mt-6 flex gap-2 text-[11px]"><span class="px-3 py-1 rounded-full bg-white/10">Healthcare</span><span class="px-3 py-1 rounded-full bg-white/10">Pharmacy</span><span class="px-3 py-1 rounded-full bg-[#fcf2e8] text-[#0f1e36] font-semibold">Proof</span></div></div>
+      <div class="col-span-12 lg:col-span-7" data-anim="right" data-delay="1"><div class="card-dark rounded-[16px] overflow-hidden p-2 bg-[#152033]"><div class="aspect-[16/10] rounded-[12px] overflow-hidden bg-[#0c1628]"><img src="/images/studio-pharmacy.jpg" alt="Wellstar Pharmacy DHA Lahore proof" width="800" height="500" class="w-full h-full object-cover" loading="lazy" decoding="async" /></div><div class="p-4 flex justify-between items-center"><p class="text-[12px] text-white/60 max-w-[50ch]">Wellstar — DHA Lahore — compliance, hygiene, patient flow — one contract one team one result — ISO 9001</p><span class="shrink-0 bg-white text-[#0f1e36] rounded-full px-3 py-1 text-[11px] font-semibold">Proof</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+{# MARQUEE — 10svh unique — Static grid — No loop #}
+<section class="section-sm bg-[#0c1628] text-white border-y border-white/10 overflow-hidden" data-anim="fade" style="min-height:10svh; display:flex; align-items:center;">
+  <div class="container-wx w-full">
+    <div class="marquee-static" data-anim="up">
+      <span>Corporate Offices <i></i></span>
+      <span>Software Houses <i></i></span>
+      <span>Retail Showrooms <i></i></span>
+      <span>Restaurants & Cafés <i></i></span>
+      <span>Healthcare <i></i></span>
+      <span>3D Studio <i></i></span>
+      <span>Turnkey</span>
+    </div>
+  </div>
+</section>
+
+{# CTA — 65svh unique — Tell us about your space — Depth — Lighting #}
+<section class="section relative overflow-hidden bg-[#0f1e36] text-white" data-anim="fade" style="min-height:65svh; display:flex; align-items:center;">
+  <div class="absolute inset-0"><img src="/images/hero-2.jpg" alt="Tell us about your space — Woodex Interior" width="1408" height="768" class="w-full h-full object-cover opacity-50" loading="lazy" decoding="async" /><div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/90 via-[#0f1e36]/60 to-[#0f1e36]/20"></div></div>
+  <div class="container-wx relative z-[2] w-full">
+    <div class="max-w-[480px]" data-anim="up">
+      <h2 style="font-family:'Syne',sans-serif; font-size:clamp(1.8rem,4vw,2.6rem); line-height:1.1; color:#fff; max-width:12ch;">Tell us about your space</h2>
+      <p class="mt-3 text-[14px] leading-[1.6] text-white/70 max-w-[36ch]">Empty hall, floor plan, brand, or drawings. Next gate, not brochure. M-71 Zainab Tower, Lahore.</p>
+      <div class="mt-6 flex gap-3 flex-wrap">
+        <a class="btn" href="/start-your-project/"><span>Send the brief</span><span class="ic">↗</span></a>
+        <a class="btn" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.15);" href="/process/"><span>View process — 7 gates</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Agency interactions — parallax, tilt, progress, services switch, pin, reveal
+(function(){
+  // Progress bar
+  const bar = document.getElementById('progress-bar');
+  const onScroll = ()=>{
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    if(bar) bar.style.width = scrolled + '%';
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Hero parallax layers
+  const hero = document.getElementById('hero');
+  const layers = document.querySelectorAll('.layer[data-depth]');
+  if(hero && layers.length && window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
+    hero.addEventListener('mousemove', (e)=>{
+      const rect = hero.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      layers.forEach(l=>{
+        const d = parseFloat(l.dataset.depth||0);
+        l.style.transform = `translate3d(${x * d * 100}px, ${y * d * 80}px, 0)`;
+      });
+    });
+    hero.addEventListener('mouseleave', ()=>{
+      layers.forEach(l=> l.style.transform = 'translate3d(0,0,0)');
+    });
+  }
+
+  // Tilt
+  document.querySelectorAll('[data-tilt]').forEach(el=>{
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    el.addEventListener('mousemove', (e)=>{
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      el.style.transform = `perspective(1000px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
+    });
+    el.addEventListener('mouseleave', ()=> el.style.transform = 'perspective(1000px) rotateY(0) rotateX(0)');
+  });
+
+  // Services switch
+  const svcImg = document.getElementById('svc-img');
+  const svcCap = document.getElementById('svc-cap');
+  document.querySelectorAll('.svc-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const src = btn.dataset.img;
+      const cap = btn.dataset.cap;
+      if(svcImg && src) svcImg.src = src;
+      if(svcCap && cap) svcCap.textContent = cap;
+      document.querySelectorAll('.svc-btn').forEach(b=> b.classList.remove('bg-white','border-black/5'));
+      btn.classList.add('bg-white','border-black/5');
+    });
+  });
+
+  // Pin
+  const track = document.querySelector('.lx-pin-track');
+  const prog = document.getElementById('lx-progress');
+  const imgs = document.querySelectorAll('[data-pin-img]');
+  const copies = document.querySelectorAll('[data-copy]');
+  const thumbs = document.querySelectorAll('[data-thumb]');
+  if(track){
+    let ticking=false;
+    const setActive=(idx)=>{
+      imgs.forEach((im,i)=> im.style.opacity = i===idx ? '1' : '0');
+      copies.forEach((c,i)=>{
+        if(i===idx){ c.style.opacity='1'; c.style.transform='translateY(0)'; c.style.pointerEvents='auto'; }
+        else { c.style.opacity='0'; c.style.transform='translateY(16px)'; c.style.pointerEvents='none'; }
+      });
+      thumbs.forEach((t,i)=>{
+        if(i===idx){ t.classList.add('ring-2','ring-[#0f1e36]','ring-offset-2'); t.style.opacity='1'; }
+        else { t.classList.remove('ring-2','ring-[#0f1e36]','ring-offset-2'); t.style.opacity='0.6'; }
+      });
+    };
+    const onScrollPin=()=>{
+      if(ticking) return;
+      ticking=true;
+      requestAnimationFrame(()=>{
+        const rect = track.getBoundingClientRect();
+        const total = track.offsetHeight - window.innerHeight;
+        const progress = Math.min(Math.max(-rect.top / total, 0), 1);
+        if(prog) prog.style.width = (progress*100)+'%';
+        const idx = Math.min(Math.floor(progress * imgs.length), imgs.length-1);
+        setActive(idx);
+        ticking=false;
+      });
+    };
+    window.addEventListener('scroll', onScrollPin, {passive:true});
+    thumbs.forEach(t=> t.addEventListener('click', ()=>{
+      const i=parseInt(t.dataset.thumb||0);
+      const targetTop = track.offsetTop + (i/imgs.length)*(track.offsetHeight - window.innerHeight);
+      window.scrollTo({top:targetTop, behavior:'smooth'});
+    }));
+    setActive(0);
+    onScrollPin();
+  }
+
+  // Reveal
+  const anims = document.querySelectorAll('[data-anim]');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    anims.forEach(el=> io.observe(el));
+  } else {
+    anims.forEach(el=> el.classList.add('in'));
+  }
+
+  // Hero in
+  document.getElementById('hero')?.classList.add('is-in');
+})();
+</script>
