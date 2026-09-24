@@ -7,7 +7,7 @@
   <title>{% if title %}{{ title }} | {% endif %}{{ site.name }} — {{ site.tagline }} | Pakistan</title>
   <meta name="description" content="{{ description or site.tagline + ' — 10 years, 200+ projects, ISO 9001. Offices in Lahore, Karachi, Islamabad. M-71 Zainab Tower, Model Town Link Road, Lahore.' }}" />
   <link rel="canonical" href="{{ site.domain }}{{ page.url }}" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="{{ robots or 'index, follow' }}" />
   <meta name="theme-color" content="#0c1628" />
   <meta property="og:site_name" content="{{ site.name }}" />
   <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ site.name }}" />

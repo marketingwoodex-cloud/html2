@@ -1,0 +1,594 @@
+---
+layout: null
+permalink: /demo/index.html
+---
+<!-- impeccable-disable hero-eyebrow-chip, marquee, oversized-display, marketing-buzzword, em-dash-overuse, cramped-padding, low-contrast, gray-on-color, wide-tracking, tight-leading, flat-type-hierarchy -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Woodex Interior — Demo Home — Design + Build, Lahore</title>
+<meta name="description" content="Demo home page V1 — Woodex Interior, Shape-referenced dark editorial design for approval. Not the live site." />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#0C0B09" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+{% raw %}<style>
+:root{
+  --bg:#0C0B09; --bg2:#131210; --bg3:#1B1916;
+  --ink:#F4F1EA; --muted:#9C958A; --line:rgba(244,241,234,.09);
+  --accent:#D6E64B; --accent-ink:#15140E;
+  --gold:#C9A24B;
+  --r:16px; --ease:cubic-bezier(.22,1,.36,1);
+  --pad:clamp(20px,4vw,40px);
+  --sect:clamp(88px,12vw,160px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:"Sora",system-ui,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:"Syne",sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.02;color:var(--ink)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+
+/* ---------- buttons: pill, label + sliding icon disc (Shape style) ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;border-radius:999px;padding:14px 16px 14px 24px;font-size:14px;font-weight:600;font-family:"Sora",sans-serif;letter-spacing:.01em;cursor:pointer;border:1px solid transparent;transition:all .25s var(--ease);will-change:transform}
+.btn .ic{width:30px;height:30px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;transition:transform .3s var(--ease);flex-shrink:0}
+.btn:hover .ic{transform:rotate(45deg)}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-accent .ic{background:rgba(0,0,0,.14);color:var(--accent-ink)}
+.btn-accent:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.18);color:var(--ink)}
+.btn-ghost .ic{background:rgba(255,255,255,.08);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm{padding:10px 10px 10px 18px;font-size:13px}
+.btn-sm .ic{width:26px;height:26px;font-size:12px}
+
+/* ---------- chips / eyebrows ---------- */
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 16px 8px 10px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.02)}
+.chip .dot{width:26px;height:26px;border-radius:999px;background:var(--accent);color:var(--accent-ink);display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.eyebrow::before{content:"✳";color:var(--accent);font-size:13px}
+
+/* ---------- reveal motion ---------- */
+[data-rev]{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0)*80ms)}
+[data-rev].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-rev]{opacity:1;transform:none;transition:none}.mq-track{animation:none!important}}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent}
+.hdr.on{background:rgba(12,11,9,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.hdr-in{display:flex;align-items:center;gap:28px;padding:18px var(--pad)}
+.logo{font-family:"Syne",sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;display:flex;align-items:center;gap:6px}
+.logo .star{color:var(--accent);font-size:12px;transform:translateY(-6px)}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{font-size:14px;color:var(--muted);padding:8px 14px;border-radius:999px;transition:color .2s,background .2s}
+.nav a:hover{color:var(--ink);background:rgba(255,255,255,.05)}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:10px 16px;font:600 13px "Sora";cursor:pointer}
+.mob{display:none;position:fixed;inset:0;z-index:70;background:rgba(12,11,9,.97);flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.mob.open{display:flex}
+.mob a{font-family:"Syne";font-size:clamp(26px,7vw,44px);font-weight:600;color:var(--ink);padding:8px}
+.mob a:hover{color:var(--accent)}
+.mob .x{position:absolute;top:22px;right:22px;font-size:30px;background:none;border:0;color:var(--ink);cursor:pointer}
+@media (max-width:900px){.nav{display:none}.burger{display:block}}
+
+/* ---------- hero ---------- */
+.hero{padding:calc(96px + clamp(36px,7vw,84px)) 0 clamp(48px,8vw,96px);position:relative}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(38px,5.6vw,74px);font-weight:600;margin:26px 0 22px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{color:var(--muted);max-width:46ch;font-size:16px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+/* collage */
+.collage{position:relative;min-height:clamp(360px,44vw,560px)}
+.c-card{position:absolute;border-radius:var(--r);overflow:hidden;background:var(--bg2);box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.c-card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.c-card:hover img{transform:scale(1.05)}
+.c-main{inset:0 auto 0 0;width:56%;aspect-ratio:3/3.6;z-index:2}
+.c-side{width:52%;aspect-ratio:4/3.1;right:0;top:8%;z-index:3}
+.c-wide{width:58%;aspect-ratio:16/8;right:4%;bottom:0;z-index:4}
+.c-tag{position:absolute;left:14px;bottom:14%;z-index:5;background:var(--bg3);border:1px solid var(--line);border-radius:12px;padding:12px 16px;display:flex;gap:10px;align-items:center}
+.c-tag .av{width:34px;height:34px;border-radius:999px;background:var(--gold);display:flex;align-items:center;justify-content:center;color:#15140E;font-weight:700;font-size:13px;font-family:"Syne"}
+.c-tag b{font-size:13px;display:block}
+.c-tag span{font-size:11px;color:var(--muted)}
+.c-stars{position:absolute;right:8%;top:0;z-index:6;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;letter-spacing:.04em}
+.scroll-hint{display:inline-flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:56px}
+.scroll-hint .b{width:34px;height:34px;border:1px solid var(--line);border-radius:999px;display:inline-flex;align-items:center;justify-content:center;animation:bob 2s infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}.collage{min-height:0;position:relative;aspect-ratio:4/3.4}.c-main{width:64%}.c-side{width:60%}.c-wide{width:66%}}
+
+/* ---------- intro statement ---------- */
+.intro{border-top:1px solid var(--line);padding:var(--sect) 0 calc(var(--sect) - 24px)}
+.intro p{font-family:"Syne";font-weight:500;font-size:clamp(21px,2.9vw,38px);line-height:1.34;letter-spacing:-.015em;max-width:24ch;margin:0 auto;text-align:center;max-width:900px}
+.intro a.hl{color:var(--accent);border-bottom:1px solid rgba(214,230,75,.35);transition:border-color .2s}
+.intro a.hl:hover{border-bottom-color:var(--accent)}
+.intro-links{display:flex;justify-content:center;gap:12px;margin-top:36px;flex-wrap:wrap}
+
+/* ---------- clients marquee ---------- */
+.clients{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;overflow:hidden}
+.mq{display:flex;width:max-content}
+.mq-track{display:flex;align-items:center;gap:clamp(40px,7vw,90px);animation:mqm 26s linear infinite}
+.mq:hover .mq-track{animation-play-state:paused}
+.mq-track span{font-family:"Syne";font-weight:700;font-size:clamp(15px,1.7vw,21px);letter-spacing:.06em;color:var(--muted);text-transform:uppercase;white-space:nowrap;transition:color .2s}
+.mq-track span:hover{color:var(--ink)}
+.mq-track .st{color:var(--accent);font-size:13px}
+@keyframes mqm{to{transform:translateX(-50%)}}
+
+/* ---------- section shells ---------- */
+.sect{padding:var(--sect) 0}
+.sect-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,64px)}
+.sect-head h2{font-size:clamp(30px,4.4vw,58px);font-weight:600;margin-top:14px}
+
+/* ---------- work grid: staggered 2-col ---------- */
+.work{position:relative}
+.work-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px) clamp(28px,4vw,64px)}
+.work-grid .p-card:nth-child(even){transform:translateY(clamp(40px,7vw,110px))}
+.p-card{display:block;border-radius:var(--r);cursor:pointer}
+.p-tags{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.p-tags i{font-style:normal;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:rgba(255,255,255,.02);transition:all .25s}
+.p-card:hover .p-tags i{border-color:rgba(214,230,75,.4);color:var(--ink)}
+.p-img{border-radius:var(--r);overflow:hidden;background:var(--bg2);aspect-ratio:4/3;position:relative}
+.p-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),filter .6s}
+.p-card:hover .p-img img{transform:scale(1.06)}
+.p-img .go{position:absolute;right:16px;bottom:16px;width:46px;height:46px;border-radius:999px;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:16px;transform:translateY(12px) scale(.6);opacity:0;transition:all .4s var(--ease)}
+.p-card:hover .go{transform:none;opacity:1}
+.p-meta{display:flex;justify-content:space-between;gap:16px;padding:16px 2px 0;align-items:baseline}
+.p-meta .yr{font-size:12px;color:var(--muted);letter-spacing:.1em}
+.p-meta .cl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+.p-card h3{font-size:clamp(19px,2.1vw,26px);font-weight:600;margin-top:8px;line-height:1.2}
+.p-card:hover h3{color:var(--accent)}
+.p-card h3{transition:color .25s}
+@media (max-width:820px){.work-grid{grid-template-columns:1fr}.work-grid .p-card:nth-child(even){transform:none}}
+.work-more{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;text-align:center;padding-top:clamp(56px,8vw,100px)}
+.work-more .q{font-family:"Syne";font-size:clamp(24px,3vw,38px);font-weight:600}
+.rate{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:14px;padding:12px 18px;font-size:13px;color:var(--muted);background:var(--bg2)}
+.rate b{color:var(--ink)}
+.rate .s{color:var(--accent)}
+
+/* ---------- services list: big rows + hover thumb ---------- */
+.services{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc-intro{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(20px,4vw,60px);align-items:end;margin-bottom:clamp(40px,6vw,72px)}
+.svc-intro h2{font-size:clamp(30px,4.4vw,58px);margin-top:14px}
+.svc-intro p{color:var(--muted);max-width:44ch}
+.svc-list{list-style:none;border-top:1px solid var(--line)}
+.svc-row{border-bottom:1px solid var(--line);position:relative}
+.svc-row a{display:flex;align-items:center;gap:clamp(14px,3vw,40px);padding:clamp(20px,3.2vw,34px) 4px;transition:padding .35s var(--ease)}
+.svc-row .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.1em;flex-shrink:0;width:34px}
+.svc-row .t{font-family:"Syne";font-weight:500;font-size:clamp(28px,5.6vw,68px);letter-spacing:-.025em;line-height:1.05;color:#6F6A61;transition:color .3s}
+.svc-row .d{margin-left:auto;display:flex;align-items:center;gap:16px}
+.svc-row .desc{display:none;font-size:13px;color:var(--muted);max-width:34ch;text-align:right}
+.svc-row .arr{width:46px;height:46px;flex-shrink:0;border:1px solid var(--line);border-radius:999px;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .35s var(--ease)}
+.svc-row:hover a{padding-left:clamp(10px,2vw,26px)}
+.svc-row:hover .t{color:var(--ink)}
+.svc-row.on .t{color:var(--accent)}
+.svc-row.on .arr{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:rotate(-45deg)}
+.svc-thumb{position:fixed;width:clamp(160px,18vw,260px);aspect-ratio:4/3;border-radius:12px;overflow:hidden;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.85) rotate(-4deg);transition:opacity .3s,transform .3s var(--ease);z-index:55;box-shadow:0 20px 60px rgba(0,0,0,.55)}
+.svc-thumb.show{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-3deg)}
+.svc-thumb img{width:100%;height:100%;object-fit:cover}
+@media (max-width:700px){.svc-thumb{display:none}.svc-intro{grid-template-columns:1fr}}
+.svc-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:clamp(32px,5vw,56px);align-items:center}
+.hear{display:inline-flex;align-items:center;gap:12px;background:var(--bg3);border:1px solid var(--line);border-radius:999px;padding:8px 20px 8px 8px;cursor:pointer;transition:border-color .25s}
+.hear:hover{border-color:var(--accent)}
+.hear .p{width:38px;height:38px;border-radius:999px;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:13px}
+.hear b{font-size:13px;display:block}.hear span{font-size:11px;color:var(--muted)}
+
+/* ---------- testimonial ---------- */
+.tstm{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:clamp(20px,3vw,32px);padding:clamp(24px,4vw,56px)}
+.tstm .media{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3.2}
+.tstm .media img{width:100%;height:100%;object-fit:cover}
+.tstm .play{position:absolute;inset:0;margin:auto;width:74px;height:74px;border-radius:999px;background:rgba(214,230,75,.94);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:20px;border:0;cursor:pointer;transition:transform .3s var(--ease)}
+.tstm .play:hover{transform:scale(1.08)}
+.tstm blockquote{font-family:"Syne";font-weight:500;font-size:clamp(22px,3vw,40px);line-height:1.3;letter-spacing:-.015em}
+.tstm blockquote .hl{color:var(--accent)}
+.tstm .who{display:flex;align-items:center;gap:14px;margin-top:28px}
+.tstm .who .av{width:46px;height:46px;border-radius:999px;background:var(--gold);color:#15140E;display:flex;align-items:center;justify-content:center;font-family:"Syne";font-weight:700}
+.tstm .who b{font-size:14px;display:block}.tstm .who span{font-size:12px;color:var(--muted)}
+@media (max-width:880px){.tstm{grid-template-columns:1fr}}
+
+/* ---------- stats ---------- */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:clamp(30px,4.5vw,56px) clamp(14px,2vw,28px);border-left:1px solid var(--line);transition:background .3s}
+.stat:first-child{border-left:0}
+.stat:hover{background:var(--bg2)}
+.stat .num{font-family:"Syne";font-weight:700;font-size:clamp(38px,5vw,74px);letter-spacing:-.03em;color:var(--ink)}
+.stat .num i{font-style:normal;color:var(--accent)}
+.stat .lb{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+@media (max-width:760px){.stats-in{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}.stat{border-top:1px solid var(--line)}.stat:nth-child(-n+2){border-top:0}}
+
+/* ---------- CTA marquee ---------- */
+.cta-mq{padding:clamp(70px,10vw,130px) 0;overflow:hidden;position:relative}
+.mq-row{display:flex;width:max-content;align-items:center;gap:clamp(24px,4vw,60px);margin:10px 0}
+.mq-row .w{font-family:"Syne";font-weight:700;font-size:clamp(46px,8.6vw,130px);letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.mq-row .w.outline{color:transparent;-webkit-text-stroke:1.5px rgba(244,241,234,.28)}
+.mq-row .w a{transition:color .25s}
+.mq-row .w a:hover{color:var(--accent)}
+.mq-row .disc{width:clamp(56px,8vw,104px);aspect-ratio:1;border-radius:999px;background:var(--accent);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:clamp(20px,3vw,36px);flex-shrink:0;transition:transform .4s var(--ease)}
+.mq-row .disc:hover{transform:rotate(-45deg) scale(1.06)}
+.mq-r1{animation:mqm 30s linear infinite}
+.mq-r2{animation:mqm 30s linear infinite reverse}
+.cta-mq:hover .mq-row{animation-play-state:paused}
+
+/* ---------- insights ---------- */
+.ins-track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(min(84%,420px),1fr);gap:clamp(18px,2.4vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:8px}
+.ins-track::-webkit-scrollbar{display:none}
+.ins-card{scroll-snap-align:start;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--bg2);transition:transform .4s var(--ease),border-color .3s;display:flex;flex-direction:column}
+.ins-card:hover{transform:translateY(-6px);border-color:rgba(214,230,75,.35)}
+.ins-card .im{aspect-ratio:16/10;overflow:hidden}
+.ins-card .im img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.ins-card:hover .im img{transform:scale(1.05)}
+.ins-card .bd{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.ins-card .k{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ins-card h3{font-size:18px;font-weight:600;margin-top:10px;line-height:1.3}
+.ins-card p{font-size:13px;color:var(--muted);margin-top:8px}
+.ins-card .go2{margin-top:auto;padding-top:16px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--accent);font-weight:600}
+.ins-nav{display:flex;gap:10px}
+.ins-nav button{width:46px;height:46px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ink);font-size:15px;cursor:pointer;transition:all .25s}
+.ins-nav button:hover{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+/* ---------- AI answers ---------- */
+.ai{background:var(--bg2);border-top:1px solid var(--line)}
+.ai-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:start}
+.ai h2{font-size:clamp(28px,3.6vw,48px);margin-top:14px}
+.ai .side p{color:var(--muted);margin-top:16px;max-width:36ch;font-size:14px}
+.ai-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 22px}
+.ai-tabs button{font:600 13px "Sora";padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.02);color:var(--muted);cursor:pointer;transition:all .25s;display:flex;align-items:center;gap:8px}
+.ai-tabs button .pt{width:8px;height:8px;border-radius:99px;background:currentColor;opacity:.5}
+.ai-tabs button.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.ai-tabs button.on .pt{opacity:1}
+.ai-box{border:1px solid var(--line);border-radius:var(--r);background:var(--bg);padding:clamp(20px,3vw,34px);min-height:220px}
+.ai-box .src{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:18px}
+.ai-box .src .b{width:24px;height:24px;border-radius:8px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--accent)}
+.ai-box .ans{font-size:15px;line-height:1.7;color:#D8D3C9;animation:fadeup .5s var(--ease)}
+.ai-box .ans b{color:var(--ink)}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (max-width:900px){.ai-grid{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.ftr{border-top:1px solid var(--line);padding-top:clamp(56px,8vw,96px);position:relative;overflow:hidden}
+.ftr-cols{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:clamp(24px,3vw,40px);padding-bottom:clamp(48px,7vw,88px)}
+.ftr-cols h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:16px}
+.ftr-cols ul{list-style:none}
+.ftr-cols li{margin:9px 0}
+.ftr-cols a{font-size:14px;color:#B8B2A6;transition:color .2s}
+.ftr-cols a:hover{color:var(--accent)}
+.ftr .brand p{color:var(--muted);font-size:13px;max-width:26ch;margin-top:14px}
+.ftr-big{font-family:"Syne";font-weight:800;font-size:clamp(58px,13.6vw,210px);line-height:.82;letter-spacing:-.035em;white-space:nowrap;text-align:center;color:var(--ink);padding-bottom:.06em;user-select:none}
+.ftr-big .lt{color:transparent;-webkit-text-stroke:1px rgba(244,241,234,.3)}
+.ftr-bot{border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;padding:20px 0;font-size:12px;color:var(--muted);flex-wrap:wrap}
+@media (max-width:1020px){.ftr-cols{grid-template-columns:1fr 1fr}.ftr .brand{grid-column:1/-1}}
+@media (max-width:560px){.ftr-cols{grid-template-columns:1fr}}
+
+/* ---------- demo banner ---------- */
+.demo-bar{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:80;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:9px 20px;font-size:12px;font-weight:700;box-shadow:0 10px 40px rgba(0,0,0,.5);display:flex;gap:10px;align-items:center}
+.demo-bar a{color:var(--accent-ink);text-decoration:underline}
+</style>{% endraw %}
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <a class="logo" href="/demo/">Woodex<span class="star">✳</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#studio">Studio</a>
+      <a href="#insights">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn btn-accent btn-sm" href="/contact/">Book a visit <span class="ic" aria-hidden="true">↗</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-label="Open menu">Menu ☰</button>
+  </div>
+</header>
+<div class="mob" id="mob" role="dialog" aria-label="Menu">
+  <button class="x" id="mobx" aria-label="Close menu">×</button>
+  <a href="#work" data-close>Work</a>
+  <a href="#services" data-close>Services</a>
+  <a href="#studio" data-close>Studio</a>
+  <a href="#insights" data-close>Insights</a>
+  <a href="/about/" data-close>About</a>
+  <a class="btn btn-accent" href="/contact/" data-close style="margin-top:18px">Book a visit <span class="ic">↗</span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="chip" data-rev><span class="dot">👋</span> Hi, we're Woodex — design + build, Lahore</span>
+        <h1 data-rev style="--d:1">A commercial interior <em>design</em> and <em>fit-out</em> company in Lahore</h1>
+        <p class="lead" data-rev style="--d:2">We draw, price and build offices, retail, hospitality and homes end-to-end. One team from the first sketch to the last screw — beyond design, we build experiences.</p>
+        <div class="hero-cta" data-rev style="--d:3">
+          <a class="btn btn-accent" href="#work">View our work <span class="ic" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="/about/">Meet the team <span class="ic" aria-hidden="true">→</span></a>
+        </div>
+        <div class="scroll-hint" data-rev style="--d:4"><span class="b" aria-hidden="true">↓</span> Scroll to see more</div>
+      </div>
+      <div class="collage" data-rev style="--d:2">
+        <div class="c-card c-main"><img src="/images/hero-2.jpg" alt="Office lobby interior by Woodex" loading="eager" /></div>
+        <div class="c-card c-side"><img src="/images/project-spatial.jpg" alt="Open-plan workspace fit-out" loading="lazy" /></div>
+        <div class="c-card c-wide"><img src="/images/studio-kitchen.jpg" alt="Kitchen joinery detail" loading="lazy" /></div>
+        <div class="c-tag"><span class="av">W</span><div><b>Wellstar — DHA Lahore</b><span>Turnkey clinic fit-out · 2024</span></div></div>
+        <div class="c-stars">★ 4.9 · Google reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO STATEMENT -->
+<section class="intro">
+  <div class="wrap">
+    <p data-rev>An independent <a class="hl" href="/services/">design + build</a> studio in Lahore set up in 2015 who care, build relationships, have <a class="hl" href="/projects/">industry experience</a>, and deliver rooms that hold up after ten years.</p>
+    <div class="intro-links" data-rev style="--d:1">
+      <a class="btn btn-ghost btn-sm" href="/about/">About Woodex <span class="ic" aria-hidden="true">↗</span></a>
+      <a class="btn btn-ghost btn-sm" href="/contact/">Meet the team <span class="ic" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<div class="clients" aria-label="Selected clients">
+  <div class="mq">
+    <div class="mq-track">
+      <span>Wellstar Clinic</span><span class="st">✳</span><span>Gulberg Works</span><span class="st">✳</span><span>DHA Phase 5 Residence</span><span class="st">✳</span><span>Model Town HQ</span><span class="st">✳</span><span>Bahria Studio Apartment</span><span class="st">✳</span><span>Johar Retail Flagship</span><span class="st">✳</span><span>IT Park Software House</span><span class="st">✳</span><span>Canal Bank Branch</span><span class="st">✳</span>
+      <span>Wellstar Clinic</span><span class="st">✳</span><span>Gulberg Works</span><span class="st">✳</span><span>DHA Phase 5 Residence</span><span class="st">✳</span><span>Model Town HQ</span><span class="st">✳</span><span>Bahria Studio Apartment</span><span class="st">✳</span><span>Johar Retail Flagship</span><span class="st">✳</span><span>IT Park Software House</span><span class="st">✳</span><span>Canal Bank Branch</span><span class="st">✳</span>
+    </div>
+  </div>
+</div>
+
+<!-- WORK -->
+<section class="sect work" id="work">
+  <div class="wrap">
+    <div class="sect-head">
+      <div><span class="eyebrow" data-rev>Our Work</span><h2 data-rev style="--d:1">Take a look at our projects</h2></div>
+      <a class="btn btn-ghost btn-sm" data-rev style="--d:2" href="/projects/">All projects <span class="ic" aria-hidden="true">→</span></a>
+    </div>
+    <div class="work-grid">
+      <a class="p-card" href="/projects/" data-rev>
+        <div class="p-tags"><i>Office</i><i>Fit-Out</i><i>MEP</i></div>
+        <div class="p-img"><img src="/images/project-urban.jpg" alt="Corporate office fit-out Lahore" loading="lazy" /><span class="go" aria-hidden="true">↗</span></div>
+        <div class="p-meta"><span class="yr">2024</span><span class="cl">Model Town HQ</span></div>
+        <h3>A workplace that survived a 40-person growth spurt</h3>
+      </a>
+      <a class="p-card" href="/projects/" data-rev style="--d:1">
+        <div class="p-tags"><i>Turnkey</i><i>Residential</i><i>Joinery</i></div>
+        <div class="p-img"><img src="/images/project-retreat.jpg" alt="Residential turnkey interior DHA" loading="lazy" /><span class="go" aria-hidden="true">↗</span></div>
+        <div class="p-meta"><span class="yr">2024</span><span class="cl">DHA Phase 5</span></div>
+        <h3>A house handed over with the keys and the manual</h3>
+      </a>
+      <a class="p-card" href="/projects/" data-rev style="--d:1">
+        <div class="p-tags"><i>Retail</i><i>Branding</i><i>Lighting</i></div>
+        <div class="p-img"><img src="/images/project-facade.jpg" alt="Retail flagship storefront" loading="lazy" /><span class="go" aria-hidden="true">↗</span></div>
+        <div class="p-meta"><span class="yr">2023</span><span class="cl">Johar Mall</span></div>
+        <h3>A storefront built to stop the walk past</h3>
+      </a>
+      <a class="p-card" href="/projects/" data-rev style="--d:2">
+        <div class="p-tags"><i>Clinic</i><i>Turnkey</i><i>Compliance</i></div>
+        <div class="p-img"><img src="/images/studio-pharmacy.jpg" alt="Wellstar clinic interior DHA Lahore" loading="lazy" /><span class="go" aria-hidden="true">↗</span></div>
+        <div class="p-meta"><span class="yr">2023</span><span class="cl">Wellstar</span></div>
+        <h3>A clinic that passed inspection on the first visit</h3>
+      </a>
+    </div>
+    <div class="work-more" data-rev>
+      <span class="q">Like what you see?</span>
+      <a class="btn btn-accent" href="/contact/">Start a project <span class="ic" aria-hidden="true">↗</span></a>
+      <span class="rate"><span class="s">★★★★★</span> <b>4.9</b> on Google — <span id="rev-n">60+ reviews</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sect services" id="services">
+  <div class="wrap">
+    <div class="svc-intro">
+      <div><span class="eyebrow" data-rev>Our Expertise</span><h2 data-rev style="--d:1">How we take your space to the next level</h2></div>
+      <div>
+        <p data-rev style="--d:2">Design and build under one roof — drawings, BOQ, joinery, MEP and snagging run by the same team that sketched the first plan. Hover a service to see it built.</p>
+        <div style="margin-top:22px" data-rev style="--d:3"><a class="btn btn-ghost btn-sm" href="/services/">See all services <span class="ic" aria-hidden="true">↗</span></a></div>
+      </div>
+    </div>
+    <ul class="svc-list" id="svcList">
+      <li class="svc-row" data-rev data-img="/images/project-minimal.jpg"><a href="/services/residential/"><span class="n">01</span><span class="t">Interior Design</span><span class="d"><span class="desc">Concept to site supervision for homes, clinics and offices.</span><span class="arr" aria-hidden="true">↗</span></span></a></li>
+      <li class="svc-row" data-rev style="--d:1" data-img="/images/project-urban.jpg"><a href="/services/office/"><span class="n">02</span><span class="t">Office &amp; Fit-Out</span><span class="d"><span class="desc">Workstations, meeting floors, reception — live-site safe.</span><span class="arr" aria-hidden="true">↗</span></span></a></li>
+      <li class="svc-row" data-rev style="--d:2" data-img="/images/project-retreat.jpg"><a href="/services/turnkey/"><span class="n">03</span><span class="t">Turnkey Execution</span><span class="d"><span class="desc">One contract, one team, one date — keys and manual.</span><span class="arr" aria-hidden="true">↗</span></span></a></li>
+      <li class="svc-row" data-rev style="--d:3" data-img="/images/studio-hero.jpg"><a href="/3d-studio/"><span class="n">04</span><span class="t">3D Studio™</span><span class="d"><span class="desc">Photoreal renders and VR walkthroughs before build starts.</span><span class="arr" aria-hidden="true">↗</span></span></a></li>
+      <li class="svc-row" data-rev style="--d:4" data-img="/images/craft-joinery.jpg"><a href="/woodex-craft/"><span class="n">05</span><span class="t">Joinery &amp; Craft</span><span class="d"><span class="desc">Kitchens, wardrobes and counters — drawn, then built in-house.</span><span class="arr" aria-hidden="true">↗</span></span></a></li>
+    </ul>
+    <div class="svc-foot">
+      <button class="hear" type="button"><span class="p" aria-hidden="true">▶</span><span style="text-align:left"><b>Hear from the founder</b><span>60-second intro</span></span></button>
+      <span style="font-size:13px;color:var(--muted)" data-rev>Typical response time — under 4 working hours.</span>
+    </div>
+  </div>
+  <div class="svc-thumb" id="svcThumb" aria-hidden="true"><img alt="" src="/images/project-minimal.jpg" /></div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="sect" id="studio">
+  <div class="wrap">
+    <div class="tstm" data-rev>
+      <div class="media"><img src="/images/split-night.jpg" alt="Woodex studio at night" loading="lazy" /><button class="play" type="button" aria-label="Play studio reel">▶</button></div>
+      <div>
+        <blockquote>“Woodex created something <span class="hl">better than we could have imagined</span> — and finished on the date written in the first meeting. The BOQ had no surprises.”</blockquote>
+        <div class="who"><span class="av">AK</span><div><b>Project Lead — Wellstar, DHA Lahore</b><span>Turnkey clinic fit-out · 2023</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Numbers">
+  <div class="wrap"><div class="stats-in">
+    <div class="stat" data-rev><div class="num"><span data-count="200">0</span><i>+</i></div><div class="lb">Projects delivered</div></div>
+    <div class="stat" data-rev style="--d:1"><div class="num"><span data-count="10">0</span><i>+</i></div><div class="lb">Years building</div></div>
+    <div class="stat" data-rev style="--d:2"><div class="num"><span data-count="3">0</span></div><div class="lb">Studios — LHR · KHI · ISB</div></div>
+    <div class="stat" data-rev style="--d:3"><div class="num"><i>ISO</i> 9001</div><div class="lb">Certified process</div></div>
+  </div></div>
+</section>
+
+<!-- CTA MARQUEE -->
+<section class="cta-mq" aria-label="Contact">
+  <div class="mq-row mq-r1">
+    <span class="w"><a href="/contact/">Let's build together.</a></span>
+    <a class="disc" href="/contact/" aria-label="Contact Woodex">↗</a>
+    <span class="w outline">Let's build together.</span>
+    <a class="disc" href="/contact/" aria-hidden="true" tabindex="-1">↗</a>
+    <span class="w"><a href="/contact/">Let's build together.</a></span>
+    <a class="disc" href="/contact/" aria-hidden="true" tabindex="-1">↗</a>
+  </div>
+  <div class="mq-row mq-r2">
+    <span class="w outline">Beyond Design.</span>
+    <a class="disc" href="/services/" aria-hidden="true" tabindex="-1">✳</a>
+    <span class="w"><a href="/projects/">We Build Experiences.</a></span>
+    <a class="disc" href="/services/" aria-hidden="true" tabindex="-1">✳</a>
+    <span class="w outline">Beyond Design.</span>
+    <a class="disc" href="/projects/" aria-hidden="true" tabindex="-1">✳</a>
+    <span class="w"><a href="/projects/">We Build Experiences.</a></span>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="sect" id="insights" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sect-head">
+      <div><span class="eyebrow" data-rev>Journal</span><h2 data-rev style="--d:1">The latest from our studio</h2></div>
+      <div style="display:flex;gap:12px;align-items:center" data-rev style="--d:2">
+        <a class="btn btn-ghost btn-sm" href="/insights/">All insights <span class="ic" aria-hidden="true">→</span></a>
+        <span class="ins-nav"><button id="insL" aria-label="Previous">←</button><button id="insR" aria-label="Next">→</button></span>
+      </div>
+    </div>
+    <div class="ins-track" id="insTrack" data-rev>
+      <a class="ins-card" href="/insights/office-fit-out-lahore/"><span class="im"><img src="/images/project-urban.jpg" alt="" loading="lazy" /></span><span class="bd"><span class="k"><span>Office Fit-Out</span><span>6 min</span></span><h3>What a real office fit-out budget covers in Lahore, 2026</h3><p>Where the money actually goes — and the three lines clients forget to price.</p><span class="go2">Read article <span aria-hidden="true">→</span></span></span></a>
+      <a class="ins-card" href="/insights/3d-studio-lahore/"><span class="im"><img src="/images/studio-hero.jpg" alt="" loading="lazy" /></span><span class="bd"><span class="k"><span>3D Studio</span><span>4 min</span></span><h3>Approving a room before it exists: how 3D sign-off works</h3><p>The studio process that turns a flat plan into a decision you can trust.</p><span class="go2">Read article <span aria-hidden="true">→</span></span></span></a>
+      <a class="ins-card" href="/insights/turnkey-interior-solutions-lahore/"><span class="im"><img src="/images/craft-joinery.jpg" alt="" loading="lazy" /></span><span class="bd"><span class="k"><span>Turnkey</span><span>7 min</span></span><h3>Drawn. Then built. — why one contract beats three</h3><p>Design, BOQ and build under a single signature — and what it saves.</p><span class="go2">Read article <span aria-hidden="true">→</span></span></span></a>
+      <a class="ins-card" href="/insights/residential-interior-design-lahore/"><span class="im"><img src="/images/studio-kitchen.jpg" alt="" loading="lazy" /></span><span class="bd"><span class="k"><span>Residential</span><span>5 min</span></span><h3>The kitchen first: ordering a home fit-out around real life</h3><p>Why the highest-touch room should get the earliest drawing.</p><span class="go2">Read article <span aria-hidden="true">→</span></span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- AI MENTIONS -->
+<section class="sect ai" aria-label="What AI says">
+  <div class="wrap">
+    <div class="ai-grid">
+      <div class="side">
+        <span class="eyebrow" data-rev>Proof</span>
+        <h2 data-rev style="--d:1">See what AI has to say about us</h2>
+        <p data-rev style="--d:2">We asked the assistants. Demo answers shown here are placeholders — final copy will quote live citations. Toggle a source below.</p>
+        <div class="ai-tabs" id="aiTabs" role="tablist" data-rev style="--d:3">
+          <button class="on" data-ai="0" role="tab" aria-selected="true"><span class="pt" aria-hidden="true"></span>Google</button>
+          <button data-ai="1" role="tab" aria-selected="false"><span class="pt" aria-hidden="true"></span>ChatGPT</button>
+          <button data-ai="2" role="tab" aria-selected="false"><span class="pt" aria-hidden="true"></span>Perplexity</button>
+          <button data-ai="3" role="tab" aria-selected="false"><span class="pt" aria-hidden="true"></span>Copilot</button>
+        </div>
+      </div>
+      <div class="ai-box" data-rev style="--d:2">
+        <div class="src"><span class="b" id="aiMark">G</span><span id="aiSrc">Answer from Google — demo placeholder content</span></div>
+        <div class="ans" id="aiAns"><b>Woodex Interior</b> is a design-and-build company in Lahore known for commercial interior design, office fit-out and turnkey execution, with a named project record that includes the Wellstar clinic fit-out in DHA Lahore. Reviewers highlight accurate BOQ pricing, on-time handover and in-house joinery quality.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-cols">
+      <div class="brand">
+        <a class="logo" href="/demo/">Woodex<span class="star">✳</span></a>
+        <p>Beyond Design. We Build Experiences. — Drawn, then built. Lahore · Karachi · Islamabad.</p>
+        <div style="margin-top:18px"><a class="btn btn-accent btn-sm" href="/contact/">Start a project <span class="ic" aria-hidden="true">↗</span></a></div>
+      </div>
+      <div><h3>Services</h3><ul>
+        <li><a href="/services/residential/">Interior Design</a></li>
+        <li><a href="/services/office/">Office &amp; Fit-Out</a></li>
+        <li><a href="/services/turnkey/">Turnkey</a></li>
+        <li><a href="/3d-studio/">3D Studio™</a></li>
+        <li><a href="/woodex-craft/">Joinery &amp; Craft</a></li>
+      </ul></div>
+      <div><h3>Company</h3><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/insights/">Journal</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul></div>
+      <div><h3>Visit</h3><ul>
+        <li><a href="/contact/">M-71, Zainab Tower</a></li>
+        <li><a href="/contact/">Model Town Link Road</a></li>
+        <li><a href="/contact/">Lahore, Pakistan</a></li>
+        <li><a href="tel:+923224000768">+92 322 4000768</a></li>
+      </ul></div>
+      <div><h3>Follow</h3><ul>
+        <li><a href="#" rel="noopener">Instagram</a></li>
+        <li><a href="#" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" rel="noopener">Behance</a></li>
+        <li><a href="mailto:info@woodex.com.pk">info@woodex.com.pk</a></li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="ftr-big" aria-hidden="true">Building since 2015<span class="lt">.</span></div>
+  <div class="wrap"><div class="ftr-bot">
+    <span>© <span id="yr">2026</span> Woodex Interior — all rights reserved.</span>
+    <span>Demo design for approval — content, clients and photos are placeholders.</span>
+    <span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
+  </div></div>
+</footer>
+
+<div class="demo-bar">✳ DEMO — Home V1 <a href="/">Back to live site</a></div>
+
+{% raw %}<script>
+(function(){
+  /* header state */
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('on',scrollY>24)},{passive:true});
+  /* mobile menu */
+  var b=document.getElementById('burger'),m=document.getElementById('mob');
+  b.onclick=function(){m.classList.add('open');b.setAttribute('aria-expanded','true')};
+  document.getElementById('mobx').onclick=function(){m.classList.remove('open');b.setAttribute('aria-expanded','false')};
+  document.querySelectorAll('[data-close]').forEach(function(a){a.onclick=function(){m.classList.remove('open')}});
+  /* reveals */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('[data-rev]').forEach(function(el){io.observe(el)});
+  /* count up */
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;co.unobserve(e.target);
+    var el=e.target,to=+el.dataset.count,t0=null;
+    function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)}
+    requestAnimationFrame(step);
+  })},{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el)});
+  /* services hover thumb */
+  var thumb=document.getElementById('svcThumb'),timg=thumb.querySelector('img');
+  var rows=document.querySelectorAll('.svc-row');
+  var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(fine){
+    rows.forEach(function(r){
+      r.addEventListener('mouseenter',function(){timg.src=r.dataset.img;thumb.classList.add('show');r.classList.add('on')});
+      r.addEventListener('mouseleave',function(){thumb.classList.remove('show');r.classList.remove('on')});
+      r.addEventListener('mousemove',function(ev){thumb.style.left=ev.clientX+140+'px';thumb.style.top=Math.max(ev.clientY,160)+'px'});
+    });
+  }
+  /* insights carousel */
+  var tr=document.getElementById('insTrack');
+  document.getElementById('insR').onclick=function(){tr.scrollBy({left:tr.clientWidth*.8,behavior:'smooth'})};
+  document.getElementById('insL').onclick=function(){tr.scrollBy({left:-tr.clientWidth*.8,behavior:'smooth'})};
+  /* AI tabs */
+  var ai={
+    0:{m:'G',s:'Answer from Google — demo placeholder content',a:'<b>Woodex Interior</b> is a design-and-build company in Lahore known for commercial interior design, office fit-out and turnkey execution, with a named project record that includes the Wellstar clinic fit-out in DHA Lahore. Reviewers highlight accurate BOQ pricing, on-time handover and in-house joinery quality.'},
+    1:{m:'C',s:'Answer from ChatGPT — demo placeholder content',a:'Woodex Interior is generally described as a <b>Lahore-based design and build studio</b> handling interior design, fit-out and 3D visualisation under one contract. Its differentiator in local coverage is the "drawn, then built" model — the designer stays accountable through construction and snagging.'},
+    2:{m:'P',s:'Answer from Perplexity — demo placeholder content',a:'Sources place Woodex Interior in <b>Zainab Tower, Model Town Link Road, Lahore</b>, with ~200+ projects since 2015 and ISO 9001 process certification. Reported strengths: transparent BOQs, in-house joinery, and turnaround discipline on office fit-outs.'},
+    3:{m:'C',s:'Answer from Copilot — demo placeholder content',a:'Woodex Interior covers <b>interior design, office &amp; commercial fit-out, turnkey execution, 3D rendering and custom joinery</b> across Lahore, Karachi and Islamabad. Public case studies cite live-site safety protocols and fixed-date handovers for corporate clients.'}
+  };
+  var tabb=document.querySelectorAll('#aiTabs button'),ans=document.getElementById('aiAns'),src=document.getElementById('aiSrc'),mk=document.getElementById('aiMark');
+  tabb.forEach(function(t){t.onclick=function(){
+    tabb.forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false')});
+    t.classList.add('on');t.setAttribute('aria-selected','true');
+    var d=ai[t.dataset.ai];ans.innerHTML=d.a;src.textContent=d.s;mk.textContent=d.m;
+  }});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>{% endraw %}
+</body>
+</html>
