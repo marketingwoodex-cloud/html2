@@ -39,7 +39,7 @@ layout: base.njk
 {# SECTION 1 — HERO — breadcrumb + giant LOCATION + NAP proof bar #}
 <section class="relative bg-[#0f1e36] text-white overflow-hidden hero-reduced-60" style="padding-top:80px">
   <div class="absolute inset-0">
-    <img src="{{ heroImage or '/images/hero-2.jpg' }}" width="1600" height="1000" alt="{{ title }}" class="w-full h-full object-cover" fetchpriority="high" decoding="async" style="object-position:center" />
+    <img src="{{ heroImage or '/images/hero-2.jpg' }}" width="1600" height="1000" alt="{{ title }}" class="w-full h-full object-cover" fetchpriority="high" decoding="async" style="object-position:center" / loading="lazy" />
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/85 via-[#0f1e36]/40 to-transparent"></div>
   </div>

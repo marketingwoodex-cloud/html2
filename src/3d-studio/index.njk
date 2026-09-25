@@ -50,7 +50,7 @@ description: "Photorealistic 3D interior rendering, architectural visualization,
 {# SECTION 1 — HERO — Creative: giant STUDIO bleed + grid lines 4x for Linoxa depth, Performance: fetchpriority high + width/height to prevent CLS, UX: breadcrumb + trust bar + dual CTA #}
 <section class="relative bg-[#0c1628] text-white overflow-hidden hero-fallback" style="padding-top:96px">
   <div class="absolute inset-0">
-    <img src="/images/studio-hero.jpg" width="1600" height="1000" alt="Photorealistic 3D interior render by Woodex 3D Studio Lahore — corporate office with branded reception counter" class="w-full h-full object-cover" fetchpriority="high" decoding="async" style="object-position:40% center" />
+    <img src="/images/studio-hero.jpg" width="1600" height="1000" alt="Photorealistic 3D interior render by Woodex 3D Studio Lahore — corporate office with branded reception counter" class="w-full h-full object-cover" fetchpriority="high" decoding="async" style="object-position:40% center" / loading="lazy" />
     <div class="absolute inset-0 bg-black/35"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-[#0c1628]/85 via-[#0c1628]/35 to-transparent"></div>
   </div>
@@ -277,8 +277,8 @@ description: "Photorealistic 3D interior rendering, architectural visualization,
       <div class="col-span-12 lg:col-span-6">
         <div class="linoxa-card rounded-[16px] overflow-hidden bg-white">
           <div class="before-after" id="ba-slider" role="img" aria-label="3D render versus completed space comparison">
-            <img src="/images/studio-hero.jpg" width="800" height="500" alt="3D render" style="clip-path:inset(0 50% 0 0)" id="ba-before" />
-            <img src="/images/hero-1.jpg" width="800" height="500" alt="Completed space" />
+            <img src="/images/studio-hero.jpg" width="800" height="500" alt="3D render" style="clip-path:inset(0 50% 0 0)" id="ba-before" / loading="lazy" />
+            <img src="/images/hero-1.jpg" width="800" height="500" alt="Completed space" / loading="lazy" />
             <div class="handle" id="ba-handle"><div class="knob" aria-hidden="true">↔</div></div>
             <span class="absolute top-4 left-4 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-[11px] font-semibold uppercase z-10">3D Render</span>
             <span class="absolute top-4 right-4 bg-[#0f1e36] text-white rounded-full px-3 py-1 text-[11px] font-semibold uppercase z-10">Completed Space</span>

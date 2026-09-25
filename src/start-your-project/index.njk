@@ -16,7 +16,7 @@ description: "Start your project — Woodex Interior — brief funnel — M-71 Z
 </style>
 
 <section class="hero-start" data-anim="fade">
-  <div class="absolute inset-0"><img src="/images/hero-1.jpg" width="1600" height="1000" alt="Start your project — Woodex Interior" class="w-full h-full object-cover opacity-30" fetchpriority="high" decoding="async" /><div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/90 via-[#0f1e36]/70 to-[#0f1e36]/40"></div></div>
+  <div class="absolute inset-0"><img src="/images/hero-1.jpg" width="1600" height="1000" alt="Start your project — Woodex Interior" class="w-full h-full object-cover opacity-30" fetchpriority="high" decoding="async" / loading="lazy" /><div class="absolute inset-0 bg-gradient-to-r from-[#0f1e36]/90 via-[#0f1e36]/70 to-[#0f1e36]/40"></div></div>
   <div class="container-wx relative z-[1] w-full">
     <div class="grid grid-cols-12 gap-8 items-center">
       <div class="col-span-12 lg:col-span-6" data-anim="left">
@@ -34,7 +34,7 @@ description: "Start your project — Woodex Interior — brief funnel — M-71 Z
       <div class="col-span-12 lg:col-span-6" data-anim="right" data-delay="1">
         <div class="linoxa-card p-8 bg-white rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
           <p class="eyebrow text-black/50">Quick Brief — 60 seconds</p>
-          <h3 class="mt-2 text-[18px] font-semibold text-[#111]">What to send us</h3>
+          <h2 class="mt-2 text-[18px] font-semibold text-[#111]">What to send us</h2>
           <ul class="mt-4 space-y-2 text-[13px] text-[#525252]">
             <li class="flex gap-2"><span class="text-[#0f1e36]">→</span> What space is today, must become, usage, city, budget band</li>
             <li class="flex gap-2"><span class="text-[#0f1e36]">→</span> Plan or photographs — empty hall, floor plan, brand, drawings</li>
@@ -42,9 +42,9 @@ description: "Start your project — Woodex Interior — brief funnel — M-71 Z
           </ul>
           <form id="brief" name="start-quick" method="POST" data-netlify="true" class="mt-6 space-y-4" aria-label="Quick brief">
             <input type="hidden" name="form-name" value="start-quick" />
-            <input name="full-name" required placeholder="Full Name *" class="w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px]" />
-            <input name="phone" required type="tel" placeholder="Phone *" class="w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px]" />
-            <textarea name="brief" required rows="3" placeholder="Tell us about your space *" class="w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px] resize-y"></textarea>
+            <input name="full-name" required placeholder="Full Name *" class="w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px]"  aria-label="Full Name" />
+            <input name="phone" required type="tel" placeholder="Phone *" class="w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px]"  aria-label="Phone" />
+            <textarea name="brief" required rows="3" placeholder="Tell us about your space *" class="w-full border border-black/10 rounded-[10px] px-4 py-3 text-[14px] resize-y" aria-label="Tell us about your space"></textarea>
             <button type="submit" class="btn btn-dark w-full justify-center"><span>Send the brief — Start</span><span class="btn-icon" style="background:white; color:#0f1e36">↗</span></button>
           </form>
         </div>
