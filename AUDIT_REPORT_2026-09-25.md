@@ -83,3 +83,23 @@
 
 ## Verified clean in this pass
 0 broken links · 0 missing assets · 0 dead anchors · 0 dup IDs · 0 dup titles · 0 heading skips · 0 unlabeled inputs · 0 img missing alt · 0 JSON-LD errors · 0 sitemap dead · 0 template artifacts · 0 malformed HTML · 0 impeccable design-lint failures (98/98 pages) · all key routes HTTP 200.
+
+---
+
+## AMENDMENT 2026-09-25 (later same day) — THE giant-"W" root cause — found & permanently fixed
+
+**User evidence:** screenshot showing a full-viewport dark "W" glyph on a blurred navy layer — the site "showing a W, not the website".
+
+**Finding (bug #8 — highest severity, recurring across 3 sessions):**
+- Header logo is `<svg class="logo-mark">` shaped as the Woodex "W". Its sizing rule (`.logo-mark{width:22px;height:22px}`) lived in **chrome.css**.
+- Commit `6d52d1e "Theme V2 unified"` **deleted 11 component CSS files** (theme.css, chrome.css, mega.css, lx.css, home.css, qa.css, studio.css, service-theme.css, premium-master.css, blog-two.css, contact-three.css) and replaced them with theme-v2.css — **but theme-v2.css never contained the header/footer/mega/logo/mobile-nav rules** (verified: 0 definitions for `logo-mark`, `header-inner`, `logo`, `mega`, `mobile-nav`, `footer-*`, `btn-icon`, `acc-icon` in any version of theme-v2.css).
+- Result: unstyled `<header>` → the W SVG unconstrained (browser default large SVG), mega-menu panel no longer hidden by default → both painted over the whole page; `backdrop-filter` blur from `.site-header` tinted everything navy. Exactly the screenshot.
+- Prior sessions "fixed" it only by deleting stale `_site/css/*` leftovers — the real styles were gone from **source**; every clean environment (fresh sandbox, Netlify deploy) reproduced the bug.
+
+**Fix applied:**
+1. Restored `theme.css` (38 KB base chrome), `chrome.css` (logo/header/footer/buttons), `mega.css` (mega-menu show/hide behavior) from git history into `src/css/`.
+2. `base.njk` link order: `tailwind → theme → chrome → mega → theme-v2` (V2 tokens keep final say on colors/type).
+3. theme-v2.css gained missing component rules: `details[open] .acc-icon{rotate 45deg}`, marker/`list-style` cleanup.
+4. **Build hardened**: `npm run build:all` now starts with `rm -rf _site` — stale CSS can never mask or resurrect this class of bug again.
+
+**Post-fix verification:** all 5 stylesheets serve 200 · `logo-mark` rule present (22px) · mega hidden until hover · 0 structural issues across 98 pages · 0 duplicate titles/anchors/ids · impeccable design-lint **0 fails site-wide** · all key routes 200.

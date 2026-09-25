@@ -101,3 +101,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .linoxa-giant{font-size:clamp(5rem,14vw,11rem); font-weight:800; line-height:0.8; letter-spacing:-0.06em; color:#fff; opacity:0.05; white-space:nowrap; pointer-events:none; user-select:none; text-transform:uppercase;}
 .rounded-wx{border-radius:var(--r24);} .rounded-wx-sm{border-radius:var(--r16);}
 .bg-navy{background:var(--navy-2);} .bg-cream{background:var(--cream-2);} .text-wood{color:var(--wood);} .bg-wood{background:var(--wood);}
+
+/* Component gaps — found in deep audit 2026-09-25 */
+details[open] .acc-icon{transform:rotate(45deg)}
+details summary::-webkit-details-marker{display:none}
+details summary{list-style:none}
